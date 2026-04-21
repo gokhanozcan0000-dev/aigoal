@@ -1,3 +1,5 @@
+# Weekly auto-update script
+
 import os
 import json
 import requests
