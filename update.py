@@ -1,5 +1,6 @@
 import os
 import json
+import base64
 import requests
 from datetime import datetime, timedelta
 
@@ -20,27 +21,34 @@ def get_fixtures():
     next_week = today + timedelta(days=7)
     date_from = today.strftime("%Y-%m-%d")
     date_to = next_week.strftime("%Y-%m-%d")
+    
     all_matches = []
     headers = {"X-Auth-Token": FOOTBALL_API_KEY}
+    
     for league_key, league_id in LEAGUE_IDS.items():
         url = f"https://api.football-data.org/v4/competitions/{league_id}/matches"
         params = {"dateFrom": date_from, "dateTo": date_to, "status": "SCHEDULED"}
         response = requests.get(url, headers=headers, params=params)
+        
         if response.status_code == 200:
             data = response.json()
-            for m in data.get("matches", []):
+            matches = data.get("matches", [])
+            for m in matches:
                 all_matches.append({
                     "league": league_key,
                     "home": m["homeTeam"]["name"],
                     "away": m["awayTeam"]["name"],
                     "date": m["utcDate"][:10]
                 })
+    
     return all_matches
 
 def get_predictions(matches):
     if not matches:
         return []
+    
     match_list = "\n".join([f"{m['home']} vs {m['away']} ({m['league']})" for m in matches])
+    
     prompt = f"""Sen bir futbol analiz uzmanısın. Aşağıdaki maçlar için 6 farklı yapay zeka modelinin (ChatGPT, Gemini, Grok, Copilot, Claude, Perplexity) tahminlerini simüle et.
 
 Her model için gerçekçi ve birbirinden farklı tahminler üret. Tahmin seçenekleri: MS 1, MS X, MS 2, MS 1X, MS X2, KG Var, KG Yok, 2.5 Üst, 2.5 Alt
@@ -52,7 +60,7 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
 [
   {{
     "home": "ev sahibi takım adı",
-    "away": "deplasman takımı adı",
+    "away": "deplasman takımı adı", 
     "league": "lig kodu",
     "date": "tarih",
     "predictions": {{
@@ -65,6 +73,7 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
     }}
   }}
 ]"""
+
     response = requests.post(
         "https://api.anthropic.com/v1/messages",
         headers={
@@ -78,6 +87,7 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
             "messages": [{"role": "user", "content": prompt}]
         }
     )
+    
     if response.status_code == 200:
         content = response.json()["content"][0]["text"]
         try:
@@ -91,64 +101,87 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
 
 def pred_to_badge(pred):
     mapping = {
-        "MS 1": ("b1", "1"), "MS X": ("b1x", "X"), "MS 2": ("bx2", "2"),
-        "MS 1X": ("b1x", "1X"), "MS X2": ("bx2", "X2"),
-        "KG Var": ("bkg", "BTTS"), "KG Yok": ("bkg", "BTTS No"),
-        "2.5 Üst": ("bu", "O2.5"), "2.5 Alt": ("ba", "U2.5"),
+        "MS 1": ("b1", "1"),
+        "MS X": ("b1x", "X"),
+        "MS 2": ("bx2", "2"),
+        "MS 1X": ("b1x", "1X"),
+        "MS X2": ("bx2", "X2"),
+        "KG Var": ("bkg", "BTTS"),
+        "KG Yok": ("bkg", "BTTS No"),
+        "2.5 Üst": ("bu", "O2.5"),
+        "2.5 Alt": ("ba", "U2.5"),
     }
     return mapping.get(pred, ("bkg", pred))
 
 def generate_match_js(predictions):
     if not predictions:
         return ""
+    
     lines = []
     for m in predictions:
         p = m.get("predictions", {})
         date_str = m.get("date", "")
+        
         def fmt(ai):
             pred_tr = p.get(ai, "MS 1")
             c, en = pred_to_badge(pred_tr)
             return f'{{tr:"{pred_tr}",en:"{en}",c:"{c}"}}'
-        line = f'      {{home:"{m["home"]}",away:"{m["away"]}",date:{{tr:"{date_str}",en:"{date_str}"}},time:"",derbi:false,\n       p:{{chatgpt:{fmt("chatgpt")},gemini:{fmt("gemini")},grok:{fmt("grok")},copilot:{fmt("copilot")},claude:{fmt("claude")},perplexity:{fmt("perplexity")}}}}}'
+        
+        line = f'''      {{home:"{m["home"]}",away:"{m["away"]}",date:{{tr:"{date_str}",en:"{date_str}"}},time:"",derbi:false,
+       p:{{chatgpt:{fmt("chatgpt")},gemini:{fmt("gemini")},grok:{fmt("grok")},copilot:{fmt("copilot")},claude:{fmt("claude")},perplexity:{fmt("perplexity")}}}}}'''
         lines.append(line)
+    
     return ",\n".join(lines)
 
 def update_league_in_html(html, league_key, new_matches_js):
     if not new_matches_js:
         return html
+    
     import re
-    pattern = rf"({re.escape(league_key)}:\s*{{[^{{]*matches:\s*\[)(.*?)(\s*\]\s*}})"
+    pattern = rf"({re.escape(league_key)}:\s*{{[^}}]*matches:\s*\[)(.*?)(\s*\]\s*}})"
+    
     def replacer(match):
         return match.group(1) + "\n" + new_matches_js + "\n    " + match.group(3)
-    return re.sub(pattern, replacer, html, flags=re.DOTALL)
+    
+    new_html = re.sub(pattern, replacer, html, flags=re.DOTALL)
+    return new_html
 
 def main():
     print("Maçlar çekiliyor...")
     matches = get_fixtures()
     print(f"{len(matches)} maç bulundu.")
+    
     if not matches:
         print("Maç bulunamadı, çıkılıyor.")
         return
-    print("Tahminler alınıyor...")
+    
+    print("Claude'dan tahminler alınıyor...")
     predictions = get_predictions(matches)
     print(f"{len(predictions)} tahmin alındı.")
+    
     if not predictions:
         print("Tahmin alınamadı, çıkılıyor.")
         return
+    
     with open("index.html", "r", encoding="utf-8") as f:
         html = f.read()
+    
     by_league = {}
     for m in predictions:
         league = m.get("league", "pl")
         if league not in by_league:
             by_league[league] = []
         by_league[league].append(m)
+    
     for league_key, league_matches in by_league.items():
         new_js = generate_match_js(league_matches)
         html = update_league_in_html(html, league_key, new_js)
         print(f"{league_key}: {len(league_matches)} maç güncellendi.")
+    
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html)
+    
     print("index.html güncellendi!")
 
-i
+if __name__ == "__main__":
+    main()
