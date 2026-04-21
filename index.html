@@ -282,61 +282,40 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('pl',this)">Premier League </a>
       <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('championship',this)">Championship </a>
     </div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-es',this)">
+    <a class="sb-item" onclick="switchLeague('laliga',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/es.svg" alt="ES">
-      <span data-tr="İspanya" data-en="Spain">İspanya</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-es">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('laliga',this)">La Liga </a>
-    </div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-de',this)">
+      <span data-tr="İspanya — La Liga" data-en="Spain — La Liga">İspanya — La Liga</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('bundesliga',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/de.svg" alt="DE">
-      <span data-tr="Almanya" data-en="Germany">Almanya</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-de">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('bundesliga',this)">Bundesliga </a>
-    </div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-it',this)">
+      <span data-tr="Almanya — Bundesliga" data-en="Germany — Bundesliga">Almanya — Bundesliga</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('seriea',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/it.svg" alt="IT">
-      <span data-tr="İtalya" data-en="Italy">İtalya</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-it">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('seriea',this)">Serie A </a>
-    </div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-fr',this)">
+      <span data-tr="İtalya — Serie A" data-en="Italy — Serie A">İtalya — Serie A</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('ligue1',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/fr.svg" alt="FR">
-      <span data-tr="Fransa" data-en="France">Fransa</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-fr">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('ligue1',this)">Ligue 1 </a>
-    </div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-nl',this)">
+      <span data-tr="Fransa — Ligue 1" data-en="France — Ligue 1">Fransa — Ligue 1</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('eredivisie',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/nl.svg" alt="NL">
-      <span data-tr="Hollanda" data-en="Netherlands">Hollanda</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-nl">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('eredivisie',this)">Eredivisie </a>
-    </div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-pt',this)">
+      <span data-tr="Hollanda — Eredivisie" data-en="Netherlands — Eredivisie">Hollanda — Eredivisie</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('primeiraliga',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pt.svg" alt="PT">
-      <span data-tr="Portekiz" data-en="Portugal">Portekiz</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-pt">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('primeiraliga',this)">Primeira Liga </a>
-    </div>
+      <span data-tr="Portekiz — Primeira Liga" data-en="Portugal — Primeira Liga">Portekiz — Primeira Liga</span>
+    </a>
   </div>
 
   <div class="sb-divider"></div>
 
   <div class="sb-section">
     <div class="sb-section-label">🌎 <span data-tr="Amerika" data-en="Americas">Amerika</span></div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-us',this)">
+    <a class="sb-item" onclick="switchLeague('mls',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg" alt="US">
-      <span data-tr="Amerika" data-en="USA">Amerika</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-us">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('mls',this)">MLS </a>
-    </div>
+      <span data-tr="Amerika — MLS" data-en="USA — MLS">Amerika — MLS</span>
+    </a>
 
   <div class="sb-divider"></div>
 
@@ -368,13 +347,10 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 
   <div class="sb-section">
     <div class="sb-section-label">🌎 <span data-tr="Güney Amerika" data-en="South America">Güney Amerika</span></div>
-    <div class="sb-group-toggle" onclick="toggleGroup('grp-br',this)">
+    <a class="sb-item" onclick="switchLeague('brasileirao',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
-      <span data-tr="Brezilya" data-en="Brazil">Brezilya</span><span class="arrow">▶</span>
-    </div>
-    <div class="sb-group-content" id="grp-br">
-      <a class="sb-item" style="padding-left:28px;" onclick="switchLeague('brasileirao',this)">Brasileirão Série A </a>
-    </div>
+      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A">Brezilya — Série A</span>
+    </a>
   </div>
 
 </aside>
