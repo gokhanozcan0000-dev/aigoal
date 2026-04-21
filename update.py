@@ -47,64 +47,64 @@ def get_predictions(matches):
     if not matches:
         return []
     
-    match_list = "\n".join([f"{m['home']} vs {m['away']} ({m['league']})" for m in matches])
+    all_predictions = []
     
-    prompt = f"""Sen bir futbol analiz uzmanısın. Aşağıdaki maçlar için 6 farklı yapay zeka modelinin (ChatGPT, Gemini, Grok, Copilot, Claude, Perplexity) tahminlerini simüle et.
+    # Liglere böl, her lig için ayrı istek
+    by_league = {}
+    for m in matches:
+        league = m.get("league", "pl")
+        if league not in by_league:
+            by_league[league] = []
+        by_league[league].append(m)
+    
+    for league_key, league_matches in by_league.items():
+        match_list = "\n".join([f"{m['home']} vs {m['away']}" for m in league_matches])
+        
+        prompt = f"""Aşağıdaki futbol maçları için 6 farklı yapay zeka modelinin tahminlerini simüle et.
+Tahmin seçenekleri: MS 1, MS X, MS 2, MS 1X, MS X2, KG Var, KG Yok, 2.5 Üst, 2.5 Alt
 
-Her model için gerçekçi ve birbirinden farklı tahminler üret. Tahmin seçenekleri: MS 1, MS X, MS 2, MS 1X, MS X2, KG Var, KG Yok, 2.5 Üst, 2.5 Alt
-
-Maçlar:
+Maçlar ({league_key}):
 {match_list}
 
-Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
-[
-  {{
-    "home": "ev sahibi takım adı",
-    "away": "deplasman takımı adı", 
-    "league": "lig kodu",
-    "date": "tarih",
-    "predictions": {{
-      "chatgpt": "TAHMİN",
-      "gemini": "TAHMİN",
-      "grok": "TAHMİN",
-      "copilot": "TAHMİN",
-      "claude": "TAHMİN",
-      "perplexity": "TAHMİN"
-    }}
-  }}
-]"""
+SADECE JSON döndür, başka hiçbir şey yazma:
+[{{"home":"takım","away":"takım","league":"{league_key}","date":"2026","predictions":{{"chatgpt":"TAHMİN","gemini":"TAHMİN","grok":"TAHMİN","copilot":"TAHMİN","claude":"TAHMİN","perplexity":"TAHMİN"}}}}]"""
 
-    response = requests.post(
-        "https://api.anthropic.com/v1/messages",
-        headers={
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json"
-        },
-        json={
-            "model": "claude-opus-4-7",
-            "max_tokens": 8000,
-            "messages": [{"role": "user", "content": prompt}]
-        }
-    )
+        response = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json"
+            },
+            json={
+                "model": "claude-opus-4-7",
+                "max_tokens": 4000,
+                "messages": [{"role": "user", "content": prompt}]
+            }
+        )
+        
+        if response.status_code == 200:
+            content = response.json()["content"][0]["text"]
+            try:
+                preds = json.loads(content)
+                all_predictions.extend(preds)
+                print(f"{league_key}: {len(preds)} tahmin alındı.")
+            except:
+                import re
+                json_match = re.search(r'\[.*\]', content, re.DOTALL)
+                if json_match:
+                    try:
+                        preds = json.loads(json_match.group())
+                        all_predictions.extend(preds)
+                        print(f"{league_key}: {len(preds)} tahmin alındı.")
+                    except:
+                        print(f"{league_key}: parse hatası.")
+                else:
+                    print(f"{league_key}: JSON bulunamadı.")
+        else:
+            print(f"{league_key}: API hatası {response.status_code}")
     
-    print(f"Claude API status: {response.status_code}")
-    if response.status_code == 200:
-        content = response.json()["content"][0]["text"]
-        try:
-            return json.loads(content)
-        except:
-            import re
-            json_match = re.search(r'\[.*\]', content, re.DOTALL)
-            if json_match:
-                try:
-                    return json.loads(json_match.group())
-                except:
-                    pass
-            print(f"JSON parse hatası. Content: {content[:200]}")
-    else:
-        print(f"API hatası: {response.status_code} - {response.text[:200]}")
-    return []
+    return all_predictions
 
 def pred_to_badge(pred):
     mapping = {
