@@ -88,6 +88,8 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
         }
     )
     
+print(f"Claude API status: {response.status_code}")
+    print(f"Claude API response: {response.text[:500]}")
     if response.status_code == 200:
         content = response.json()["content"][0]["text"]
         try:
