@@ -256,7 +256,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <a class="sb-item" onclick="switchLeague('superlig',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
       <span>Trendyol Süper Lig</span>
-      <span class="sb-badge">31</span>
+      <span class="sb-badge">9</span>
     </a>
     <a class="sb-item" onclick="switchLeague('lig1',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
@@ -266,7 +266,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <a class="sb-item" onclick="switchLeague('turkkupasi',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
       <span>Ziraat Türkiye Kupası</span>
-      <span class="sb-badge">0</span>
+      <span class="sb-badge">4</span>
     </a>
   </div>
 
@@ -753,10 +753,18 @@ const allLeagues = {
   turkkupasi: {
     nameTr:'Ziraat Türkiye Kupası', nameEn:'Ziraat Turkey Cup',
     countryTr:'Türkiye', countryEn:'Turkey',
-    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'Nisan 2026', en:'April 2026'},
+    week:'', weekLabel:{tr:'YARI FİNAL', en:'SEMI-FINAL'},
+    dates:{tr:'21–23 Nisan 2026', en:'21–23 April 2026'},
     flag:'🇹🇷',
     matches:[
+      {home:'Konyaspor',away:'Fenerbahçe',date:{tr:'21 Nisan Sal',en:'Tue 21 Apr'},time:'20:30',derbi:false,
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+      {home:'Galatasaray',away:'Gençlerbirliği',date:{tr:'22 Nisan Çar',en:'Wed 22 Apr'},time:'20:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Samsunspor',away:'Trabzonspor',date:{tr:'23 Nisan Per',en:'Thu 23 Apr'},time:'18:45',derbi:false,
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS X2',en:'X2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+      {home:'Beşiktaş',away:'Alanyaspor',date:{tr:'23 Nisan Per',en:'Thu 23 Apr'},time:'20:45',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
     ]
   },
   pl: {
@@ -771,21 +779,21 @@ const allLeagues = {
       {home:"AFC Bournemouth",away:"Leeds United FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Burnley FC",away:"Manchester City FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
       {home:"Sunderland AFC",away:"Nottingham Forest FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS X",en:"X",c:"b1x"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
       {home:"Fulham FC",away:"Aston Villa FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
       {home:"Liverpool FC",away:"Crystal Palace FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"West Ham United FC",away:"Everton FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
       {home:"Wolverhampton Wanderers FC",away:"Tottenham Hotspur FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
       {home:"Arsenal FC",away:"Newcastle United FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"Manchester United FC",away:"Brentford FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
     ]
   },
   championship: {
@@ -831,23 +839,23 @@ const allLeagues = {
     flag:'🇩🇪',
     matches:[
       {home:"RB Leipzig",away:"1. FC Union Berlin",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
       {home:"1. FSV Mainz 05",away:"FC Bayern München",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"1. FC Köln",away:"Bayer 04 Leverkusen",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
       {home:"FC Augsburg",away:"Eintracht Frankfurt",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"VfL Wolfsburg",away:"Borussia Mönchengladbach",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X",en:"X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"1. FC Heidenheim 1846",away:"FC St. Pauli 1910",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"KG Yok",en:"BTTS No",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
       {home:"Hamburger SV",away:"TSG 1899 Hoffenheim",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
       {home:"VfB Stuttgart",away:"SV Werder Bremen",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Borussia Dortmund",away:"SC Freiburg",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
     ]
   },
   seriea: {
@@ -858,25 +866,25 @@ const allLeagues = {
     flag:'🇮🇹',
     matches:[
       {home:"SSC Napoli",away:"US Cremonese",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
       {home:"Parma Calcio 1913",away:"AC Pisa 1909",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS X",en:"X",c:"b1x"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"KG Yok",en:"BTTS No",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
       {home:"Bologna FC 1909",away:"AS Roma",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X",en:"X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
       {home:"Hellas Verona FC",away:"US Lecce",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X",en:"X",c:"b1x"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS X",en:"X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
       {home:"ACF Fiorentina",away:"US Sassuolo Calcio",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"Genoa CFC",away:"Como 1907",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X",en:"X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X",en:"X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
       {home:"Torino FC",away:"FC Internazionale Milano",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"AC Milan",away:"Juventus FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X",en:"X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X",en:"X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
       {home:"Cagliari Calcio",away:"Atalanta BC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
       {home:"SS Lazio",away:"Udinese Calcio",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}}
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
     ]
   },
   laliga: {
@@ -887,43 +895,43 @@ const allLeagues = {
     flag:'🇪🇸',
     matches:[
       {home:"Athletic Club",away:"CA Osasuna",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"RCD Mallorca",away:"Valencia CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Real Madrid CF",away:"Deportivo Alavés",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
-      {home:"Girona FC",away:"Real Betis Balompié",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-      {home:"Elche CF",away:"Club Atlético de Madrid",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Real Sociedad de Fútbol",away:"Getafe CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"RCD Mallorca",away:"Valencia CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Real Madrid CF",away:"Deportivo Alavés",date:{tr:"2026",en:"2026"},time:"",derbi:false,
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
+      {home:"Girona FC",away:"Real Betis Balompié",date:{tr:"2026",en:"2026"},time:"",derbi:false,
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Elche CF",away:"Club Atlético de Madrid",date:{tr:"2026",en:"2026"},time:"",derbi:false,
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Real Sociedad de Fútbol",away:"Getafe CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"FC Barcelona",away:"RC Celta de Vigo",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"Levante UD",away:"Sevilla FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X",en:"X",c:"b1x"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
       {home:"Rayo Vallecano de Madrid",away:"RCD Espanyol de Barcelona",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS X",en:"X",c:"b1x"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Real Oviedo",away:"Villarreal CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"Real Betis Balompié",away:"Real Madrid CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
       {home:"Deportivo Alavés",away:"RCD Mallorca",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS X",en:"X",c:"b1x"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
       {home:"Getafe CF",away:"FC Barcelona",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"Valencia CF",away:"Girona FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X",en:"X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"Club Atlético de Madrid",away:"Athletic Club",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Rayo Vallecano de Madrid",away:"Real Sociedad de Fútbol",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X",en:"X",c:"b1x"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+       p:{chatgpt:{tr:"MS X",en:"X",c:"b1x"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
       {home:"Real Oviedo",away:"Elche CF",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X",en:"X",c:"b1x"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS X",en:"X",c:"b1x"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+       p:{chatgpt:{tr:"MS X",en:"X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"CA Osasuna",away:"Sevilla FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS X",en:"X",c:"b1x"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Villarreal CF",away:"RC Celta de Vigo",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"RCD Espanyol de Barcelona",away:"Levante UD",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
     ]
@@ -938,23 +946,23 @@ const allLeagues = {
       {home:"Paris Saint-Germain FC",away:"FC Nantes",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"Stade Brestois 29",away:"Racing Club de Lens",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"Olympique Lyonnais",away:"AJ Auxerre",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"Angers SCO",away:"Paris Saint-Germain FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"Toulouse FC",away:"AS Monaco FC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X",en:"X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X",en:"X",c:"b1x"}}},
       {home:"FC Lorient",away:"RC Strasbourg Alsace",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"Le Havre AC",away:"FC Metz",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Yok",en:"BTTS No",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Yok",en:"BTTS No",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Paris FC",away:"Lille OSC",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
       {home:"Stade Rennais FC 1901",away:"FC Nantes",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"Olympique de Marseille",away:"OGC Nice",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
     ]
   },
   eredivisie: {
@@ -969,7 +977,7 @@ const allLeagues = {
       {home:"Go Ahead Eagles",away:"AZ",date:{tr:"2026",en:"2026"},time:"",derbi:false,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"PSV",away:"PEC Zwolle",date:{tr:"2026",en:"2026"},time:"",derbi:false,
-       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
     ]
   },
   primeiraliga: {
