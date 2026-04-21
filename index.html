@@ -345,6 +345,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <a class="sb-item" onclick="switchLeague('worldcup',this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
       <span data-tr="2026 FIFA Dünya Kupası" data-en="2026 FIFA World Cup">2026 FIFA Dünya Kupası</span>
+      <span class="sb-badge new">Haziran</span>
     </a>
   </div>
 
@@ -1023,8 +1024,8 @@ const allLeagues = {
   worldcup: {
     nameTr:'2026 FIFA Dünya Kupası', nameEn:'2026 FIFA World Cup',
     countryTr:'Dünya', countryEn:'World',
-    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'Haziran 2026', en:'June 2026'},
+    week:'', weekLabel:{tr:'HAZİRAN 2026', en:'JUNE 2026'},
+    dates:{tr:'Haziran–Temmuz 2026', en:'June–July 2026'},
     flag:'🏆',
     matches:[
     ]
@@ -1032,19 +1033,47 @@ const allLeagues = {
   championsleague: {
     nameTr:'UEFA Şampiyonlar Ligi', nameEn:'UEFA Champions League',
     countryTr:'Avrupa', countryEn:'Europe',
-    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'Nisan 2026', en:'April 2026'},
+    week:'', weekLabel:{tr:'YARI FİNAL', en:'SEMI-FINAL'},
+    dates:{tr:'28 Nis – 6 May 2026', en:'28 Apr – 6 May 2026'},
     flag:'🏆',
     matches:[
+      {home:'PSG',away:'Bayern München',date:{tr:'28 Nisan Sal',en:'Tue 28 Apr'},time:'21:00',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+      {home:'Atletico',away:'Arsenal',date:{tr:'29 Nisan Çar',en:'Wed 29 Apr'},time:'21:00',derbi:false,
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'2.5 Alt',en:'U2.5',c:'ba'},grok:{tr:'MS X',en:'X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
+      {home:'Bayern München',away:'PSG',date:{tr:'6 Mayıs Çar',en:'Wed 6 May'},time:'21:00',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+      {home:'Arsenal',away:'Atletico',date:{tr:'5 Mayıs Sal',en:'Tue 5 May'},time:'21:00',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
     ]
   },
   brasileirao: {
     nameTr:'Brasileirão Série A', nameEn:'Brasileirão Série A',
     countryTr:'Brezilya', countryEn:'Brazil',
     week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'Nisan 2026', en:'April 2026'},
+    dates:{tr:'25–27 Nisan 2026', en:'25–27 April 2026'},
     flag:'🇧🇷',
     matches:[
+      {home:'Botafogo',away:'Internacional',date:{tr:'25 Nisan Cmt',en:'Sat 25 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+      {home:'Bahia',away:'Santos',date:{tr:'25 Nisan Cmt',en:'Sat 25 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Remo',away:'Cruzeiro',date:{tr:'25 Nisan Cmt',en:'Sat 25 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
+      {home:'Sao Paulo',away:'Mirassol',date:{tr:'26 Nisan Paz',en:'Sun 26 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Corinthians',away:'Vasco',date:{tr:'26 Nisan Paz',en:'Sun 26 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X',en:'X',c:'b1x'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
+      {home:'Gremio',away:'Coritiba',date:{tr:'26 Nisan Paz',en:'Sun 26 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Bragantino',away:'Palmeiras',date:{tr:'26 Nisan Paz',en:'Sun 26 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+      {home:'Athletico-PR',away:'Vitoria',date:{tr:'26 Nisan Paz',en:'Sun 26 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Fluminense',away:'Chapecoense',date:{tr:'27 Nisan Pzt',en:'Mon 27 Apr'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'Atletico-MG',away:'Flamengo',date:{tr:'27 Nisan Pzt',en:'Mon 27 Apr'},time:'',derbi:true,
+       p:{chatgpt:{tr:'MS X',en:'X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS X',en:'X',c:'b1x'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
     ]
   },
   konyaspor: { // Süper Lig yeni hafta maçları
