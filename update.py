@@ -153,12 +153,6 @@ def update_league_in_html(html, league_key, new_matches_js):
     else:
         print(f"{league_key}: güncellendi.")
     return result
-    
-    def replacer(match):
-        return match.group(1) + "\n" + new_matches_js + "\n    " + match.group(3)
-    
-    new_html = re.sub(pattern, replacer, html, flags=re.DOTALL)
-    return new_html
 
 def main():
     print("Maçlar çekiliyor...")
