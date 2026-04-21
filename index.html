@@ -197,8 +197,20 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 .flinks a:hover{color:var(--accent);}
 .fsmall{font-size:10px;color:#2e3455;margin-top:2px;}
 
+/* ─── MOBILE CARD VIEW ─── */
+.match-card{display:none;background:var(--card);border:1px solid var(--border);border-radius:10px;margin:8px 16px;overflow:hidden;}
+.match-card-header{padding:12px 14px 8px;border-bottom:1px solid var(--border);}
+.match-card-teams{font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.match-card-teams .vs{color:var(--muted);font-weight:400;font-size:11px;}
+.match-card-meta{font-size:10px;color:var(--muted);margin-top:4px;}
+.match-card-preds{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.match-card-pred{display:flex;align-items:center;justify-content:space-between;padding:7px 14px;border-bottom:1px solid rgba(30,35,64,.5);}
+.match-card-pred:nth-child(odd){border-right:1px solid rgba(30,35,64,.5);}
+.match-card-pred:nth-last-child(-n+2){border-bottom:none;}
+.match-card-ai{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+
 /* ─── MOBILE ─── */
-.sb-toggle{display:none;position:fixed;bottom:20px;left:16px;z-index:400;width:42px;height:42px;border-radius:50%;background:var(--accent);border:none;color:#000;font-size:18px;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,229,255,.35);}
+.sb-toggle{display:none;position:fixed;bottom:20px;right:16px;z-index:400;width:44px;height:44px;border-radius:50%;background:var(--accent);border:none;color:#000;font-size:18px;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,229,255,.35);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 .content>*{animation:fadeUp .4s ease both;}
 ::-webkit-scrollbar{width:4px;height:4px;}
@@ -210,9 +222,16 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
   .main{margin-left:0;}
   .sb-toggle{display:flex;}
   .topnav{padding:0 12px;}
-  .title-bar,.legend-bar{padding-left:16px;padding-right:16px;}
-  .sec{padding:0 16px;}
+  .topnav-breadcrumb{display:none;}
+  .week-chip{font-size:10px;padding:4px 8px;}
+  .title-bar,.legend-bar{padding-left:12px;padding-right:12px;}
+  .legend-bar{flex-wrap:wrap;gap:4px;}
+  .sec{padding:0 12px;}
   .static-page{padding:24px 16px 40px;}
+  .table-wrap{display:none;}
+  .match-card{display:block;}
+  .ag{grid-template-columns:repeat(3,1fr);}
+  .cg{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -410,6 +429,8 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
           <tbody id="matchTable"></tbody>
         </table>
       </div>
+
+      <div id="mobileCards"></div>
 
       <div class="sec sec-gap" id="konsensus">
         <div class="sec-title">🎯 <span data-tr="KONSENSÜs ANALİZİ" data-en="CONSENSUS">KONSENSÜs <span>ANALİZİ</span></span></div>
@@ -632,6 +653,9 @@ const ais=['chatgpt','gemini','grok','copilot','claude','perplexity'];
 
 function renderTable(){
   const derbiLabel = currentLang==='tr' ? 'DERBİ' : 'DERBY';
+  const aiNames = {chatgpt:'ChatGPT', gemini:'Gemini', grok:'Grok', copilot:'Copilot', claude:'Claude', perplexity:'Perplexity'};
+
+  // Desktop table
   document.getElementById('matchTable').innerHTML=matches.map(m=>{
     const cells=ais.map(ai=>{
       const p=m.p[ai];
@@ -649,6 +673,32 @@ function renderTable(){
         <div class="match-meta">${dateStr} <span class="match-time">${m.time}</span></div>
       </td>${cells}</tr>`;
   }).join('');
+
+  // Mobile cards
+  const container = document.getElementById('mobileCards');
+  if(container){
+    container.innerHTML = matches.map(m=>{
+      const dt = m.derbi ? `<span class="dtag">${derbiLabel}</span>` : '';
+      const dateStr = m.date[currentLang] || m.date.tr;
+      const preds = ais.map(ai=>{
+        const p = m.p[ai];
+        const lbl = p[currentLang] || p.tr;
+        return `<div class="match-card-pred">
+          <span class="match-card-ai">${aiNames[ai]}</span>
+          <span class="badge ${p.c}">${lbl}</span>
+        </div>`;
+      }).join('');
+      return `<div class="match-card${m.derbi?' dr':''}">
+        <div class="match-card-header">
+          <div class="match-card-teams">
+            <span>${m.home}</span><span class="vs">vs</span><span>${m.away}</span>${dt}
+          </div>
+          <div class="match-card-meta">${dateStr}${m.time ? ' · <span style="color:#ffe600;font-family:Bebas Neue,cursive;font-size:13px;">'+m.time+'</span>' : ''}</div>
+        </div>
+        <div class="match-card-preds">${preds}</div>
+      </div>`;
+    }).join('');
+  }
 }
 
 function renderConsensus(){
