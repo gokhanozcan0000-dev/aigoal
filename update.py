@@ -143,9 +143,14 @@ def generate_match_js(predictions):
 def update_league_in_html(html, league_key, new_matches_js):
     if not new_matches_js:
         return html
-    
     import re
-    pattern = rf"({re.escape(league_key)}:\s*{{[^}}]*matches:\s*\[)(.*?)(\s*\]\s*}})"
+    pattern = rf"({re.escape(league_key)}:\s*\{{[^{{]*?matches:\s*\[)(.*?)(\s*\]\s*\}})"
+    def replacer(match):
+        return match.group(1) + "\n" + new_matches_js + "\n    " + match.group(3)
+    result = re.sub(pattern, replacer, html, flags=re.DOTALL)
+    if result == html:
+        print(f"{league_key}: pattern eşleşmedi, güncellenmedi.")
+    return result
     
     def replacer(match):
         return match.group(1) + "\n" + new_matches_js + "\n    " + match.group(3)
