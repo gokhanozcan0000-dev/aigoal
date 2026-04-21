@@ -82,7 +82,7 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
             "content-type": "application/json"
         },
         json={
-            "model": "claude-3-5-haiku-20241022",
+            "model": "claude-opus-4-7",
             "max_tokens": 4000,
             "messages": [{"role": "user", "content": prompt}]
         }
