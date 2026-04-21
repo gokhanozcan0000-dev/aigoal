@@ -83,7 +83,7 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
         },
         json={
             "model": "claude-opus-4-7",
-            "max_tokens": 4000,
+            "max_tokens": 8000,
             "messages": [{"role": "user", "content": prompt}]
         }
     )
