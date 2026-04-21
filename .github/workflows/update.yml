@@ -1,4 +1,4 @@
-yamlname: Weekly Match Update
+name: Weekly Match Update
 
 on:
   schedule:
@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: pip install requests anthropic
-      
+
       - name: Run update script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
         run: python update.py
-      
+
       - name: Commit and push
         run: |
           git config --global user.email "action@github.com"
