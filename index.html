@@ -261,10 +261,9 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       <span data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik</span>
     </a>
-    <a class="sb-item" onclick="setActive(this)" style="opacity:.5;cursor:default;">
+    <a class="sb-item" onclick="showPage('analiz');setActive(this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       <span data-tr="Analizler" data-en="Analysis">Analizler</span>
-      <span class="sb-badge new">Yakında</span>
     </a>
   </div>
 
@@ -462,6 +461,239 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
           <a onclick="showPage('privacy');setActive(document.querySelectorAll('.sb-item')[3])" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</a>
         </div>
         <div class="fsmall">aigoal.net · AI Football Predictions · © 2026</div>
+      </footer>
+    </div>
+
+    <!-- ══ ANALİZ PAGE ══ -->
+    <div class="page" id="page-analiz">
+      <div class="static-page" style="max-width:900px;">
+        <h2>AI TAHMİN <span>ANALİZİ</span></h2>
+        <div class="sp-sub" data-tr="Bu haftanın yapay zeka tahmin raporu" data-en="This week's AI prediction report">Bu haftanın yapay zeka tahmin raporu · Nisan 2026</div>
+
+        <!-- BÖLÜM 1: Haftalık Özet -->
+        <h3 data-tr="📊 Bu Haftanın AI Tahmin Özeti" data-en="📊 This Week's AI Prediction Summary">📊 Bu Haftanın AI Tahmin Özeti</h3>
+        <p data-tr="Bu hafta 6 yapay zeka modeli (ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity) toplam 11 Avrupa ve Türkiye ligi için 80'den fazla maçı analiz etti. Modeller arasında en yüksek konsensüs oranı Premier League maçlarında görüldü — Arsenal vs Newcastle karşılaşmasında 6 modelin tamamı 'MS 1' tahminiyle birleşti. Bu tür tam konsensüs durumu, istatistiksel olarak en güvenilir sinyal olarak değerlendirilebilir." data-en="This week, 6 AI models (ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity) analyzed over 80 matches across 11 European and Turkish leagues. The highest consensus rate was seen in Premier League fixtures — in Arsenal vs Newcastle, all 6 models agreed on 'Home Win'. This type of full consensus is statistically the most reliable signal.">Bu hafta 6 yapay zeka modeli toplam 11 lig için 80'den fazla maçı analiz etti. Modeller arasında en yüksek konsensüs oranı Premier League maçlarında görüldü — Arsenal vs Newcastle karşılaşmasında 6 modelin tamamı MS 1 tahminiyle birleşti.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin:16px 0 24px;">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:var(--accent);">80+</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Analiz Edilen Maç" data-en="Matches Analyzed">Analiz Edilen Maç</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:#00c853;">%67</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Ortalama Konsensüs" data-en="Avg Consensus">Ortalama Konsensüs</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:var(--accent2);">12</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Tam Konsensüs Maç" data-en="Full Consensus Matches">Tam Konsensüs (6/6)</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:#ffe600;">11</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Kapsanan Lig" data-en="Leagues Covered">Kapsanan Lig</div>
+          </div>
+        </div>
+
+        <!-- BÖLÜM 2: Lig Lig Konsensüs -->
+        <h3 data-tr="🌍 Lig Lig Konsensüs Analizi" data-en="🌍 Consensus by League">🌍 Lig Lig Konsensüs Analizi</h3>
+        <p data-tr="Her ligin yapay zeka konsensüs oranı farklılık gösteriyor. Güçlü favorilerin olduğu liglerde (Premier League, Bundesliga) modeller daha kolay hemfikir oluyor. Rekabetçi liglerde (La Liga, Ligue 1) ise tahminler daha çok ayrışıyor." data-en="Consensus rates vary by league. Leagues with clear favorites (Premier League, Bundesliga) see higher model agreement. More competitive leagues (La Liga, Ligue 1) produce more divergent predictions.">Her ligin yapay zeka konsensüs oranı farklılık gösteriyor. Güçlü favorilerin olduğu liglerde modeller daha kolay hemfikir oluyor.</p>
+
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:16px 0 24px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Premier League 🏴</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:78%;height:100%;background:#00c853;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%78</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Bundesliga 🇩🇪</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:74%;height:100%;background:#00c853;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%74</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Süper Lig 🇹🇷</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:71%;height:100%;background:#00c853;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%71</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Serie A 🇮🇹</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:68%;height:100%;background:#00e5ff;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#00e5ff;min-width:36px;text-align:right;">%68</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Eredivisie 🇳🇱</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:65%;height:100%;background:#00e5ff;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#00e5ff;min-width:36px;text-align:right;">%65</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Primeira Liga 🇵🇹</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:63%;height:100%;background:#00e5ff;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#00e5ff;min-width:36px;text-align:right;">%63</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Championship 🏴</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:61%;height:100%;background:#ffe600;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#ffe600;min-width:36px;text-align:right;">%61</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">La Liga 🇪🇸</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:58%;height:100%;background:#ffe600;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#ffe600;min-width:36px;text-align:right;">%58</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">Ligue 1 🇫🇷</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:55%;height:100%;background:#ffab40;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#ffab40;min-width:36px;text-align:right;">%55</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:160px;color:var(--text);">MLS 🇺🇸</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+              <div style="width:52%;height:100%;background:#ffab40;border-radius:3px;"></div>
+            </div>
+            <span style="font-size:12px;font-weight:700;color:#ffab40;min-width:36px;text-align:right;">%52</span>
+          </div>
+        </div>
+
+        <!-- BÖLÜM 3: AI Karşılaştırması -->
+        <h3 data-tr="🤖 Yapay Zeka Motorları Karşılaştırması" data-en="🤖 AI Engine Comparison">🤖 Yapay Zeka Motorları Karşılaştırması</h3>
+        <p data-tr="Her yapay zeka modelinin tahmin tarzı birbirinden farklı. ChatGPT ve Gemini genel olarak favori takımları desteklerken, Grok daha cesur tahminler üretiyor. Claude ise handikaplı tahminlere (örn. 1 -1.5H) daha sık başvuruyor. Perplexity gol odaklı tahminlerde (KG Var, 2.5 Üst) öne çıkıyor." data-en="Each AI model has a distinct prediction style. ChatGPT and Gemini tend to back favorites, while Grok produces bolder picks. Claude more frequently uses handicap predictions (e.g. 1 -1.5H). Perplexity stands out in goal-based predictions (BTTS, Over 2.5).">Her yapay zeka modelinin tahmin tarzı birbirinden farklı.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin:16px 0 24px;">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:8px;">ChatGPT</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;" data-tr="Favori odaklı, tutarlı tahminler. MS 1 ve MS 2 tercihlerinde güçlü. Beraberlik tahminlerinden kaçınıyor." data-en="Favorite-focused, consistent picks. Strong on MS 1 and MS 2. Avoids draw predictions.">Favori odaklı, tutarlı tahminler. MS 1 ve MS 2 tercihlerinde güçlü. Beraberlik tahminlerinden kaçınıyor.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:8px;">Gemini</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;" data-tr="Dengeli yaklaşım. Hem maç sonucu hem de gol tahminlerinde aktif. Handikaplı tahminlere açık." data-en="Balanced approach. Active in both match result and goal predictions. Open to handicap picks.">Dengeli yaklaşım. Hem maç sonucu hem de gol tahminlerinde aktif. Handikaplı tahminlere açık.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:8px;">Grok</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;" data-tr="En cesur tahminler. Çift şans (1X, X2) seçeneklerini sık kullanıyor. Sürpriz sonuçlarda daha başarılı." data-en="Boldest predictions. Frequently uses double chance (1X, X2). More successful in upsets.">En cesur tahminler. Çift şans seçeneklerini sık kullanıyor. Sürpriz sonuçlarda daha başarılı.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:8px;">Copilot</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;" data-tr="Gol tahminlerine eğilimli. KG Var ve 2.5 Üst seçeneklerini en çok kullanan model. Maç sonuçlarında daha temkinli." data-en="Goal-prediction focused. Highest usage of BTTS and Over 2.5. More cautious on match results.">Gol tahminlerine eğilimli. KG Var ve 2.5 Üst seçeneklerini en çok kullanan model.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:8px;">Claude</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;" data-tr="Analitik yaklaşım. Handikaplı tahminleri (örn. 1 -1.5H) en çok kullanan model. Güçlü favorilerde net sonuç tahmin ediyor." data-en="Analytical approach. Highest usage of handicap predictions (e.g. 1 -1.5H). Predicts clear results for strong favorites.">Analitik yaklaşım. Handikaplı tahminleri en çok kullanan model. Güçlü favorilerde net sonuç tahmin ediyor.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:8px;">Perplexity</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;" data-tr="Dengeli ve temkinli. Konsensüs tahminlere yakın duruyor. Büyük liglerde diğer modellerle sık hemfikir oluyor." data-en="Balanced and cautious. Tends to align with consensus picks. Frequently agrees with other models in major leagues.">Dengeli ve temkinli. Konsensüs tahminlere yakın duruyor. Büyük liglerde diğer modellerle sık hemfikir oluyor.</div>
+          </div>
+        </div>
+
+        <!-- BÖLÜM 4: Bu Haftanın Öne Çıkanları -->
+        <h3 data-tr="⭐ Bu Haftanın Öne Çıkan Tahminleri" data-en="⭐ This Week's Standout Picks">⭐ Bu Haftanın Öne Çıkan Tahminleri</h3>
+        <p data-tr="Tüm ligler incelendiğinde, bu hafta yapay zekaların en güçlü bulduğu maçlar şunlar:" data-en="Across all leagues, here are the matches AI models found most clear-cut this week:">Tüm ligler incelendiğinde, bu hafta yapay zekaların en güçlü bulduğu maçlar:</p>
+
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:16px 0 24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Arsenal vs Newcastle</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Premier League</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #00c853;color:#00c853;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">MS 1</span>
+              <span style="font-size:11px;color:var(--muted);">6/6 AI</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Bayern München vs Mainz</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Bundesliga</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #ff3d5a;color:#ff3d5a;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">MS 2</span>
+              <span style="font-size:11px;color:var(--muted);">6/6 AI</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Napoli vs Cremonese</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Serie A</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #00c853;color:#00c853;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">MS 1</span>
+              <span style="font-size:11px;color:var(--muted);">6/6 AI</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">PSV vs Vitesse</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Eredivisie</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #00c853;color:#00c853;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">MS 1</span>
+              <span style="font-size:11px;color:var(--muted);">6/6 AI</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Beşiktaş vs Fatih Karagümrük</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Süper Lig</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #00c853;color:#00c853;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">MS 1</span>
+              <span style="font-size:11px;color:var(--muted);">6/6 AI</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">PSG vs Lyon</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Ligue 1</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #00c853;color:#00c853;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">MS 1</span>
+              <span style="font-size:11px;color:var(--muted);">5/6 AI</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Galatasaray vs Fenerbahçe</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Süper Lig</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid #00e5ff;color:#00e5ff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">KG Var</span>
+              <span style="font-size:11px;color:var(--muted);">4/6 AI</span>
+            </div>
+          </div>
+        </div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">${r.lig}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="background:rgba(0,0,0,.2);border:1px solid ${r.c};color:${r.c};font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;">${r.tahmin}</span>
+              <span style="font-size:11px;color:var(--muted);">${r.konsensus} AI</span>
+            </div>
+          </div>`).join('')}
+        </div>
+
+        <div class="dis">
+          <span style="font-size:17px;flex-shrink:0;">⚠️</span>
+          <span data-tr="<strong>Sorumluluk Reddi:</strong> Bu analizler yapay zeka modellerinin tahminlerine dayanmakta olup kesinlikle garanti içermez. Yalnızca bilgilendirme amaçlıdır." data-en="<strong>Disclaimer:</strong> These analyses are based on AI model predictions and carry no guarantee whatsoever. For informational purposes only."><strong>Sorumluluk Reddi:</strong> Bu analizler yapay zeka modellerinin tahminlerine dayanmakta olup kesinlikle garanti içermez. Yalnızca bilgilendirme amaçlıdır.</span>
+        </div>
+      </div>
+      <footer>
+        <div class="flogo">AI<span>GOAL</span></div>
+        <div class="fsmall">aigoal.net · © 2026</div>
       </footer>
     </div>
 
