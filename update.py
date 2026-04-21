@@ -89,7 +89,6 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
     )
     
     print(f"Claude API status: {response.status_code}")
-    print(f"Claude API response: {response.text[:500]}")
     if response.status_code == 200:
         content = response.json()["content"][0]["text"]
         try:
@@ -98,7 +97,13 @@ Yanıtı SADECE aşağıdaki JSON formatında ver, başka hiçbir şey yazma:
             import re
             json_match = re.search(r'\[.*\]', content, re.DOTALL)
             if json_match:
-                return json.loads(json_match.group())
+                try:
+                    return json.loads(json_match.group())
+                except:
+                    pass
+            print(f"JSON parse hatası. Content: {content[:200]}")
+    else:
+        print(f"API hatası: {response.status_code} - {response.text[:200]}")
     return []
 
 def pred_to_badge(pred):
