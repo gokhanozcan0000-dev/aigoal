@@ -1,5 +1,3 @@
-# Weekly auto-update script
-
 import os
 import json
 import requests
@@ -7,6 +5,7 @@ from datetime import datetime, timedelta
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_KEY")
+RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY")
 
 LEAGUE_IDS = {
     "pl": 2021,
@@ -15,6 +14,11 @@ LEAGUE_IDS = {
     "laliga": 2014,
     "ligue1": 2015,
     "eredivisie": 2003,
+}
+
+TURKEY_LEAGUE_IDS = {
+    "superlig": 203,
+    "lig1": 204,
 }
 
 def get_fixtures():
@@ -36,6 +40,35 @@ def get_fixtures():
                     "away": m["awayTeam"]["name"],
                     "date": m["utcDate"][:10]
                 })
+    return all_matches
+
+def get_turkey_fixtures():
+    today = datetime.now()
+    next_week = today + timedelta(days=7)
+    date_from = today.strftime("%Y-%m-%d")
+    date_to = next_week.strftime("%Y-%m-%d")
+    all_matches = []
+    headers = {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": RAPIDAPI_KEY
+    }
+    for league_key, league_id in TURKEY_LEAGUE_IDS.items():
+        url = "https://v3.football.api-sports.io/fixtures"
+        params = {"league": league_id, "season": "2025", "from": date_from, "to": date_to}
+        response = requests.get(url, headers=headers, params=params)
+        if response.status_code == 200:
+            for m in response.json().get("response", []):
+                fixture = m.get("fixture", {})
+                teams = m.get("teams", {})
+                all_matches.append({
+                    "league": league_key,
+                    "home": teams.get("home", {}).get("name", ""),
+                    "away": teams.get("away", {}).get("name", ""),
+                    "date": fixture.get("date", "")[:10]
+                })
+            print(f"{league_key}: {len([m for m in all_matches if m['league']==league_key])} mac bulundu.")
+        else:
+            print(f"{league_key}: API hatasi {response.status_code}")
     return all_matches
 
 def get_predictions(matches):
@@ -174,12 +207,14 @@ def update_league_in_html(html, league_key, league_predictions):
 def main():
     print("Maclar cekiliyor...")
     matches = get_fixtures()
-    print(f"{len(matches)} mac bulundu.")
-    if not matches:
+    turkey_matches = get_turkey_fixtures()
+    all_matches = matches + turkey_matches
+    print(f"Toplam {len(all_matches)} mac bulundu.")
+    if not all_matches:
         print("Mac bulunamadi, cikiliyor.")
         return
     print("Tahminler aliniyor...")
-    predictions = get_predictions(matches)
+    predictions = get_predictions(all_matches)
     print(f"{len(predictions)} tahmin alindi.")
     if not predictions:
         print("Tahmin alinamadi, cikiliyor.")
