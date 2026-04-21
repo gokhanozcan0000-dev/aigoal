@@ -144,12 +144,14 @@ def update_league_in_html(html, league_key, new_matches_js):
     if not new_matches_js:
         return html
     import re
-    pattern = rf"({re.escape(league_key)}:\s*\{{[^{{]*?matches:\s*\[)(.*?)(\s*\]\s*\}})"
+    pattern = rf"({re.escape(league_key)}:.*?matches:\[)(.*?)(\s*\]\s*,?\s*\n\s*(?:analysisTr|nameTr|\w+):)"
     def replacer(match):
-        return match.group(1) + "\n" + new_matches_js + "\n    " + match.group(3)
+        return match.group(1) + "\n" + new_matches_js + "\n    " + match.group(3).lstrip()
     result = re.sub(pattern, replacer, html, flags=re.DOTALL)
     if result == html:
-        print(f"{league_key}: pattern eşleşmedi, güncellenmedi.")
+        print(f"{league_key}: pattern eşleşmedi.")
+    else:
+        print(f"{league_key}: güncellendi.")
     return result
     
     def replacer(match):
