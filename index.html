@@ -1392,9 +1392,35 @@ function switchLeague(id,el){
 // ── Contact form ──
 function submitContact(){
   const msg=document.getElementById('formMsg');
+  const name=document.getElementById('cName').value;
+  const email=document.getElementById('cEmail').value;
+  const message=document.getElementById('cMsg').value;
+  if(!name||!email||!message){
+    msg.style.display='block';
+    msg.style.color='var(--accent2)';
+    msg.innerHTML = currentLang==='tr' ? 'Lütfen tüm alanları doldurun.' : 'Please fill in all fields.';
+    return;
+  }
   msg.style.display='block';
-  msg.innerHTML = currentLang==='tr' ? 'Mesajınız alındı, teşekkürler! ✓' : 'Message received, thank you! ✓';
-  ['cName','cEmail','cMsg'].forEach(id=>{document.getElementById(id).value='';});
+  msg.style.color='var(--muted)';
+  msg.innerHTML = currentLang==='tr' ? 'Gönderiliyor...' : 'Sending...';
+  fetch('https://formspree.io/f/mbdqzrrj', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name, email, message})
+  }).then(r=>{
+    if(r.ok){
+      msg.style.color='var(--accent)';
+      msg.innerHTML = currentLang==='tr' ? 'Mesajınız alındı, teşekkürler! ✓' : 'Message received, thank you! ✓';
+      ['cName','cEmail','cMsg'].forEach(id=>{document.getElementById(id).value='';});
+    } else {
+      msg.style.color='var(--accent2)';
+      msg.innerHTML = currentLang==='tr' ? 'Bir hata oluştu, tekrar deneyin.' : 'An error occurred, please try again.';
+    }
+  }).catch(()=>{
+    msg.style.color='var(--accent2)';
+    msg.innerHTML = currentLang==='tr' ? 'Bağlantı hatası, tekrar deneyin.' : 'Connection error, please try again.';
+  });
 }
 
 // ── Mobile sidebar close ──
