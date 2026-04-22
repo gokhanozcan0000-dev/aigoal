@@ -441,22 +441,6 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         <div class="cg" id="cgrid"></div>
       </div>
 
-      <div class="sec sec-gap" id="puanDurumu" style="display:none;">
-        <div class="sec-title">🏆 <span data-tr="PUAN DURUMU" data-en="STANDINGS">PUAN <span>DURUMU</span></span></div>
-        <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-          <iframe id="sofascoreWidget"
-            src="https://widgets.sofascore.com/embed/tournament/52/standings?widgetBackground=0f1220&widgetTextColor=e8eaf6&widgetSecondaryTextColor=5a6280&titleColor=00e5ff&defaultTheme=dark&locale=tr"
-            style="width:100%;height:500px;border:none;display:block;"
-            scrolling="no"
-            frameborder="0"
-            allowtransparency="true">
-          </iframe>
-        </div>
-        <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:right;">
-          Kaynak: <a href="https://www.sofascore.com" target="_blank" rel="noopener" style="color:var(--muted);">Sofascore</a>
-        </div>
-      </div>
-
       <div class="sec sec-gap" id="analizNotlari" style="display:none;">
         <div class="sec-title">📝 <span data-tr="ANALİZ NOTLARI" data-en="ANALYSIS NOTES">ANALİZ <span>NOTLARI</span></span></div>
         <div id="analizIcerik" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:13px;color:var(--muted);line-height:1.9;"></div>
@@ -860,7 +844,6 @@ function setLang(lang){
   renderTable();
   renderConsensus();
   renderAnalysis();
-  document.getElementById('puanDurumu').style.display = currentLeague === 'superlig' ? '' : 'none';
 }
 
 function renderAnalysis(){
@@ -1425,7 +1408,6 @@ function switchLeague(id,el){
   renderTable();
   renderConsensus();
   renderAnalysis();
-  document.getElementById('puanDurumu').style.display = id === 'superlig' ? '' : 'none';
   showPage('home');
   window.scrollTo(0,0);
 }
@@ -1474,7 +1456,6 @@ document.addEventListener('click',e=>{
 // ── Init ──
 setLang(currentLang);
 renderAnalysis();
-document.getElementById('puanDurumu').style.display = '';
 </script>
 </body>
 </html>
