@@ -85,7 +85,7 @@ body::before{
 
 /* ─── TITLE BAR ─── */
 .title-bar{background:linear-gradient(135deg,#0c1030 0%,#141930 100%);border-bottom:1px solid var(--border);padding:16px 24px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.title-bar h1{font-family:'Bebas Neue',cursive;font-size:clamp(18px,3vw,30px);letter-spacing:2px;color:#fff;line-height:1.1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.title-bar h1{font-family:'DM Sans',sans-serif;font-size:clamp(14px,2.2vw,22px);font-weight:700;letter-spacing:.5px;color:#fff;line-height:1.1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .title-bar h1 .cy{color:var(--accent);}
 .title-bar h1 .cr{color:var(--accent2);}
 .title-sub{font-size:11px;color:var(--muted);margin-top:4px;}
@@ -240,13 +240,13 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 
 <!-- ═══ SIDEBAR ═══ -->
 <aside class="sidebar" id="sidebar">
-  <a class="sb-logo" onclick="showPage('home');setActive(document.querySelector('.sb-item'))">
+  <a class="sb-logo" onclick="switchLeague('superlig',document.querySelector('[onclick*=superlig]'));setActive(document.querySelector('[onclick*=superlig]'));">
     <img src="logo.png" alt="AIGoal" style="width:178px;height:auto;object-fit:contain;display:block;" onerror="this.style.display='none'">
   </a>
 
   <div class="sb-section">
     <div class="sb-section-label" data-tr="Genel" data-en="General">Genel</div>
-    <a class="sb-item active" onclick="showPage('home');setActive(this)">
+    <a class="sb-item active" onclick="switchLeague('superlig',document.querySelector('[onclick*=superlig]'));setActive(document.querySelector('[onclick*=superlig]'))">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       <span data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</span>
     </a>
@@ -339,6 +339,16 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
   <div class="sb-divider"></div>
 
   <div class="sb-section">
+    <div class="sb-section-label">🌎 <span data-tr="Güney Amerika" data-en="South America">Güney Amerika</span></div>
+    <a class="sb-item" onclick="switchLeague('brasileirao',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
+      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A">Brezilya — Série A</span>
+    </a>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
     <div class="sb-section-label">🏆 <span data-tr="Dünya Kupası" data-en="World Cup">Dünya Kupası</span></div>
     <a class="sb-item" onclick="switchLeague('worldcup',this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
@@ -362,15 +372,6 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     </a>
   </div>
 
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">🌎 <span data-tr="Güney Amerika" data-en="South America">Güney Amerika</span></div>
-    <a class="sb-item" onclick="switchLeague('brasileirao',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
-      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A">Brezilya — Série A</span>
-    </a>
-  </div>
 
 </aside>
 
@@ -876,21 +877,21 @@ function pl(tr, en){ return currentLang==='tr' ? tr : en; }
 
 const matchDefs=[
   {home:"RAMS Başakşehir",away:"Kasımpaşa",date:{tr:"24 Nisan Cuma",en:"Fri 24 Apr"},time:"20:00",derbi:false,
-   p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Üst",en:"O2.5",c:"bu"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+   p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Üst",en:"O2.5",c:"bu"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
   {home:"İkas Eyüpspor",away:"Gaziantep FK",date:{tr:"25 Nisan Cmt",en:"Sat 25 Apr"},time:"14:30",derbi:false,
-   p:{chatgpt:{tr:"2.5 Üst",en:"O2.5",c:"bu"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+   p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
   {home:"Zecorner Kayserispor",away:"Çaykur Rizespor",date:{tr:"25 Nisan Cmt",en:"Sat 25 Apr"},time:"17:00",derbi:false,
-   p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+   p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
   {home:"Göztepe",away:"Hesap.com Antalyaspor",date:{tr:"25 Nisan Cmt",en:"Sat 25 Apr"},time:"20:00",derbi:false,
-   p:{chatgpt:{tr:"1.5 Üst",en:"O1.5",c:"bu"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+   p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
   {home:"Nat. Dünyası Gençlerbirliği",away:"Kocaelispor",date:{tr:"26 Nisan Pazar",en:"Sun 26 Apr"},time:"14:30",derbi:false,
-   p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+   p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
   {home:"Galatasaray",away:"Fenerbahçe",date:{tr:"26 Nisan Pazar",en:"Sun 26 Apr"},time:"20:00",derbi:true,url:"/galatasaray-vs-fenerbahce",
-   p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+   p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
   {home:"Corendon Alanyaspor",away:"Samsunspor",date:{tr:"27 Nisan Pzt",en:"Mon 27 Apr"},time:"17:00",derbi:false,
-   p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+   p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
   {home:"Tümosan Konyaspor",away:"Trabzonspor",date:{tr:"27 Nisan Pzt",en:"Mon 27 Apr"},time:"20:00",derbi:false,
-   p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+   p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
   {home:"Beşiktaş",away:"Fatih Karagümrük",date:{tr:"27 Nisan Pzt",en:"Mon 27 Apr"},time:"20:00",derbi:false,
    p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
 ];
@@ -945,7 +946,7 @@ function renderTable(){
         </div>
         <div class="match-card-preds">${preds}</div>`;
       if(m.url) {
-        return `<a href="${m.url}" style="text-decoration:none;color:inherit;display:block;" class="match-card${m.derbi?' dr':''}">${cardContent}</a>`;
+        return `<div class="match-card${m.derbi?' dr':''}">${cardContent}</div>`;
       }
       return `<div class="match-card${m.derbi?' dr':''}">${cardContent}</div>`;
     }).join('');
@@ -1007,15 +1008,15 @@ const allLeagues = {
     flag:'🇹🇷',
     matches:[
       {home:'Amed SK',away:'Bodrum FK',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{grok:{tr:'MS 1',en:'1',c:'b1'},chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
       {home:'Sarıyer',away:'Esenler Erokspor',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{grok:{tr:'MS 2',en:'2',c:'bx2'},chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS X2',en:'X2',c:'bx2'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
       {home:'Sakaryaspor',away:'Çorum FK',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{grok:{tr:'MS X',en:'X',c:'b1x'},chatgpt:{tr:'IY 0',en:'HT 0-0',c:'bkg'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
       {home:'Erzurumspor',away:'Bandırmaspor',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{grok:{tr:'MS 1',en:'1',c:'b1'},chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'2.5 Alt',en:'U2.5',c:'ba'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
       {home:'Pendikspor',away:'Boluspor',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{grok:{tr:'MS 1X',en:'1X',c:'b1x'},chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
     ]
   },
   turkkupasi: {
@@ -1026,13 +1027,13 @@ const allLeagues = {
     flag:'🇹🇷',
     matches:[
       {home:'Konyaspor',away:'Fenerbahçe',date:{tr:'21 Nisan Sal',en:'Tue 21 Apr'},time:'20:30',derbi:false,
-       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
       {home:'Galatasaray',away:'Gençlerbirliği',date:{tr:'22 Nisan Çar',en:'Wed 22 Apr'},time:'20:30',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'2.5 Üst',en:'O2.5',c:'bu'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
       {home:'Samsunspor',away:'Trabzonspor',date:{tr:'23 Nisan Per',en:'Thu 23 Apr'},time:'18:45',derbi:false,
-       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS X2',en:'X2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS X2',en:'X2',c:'bx2'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
       {home:'Beşiktaş',away:'Alanyaspor',date:{tr:'23 Nisan Per',en:'Thu 23 Apr'},time:'20:45',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'2.5 Üst',en:'O2.5',c:'bu'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
     ]
   },
   pl: {
