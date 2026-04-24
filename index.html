@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIGoal — AI-Powered Football Predictions</title>
+<title id="pageTitle">AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası</title>
 <meta name="description" content="ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity weekly football predictions for leagues worldwide. Free AI football analysis.">
-<meta property="og:title" content="AIGoal — AI Football Predictions">
+<meta property="og:title" content="AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası">
 <meta property="og:description" content="6 AI models analyze football matches every week. Free predictions for Super Lig, Premier League and more.">
 <meta property="og:url" content="https://aigoal.net">
 <meta name="robots" content="index, follow">
@@ -383,14 +383,15 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <span class="live-badge" data-tr="31. HAFTA" data-en="WEEK 31">31. HAFTA</span>
     </div>
     <div class="topnav-right">
-      <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;color:var(--muted);transition:color .15s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-      </a>
       <div class="lang-switcher">
         <button class="lang-btn active" id="btnTR" onclick="setLang('tr')">TR</button>
         <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
       </div>
       <div class="week-chip">📅 24–27 <span data-tr="Nisan" data-en="April">Nisan</span> 2026</div>
+      <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:5px 9px;transition:all .15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        <span style="font-size:11px;font-weight:600;">@AIGoalnet</span>
+      </a>
     </div>
   </nav>
 
@@ -841,6 +842,12 @@ function setLang(lang){
     const chip = document.querySelector('.week-chip');
     if(chip) chip.innerHTML = `📅 ${lang==='tr'?lg.dates.tr:lg.dates.en}`;
   }
+  // Update page title based on language
+  if(lang==='en'){
+    document.getElementById('pageTitle').textContent = 'AIGoal.net — AI-Powered Football Predictions | Super Lig, Premier League & More';
+  } else {
+    document.getElementById('pageTitle').textContent = 'AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası';
+  }
   renderTable();
   renderConsensus();
   renderAnalysis();
@@ -1288,22 +1295,22 @@ const allLeagues = {
     dates:{tr:'Nisan 2026', en:'April 2026'},
     flag:'🇺🇸',
     matches:[
-      {home:'Toronto',away:'Atlanta',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS X',en:'X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
-      {home:'Inter Miami',away:'New England',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Cincinnati',away:'NY Red Bulls',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'LAFC',away:'San Jose',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'3.5 Üst',en:'O3.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Seattle',away:'Portland',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:true,
-       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X',en:'X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'Toronto FC',away:'Atlanta United',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+      {home:'Inter Miami CF',away:'New England Revolution',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'2.5 Üst',en:'O2.5',c:'bu'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+      {home:'FC Cincinnati',away:'NY Red Bulls',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
+      {home:'LAFC',away:'San Jose Earthquakes',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+      {home:'Seattle Sounders',away:'Portland Timbers',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:true,
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'2.5 Üst',en:'O2.5',c:'bu'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
       {home:'LA Galaxy',away:'Austin FC',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Columbus',away:'Chicago',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Nashville',away:'DC United',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Columbus Crew',away:'Chicago Fire',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'2.5 Alt',en:'U2.5',c:'ba'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+      {home:'Nashville SC',away:'DC United',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'2.5 Alt',en:'U2.5',c:'ba'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
     ]
   },
   worldcup: {
