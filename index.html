@@ -405,7 +405,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         <div>
           <h1>
             <img id="leagueLogo" class="league-logo-header" src="" alt="Süper Lig" onerror="this.style.display='none'">
-            <span class="league-country-tag">🇹🇷 TR</span> TRENDYOL SÜPER LİG — <span class="cr" data-tr="GÜNCEL TAHMİNLER" data-en="LATEST PREDICTIONS">GÜNCEL TAHMİNLER</span>
+            <span class="league-country-tag">TR</span> TRENDYOL SÜPER LİG — <span class="cr" data-tr="GÜNCEL TAHMİNLER" data-en="LATEST PREDICTIONS">GÜNCEL TAHMİNLER</span>
           </h1>
           <div class="title-sub" data-tr="Yapay zeka destekli futbol tahminleri · Her hafta güncellenir" data-en="AI-powered football predictions · Updated every week">Yapay zeka destekli futbol tahminleri · Her hafta güncellenir</div>
         </div>
@@ -1462,7 +1462,7 @@ function switchLeague(id,el){
   const titleEl = document.querySelector('.title-bar h1');
   if(titleEl){
     const labelTr = currentLang==='tr' ? 'GÜNCEL TAHMİNLER' : 'LATEST PREDICTIONS';
-    titleEl.innerHTML = `<span class="league-country-tag">${lg.flag} ${lg.code||''}</span> ${currentLang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
+    titleEl.innerHTML = `<span class="league-country-tag">${lg.code||''}</span> ${currentLang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
   }
   renderTable();
   renderConsensus();
