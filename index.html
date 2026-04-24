@@ -32,6 +32,7 @@ body::before{
 
 /* ─── SIDEBAR ─── */
 .sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:300;overflow-y:auto;transition:transform .25s;}
+.sidebar .sb-section:last-child{margin-top:auto;}
 .sidebar::-webkit-scrollbar{width:3px;}
 .sidebar::-webkit-scrollbar-thumb{background:var(--border);}
 .sb-logo{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:flex-start;text-decoration:none;cursor:pointer;flex-shrink:0;}
@@ -252,18 +253,6 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       <span data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</span>
     </a>
-    <a class="sb-item" onclick="showPage('about');setActive(this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <span data-tr="Hakkımızda" data-en="About Us">Hakkımızda</span>
-    </a>
-    <a class="sb-item" onclick="showPage('contact');setActive(this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      <span data-tr="İletişim" data-en="Contact">İletişim</span>
-    </a>
-    <a class="sb-item" onclick="showPage('privacy');setActive(this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <span data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik</span>
-    </a>
     <a class="sb-item" onclick="showPage('analiz');setActive(this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       <span data-tr="Analizler" data-en="Analysis">Analizler</span>
@@ -374,6 +363,22 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     </a>
   </div>
 
+  <div class="sb-divider" style="margin-top:auto;"></div>
+
+  <div class="sb-section">
+    <a class="sb-item" onclick="showPage('about');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span data-tr="Hakkımızda" data-en="About Us">Hakkımızda</span>
+    </a>
+    <a class="sb-item" onclick="showPage('contact');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span data-tr="İletişim" data-en="Contact">İletişim</span>
+    </a>
+    <a class="sb-item" onclick="showPage('privacy');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik</span>
+    </a>
+  </div>
 
 </aside>
 
