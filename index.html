@@ -380,7 +380,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 <div class="main">
   <nav class="topnav">
     <div class="topnav-left">
-      <div class="topnav-breadcrumb" id="breadcrumb"><span data-tr="Türkiye" data-en="Turkey">Türkiye</span> › <span data-tr="Trendyol Süper Lig" data-en="Trendyol Süper Lig">Trendyol Süper Lig</span></div>
+      <div class="topnav-breadcrumb" id="breadcrumb"><span data-tr="🇹🇷 Türkiye" data-en="🇹🇷 Turkey">🇹🇷 Türkiye</span> › <span data-tr="Trendyol Süper Lig" data-en="Trendyol Süper Lig">Trendyol Süper Lig</span></div>
       <span class="live-badge" data-tr="31. HAFTA" data-en="WEEK 31">31. HAFTA</span>
     </div>
     <div class="topnav-right">
@@ -837,7 +837,7 @@ function setLang(lang){
   const lg = allLeagues[currentLeague];
   if(lg){
     const bc = document.getElementById('breadcrumb');
-    if(bc) bc.innerHTML = `<span>${lang==='tr'?lg.countryTr:lg.countryEn}</span> › <span>${lang==='tr'?lg.nameTr:lg.nameEn}</span>`;
+    if(bc) bc.innerHTML = `<span>${lg.flag} ${lang==='tr'?lg.countryTr:lg.countryEn}</span> › <span>${lang==='tr'?lg.nameTr:lg.nameEn}</span>`;
     const badge = document.querySelector('.live-badge');
     if(badge) badge.textContent = lang==='tr' ? lg.weekLabel.tr : lg.weekLabel.en;
     const chip = document.querySelector('.week-chip');
@@ -1437,7 +1437,7 @@ function switchLeague(id,el){
   matches = lg.matches;
   // Update breadcrumb
   const bc = document.getElementById('breadcrumb');
-  if(bc) bc.innerHTML = `<span>${currentLang==='tr'?lg.countryTr:lg.countryEn}</span> › <span>${currentLang==='tr'?lg.nameTr:lg.nameEn}</span>`;
+  if(bc) bc.innerHTML = `<span>${lg.flag} ${currentLang==='tr'?lg.countryTr:lg.countryEn}</span> › <span>${currentLang==='tr'?lg.nameTr:lg.nameEn}</span>`;
   // Update live badge
   const badge = document.querySelector('.live-badge');
   if(badge) badge.textContent = currentLang==='tr' ? lg.weekLabel.tr : lg.weekLabel.en;
