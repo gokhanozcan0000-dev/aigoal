@@ -357,10 +357,9 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       <span data-tr="Şampiyonlar Ligi" data-en="Champions League">Şampiyonlar Ligi</span>
     </a>
-    <a class="sb-item" style="opacity:.5;cursor:default;">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+    <a class="sb-item" onclick="switchLeague('europaleague',this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
       <span data-tr="Avrupa Ligi" data-en="Europa League">Avrupa Ligi</span>
-      <span class="sb-badge new">Yakında</span>
     </a>
   </div>
 
@@ -1440,8 +1439,24 @@ const allLeagues = {
     dates:{tr:'28 Nis – 6 May 2026', en:'28 Apr – 6 May 2026'},
     flag:'🏆',
     matches:[
-      {home:"Paris Saint-Germain FC",away:"FC Bayern München",date:{tr:"29 Nis Sal",en:"Tue 29 Apr"},time:"21:00",derbi:false,
-       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+      {home:"Paris Saint-Germain FC",away:"FC Bayern München",date:{tr:"28 Nis Sal",en:"Tue 28 Apr"},time:"22:00",derbi:false,
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Club Atlético de Madrid",away:"Arsenal FC",date:{tr:"29 Nis Çar",en:"Wed 29 Apr"},time:"22:00",derbi:false,
+       p:{chatgpt:{tr:"2.5 Alt",en:"U2.5",c:"ba"},gemini:{tr:"KG Yok",en:"BTTS No",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}}
+    ]
+  },
+  europaleague: {
+    nameTr:'UEFA Avrupa Ligi', nameEn:'UEFA Europa League',
+    countryTr:'Avrupa', countryEn:'Europe',
+    code:'UEFA', flagImg:'',
+    week:'', weekLabel:{tr:'YARI FİNAL', en:'SEMI-FINAL'},
+    dates:{tr:'30 Nis 2026', en:'30 Apr 2026'},
+    flag:'🏆',
+    matches:[
+      {home:"Nottingham Forest",away:"Aston Villa",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"Sporting Braga",away:"SC Freiburg",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}}
     ]
   },
   brasileirao: {
