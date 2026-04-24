@@ -405,7 +405,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         <div>
           <h1>
             <img id="leagueLogo" class="league-logo-header" src="" alt="Süper Lig" onerror="this.style.display='none'">
-            <span class="league-country-tag">TR</span> TRENDYOL SÜPER LİG — <span class="cr" data-tr="GÜNCEL TAHMİNLER" data-en="LATEST PREDICTIONS">GÜNCEL TAHMİNLER</span>
+            <span class="league-country-tag">TR</span> TRENDYOL SÜPER LİG — <span class="cr" data-tr="Güncel Tahminler" data-en="Latest Predictions">Güncel Tahminler</span>
           </h1>
           <div class="title-sub" data-tr="Yapay zeka destekli futbol tahminleri · Her hafta güncellenir" data-en="AI-powered football predictions · Updated every week">Yapay zeka destekli futbol tahminleri · Her hafta güncellenir</div>
         </div>
@@ -846,7 +846,7 @@ function setLang(lang){
     // Update title with flag
     const titleEl = document.querySelector('.title-bar h1');
     if(titleEl){
-      const labelTr = lang==='tr' ? 'GÜNCEL TAHMİNLER' : 'LATEST PREDICTIONS';
+      const labelTr = lang==='tr' ? 'Güncel Tahminler' : 'Latest Predictions';
       const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
       titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
     }
@@ -1420,24 +1420,8 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}}
     ]
   },
-  konyaspor: { // Süper Lig yeni hafta maçları
-    nameTr:'Trendyol Süper Lig', nameEn:'Trendyol Süper Lig',
-    countryTr:'Türkiye', countryEn:'Turkey',
-    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'Nisan 2026', en:'April 2026'},
-    flag:'🇹🇷',
-    matches:[
-      {home:'Konyaspor',away:'Fenerbahçe',date:{tr:'22 Nis Çar',en:'Wed 22 Apr'},time:'20:30',derbi:false,
-       p:{grok:{tr:'MS 2',en:'2',c:'bx2'},chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
-      {home:'Galatasaray',away:'Gençlerbirliği',date:{tr:'23 Nis Per',en:'Thu 23 Apr'},time:'20:30',derbi:false,
-       p:{grok:{tr:'MS 1',en:'1',c:'b1'},chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Samsunspor',away:'Trabzonspor',date:{tr:'24 Nis Cum',en:'Fri 24 Apr'},time:'20:00',derbi:false,
-       p:{grok:{tr:'MS X2',en:'X2',c:'bx2'},chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'IY 0',en:'HT 0-0',c:'bkg'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
-      {home:'Beşiktaş',away:'Alanyaspor',date:{tr:'24 Nis Cum',en:'Fri 24 Apr'},time:'20:00',derbi:false,
-       p:{grok:{tr:'MS 1',en:'1',c:'b1'},chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-    ]
-  },
 };
+
 
 let currentLeague = 'superlig';
 
@@ -1468,7 +1452,7 @@ function switchLeague(id,el){
   // Update title
   const titleEl = document.querySelector('.title-bar h1');
   if(titleEl){
-    const labelTr = currentLang==='tr' ? 'GÜNCEL TAHMİNLER' : 'LATEST PREDICTIONS';
+    const labelTr = currentLang==='tr' ? 'Güncel Tahminler' : 'Latest Predictions';
     const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
     titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${currentLang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
   }
