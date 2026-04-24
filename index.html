@@ -1458,47 +1458,8 @@ document.addEventListener('click',e=>{
   if(window.innerWidth<=768&&!sb.contains(e.target)&&e.target!==toggle) sb.classList.remove('open');
 });
 
-// ── Geo-based default league ──
-async function initWithGeo(){
-  // If user has previously visited, respect their last league (stored in session)
-  const savedLeague = sessionStorage.getItem('aigoal_league');
-  if(savedLeague && allLeagues[savedLeague]){
-    const el = document.querySelector(`[onclick*="switchLeague('${savedLeague}'"]`);
-    switchLeague(savedLeague, el);
-    setLang(currentLang);
-    return;
-  }
-  try {
-    const res = await fetch('https://ipapi.co/json/');
-    const data = await res.json();
-    const country = (data.country_code || '').toUpperCase();
-    // Map country codes to default leagues
-    const geoLeagueMap = {
-      'GB': 'pl',   // United Kingdom → Premier League
-      'IE': 'pl',   // Ireland → Premier League
-    };
-    const defaultLeague = geoLeagueMap[country] || 'superlig';
-    const el = document.querySelector(`[onclick*="switchLeague('${defaultLeague}'"]`);
-    switchLeague(defaultLeague, el);
-    // English-speaking countries get EN by default (unless user already set a preference)
-    const englishCountries = ['GB','IE','US','AU','CA','NZ'];
-    if(englishCountries.includes(country) && !localStorage.getItem('aigoal_lang')){
-      currentLang = 'en';
-    }
-  } catch(e) {
-    switchLeague('superlig', document.querySelector("[onclick*=\"switchLeague('superlig'\"]"));
-  }
-  setLang(currentLang);
-}
-
-// Save league on switch for session persistence
-const _origSwitchLeague = switchLeague;
-function switchLeague(id, el){
-  sessionStorage.setItem('aigoal_league', id);
-  _origSwitchLeague(id, el);
-}
-
-initWithGeo();
+// ── Init ──
+setLang(currentLang);
 renderAnalysis();
 </script>
 </body>
