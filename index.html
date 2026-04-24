@@ -843,6 +843,13 @@ function setLang(lang){
     if(badge) badge.textContent = lang==='tr' ? lg.weekLabel.tr : lg.weekLabel.en;
     const chip = document.querySelector('.week-chip');
     if(chip) chip.innerHTML = `📅 ${lang==='tr'?lg.dates.tr:lg.dates.en}`;
+    // Update title with flag
+    const titleEl = document.querySelector('.title-bar h1');
+    if(titleEl){
+      const labelTr = lang==='tr' ? 'GÜNCEL TAHMİNLER' : 'LATEST PREDICTIONS';
+      const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
+      titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
+    }
   }
   // Update page title based on language
   if(lang==='en'){
