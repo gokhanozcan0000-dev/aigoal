@@ -231,6 +231,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
   .static-page{padding:24px 16px 40px;}
   .table-wrap{display:none;}
   .match-card{display:block;}
+  a.match-card{display:block;}
   .ag{grid-template-columns:repeat(3,1fr);}
   .cg{grid-template-columns:1fr;}
 }
@@ -906,7 +907,7 @@ const matchDefs=[
    p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
   {home:"Tümosan Konyaspor",away:"Trabzonspor",date:{tr:"27 Nisan Pzt",en:"Mon 27 Apr"},time:"20:00",derbi:false,
    p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-  {home:"Beşiktaş",away:"Fatih Karagümrük",date:{tr:"27 Nisan Pzt",en:"Mon 27 Apr"},time:"20:00",derbi:false,url:"/besiktas-vs-fatih-karagumruk",
+  {home:"Beşiktaş",away:"Fatih Karagümrük",date:{tr:"27 Nisan Pzt",en:"Mon 27 Apr"},time:"20:00",derbi:false,
    p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
 ];
 // build matches array dynamically based on lang
@@ -960,7 +961,7 @@ function renderTable(){
         </div>
         <div class="match-card-preds">${preds}</div>`;
       if(m.url) {
-        return `<a href="${m.url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;" class="match-card${m.derbi?' dr':''}">${cardContent}</a>`;
+        return `<a href="${m.url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;" class="match-card${m.derbi?' dr':''}">${cardContent}</a>`;
       }
       return `<div class="match-card${m.derbi?' dr':''}">${cardContent}</div>`;
     }).join('');
@@ -1292,25 +1293,39 @@ const allLeagues = {
     nameTr:'MLS', nameEn:'MLS',
     countryTr:'Amerika', countryEn:'USA',
     week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'Nisan 2026', en:'April 2026'},
+    dates:{tr:'25–27 Nisan 2026', en:'25–27 April 2026'},
     flag:'🇺🇸',
     matches:[
-      {home:'Toronto FC',away:'Atlanta United',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
-      {home:'Inter Miami CF',away:'New England Revolution',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
+      {home:'Toronto FC',away:'Atlanta United',date:{tr:'25 Nis Cum',en:'Fri 25 Apr'},time:'20:00',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'CF Montreal',away:'New York City FC',date:{tr:'25 Nis Cum',en:'Fri 25 Apr'},time:'21:30',derbi:false,
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+      {home:'Minnesota United',away:'Los Angeles FC',date:{tr:'25 Nis Cum',en:'Fri 25 Apr'},time:'23:45',derbi:false,
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+      {home:'Columbus Crew',away:'Philadelphia Union',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'02:30',derbi:false,
        p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'2.5 Üst',en:'O2.5',c:'bu'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
-      {home:'FC Cincinnati',away:'NY Red Bulls',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
-      {home:'LAFC',away:'San Jose Earthquakes',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'1 (-1.5 H)',en:'1 (-1.5 H)',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
-      {home:'Seattle Sounders',away:'Portland Timbers',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:true,
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'2.5 Üst',en:'O2.5',c:'bu'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
-      {home:'LA Galaxy',away:'Austin FC',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Columbus Crew',away:'Chicago Fire',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'2.5 Alt',en:'U2.5',c:'ba'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
-      {home:'Nashville SC',away:'DC United',date:{tr:'Bu hafta',en:'This week'},time:'',derbi:false,
-       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'2.5 Alt',en:'U2.5',c:'ba'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X',en:'X',c:'b1x'}}},
+      {home:'DC United',away:'Orlando City',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'02:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'FC Cincinnati',away:'New York Red Bulls',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'02:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+      {home:'Inter Miami',away:'New England Revolution',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'02:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Austin FC',away:'Houston Dynamo',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'03:30',derbi:false,
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+      {home:'Chicago Fire',away:'Sporting Kansas City',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'03:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'Nashville SC',away:'Charlotte FC',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'03:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'St. Louis City',away:'San Jose Earthquakes',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'03:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'2.5 Alt',en:'U2.5',c:'ba'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X',en:'X',c:'b1x'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+      {home:'San Diego FC',away:'Portland Timbers',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'04:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+      {home:'Seattle Sounders',away:'FC Dallas',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'05:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+      {home:'Vancouver Whitecaps',away:'Colorado Rapids',date:{tr:'26 Nis Cmt',en:'Sat 26 Apr'},time:'05:30',derbi:false,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Los Angeles Galaxy',away:'Real Salt Lake',date:{tr:'27 Nis Paz',en:'Sun 27 Apr'},time:'02:00',derbi:false,
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
     ]
   },
   worldcup: {
