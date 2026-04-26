@@ -300,6 +300,14 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       <span data-tr="Analizler" data-en="Analysis">Analizler</span>
     </a>
+    <a class="sb-item" onclick="switchLeague(currentLeague,null);setTimeout(()=>document.getElementById('enGuvenli')?.scrollIntoView({behavior:'smooth'}),100);setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span data-tr="En Güvenli" data-en="Top Picks">En Güvenli</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague(currentLeague,null);setTimeout(()=>document.getElementById('aiStats')?.scrollIntoView({behavior:'smooth'}),100);setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span data-tr="AI İstatistik" data-en="AI Stats">AI İstatistik</span>
+    </a>
   </div>
 
   <div class="sb-divider"></div>
@@ -497,7 +505,20 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         <div class="ag" id="agrid"></div>
       </div>
 
-      <div class="sec">
+      
+      <!-- ══ EN GÜVENLİ TAHMİNLER ══ -->
+      <div class="sec sec-gap" id="enGuvenli">
+        <div class="sec-title">🔒 <span>EN GÜVENLİ</span> TAHMİNLER</div>
+        <div id="guvenliGrid" class="cg"></div>
+      </div>
+
+      <!-- ══ AI MODEL İSTATİSTİKLERİ ══ -->
+      <div class="sec sec-gap" id="aiStats">
+        <div class="sec-title">📊 AI MODEL <span>İSTATİSTİKLERİ</span></div>
+        <div id="aiStatsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;"></div>
+      </div>
+
+<div class="sec">
         <div class="dis">
           <span style="font-size:17px;flex-shrink:0;">⚠️</span>
           <span data-tr="<strong>Sorumluluk Reddi:</strong> Bu sitedeki tahminler yapay zeka modellerinin analizlerine dayanmakta olup <strong>kesinlikle garanti içermez.</strong> Tüm tahminler yalnızca bilgilendirme ve eğlence amaçlıdır. Yatırım veya finansal karar alma süreçlerinde kullanılmamalıdır." data-en="<strong>Disclaimer:</strong> Predictions on this site are based on AI model analysis and <strong>carry no guarantee whatsoever.</strong> All predictions are for informational and entertainment purposes only. They should not be used as a basis for financial or investment decisions."><strong>Sorumluluk Reddi:</strong> Bu sitedeki tahminler yapay zeka modellerinin analizlerine dayanmakta olup <strong>kesinlikle garanti içermez.</strong> Tüm tahminler yalnızca bilgilendirme ve eğlence amaçlıdır. Yatırım veya finansal karar alma süreçlerinde kullanılmamalıdır.</span>
@@ -994,6 +1015,8 @@ function setLang(lang){
   renderTable();
   renderConsensus();
   renderAnalysis();
+  renderTopPicks();
+  renderAiStats();
 }
 
 function renderAnalysis(){
@@ -1120,6 +1143,111 @@ function renderTable(){
       return `<div class="match-card${m.derbi?' dr':''}">${cardContent}</div>`;
     }).join('');
   }
+}
+
+function renderTopPicks(){
+  // "En Güvenli Tahminler" — 6/6 veya 5/6 konsensüslü maçlar, tüm liglerden
+  const grid = document.getElementById('guvenliGrid');
+  if(!grid) return;
+  const allMatches = [];
+  Object.entries(allLeagues).forEach(([lk, lg]) => {
+    (lg.matches || []).forEach(m => {
+      const f = {};
+      ais.forEach(ai => {
+        const l = m.p[ai][currentLang] || m.p[ai].tr;
+        f[l] = (f[l]||0) + 1;
+      });
+      const [tl, tc] = Object.entries(f).sort((a,b)=>b[1]-a[1])[0];
+      const pct = Math.round(tc/6*100);
+      if(tc >= 5) allMatches.push({home:m.home, away:m.away, tl, tc, pct, league: currentLang==='tr'?lg.nameTr:lg.nameEn, url:m.url||null});
+    });
+  });
+  allMatches.sort((a,b)=>b.tc-a.tc || b.pct-a.pct);
+  const top = allMatches.slice(0,12);
+  if(!top.length){ grid.innerHTML='<p style="color:var(--muted);font-size:13px;">Bu hafta tam konsensüslü maç bulunamadı.</p>'; return; }
+  
+  const lockColors = {6:'#00c853', 5:'#ffe600'};
+  grid.innerHTML = top.map(d => {
+    const nameHtml = d.url
+      ? `<a href="${d.url}" style="color:#fff;text-decoration:none;font-size:13px;font-weight:700;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#fff'">${d.home} – ${d.away}</a>`
+      : `<span style="font-size:13px;font-weight:700;color:#fff;">${d.home} – ${d.away}</span>`;
+    return `<div class="cc" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;right:0;background:${lockColors[d.tc]||'#00e5ff'};color:#000;font-size:9px;font-weight:700;padding:2px 8px;border-radius:0 8px 0 6px;letter-spacing:1px;">${d.tc}/6</div>
+      <div class="cc-m">${d.league}</div>
+      ${nameHtml}
+      <div class="cc-p" style="margin-top:4px;">${d.tl}</div>
+      <div class="cc-bg" style="margin-top:8px;"><div class="cc-bar" style="width:0%;background:${lockColors[d.tc]||'#00e5ff'}" data-w="${d.pct}"></div></div>
+      <div class="cc-n">${d.tc}/6 AI hemfikir · %${d.pct}</div>
+    </div>`;
+  }).join('');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    grid.querySelectorAll('.cc-bar').forEach(b=>b.style.width=b.dataset.w+'%');
+  }));
+}
+
+function renderAiStats(){
+  const grid = document.getElementById('aiStatsGrid');
+  if(!grid) return;
+  
+  // Collect all predictions across all leagues
+  const aiPredCounts = {};
+  const aiTotals = {};
+  ais.forEach(ai => { aiPredCounts[ai] = {}; aiTotals[ai] = 0; });
+  
+  Object.values(allLeagues).forEach(lg => {
+    (lg.matches || []).forEach(m => {
+      ais.forEach(ai => {
+        const pred = m.p[ai][currentLang] || m.p[ai].tr;
+        aiPredCounts[ai][pred] = (aiPredCounts[ai][pred]||0) + 1;
+        aiTotals[ai]++;
+      });
+    });
+  });
+
+  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity Pro'};
+  const aiColors = {chatgpt:'#e8eaf6', gemini:'#4285F4', grok:'#e8eaf6', copilot:'#7fba00', claude:'#CC785C', perplexity:'#20e3b2'};
+  const aiSVGs = {
+    chatgpt:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073z" fill="#e8eaf6"/></svg>`,
+    gemini:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>`,
+    grok:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#e8eaf6"/></svg>`,
+    copilot:`<svg width="24" height="24" viewBox="0 0 24 24"><rect width="11" height="11" x="1" y="1" fill="#f25022"/><rect width="11" height="11" x="13" y="1" fill="#7fba00"/><rect width="11" height="11" x="1" y="13" fill="#00a4ef"/><rect width="11" height="11" x="13" y="13" fill="#ffb900"/></svg>`,
+    claude:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M17.5 2.5c-1.2 0-2.3.5-3.1 1.4L12 6.7l-2.4-2.8C8.8 3 7.7 2.5 6.5 2.5 4 2.5 2 4.5 2 7c0 1.2.5 2.3 1.3 3.1L12 19.5l8.7-9.4c.8-.8 1.3-1.9 1.3-3.1 0-2.5-2-4.5-4.5-4.5z" fill="#CC785C"/></svg>`,
+    perplexity:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  };
+
+  grid.innerHTML = ais.map(ai => {
+    const counts = aiPredCounts[ai];
+    const total = aiTotals[ai];
+    // Top 3 predictions
+    const top3 = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const favPred = top3[0] ? top3[0][0] : '—';
+    const favCount = top3[0] ? top3[0][1] : 0;
+    const favPct = total ? Math.round(favCount/total*100) : 0;
+    
+    // Aggressiveness: how often picks outright win (MS 1 or MS 2)
+    const boldPicks = (counts['MS 1']||counts['1']||0) + (counts['MS 2']||counts['2']||0);
+    const boldPct = total ? Math.round(boldPicks/total*100) : 0;
+    
+    return `<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,229,255,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        ${aiSVGs[ai]}
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#fff;">${aiNames[ai]}</div>
+          <div style="font-size:10px;color:var(--muted);">${total} tahmin</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">En Sık Tahmin</div>
+      <div style="font-size:16px;font-weight:700;color:${aiColors[ai]};margin-bottom:8px;">${favPred} <span style="font-size:11px;color:var(--muted);font-weight:400;">%${favPct}</span></div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;">
+        ${top3.map(([p,c])=>`<span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:3px;font-size:10px;padding:2px 7px;color:var(--muted);">${p} <strong style="color:var(--text);">${Math.round(c/total*100)}%</strong></span>`).join('')}
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px;">Net Kazanım Tahmini</div>
+      <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;">
+        <div style="height:100%;width:${boldPct}%;background:${aiColors[ai]};border-radius:2px;transition:width 1s;"></div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px;">%${boldPct} MS 1/MS 2</div>
+    </div>`;
+  }).join('');
 }
 
 function renderConsensus(){
@@ -1666,6 +1794,8 @@ function switchLeague(id,el){
   renderTable();
   renderConsensus();
   renderAnalysis();
+  renderTopPicks();
+  renderAiStats();
   showPage('home');
   window.scrollTo(0,0);
 }
@@ -1714,6 +1844,8 @@ document.addEventListener('click',e=>{
 // ── Init ──
 setLang(currentLang);
 renderAnalysis();
+renderTopPicks();
+renderAiStats();
 </script>
 </body>
 </html>
