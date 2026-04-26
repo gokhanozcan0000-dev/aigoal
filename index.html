@@ -10,9 +10,13 @@
 <meta property="og:url" content="https://aigoal.net">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://aigoal.net">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8363649317786686" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+<script async defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8363649317786686" crossorigin="anonymous"></script>
 <style>
 :root{
   --bg:#0a0c14;--bg2:#0f1220;--card:#13172a;--border:#1e2340;
@@ -267,7 +271,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 <link rel="alternate" hreflang="x-default" href="https://aigoal.net/">
 <meta property="og:image" content="https://aigoal.net/og-image.png">
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E821MSQ47G"></script>
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-E821MSQ47G"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -280,7 +284,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 <!-- ═══ SIDEBAR ═══ -->
 <aside class="sidebar" id="sidebar">
   <a class="sb-logo" onclick="switchLeague('superlig',document.querySelector('[onclick*=superlig]'));setActive(document.querySelector('[onclick*=superlig]'));">
-    <img src="logo.png" alt="AIGoal" style="width:178px;height:auto;object-fit:contain;display:block;" onerror="this.style.display='none'">
+    <img src="logo.png" alt="AIGoal" style="width:178px;height:auto;object-fit:contain;display:block;" fetchpriority="high" width="178" height="50" onerror="this.style.display='none'">
   </a>
 
   <div class="sb-section">
