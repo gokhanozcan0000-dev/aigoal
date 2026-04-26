@@ -11,6 +11,7 @@ FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_KEY")
 
 LEAGUE_IDS = {
     "pl": 2021,
+    "championship": 2016,
     "bundesliga": 2002,
     "seriea": 2019,
     "laliga": 2014,
