@@ -957,13 +957,13 @@ const matchDefs=[
    p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
   {home:"Çaykur Rizespor",away:"Tümosan Konyaspor",date:{tr:"1 May Cum",en:"Fri 1 May"},time:"17:00",derbi:false,url:"/caykur-rizespor-vs-tumosan-konyaspor",
    p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-  {home:"Gaziantep FK",away:"Beşiktaş",date:{tr:"1 May Cum",en:"Fri 1 May"},time:"20:00",derbi:false,url:"/gaziantep-fk-vs-besiktas",
+  {home:"Gaziantep FK",away:"Beşiktaş",date:{tr:"1 May Cum",en:"Fri 1 May"},time:"20:00",derbi:false,url:"/gaziantep-fk-vs-besiktas",popular:true,
    p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-  {home:"Fenerbahçe",away:"RAMS Başakşehir",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"20:00",derbi:false,url:"/fenerbahce-vs-rams-basaksehir",
+  {home:"Fenerbahçe",away:"RAMS Başakşehir",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"20:00",derbi:false,url:"/fenerbahce-vs-rams-basaksehir",popular:true,
    p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
   {home:"Trabzonspor",away:"Göztepe",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"20:00",derbi:false,url:"/trabzonspor-vs-goztepe",
    p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
-  {home:"Samsunspor",away:"Galatasaray",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"20:00",derbi:false,url:"/samsunspor-vs-galatasaray",
+  {home:"Samsunspor",away:"Galatasaray",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"20:00",derbi:false,url:"/samsunspor-vs-galatasaray",popular:true,
    p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
   {home:"Zecorner Kayserispor",away:"İkas Eyüpspor",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"20:00",derbi:false,url:"/zecorner-kayserispor-vs-ikas-eyupspor",
    p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
@@ -993,7 +993,7 @@ function renderTable(){
     const dt=m.derbi?`<span class="dtag">${derbiLabel}</span>`:'';
     const dateStr = m.date[currentLang] || m.date.tr;
     const matchName = m.url
-      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:7px;flex-wrap:wrap;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'"><span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span></a>`
+      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:7px;flex-wrap:wrap;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'"><span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">${m.popular?'🔥 POPÜLER':''}</span></a>`
       : `<span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}`;
     return `<tr class="${m.derbi?'dr':''}">
       <td class="mc">
@@ -1019,7 +1019,7 @@ function renderTable(){
       const cardContent = `
         <div class="match-card-header">
           <div class="match-card-teams">
-            <span>${m.home}</span><span class="vs">vs</span><span>${m.away}</span>${dt}${m.url ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}
+            <span>${m.home}</span><span class="vs">vs</span><span>${m.away}</span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}
           </div>
           <div class="match-card-meta">${dateStr}${m.time ? ' · <span style="color:#ffe600;font-family:Bebas Neue,cursive;font-size:13px;">'+m.time+'</span>' : ''}</div>
         </div>
@@ -1136,17 +1136,17 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"Wolverhampton Wanderers FC",away:"Sunderland AFC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"16:00",derbi:false,url:"/wolverhampton-wanderers-fc-vs-sunderland-afc",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Arsenal FC",away:"Fulham FC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"18:30",derbi:false,url:"/arsenal-fc-vs-fulham-fc",
+      {home:"Arsenal FC",away:"Fulham FC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"18:30",derbi:false,url:"/arsenal-fc-vs-fulham-fc",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"AFC Bournemouth",away:"Crystal Palace FC",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"16:00",derbi:false,url:"/afc-bournemouth-vs-crystal-palace-fc",
        p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-      {home:"Manchester United FC",away:"Liverpool FC",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"16:30",derbi:true,url:"/manchester-united-fc-vs-liverpool-fc",
+      {home:"Manchester United FC",away:"Liverpool FC",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"16:30",derbi:true,url:"/manchester-united-fc-vs-liverpool-fc",popular:true,
        p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"Aston Villa FC",away:"Tottenham Hotspur FC",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"20:00",derbi:false,url:"/aston-villa-fc-vs-tottenham-hotspur-fc",
        p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"Chelsea FC",away:"Nottingham Forest FC",date:{tr:"4 May Pzt",en:"Mon 4 May"},time:"16:00",derbi:false,url:"/chelsea-fc-vs-nottingham-forest-fc",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Everton FC",away:"Manchester City FC",date:{tr:"4 May Pzt",en:"Mon 4 May"},time:"21:00",derbi:false,url:"/everton-fc-vs-manchester-city-fc",
+      {home:"Everton FC",away:"Manchester City FC",date:{tr:"4 May Pzt",en:"Mon 4 May"},time:"21:00",derbi:false,url:"/everton-fc-vs-manchester-city-fc",popular:true,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}}
     ]
   },
@@ -1212,11 +1212,11 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Eintracht Frankfurt",away:"Hamburger SV",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"15:30",derbi:false,url:"/eintracht-frankfurt-vs-hamburger-sv",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Bayer 04 Leverkusen",away:"RB Leipzig",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"18:30",derbi:false,url:"/bayer-04-leverkusen-vs-rb-leipzig",
+      {home:"Bayer 04 Leverkusen",away:"RB Leipzig",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"18:30",derbi:false,url:"/bayer-04-leverkusen-vs-rb-leipzig",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"FC St. Pauli 1910",away:"1. FSV Mainz 05",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"13:30",derbi:false,url:"/fc-st-pauli-1910-vs-1-fsv-mainz-05",
        p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-      {home:"Borussia Mönchengladbach",away:"Borussia Dortmund",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"15:30",derbi:false,url:"/borussia-monchengladbach-vs-borussia-dortmund",
+      {home:"Borussia Mönchengladbach",away:"Borussia Dortmund",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"15:30",derbi:false,url:"/borussia-monchengladbach-vs-borussia-dortmund",popular:true,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"SC Freiburg",away:"VfL Wolfsburg",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"17:30",derbi:false,url:"/sc-freiburg-vs-vfl-wolfsburg",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
@@ -1246,9 +1246,9 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"US Sassuolo Calcio",away:"AC Milan",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"15:00",derbi:false,url:"/us-sassuolo-calcio-vs-ac-milan",
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-      {home:"Juventus FC",away:"Hellas Verona FC",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"18:00",derbi:false,url:"/juventus-fc-vs-hellas-verona-fc",
+      {home:"Juventus FC",away:"Hellas Verona FC",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"18:00",derbi:false,url:"/juventus-fc-vs-hellas-verona-fc",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"FC Internazionale Milano",away:"Parma Calcio 1913",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"20:45",derbi:false,url:"/fc-internazionale-milano-vs-parma-calcio-1913",
+      {home:"FC Internazionale Milano",away:"Parma Calcio 1913",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"20:45",derbi:false,url:"/fc-internazionale-milano-vs-parma-calcio-1913",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"US Cremonese",away:"SS Lazio",date:{tr:"4 May Pzt",en:"Mon 4 May"},time:"20:45",derbi:false,url:"/us-cremonese-vs-ss-lazio",
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
@@ -1270,11 +1270,11 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"Villarreal CF",away:"Levante UD",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"14:00",derbi:false,url:"/villarreal-cf-vs-levante-ud",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Valencia CF",away:"Club Atlético de Madrid",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"16:15",derbi:false,url:"/valencia-cf-vs-club-atltico-de-madrid",
+      {home:"Valencia CF",away:"Club Atlético de Madrid",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"16:15",derbi:false,url:"/valencia-cf-vs-club-atltico-de-madrid",popular:true,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
       {home:"Deportivo Alavés",away:"Athletic Club",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"18:30",derbi:false,url:"/deportivo-alavs-vs-athletic-club",
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-      {home:"CA Osasuna",away:"FC Barcelona",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"21:00",derbi:false,url:"/ca-osasuna-vs-fc-barcelona",
+      {home:"CA Osasuna",away:"FC Barcelona",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"21:00",derbi:false,url:"/ca-osasuna-vs-fc-barcelona",popular:true,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
       {home:"RC Celta de Vigo",away:"Elche CF",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"14:00",derbi:false,url:"/rc-celta-de-vigo-vs-elche-cf",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
@@ -1298,7 +1298,7 @@ const allLeagues = {
     matches:[
       {home:"FC Nantes",away:"Olympique de Marseille",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"15:00",derbi:false,url:"/fc-nantes-vs-olympique-de-marseille",
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-      {home:"Paris Saint-Germain FC",away:"FC Lorient",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"17:00",derbi:false,url:"/paris-saint-germain-fc-vs-fc-lorient",
+      {home:"Paris Saint-Germain FC",away:"FC Lorient",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"17:00",derbi:false,url:"/paris-saint-germain-fc-vs-fc-lorient",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"FC Metz",away:"AS Monaco FC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"19:00",derbi:false,url:"/fc-metz-vs-as-monaco-fc",
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
@@ -1336,7 +1336,7 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"FC Groningen",away:"SBV Excelsior",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"16:45",derbi:false,url:"/fc-groningen-vs-sbv-excelsior",
        p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-      {home:"AFC Ajax",away:"PSV",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"19:00",derbi:false,url:"/afc-ajax-vs-psv",
+      {home:"AFC Ajax",away:"PSV",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"19:00",derbi:false,url:"/afc-ajax-vs-psv",popular:true,
        p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
       {home:"NEC",away:"Telstar 1963",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"21:00",derbi:false,url:"/nec-vs-telstar-1963",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
@@ -1483,9 +1483,9 @@ const allLeagues = {
     dates:{tr:'28 Nis – 6 May 2026', en:'28 Apr – 6 May 2026'},
     flag:'🏆',
     matches:[
-      {home:"Paris Saint-Germain FC",away:"FC Bayern München",date:{tr:"28 Nis Sal",en:"Tue 28 Apr"},time:"21:00",derbi:false,url:"/paris-saint-germain-fc-vs-fc-bayern-munchen",
+      {home:"Paris Saint-Germain FC",away:"FC Bayern München",date:{tr:"28 Nis Sal",en:"Tue 28 Apr"},time:"21:00",derbi:false,url:"/paris-saint-germain-fc-vs-fc-bayern-munchen",popular:true,
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-      {home:"Club Atlético de Madrid",away:"Arsenal FC",date:{tr:"29 Nis Çar",en:"Wed 29 Apr"},time:"21:00",derbi:false,url:"/club-atltico-de-madrid-vs-arsenal-fc",
+      {home:"Club Atlético de Madrid",away:"Arsenal FC",date:{tr:"29 Nis Çar",en:"Wed 29 Apr"},time:"21:00",derbi:false,url:"/club-atltico-de-madrid-vs-arsenal-fc",popular:true,
        p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}}
     ]
   },
@@ -1497,9 +1497,9 @@ const allLeagues = {
     dates:{tr:'30 Nis 2026', en:'30 Apr 2026'},
     flag:'🏆',
     matches:[
-      {home:"Nottingham Forest",away:"Aston Villa",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/nottingham-forest-vs-aston-villa",
+      {home:"Nottingham Forest",away:"Aston Villa",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/nottingham-forest-vs-aston-villa",popular:true,
        p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Sporting Braga",away:"SC Freiburg",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/sporting-braga-vs-sc-freiburg",
+      {home:"Sporting Braga",away:"SC Freiburg",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/sporting-braga-vs-sc-freiburg",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}}
     ]
   },
@@ -1517,15 +1517,15 @@ const allLeagues = {
 
       {home:"Botafogo FR",away:"Clube do Remo",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"21:00",derbi:false,url:"/botafogo-fr-vs-clube-do-remo",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"SE Palmeiras",away:"Santos FC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"21:00",derbi:false,url:"/se-palmeiras-vs-santos-fc",
+      {home:"SE Palmeiras",away:"Santos FC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"21:00",derbi:false,url:"/se-palmeiras-vs-santos-fc",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
       {home:"EC Vitória",away:"Coritiba FBC",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"19:00",derbi:false,url:"/ec-vitria-vs-coritiba-fbc",
        p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
       {home:"CA Paranaense",away:"Grêmio FBPA",date:{tr:"2 May Cmt",en:"Sat 2 May"},time:"19:00",derbi:false,url:"/ca-paranaense-vs-grmio-fbpa",
        p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-      {home:"Cruzeiro EC",away:"CA Mineiro",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"19:00",derbi:false,url:"/cruzeiro-ec-vs-ca-mineiro",
+      {home:"Cruzeiro EC",away:"CA Mineiro",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"19:00",derbi:false,url:"/cruzeiro-ec-vs-ca-mineiro",popular:true,
        p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-      {home:"CR Flamengo",away:"CR Vasco da Gama",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"21:00",derbi:false,url:"/cr-flamengo-vs-cr-vasco-da-gama",
+      {home:"CR Flamengo",away:"CR Vasco da Gama",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"21:00",derbi:false,url:"/cr-flamengo-vs-cr-vasco-da-gama",popular:true,
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
       {home:"São Paulo FC",away:"EC Bahia",date:{tr:"3 May Paz",en:"Sun 3 May"},time:"21:00",derbi:false,url:"/so-paulo-fc-vs-ec-bahia",
        p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
