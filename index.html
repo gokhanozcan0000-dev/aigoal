@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası</title>
 <meta name="description" content="ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity weekly football predictions for leagues worldwide. Free AI football analysis.">
@@ -1152,6 +1152,8 @@ function renderTopPicks(){
   const allMatches = [];
   Object.entries(allLeagues).forEach(([lk, lg]) => {
     (lg.matches || []).forEach(m => {
+      // Skip matches without predictions (e.g. World Cup placeholders)
+      if(ais.some(ai => m.p[ai].en === '—' || m.p[ai].tr === '—')) return;
       const f = {};
       ais.forEach(ai => {
         const l = m.p[ai][currentLang] || m.p[ai].tr;
