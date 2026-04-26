@@ -1,7 +1,7 @@
 name: Weekly Match Update
 on:
   schedule:
-    - cron: '0 6 * * 1'
+    - cron: '41 19 * * 0'
   workflow_dispatch:
 jobs:
   update:
