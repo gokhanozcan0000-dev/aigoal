@@ -913,25 +913,34 @@ fetch('https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c=Turkey
 // prediction labels by language
 function pl(tr, en){ return currentLang==='tr' ? tr : en; }
 
-const LOGOS = {
-  "Fenerbahçe": "https://upload.wikimedia.org/wikipedia/tr/thumb/1/1c/Fenerbah%C3%A7e_logo.svg/120px-Fenerbah%C3%A7e_logo.svg.png",
-  "Galatasaray": "https://upload.wikimedia.org/wikipedia/tr/thumb/f/f1/Galatasaray_Star_Logo.svg/120px-Galatasaray_Star_Logo.svg.png",
-  "Beşiktaş": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Besiktas_JK_logo_2019.svg/120px-Besiktas_JK_logo_2019.svg.png",
-  "Trabzonspor": "https://upload.wikimedia.org/wikipedia/tr/thumb/4/40/Trabzonspor_badge.svg/120px-Trabzonspor_badge.svg.png",
-  "Samsunspor": "https://upload.wikimedia.org/wikipedia/tr/thumb/c/ce/Samsunspor.svg/120px-Samsunspor.svg.png",
-  "Gaziantep FK": "https://upload.wikimedia.org/wikipedia/tr/thumb/7/77/Gaziantep_FK.png/120px-Gaziantep_FK.png",
-  "Göztepe": "https://upload.wikimedia.org/wikipedia/tr/thumb/f/f7/Goztepe_logo.png/120px-Goztepe_logo.png",
-  "Kasımpaşa": "https://upload.wikimedia.org/wikipedia/tr/thumb/6/65/Kasm_pa_a_S.K..png/120px-Kasm_pa_a_S.K..png",
-  "Fatih Karagümrük": "https://upload.wikimedia.org/wikipedia/tr/thumb/d/da/FKarag%C3%BCmr%C3%BCk.png/120px-FKarag%C3%BCmr%C3%BCk.png",
-  "Hesap.com Antalyaspor": "https://upload.wikimedia.org/wikipedia/tr/thumb/b/b4/Antalyaspor_logo.svg/120px-Antalyaspor_logo.svg.png",
-  "Corendon Alanyaspor": "https://upload.wikimedia.org/wikipedia/tr/thumb/8/8e/Alanyaspor_logo.svg/120px-Alanyaspor_logo.svg.png",
-  "RAMS Başakşehir": "https://upload.wikimedia.org/wikipedia/tr/thumb/e/ea/Istanbul_Basaksehir_FK.svg/120px-Istanbul_Basaksehir_FK.svg.png",
-  "Zecorner Kayserispor": "https://upload.wikimedia.org/wikipedia/tr/thumb/b/b2/Kayserispor_logo.svg/120px-Kayserispor_logo.svg.png",
-  "Tümosan Konyaspor": "https://upload.wikimedia.org/wikipedia/tr/thumb/6/6f/Konyaspor_logo.svg/120px-Konyaspor_logo.svg.png",
-  "Çaykur Rizespor": "https://upload.wikimedia.org/wikipedia/tr/thumb/3/36/Caykur_Rizespor_logo.svg/120px-Caykur_Rizespor_logo.svg.png",
-  "Nat. Dünyası Gençlerbirliği": "https://upload.wikimedia.org/wikipedia/tr/thumb/2/2a/Genclerbirligi_logo.png/120px-Genclerbirligi_logo.png",
+
+
+// Süper Lig takım logoları (SVG inline)
+const TEAM_LOGOS = {
+  "Fenerbahçe":                  {bg:"#0a3d62",fg:"#f9c502",ab:"FB"},
+  "Galatasaray":                 {bg:"#c8102e",fg:"#f5a623",ab:"GS"},
+  "Beşiktaş":                    {bg:"#000000",fg:"#ffffff",ab:"BJK"},
+  "Trabzonspor":                 {bg:"#702082",fg:"#f7941d",ab:"TS"},
+  "Samsunspor":                  {bg:"#c8102e",fg:"#ffffff",ab:"SS"},
+  "Gaziantep FK":                {bg:"#e30613",fg:"#ffffff",ab:"GFK"},
+  "Göztepe":                     {bg:"#e30613",fg:"#f5a623",ab:"GT"},
+  "Kasımpaşa":                   {bg:"#003087",fg:"#ffffff",ab:"KP"},
+  "Fatih Karagümrük":            {bg:"#c8102e",fg:"#000000",ab:"FK"},
+  "Hesap.com Antalyaspor":       {bg:"#c8102e",fg:"#ffffff",ab:"ANT"},
+  "Corendon Alanyaspor":         {bg:"#ff6600",fg:"#ffffff",ab:"ALN"},
+  "RAMS Başakşehir":             {bg:"#ff6600",fg:"#ffffff",ab:"İBB"},
+  "Zecorner Kayserispor":        {bg:"#c8102e",fg:"#f5a623",ab:"KSP"},
+  "Tümosan Konyaspor":           {bg:"#00843d",fg:"#ffffff",ab:"KNY"},
+  "Çaykur Rizespor":             {bg:"#00843d",fg:"#ffffff",ab:"RİZ"},
+  "Nat. Dünyası Gençlerbirliği": {bg:"#c8102e",fg:"#ffffff",ab:"GB"},
 };
-function getLogo(name){return LOGOS[name]||null;}
+
+function teamLogo(name) {
+  const t = TEAM_LOGOS[name];
+  if (!t) return '';
+  const fs = t.ab.length > 2 ? '5.5' : '6.5';
+  return `<svg width="22" height="22" viewBox="0 0 22 22" style="flex-shrink:0;border-radius:50%;overflow:hidden;" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="11" fill="${t.bg}"/><text x="11" y="15" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-weight="700" font-size="${fs}" fill="${t.fg}">${t.ab}</text></svg>`;
+}
 
 const matchDefs=[
 
@@ -984,8 +993,8 @@ function renderTable(){
     const dt=m.derbi?`<span class="dtag">${derbiLabel}</span>`:'';
     const dateStr = m.date[currentLang] || m.date.tr;
     const matchName = m.url
-      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:5px;flex-wrap:nowrap;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">${getLogo(m.home)?`<img src="${getLogo(m.home)}" class="team-logo" onerror="this.style.display='none'" loading="lazy">`:''}<span class="tname">${m.home}</span><span class="vs">vs</span><span class="tname">${m.away}</span>${getLogo(m.away)?`<img src="${getLogo(m.away)}" class="team-logo" onerror="this.style.display='none'" loading="lazy">`:''}${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥</span>' : ''}</a>`
-      : `${getLogo(m.home)?`<img src="${getLogo(m.home)}" class="team-logo" onerror="this.style.display='none'" loading="lazy">`:''}<span class="tname">${m.home}</span><span class="vs">vs</span><span class="tname">${m.away}</span>${getLogo(m.away)?`<img src="${getLogo(m.away)}" class="team-logo" onerror="this.style.display='none'" loading="lazy">`:''}${dt}`;
+      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:5px;flex-wrap:nowrap;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">${teamLogo(m.home)}<span class="tname">${m.home}</span><span class="vs">vs</span><span class="tname">${m.away}</span>${teamLogo(m.away)}${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥</span>' : ''}</a>`
+      : `${teamLogo(m.home)}<span class="tname">${m.home}</span><span class="vs">vs</span><span class="tname">${m.away}</span>${teamLogo(m.away)}${dt}`;
     return `<tr class="${m.derbi?'dr':''}">
       <td class="mc">
         <div class="mn">${matchName}</div>
