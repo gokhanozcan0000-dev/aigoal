@@ -88,7 +88,7 @@ def get_predictions(matches):
         prompt = f"""Asagidaki {league_key} ligi futbol maclari icin 6 farkli yapay zeka modelinin tahminlerini simule et.
 
 Her model farkli bir tahmin yapmali. Sadece su seceneklerden birini sec:
-MS 1, MS 2, MS 1X, MS X2, KG Var, 2.5 Ust, 2.5 Alt
+MS 1, MS 2, MS 1X, MS X2, MS X, KG Var, 2.5 Ust, 2.5 Alt
 
 Kurallar:
 - Buyuk favori varsa modellerin cogu MS 1 veya MS 2 demeli
