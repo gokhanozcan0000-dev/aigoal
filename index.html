@@ -936,10 +936,13 @@ const TEAM_LOGOS = {
 };
 
 function teamLogo(name) {
-  const t = TEAM_LOGOS[name];
+  var t = TEAM_LOGOS[name];
   if (!t) return '';
-  const fs = t.ab.length > 2 ? '5.5' : '6.5';
-  return `<svg width="22" height="22" viewBox="0 0 22 22" style="flex-shrink:0;border-radius:50%;overflow:hidden;" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="11" fill="${t.bg}"/><text x="11" y="15" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-weight="700" font-size="${fs}" fill="${t.fg}">${t.ab}</text></svg>`;
+  var fs = t.ab.length > 2 ? '5.5' : '6.5';
+  return '<svg width="22" height="22" viewBox="0 0 22 22" style="flex-shrink:0;border-radius:50%;overflow:hidden;" xmlns="http://www.w3.org/2000/svg">'
+    + '<circle cx="11" cy="11" r="11" fill="' + t.bg + '"/>'
+    + '<text x="11" y="15" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-weight="700" font-size="' + fs + '" fill="' + t.fg + '">' + t.ab + '</text>'
+    + '</svg>';
 }
 
 const matchDefs=[
