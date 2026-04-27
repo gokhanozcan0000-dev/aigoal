@@ -482,7 +482,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
             <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#e8eaf6"/></svg><span class="hn">Grok</span></div></th>
             <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24"><rect width="11" height="11" x="1" y="1" fill="#f25022"/><rect width="11" height="11" x="13" y="1" fill="#7fba00"/><rect width="11" height="11" x="1" y="13" fill="#00a4ef"/><rect width="11" height="11" x="13" y="13" fill="#ffb900"/></svg><span class="hn">Copilot Pro</span></div></th>
             <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 2.5c-1.2 0-2.3.5-3.1 1.4L12 6.7l-2.4-2.8C8.8 3 7.7 2.5 6.5 2.5 4 2.5 2 4.5 2 7c0 1.2.5 2.3 1.3 3.1L12 19.5l8.7-9.4c.8-.8 1.3-1.9 1.3-3.1 0-2.5-2-4.5-4.5-4.5z" fill="#CC785C"/></svg><span class="hn">Claude Pro</span></div></th>
-            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hn">Perplexity Pro</span></div></th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hn">Perplexity</span></div></th>
           </tr></thead>
           <tbody id="matchTable"></tbody>
         </table>
@@ -793,7 +793,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
             <div style="font-size:12px;color:var(--muted);line-height:1.8;">İstatistik ağırlıklı ve savunmacı. KG Yok ve 2.5 Alt tahminlerini diğer modellerden daha sık kullanıyor. Estrela-Porto gibi ezici favorilerde net MS 2 derken, belirsiz maçlarda çoğunlukla temkinli kalıyor.</div>
           </div>
           <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
-            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#20e3b2;border-radius:50%;display:inline-block;"></span>Perplexity Pro</div>
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#20e3b2;border-radius:50%;display:inline-block;"></span>Perplexity</div>
             <div style="font-size:12px;color:var(--muted);line-height:1.8;">Güncel form ve haberlere duyarlı. Konsensüs tahminlere yakın durma eğiliminde fakat zaman zaman sürpriz tercihler yapıyor — bu hafta Atletico-Arsenal için X2 diyerek Arsenal'ı öne çıkardı.</div>
           </div>
         </div>
@@ -1094,7 +1094,7 @@ const ais=['chatgpt','gemini','grok','copilot','claude','perplexity'];
 
 function renderTable(){
   const derbiLabel = currentLang==='tr' ? 'DERBİ' : 'DERBY';
-  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity Pro'};
+  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity'};
 
   // Desktop table
   document.getElementById('matchTable').innerHTML=matches.map(m=>{
@@ -1206,7 +1206,7 @@ function renderAiStats(){
     });
   });
 
-  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity Pro'};
+  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity'};
   const aiColors = {chatgpt:'#e8eaf6', gemini:'#4285F4', grok:'#e8eaf6', copilot:'#7fba00', claude:'#CC785C', perplexity:'#20e3b2'};
   const aiSVGs = {
     chatgpt:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073z" fill="#e8eaf6"/></svg>`,
