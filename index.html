@@ -867,6 +867,7 @@ let currentLang = localStorage.getItem('aigoal_lang') || 'tr';
 function setLang(lang){
   currentLang = lang;
   localStorage.setItem('aigoal_lang', lang);
+  if(currentLeague) localStorage.setItem('aigoal_league', currentLeague);
   document.getElementById('htmlRoot').lang = lang;
   ['TR','EN','ES','PT','RU'].forEach(l => {
     const btn = document.getElementById('btn'+l);
@@ -1621,12 +1622,17 @@ const allLeagues = {
     ]
   },
   brasileirao: {
-    nameTr:'Brasileirão Série A', nameEn:'Brasileirão Série A',
-    countryTr:'Brezilya', countryEn:'Brazil',
+    nameTr:'Brasileirão Série A', nameEn:'Brasileirão Série A', nameEs:'Brasileirão Série A', namePt:'Brasileirão Série A', nameRu:'Бразилейрао Серия A',
+    countryTr:'Brezilya', countryEn:'Brazil', countryEs:'Brasil', countryPt:'Brasil', countryRu:'Бразилия',
     code:'BR', flagImg:'br.svg',
-    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'25–27 Nisan 2026', en:'25–27 April 2026'},
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK', es:'ESTA SEMANA', pt:'ESTA SEMANA', ru:'ТЕКУЩАЯ НЕДЕЛЯ'},
+    dates:{tr:'2–3 May 2026', en:'2–3 May 2026', es:'2–3 May 2026', pt:'2–3 Mai 2026', ru:'2–3 Май 2026'},
     flag:'🇧🇷',
+    analysisTr:'<strong>CR Flamengo & SE Palmeiras:</strong> 4/6+ konsensüs — ev sahibi galibiyeti baskın. <br><br><strong>Mirassol FC – SC Corinthians:</strong> 5/6 model Corinthians\'ı seçiyor, deplasman baskın. <br><br><strong>Cruzeiro EC – CA Mineiro:</strong> En belirsiz maç — modeller bölünmüş.',
+    analysisEn:'<strong>CR Flamengo & SE Palmeiras:</strong> 4/6+ consensus home wins. <br><br><strong>Mirassol FC vs SC Corinthians:</strong> 5/6 models back Corinthians away win. <br><br><strong>Cruzeiro EC vs CA Mineiro:</strong> Most uncertain — models split.',
+    analysisEs:'<strong>CR Flamengo y SE Palmeiras:</strong> Consenso 4/6+ victorias locales. <br><br><strong>Mirassol FC vs SC Corinthians:</strong> 5/6 modelos eligen victoria visitante.',
+    analysisPt:'<strong>CR Flamengo e SE Palmeiras:</strong> Consenso 4/6+ vitórias em casa. <br><br><strong>Mirassol FC vs SC Corinthians:</strong> 5/6 modelos escolhem vitória visitante. <br><br><strong>Cruzeiro EC vs CA Mineiro:</strong> Jogo mais incerto — modelos divididos.',
+    analysisRu:'<strong>CR Flamengo и SE Palmeiras:</strong> Консенсус 4/6+ — победы хозяев. <br><br><strong>Mirassol FC vs SC Corinthians:</strong> 5/6 моделей выбирают гостей.',
     matches:[
 
 
@@ -1834,6 +1840,7 @@ function toggleGroup(id,toggle){
 function switchLeague(id,el){
   setActive(el);
   currentLeague = id;
+  localStorage.setItem('aigoal_league', id);
   const lg = allLeagues[id];
   if(!lg) return;
   matches = lg.matches;
@@ -1907,10 +1914,46 @@ document.addEventListener('click',e=>{
 });
 
 // ── Init ──
-setLang(currentLang);
-renderAnalysis();
-renderTopPicks();
-renderAiStats();
+// Geo-detection: Brezilya'dan erişimde pt dili + brasileirao ligi varsayılan
+(function initWithGeo(){
+  const savedLang   = localStorage.getItem('aigoal_lang');
+  const savedLeague = localStorage.getItem('aigoal_league');
+
+  function boot(lang, league){
+    currentLeague = league;
+    matches = allLeagues[league] ? allLeagues[league].matches : matches;
+    setLang(lang);
+    const leagueEl = document.querySelector(`[onclick*="switchLeague('${league}'"]`) ||
+                     document.querySelector(`[onclick*="${league}"]`);
+    setActive(leagueEl);
+    renderAnalysis();
+    renderTopPicks();
+    renderAiStats();
+  }
+
+  // Kullanıcı daha önce tercih yaptıysa onu kullan
+  if(savedLang && savedLeague){
+    boot(savedLang, savedLeague);
+    return;
+  }
+
+  // GeoIP ile ülke tespiti
+  fetch('https://ipapi.co/json/')
+    .then(r => r.json())
+    .then(data => {
+      const country = (data.country_code || '').toUpperCase();
+      if(country === 'BR'){
+        localStorage.setItem('aigoal_lang',   'pt');
+        localStorage.setItem('aigoal_league', 'brasileirao');
+        boot('pt', 'brasileirao');
+      } else {
+        boot(savedLang || currentLang, savedLeague || currentLeague);
+      }
+    })
+    .catch(() => {
+      boot(savedLang || currentLang, savedLeague || currentLeague);
+    });
+})();
 </script>
 </body>
 </html>
