@@ -373,7 +373,33 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <div class="sb-section-label">🌎 <span data-tr="Güney Amerika" data-en="South America">Güney Amerika</span></div>
     <a class="sb-item" onclick="switchLeague('brasileirao',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
-      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A">Brezilya — Série A</span>
+      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A" data-es="Brasil — Série A" data-pt="Brasil — Série A" data-ru="Бразилия — Серия A">Brezilya — Série A</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('argentina',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ar.svg" alt="AR">
+      <span data-tr="Arjantin — Liga Profesional" data-en="Argentina — Liga Profesional" data-es="Argentina — Liga Profesional" data-pt="Argentina — Liga Profissional" data-ru="Аргентина — Лига Професьональ">Arjantin — Liga Profesional</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('mexico',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/mx.svg" alt="MX">
+      <span data-tr="Meksika — Liga MX" data-en="Mexico — Liga MX" data-es="México — Liga MX" data-pt="México — Liga MX" data-ru="Мексика — Лига MX">Meksika — Liga MX</span>
+    </a>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🌍 <span data-tr="Diğer Ligler" data-en="Other Leagues" data-es="Otras Ligas" data-pt="Outras Ligas" data-ru="Другие Лиги">Diğer Ligler</span></div>
+    <a class="sb-item" onclick="switchLeague('russia',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ru.svg" alt="RU">
+      <span data-tr="Rusya — Premier Lig" data-en="Russia — Premier League" data-es="Rusia — Premier Liga" data-pt="Rússia — Premier Liga" data-ru="Россия — Премьер-Лига">Rusya — Premier Lig</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('indonesia',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/id.svg" alt="ID">
+      <span data-tr="Endonezya — Liga 1" data-en="Indonesia — Liga 1" data-es="Indonesia — Liga 1" data-pt="Indonésia — Liga 1" data-ru="Индонезия — Лига 1">Endonezya — Liga 1</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('nigeria',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ng.svg" alt="NG">
+      <span data-tr="Nijerya — NPFL" data-en="Nigeria — NPFL" data-es="Nigeria — NPFL" data-pt="Nigéria — NPFL" data-ru="Нигерия — НПФЛ">Nijerya — NPFL</span>
     </a>
   </div>
 
@@ -432,6 +458,9 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <div class="lang-switcher">
         <button class="lang-btn active" id="btnTR" onclick="setLang('tr')">TR</button>
         <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btnES" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btnPT" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" id="btnRU" onclick="setLang('ru')">RU</button>
       </div>
       <div class="week-chip">📅 27 Nis – 3 <span data-tr="Mayıs" data-en="May">Mayıs</span> 2026</div>
       <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:5px 9px;transition:all .15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">
@@ -839,35 +868,41 @@ function setLang(lang){
   currentLang = lang;
   localStorage.setItem('aigoal_lang', lang);
   document.getElementById('htmlRoot').lang = lang;
-  document.getElementById('btnTR').classList.toggle('active', lang==='tr');
-  document.getElementById('btnEN').classList.toggle('active', lang==='en');
-  document.querySelectorAll('[data-tr][data-en]').forEach(el=>{
-    const val = el.getAttribute('data-'+lang);
+  ['TR','EN','ES','PT','RU'].forEach(l => {
+    const btn = document.getElementById('btn'+l);
+    if(btn) btn.classList.toggle('active', lang===l.toLowerCase());
+  });
+  document.querySelectorAll('[data-tr]').forEach(el=>{
+    const val = el.getAttribute('data-'+lang) || el.getAttribute('data-en');
     if(val) el.innerHTML = val;
   });
   // refresh league-specific dynamic labels
   const lg = allLeagues[currentLeague];
   if(lg){
+    const lname = lg['name'+lang.charAt(0).toUpperCase()+lang.slice(1)] || lg.nameEn;
+    const lcountry = lg['country'+lang.charAt(0).toUpperCase()+lang.slice(1)] || lg.countryEn;
     const bc = document.getElementById('breadcrumb');
-    if(bc) bc.innerHTML = `<span>${lang==='tr'?lg.countryTr:lg.countryEn}</span> › <span>${lang==='tr'?lg.nameTr:lg.nameEn}</span>`;
+    if(bc) bc.innerHTML = `<span>${lcountry}</span> › <span>${lname}</span>`;
     const badge = document.querySelector('.live-badge');
-    if(badge) badge.textContent = lang==='tr' ? lg.weekLabel.tr : lg.weekLabel.en;
+    if(badge) badge.textContent = lg.weekLabel[lang] || lg.weekLabel.en;
     const chip = document.querySelector('.week-chip');
-    if(chip) chip.innerHTML = `📅 ${lang==='tr'?lg.dates.tr:lg.dates.en}`;
-    // Update title with flag
+    if(chip) chip.innerHTML = `📅 ${lg.dates[lang] || lg.dates.en}`;
     const titleEl = document.querySelector('.title-bar h1');
     if(titleEl){
-      const labelTr = lang==='tr' ? 'Güncel Tahminler' : 'Latest Predictions';
+      const labelMap = {tr:'Güncel Tahminler',en:'Latest Predictions',es:'Últimas Predicciones',pt:'Últimas Previsões',ru:'Актуальные Прогнозы'};
+      const label = labelMap[lang] || labelMap.en;
       const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
-      titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
+      titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lname} — <span class="cr">${label}</span>`;
     }
   }
-  // Update page title based on language
-  if(lang==='en'){
-    document.getElementById('pageTitle').textContent = 'AIGoal.net — AI-Powered Football Predictions | Super Lig, Premier League & More';
-  } else {
-    document.getElementById('pageTitle').textContent = 'AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası';
-  }
+  const titleMap = {
+    tr:'AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası',
+    en:'AIGoal.net — AI-Powered Football Predictions | Super Lig, Premier League & More',
+    es:'AIGoal.net — Predicciones de Fútbol con IA | Ligas del Mundo',
+    pt:'AIGoal.net — Previsões de Futebol com IA | Ligas do Mundo',
+    ru:'AIGoal.net — Прогнозы Футбола с ИИ | Лиги Мира'
+  };
+  document.getElementById('pageTitle').textContent = titleMap[lang] || titleMap.en;
   renderTable();
   renderConsensus();
   renderAnalysis();
@@ -880,7 +915,8 @@ function renderAnalysis(){
   const sec = document.getElementById('analizNotlari');
   const icerik = document.getElementById('analizIcerik');
   if(!sec || !icerik) return;
-  const text = currentLang==='tr' ? lg.analysisTr : lg.analysisEn;
+  const langKey = 'analysis'+currentLang.charAt(0).toUpperCase()+currentLang.slice(1);
+  const text = lg[langKey] || lg.analysisEn;
   if(text){
     sec.style.display='block';
     icerik.innerHTML = text;
@@ -951,11 +987,11 @@ function renderTable(){
   document.getElementById('matchTable').innerHTML=matches.map(m=>{
     const cells=ais.map(ai=>{
       const p=m.p[ai];
-      const lbl = p[currentLang] || p.tr;
+      const lbl = p[currentLang] || p.en || p.tr;
       return `<td class="pc"><span class="badge ${p.c}">${lbl}</span></td>`;
     }).join('');
     const dt=m.derbi?`<span class="dtag">${derbiLabel}</span>`:'';
-    const dateStr = m.date[currentLang] || m.date.tr;
+    const dateStr = m.date[currentLang] || m.date.en || m.date.tr;
     const matchName = m.url
       ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:7px;flex-wrap:wrap;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'"><span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}</a>`
       : `<span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}`;
@@ -971,10 +1007,10 @@ function renderTable(){
   if(container){
     container.innerHTML = matches.map(m=>{
       const dt = m.derbi ? `<span class="dtag">${derbiLabel}</span>` : '';
-      const dateStr = m.date[currentLang] || m.date.tr;
+      const dateStr = m.date[currentLang] || m.date.en || m.date.tr;
       const preds = ais.map(ai=>{
         const p = m.p[ai];
-        const lbl = p[currentLang] || p.tr;
+        const lbl = p[currentLang] || p.en || p.tr;
         return `<div class="match-card-pred">
           <span class="match-card-ai">${aiNames[ai]}</span>
           <span class="badge ${p.c}">${lbl}</span>
@@ -1007,7 +1043,7 @@ function renderTopPicks(){
       if(ais.some(ai => m.p[ai].en === '—' || m.p[ai].tr === '—')) return;
       const f = {};
       ais.forEach(ai => {
-        const l = m.p[ai][currentLang] || m.p[ai].tr;
+        const l = m.p[ai][currentLang] || m.p[ai].en || m.p[ai].tr;
         f[l] = (f[l]||0) + 1;
       });
       const [tl, tc] = Object.entries(f).sort((a,b)=>b[1]-a[1])[0];
@@ -1050,7 +1086,7 @@ function renderAiStats(){
   Object.values(allLeagues).forEach(lg => {
     (lg.matches || []).forEach(m => {
       ais.forEach(ai => {
-        const pred = m.p[ai][currentLang] || m.p[ai].tr;
+        const pred = m.p[ai][currentLang] || m.p[ai].en || m.p[ai].tr;
         aiPredCounts[ai][pred] = (aiPredCounts[ai][pred]||0) + 1;
         aiTotals[ai]++;
       });
@@ -1086,7 +1122,7 @@ function renderAiStats(){
         ${aiSVGs[ai]}
         <div>
           <div style="font-size:13px;font-weight:700;color:#fff;">${aiNames[ai]}</div>
-          <div style="font-size:10px;color:var(--muted);">${total} tahmin</div>
+          <div style="font-size:10px;color:var(--muted);">${total} ${{tr:'tahmin',en:'predictions',es:'predicciones',pt:'previsões',ru:'прогнозов'}[currentLang]||'predictions'}</div>
         </div>
       </div>
       <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">En Sık Tahmin</div>
@@ -1104,7 +1140,7 @@ function renderAiStats(){
 }
 
 function renderConsensus(){
-  const hemfikir = currentLang==='tr' ? 'hemfikir' : 'in agreement';
+  const hemfikir = {tr:'hemfikir',en:'in agreement',es:'de acuerdo',pt:'concordam',ru:'согласны'}[currentLang] || 'in agreement';
   const consensusData=matches.map(m=>{
     const f={};
     ais.forEach(ai=>{const l=m.p[ai][currentLang]||m.p[ai].tr;f[l]=(f[l]||0)+1;});
@@ -1618,6 +1654,169 @@ const allLeagues = {
        p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}}
     ]
   },
+
+  // ── NIGERIA — NPFL ──
+  nigeria: {
+    nameTr:'Nijerya Premier Futbol Ligi', nameEn:'Nigeria Premier Football League', nameEs:'Liga Premier de Fútbol de Nigeria', namePt:'Liga Premier de Futebol da Nigéria', nameRu:'Нигерийская Премьер-Лига',
+    countryTr:'Nijerya', countryEn:'Nigeria', countryEs:'Nigeria', countryPt:'Nigéria', countryRu:'Нигерия',
+    code:'NG', flagImg:'ng.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK', es:'ESTA SEMANA', pt:'ESTA SEMANA', ru:'ТЕКУЩАЯ НЕДЕЛЯ'},
+    dates:{tr:'1–4 May 2026', en:'1–4 May 2026', es:'1–4 May 2026', pt:'1–4 Mai 2026', ru:'1–4 Май 2026'},
+    flag:'🇳🇬',
+    analysisTr:`<strong>Rivers United & Ikorodu City:</strong> 6/6 model tam konsensüsle bu iki takımın galibiyetini öngörüyor. <br><br><strong>Bayelsa United – Enugu Rangers:</strong> Deplasman ağır basıyor — 4/6 model X2 seçiyor. <br><br><strong>Warri Wolves – Plateau United:</strong> Modeller bölünmüş; beraberlik ihtimali yüksek.`,
+    analysisEn:`<strong>Rivers United & Ikorodu City:</strong> Full 6/6 consensus for home wins. <br><br><strong>Bayelsa United vs Enugu Rangers:</strong> Away lean — 4/6 models pick X2. <br><br><strong>Warri Wolves vs Plateau United:</strong> Split models; draw likely.`,
+    analysisEs:`<strong>Rivers United e Ikorodu City:</strong> Consenso pleno 6/6 para victorias locales. <br><br><strong>Bayelsa United vs Enugu Rangers:</strong> Inclinación visitante — 4/6 modelos eligen X2.`,
+    analysisPt:`<strong>Rivers United e Ikorodu City:</strong> Consenso total 6/6 para vitórias em casa. <br><br><strong>Bayelsa United vs Enugu Rangers:</strong> Tendência visitante — 4/6 modelos escolhem X2.`,
+    analysisRu:`<strong>Rivers United и Ikorodu City:</strong> Полный консенсус 6/6 — победы хозяев. <br><br><strong>Bayelsa United vs Enugu Rangers:</strong> Перевес гостей — 4/6 моделей выбирают X2.`,
+    matches:[
+      {home:"Barau FC",away:"El-Kanemi Warriors",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"16:00",derbi:false,url:"/barau-fc-vs-el-kanemi-warriors",
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS X",en:"X",c:"bdash"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"Bendel Insurance",away:"Katsina United",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"16:00",derbi:false,url:"/bendel-insurance-vs-katsina-united",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Shooting Stars",away:"Nasarawa United",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"16:00",derbi:false,url:"/shooting-stars-vs-nasarawa-united",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Kun Khalifat FC",away:"Kano Pillars",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"16:00",derbi:false,url:"/kun-khalifat-fc-vs-kano-pillars",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Enyimba Int.",away:"Remo Stars",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"16:00",derbi:false,url:"/enyimba-int-vs-remo-stars",popular:true,
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Ikorodu City FC",away:"Wikki Tourists",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"16:00",derbi:false,url:"/ikorodu-city-fc-vs-wikki-tourists",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Warri Wolves FC",away:"Plateau United",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"16:00",derbi:false,url:"/warri-wolves-fc-vs-plateau-united",
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X",en:"X",c:"bdash"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X",en:"X",c:"bdash"}}},
+      {home:"Bayelsa United",away:"Enugu Rangers",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"16:00",derbi:false,url:"/bayelsa-united-vs-enugu-rangers",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X",en:"X",c:"bdash"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Rivers United",away:"Abia Warriors",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"16:00",derbi:false,url:"/rivers-united-vs-abia-warriors",popular:true,
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Niger Tornadoes",away:"Kwara United",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"16:00",derbi:false,url:"/niger-tornadoes-vs-kwara-united",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}}
+    ]
+  },
+
+  // ── ARGENTINA — Liga Profesional ──
+  argentina: {
+    nameTr:'Liga Profesional de Fútbol', nameEn:'Liga Profesional de Fútbol', nameEs:'Liga Profesional de Fútbol', namePt:'Liga Profissional de Futebol', nameRu:'Лига Профессьональ де Футбол',
+    countryTr:'Arjantin', countryEn:'Argentina', countryEs:'Argentina', countryPt:'Argentina', countryRu:'Аргентина',
+    code:'AR', flagImg:'ar.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK', es:'ESTA SEMANA', pt:'ESTA SEMANA', ru:'ТЕКУЩАЯ НЕДЕЛЯ'},
+    dates:{tr:'2–4 May 2026', en:'2–4 May 2026', es:'2–4 May 2026', pt:'2–4 Mai 2026', ru:'2–4 Май 2026'},
+    flag:'🇦🇷',
+    analysisTr:`<strong>CA River Plate & CA Lanús:</strong> 6/6 tam konsensüs — galibiyet kesin görünüyor. <br><br><strong>CA Unión – Talleres Córdoba:</strong> Deplasman lehine bölünmüş tahminler; X2 baskın. <br><br><strong>Atl. Platense – Estudiantes:</strong> Deplasman galibiyeti bekleniyor — 5/6 model X2.`,
+    analysisEn:`<strong>CA River Plate & CA Lanús:</strong> Full 6/6 consensus home wins. <br><br><strong>CA Unión vs Talleres Córdoba:</strong> Away lean — X2 dominant. <br><br><strong>Atl. Platense vs Estudiantes:</strong> Away win expected — 5/6 models pick X2.`,
+    analysisEs:`<strong>CA River Plate y CA Lanús:</strong> Consenso total 6/6 victorias locales. <br><br><strong>CA Unión vs Talleres Córdoba:</strong> Tendencia visitante — X2 dominante.`,
+    analysisPt:`<strong>CA River Plate e CA Lanús:</strong> Consenso total 6/6 vitórias em casa. <br><br><strong>CA Unión vs Talleres Córdoba:</strong> Tendência visitante — X2 dominante.`,
+    analysisRu:`<strong>CA River Plate и CA Lanús:</strong> Полный консенсус 6/6 — победы хозяев. <br><br><strong>CA Unión vs Talleres Córdoba:</strong> Перевес гостей — X2 доминирует.`,
+    matches:[
+      {home:"CA River Plate",away:"Atlético Tucumán",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"21:00",derbi:false,url:"/ca-river-plate-vs-atletico-tucuman",popular:true,
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Racing Club",away:"CA Huracán",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"19:00",derbi:false,url:"/racing-club-vs-ca-huracan",
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"CA Belgrano",away:"CA Sarmiento",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"19:30",derbi:false,url:"/ca-belgrano-vs-ca-sarmiento",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Rosario Central",away:"CA Tigre",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"19:00",derbi:false,url:"/rosario-central-vs-ca-tigre",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"CA Unión",away:"Talleres Córdoba",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"21:00",derbi:false,url:"/ca-union-vs-talleres-cordoba",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"GGE La Plata",away:"Argentinos Jrs",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"17:00",derbi:false,url:"/gge-la-plata-vs-argentinos-jrs",
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X",en:"X",c:"bdash"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X",en:"X",c:"bdash"}}},
+      {home:"Barracas Central",away:"CA Banfield",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"19:00",derbi:false,url:"/barracas-central-vs-ca-banfield",
+       p:{chatgpt:{tr:"2.5 Alt",en:"U2.5",c:"ba"},gemini:{tr:"MS X",en:"X",c:"bdash"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS X",en:"X",c:"bdash"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+      {home:"CA Lanús",away:"Deportivo Riestra",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"19:00",derbi:false,url:"/ca-lanus-vs-deportivo-riestra",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Atl. Platense",away:"Estudiantes LP",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"21:00",derbi:false,url:"/atl-platense-vs-estudiantes-lp",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}}
+    ]
+  },
+
+  // ── MEXICO — Liga MX ──
+  mexico: {
+    nameTr:'Liga MX', nameEn:'Liga MX', nameEs:'Liga MX', namePt:'Liga MX', nameRu:'Лига МХ',
+    countryTr:'Meksika', countryEn:'Mexico', countryEs:'México', countryPt:'México', countryRu:'Мексика',
+    code:'MX', flagImg:'mx.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK', es:'ESTA SEMANA', pt:'ESTA SEMANA', ru:'ТЕКУЩАЯ НЕДЕЛЯ'},
+    dates:{tr:'1–3 May 2026', en:'1–3 May 2026', es:'1–3 May 2026', pt:'1–3 Mai 2026', ru:'1–3 Май 2026'},
+    flag:'🇲🇽',
+    analysisTr:`<strong>Tigres UANL – CD Guadalajara:</strong> Klasik Clásico Regio — modeller bölünmüş, 1X baskın. <br><br><strong>Atlas FC – Cruz Azul:</strong> Deplasman galibiyeti bekleniyor; 4/6 model X2 seçiyor.`,
+    analysisEn:`<strong>Tigres UANL vs CD Guadalajara:</strong> Classic matchup — split models, 1X dominant. <br><br><strong>Atlas FC vs Cruz Azul:</strong> Away win expected; 4/6 models pick X2.`,
+    analysisEs:`<strong>Tigres UANL vs CD Guadalajara:</strong> Clásico dividido — 1X dominante. <br><br><strong>Atlas FC vs Cruz Azul:</strong> Victoria visitante esperada; 4/6 modelos eligen X2.`,
+    analysisPt:`<strong>Tigres UANL vs CD Guadalajara:</strong> Clássico dividido — 1X dominante. <br><br><strong>Atlas FC vs Cruz Azul:</strong> Vitória visitante esperada; 4/6 modelos escolhem X2.`,
+    analysisRu:`<strong>Tigres UANL vs CD Guadalajara:</strong> Классическое противостояние — модели разделились, 1X доминирует. <br><br><strong>Atlas FC vs Cruz Azul:</strong> Ожидается победа гостей — 4/6 моделей выбирают X2.`,
+    matches:[
+      {home:"Tigres UANL",away:"CD Guadalajara",date:{tr:"1 May Cum",en:"Fri 1 May",es:"Vie 1 May",pt:"Sex 1 Mai",ru:"Пят 1 Май"},time:"22:00",derbi:true,url:"/tigres-uanl-vs-cd-guadalajara",popular:true,
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"Atlas FC",away:"CF Cruz Azul",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"00:00",derbi:false,url:"/atlas-fc-vs-cf-cruz-azul",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}}
+    ]
+  },
+
+  // ── RUSSIA — Premier Liga ──
+  russia: {
+    nameTr:'Rusya Premier Ligi', nameEn:'Russian Premier League', nameEs:'Liga Premier de Rusia', namePt:'Liga Premier da Rússia', nameRu:'Российская Премьер-Лига',
+    countryTr:'Rusya', countryEn:'Russia', countryEs:'Rusia', countryPt:'Rússia', countryRu:'Россия',
+    code:'RU', flagImg:'ru.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK', es:'ESTA SEMANA', pt:'ESTA SEMANA', ru:'ТЕКУЩАЯ НЕДЕЛЯ'},
+    dates:{tr:'1–4 May 2026', en:'1–4 May 2026', es:'1–4 May 2026', pt:'1–4 Mai 2026', ru:'1–4 Май 2026'},
+    flag:'🇷🇺',
+    analysisTr:`<strong>Akron Tolyatti – FK Krasnodar:</strong> Tek tam konsensüs maçı — 6/6 model FK Krasnodar'ı seçiyor. <br><br><strong>Lokomotiv M. – Dinamo Moskva:</strong> En belirsiz maç — tüm modeller KG Var veya 2.5 Üst diyor, net sonuç tahmini yok. <br><br><strong>PFK CSKA – FK Zenit:</strong> Karşılıklı gol bekleniyor; 4/6 model X2.`,
+    analysisEn:`<strong>Akron Tolyatti vs FK Krasnodar:</strong> Only full consensus match — 6/6 pick FK Krasnodar. <br><br><strong>Lokomotiv M. vs Dinamo Moskva:</strong> Most uncertain match — all models pick BTTS or Over 2.5, no clear result. <br><br><strong>PFK CSKA vs FK Zenit:</strong> BTTS expected; 4/6 models pick X2.`,
+    analysisEs:`<strong>Akron Tolyatti vs FK Krasnodar:</strong> Único consenso total — 6/6 eligen FK Krasnodar. <br><br><strong>Lokomotiv M. vs Dinamo Moskva:</strong> Partido más incierto — todos eligen BTTS o Más 2.5.`,
+    analysisPt:`<strong>Akron Tolyatti vs FK Krasnodar:</strong> Único consenso total — 6/6 escolhem FK Krasnodar. <br><br><strong>Lokomotiv M. vs Dinamo Moskva:</strong> Jogo mais incerto — todos escolhem BTTS ou Mais 2.5.`,
+    analysisRu:`<strong>Акрон Тольятти vs ФК Краснодар:</strong> Единственный полный консенсус — 6/6 выбирают Краснодар. <br><br><strong>Локомотив М. vs Динамо Москва:</strong> Наиболее неопределённый матч — все модели выбирают ОЗ или Тотал 2.5+.`,
+    matches:[
+      {home:"Krılya Sovetov",away:"Spartak Moskva",date:{tr:"1 May Cum",en:"Fri 1 May",es:"Vie 1 May",pt:"Sex 1 Mai",ru:"Пят 1 Май"},time:"17:00",derbi:false,url:"/krilya-sovetov-vs-spartak-moskva",
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Lokomotiv M.",away:"Dinamo Moskva",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"16:00",derbi:true,url:"/lokomotiv-moskva-vs-dinamo-moskva",popular:true,
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Üst",en:"O2.5",c:"bu"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Dinamo Mahaçkala",away:"FK Rostov",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"14:00",derbi:false,url:"/dinamo-mahackala-vs-fk-rostov",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Baltika Kaliningrad",away:"FK Rubin",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"14:00",derbi:false,url:"/baltika-kaliningrad-vs-fk-rubin",
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X",en:"X",c:"bdash"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X",en:"X",c:"bdash"}}},
+      {home:"PFK CSKA",away:"FK Zenit",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"17:30",derbi:false,url:"/pfk-cska-vs-fk-zenit",popular:true,
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Soçi",away:"FC Orenburg",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"14:00",derbi:false,url:"/soci-vs-fc-orenburg",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Akron Tolyatti",away:"FK Krasnodar",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"17:00",derbi:false,url:"/akron-tolyatti-vs-fk-krasnodar",
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Ahmat Grozni",away:"Pari Nijni Nov.",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"17:00",derbi:false,url:"/ahmat-grozni-vs-pari-nijni-nov",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
+    ]
+  },
+
+  // ── INDONESIA — Liga 1 ──
+  indonesia: {
+    nameTr:'Endonezya Liga 1', nameEn:'Indonesia Liga 1', nameEs:'Indonesia Liga 1', namePt:'Indonésia Liga 1', nameRu:'Индонезия Лига 1',
+    countryTr:'Endonezya', countryEn:'Indonesia', countryEs:'Indonesia', countryPt:'Indonésia', countryRu:'Индонезия',
+    code:'ID', flagImg:'id.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK', es:'ESTA SEMANA', pt:'ESTA SEMANA', ru:'ТЕКУЩАЯ НЕДЕЛЯ'},
+    dates:{tr:'1–4 May 2026', en:'1–4 May 2026', es:'1–4 May 2026', pt:'1–4 Mai 2026', ru:'1–4 Май 2026'},
+    flag:'🇮🇩',
+    analysisTr:`<strong>Persebaya & Dewa United FC (×2):</strong> 6/6 tam konsensüs — her iki maçta da kesin ev sahibi galibiyeti bekleniyor. <br><br><strong>Bhayangkara FC – Persib Bandung:</strong> Deplasman galibiyeti baskın — Persib güçlü. <br><br><strong>Semen Padang FC – Madura United:</strong> Deplasman galibiyeti; 5/6 model MS 2.`,
+    analysisEn:`<strong>Persebaya & Dewa United FC (×2):</strong> Full 6/6 consensus home wins in both matches. <br><br><strong>Bhayangkara FC vs Persib Bandung:</strong> Away win dominant — Persib strong. <br><br><strong>Semen Padang FC vs Madura United:</strong> Away win; 5/6 models pick 2.`,
+    analysisEs:`<strong>Persebaya y Dewa United FC (×2):</strong> Consenso total 6/6 victorias locales en ambos partidos. <br><br><strong>Bhayangkara FC vs Persib Bandung:</strong> Victoria visitante dominante.`,
+    analysisPt:`<strong>Persebaya e Dewa United FC (×2):</strong> Consenso total 6/6 vitórias em casa em ambos os jogos. <br><br><strong>Bhayangkara FC vs Persib Bandung:</strong> Vitória visitante dominante.`,
+    analysisRu:`<strong>Persebaya и Dewa United FC (×2):</strong> Полный консенсус 6/6 — победы хозяев в обоих матчах. <br><br><strong>Bhayangkara FC vs Persib Bandung:</strong> Доминирует победа гостей.`,
+    matches:[
+      {home:"PSBS Biak",away:"Malut United FC",date:{tr:"1 May Cum",en:"Fri 1 May",es:"Vie 1 May",pt:"Sex 1 Mai",ru:"Пят 1 Май"},time:"13:30",derbi:false,url:"/psbs-biak-vs-malut-united-fc",
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS X",en:"X",c:"bdash"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"Persik Kediri",away:"Borneo FC",date:{tr:"1 May Cum",en:"Fri 1 May",es:"Vie 1 May",pt:"Sex 1 Mai",ru:"Пят 1 Май"},time:"13:30",derbi:false,url:"/persik-kediri-vs-borneo-fc",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Semen Padang FC",away:"Madura United",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"13:30",derbi:false,url:"/semen-padang-fc-vs-madura-united",
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Dewa United FC",away:"Persijap Jepara",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"10:00",derbi:false,url:"/dewa-united-fc-vs-persijap-jepara",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"PSIM Yogyakarta",away:"Persita Tangerang",date:{tr:"2 May Cmt",en:"Sat 2 May",es:"Sáb 2 May",pt:"Sáb 2 Mai",ru:"Суб 2 Май"},time:"13:30",derbi:false,url:"/psim-yogyakarta-vs-persita-tangerang",
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS X",en:"X",c:"bdash"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Bhayangkara FC",away:"Persib Bandung",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"13:30",derbi:false,url:"/bhayangkara-fc-vs-persib-bandung",popular:true,
+       p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
+      {home:"Persebaya",away:"PSBS Biak",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"10:00",derbi:false,url:"/persebaya-vs-psbs-biak",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Malut United FC",away:"Persis Solo",date:{tr:"3 May Paz",en:"Sun 3 May",es:"Dom 3 May",pt:"Dom 3 Mai",ru:"Вос 3 Май"},time:"13:30",derbi:false,url:"/malut-united-fc-vs-persis-solo",
+       p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X",en:"X",c:"bdash"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS X",en:"X",c:"bdash"}}},
+      {home:"Persik Kediri",away:"Arema Cronus FC",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"13:30",derbi:false,url:"/persik-kediri-vs-arema-cronus-fc",
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"Dewa United FC",away:"Semen Padang FC",date:{tr:"4 May Pzt",en:"Mon 4 May",es:"Lun 4 May",pt:"Seg 4 Mai",ru:"Пон 4 Май"},time:"10:00",derbi:false,url:"/dewa-united-fc-vs-semen-padang-fc",
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
+    ]
+  },
 };
 
 
@@ -1640,19 +1839,22 @@ function switchLeague(id,el){
   matches = lg.matches;
   // Update breadcrumb
   const bc = document.getElementById('breadcrumb');
-  if(bc) bc.innerHTML = `<span>${currentLang==='tr'?lg.countryTr:lg.countryEn}</span> › <span>${currentLang==='tr'?lg.nameTr:lg.nameEn}</span>`;
+  const lname = lg['name'+currentLang.charAt(0).toUpperCase()+currentLang.slice(1)] || lg.nameEn;
+  const lcountry = lg['country'+currentLang.charAt(0).toUpperCase()+currentLang.slice(1)] || lg.countryEn;
+  if(bc) bc.innerHTML = `<span>${lcountry}</span> › <span>${lname}</span>`;
   // Update live badge
   const badge = document.querySelector('.live-badge');
-  if(badge) badge.textContent = currentLang==='tr' ? lg.weekLabel.tr : lg.weekLabel.en;
+  if(badge) badge.textContent = lg.weekLabel[currentLang] || lg.weekLabel.en;
   // Update week chip
   const chip = document.querySelector('.week-chip');
-  if(chip) chip.innerHTML = `📅 ${currentLang==='tr'?lg.dates.tr:lg.dates.en}`;
+  if(chip) chip.innerHTML = `📅 ${lg.dates[currentLang] || lg.dates.en}`;
   // Update title
   const titleEl = document.querySelector('.title-bar h1');
   if(titleEl){
-    const labelTr = currentLang==='tr' ? 'Güncel Tahminler' : 'Latest Predictions';
+    const labelMap = {tr:'Güncel Tahminler',en:'Latest Predictions',es:'Últimas Predicciones',pt:'Últimas Previsões',ru:'Актуальные Прогнозы'};
+    const label = labelMap[currentLang] || labelMap.en;
     const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
-    titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${currentLang==='tr'?lg.nameTr:lg.nameEn} — <span class="cr">${labelTr}</span>`;
+    titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lname} — <span class="cr">${label}</span>`;
   }
   renderTable();
   renderConsensus();
