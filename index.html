@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr" id="htmlRoot">
 <head>
-<script src="https://quge5.com/88/tag.min.js" data-zone="235592" async data-cfasync="false"></script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -1493,50 +1492,40 @@ const allLeagues = {
     countryTr:'Amerika', countryEn:'USA',
     code:'US', flagImg:'us.svg',
     week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
-    dates:{tr:'2–4 May 2026', en:'2–4 May 2026'},
+    dates:{tr:'25 Nis – 3 May 2026', en:'25 Apr – 3 May 2026'},
     flag:'🇺🇸',
-    analysisTr:`<strong>Real Salt Lake - Portland:</strong> RSL güçlü favori; ChatGPT ve Claude MS 1 derken Gemini KG Var, Grok 1X ve Copilot 2.5 Alt seçiyor.<br><br><strong>Atlanta - Montreal:</strong> Dengeli maçta modeller bölündü — ChatGPT/Copilot KG Var, Gemini 2.5 Üst, Grok/Perplexity ise misafiri seçti.<br><br><strong>LA Galaxy - Vancouver:</strong> Vancouver favori; ChatGPT/Perplexity MS 2 derken Gemini/Copilot KG Var seçiyor.<br><br><strong>San Diego - LAFC:</strong> Neredeyse eşit oranlar — 6 model 6 farklı tahmin yaptı.`,
-    analysisEn:`<strong>Real Salt Lake vs Portland:</strong> RSL strong favorites; ChatGPT & Claude pick 1, Gemini goes BTTS, Grok plays safe with 1X, Copilot takes U2.5.<br><br><strong>Atlanta vs Montreal:</strong> Split market — ChatGPT/Copilot on BTTS, Gemini on O2.5, Grok/Perplexity back the visitors.<br><br><strong>LA Galaxy vs Vancouver:</strong> Vancouver favored; ChatGPT/Perplexity call 2, Gemini/Copilot go BTTS.<br><br><strong>San Diego vs LAFC:</strong> Near-even odds — 6 models, 6 different views.`,
+    analysisTr:`<strong>LAFC - Vancouver:</strong> Tüm modeller LAFC'yi güçlü favori olarak görüyor; Perplexity de MS 1 ile katılıyor.<br><br><strong>Portland - Seattle:</strong> Pasifik kuzeybatısı derbisinde Perplexity KG Var diyor — karşılıklı gollü ve yüksek tempolu bir gece bekleniyor.<br><br><strong>Inter Miami - Columbus Crew:</strong> Perplexity bu hafta MS 1X ile dengeli bir tahmin yapıyor; ev sahibi tam favori değil.<br><br><strong>CF Montreal - Atlanta United:</strong> Perplexity KG Var seçiyor — açık ve gollü bir maç öngörülüyor.`,
+    analysisEn:`<strong>LAFC vs Vancouver:</strong> All models back LAFC strongly — Perplexity also joins with MS 1.<br><br><strong>Portland vs Seattle:</strong> Perplexity calls BTTS in the Pacific Northwest derby — a high-tempo, goal-heavy night expected.<br><br><strong>Inter Miami vs Columbus Crew:</strong> Perplexity plays it balanced with 1X this week — hosts not a clear favorite.<br><br><strong>CF Montreal vs Atlanta United:</strong> Perplexity picks BTTS — an open, goalscoring game expected.`,
     matches:[
-      {home:'Real Salt Lake',away:'Portland Timbers',date:{tr:'2 May Cum',en:'Fri 2 May'},time:'23:45',derbi:false,url:'/real-salt-lake-vs-portland-timbers',
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Inter Miami',away:'Orlando City',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'02:15',derbi:false,url:'/inter-miami-vs-orlando-city',
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
-      {home:'Atlanta United',away:'CF Montreal',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'02:30',derbi:false,url:'/atlanta-united-vs-cf-montreal',
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
-      {home:'Columbus Crew',away:'Minnesota United',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'02:30',derbi:false,url:'/columbus-crew-vs-minnesota-united',
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
-      {home:'New England Revolution',away:'Charlotte',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'02:30',derbi:false,url:'/new-england-revolution-vs-charlotte',
-       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
-      {home:'New York Red Bulls',away:'FC Dallas',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'02:30',derbi:false,url:'/new-york-red-bulls-vs-fc-dallas',
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
-      {home:'Philadelphia Union',away:'Nashville SC',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'02:30',derbi:false,url:'/philadelphia-union-vs-nashville-sc',
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'Chicago Fire',away:'FC Cincinnati',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'03:30',derbi:false,url:'/chicago-fire-vs-fc-cincinnati',
-       p:{chatgpt:{tr:'2.5 Alt',en:'U2.5',c:'ba'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
-      {home:'Houston Dynamo',away:'Colorado Rapids',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'03:30',derbi:false,url:'/houston-dynamo-vs-colorado-rapids',
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'2.5 Alt',en:'U2.5',c:'ba'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
-      {home:'San Diego',away:'Los Angeles FC',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'04:30',derbi:false,url:'/san-diego-vs-los-angeles-fc',
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X',en:'X',c:'bdash'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
-      {home:'Los Angeles Galaxy',away:'Vancouver Whitecaps',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'05:30',derbi:false,url:'/los-angeles-galaxy-vs-vancouver-whitecaps',
-       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
-      {home:'New York City FC',away:'DC United',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'22:00',derbi:false,url:'/new-york-city-fc-vs-dc-united',
-       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
-      {home:'Austin',away:'St. Louis City',date:{tr:'4 May Pzt',en:'Mon 4 May'},time:'00:30',derbi:false,url:'/austin-vs-st-louis-city',
-       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'2.5 Üst',en:'O2.5',c:'bu'},grok:{tr:'MS X',en:'X',c:'bdash'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {home:'CF Montreal',away:'Atlanta United',date:{tr:'30 Nis Per',en:'Thu 30 Apr'},time:'00:30',derbi:false,url:'/cf-montreal-vs-atlanta-united',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS X2',en:'X2',c:'bx2'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'New England Revolution',away:'Toronto FC',date:{tr:'30 Nis Per',en:'Thu 30 Apr'},time:'00:30',derbi:false,url:'/new-england-revolution-vs-toronto-fc',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
+      {home:'FC Dallas',away:'Austin FC',date:{tr:'30 Nis Per',en:'Thu 30 Apr'},time:'03:30',derbi:false,url:'/fc-dallas-vs-austin-fc',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
+      {home:'Portland Timbers',away:'Seattle Sounders',date:{tr:'1 May Cum',en:'Fri 1 May'},time:'04:00',derbi:false,url:'/portland-timbers-vs-seattle-sounders',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'MS X2',en:'X2',c:'bx2'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'Inter Miami',away:'Columbus Crew',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'00:30',derbi:false,url:'/inter-miami-vs-columbus-crew',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+      {home:'LAFC',away:'Vancouver Whitecaps',date:{tr:'3 May Paz',en:'Sun 3 May'},time:'04:30',derbi:false,url:'/lafc-vs-vancouver-whitecaps',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
     ]
   },
-
-
-
-
-
-
-
-
-
-
-
   worldcup: {
     nameTr:'2026 FIFA Dünya Kupası', nameEn:'2026 FIFA World Cup',
     countryTr:'Dünya', countryEn:'World',
