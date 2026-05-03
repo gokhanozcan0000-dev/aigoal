@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ligue 1 2025/26 AI Predictions &amp; Data-Driven Match Analysis | AIGoal.net</title>
+<meta name="description" content="Ligue 1 2025/26 AI predictions, weekly football match analysis, model consensus and data-driven forecast signals by AIGoal.net.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aigoal.net/ligue-1-ai-prediction">
+<meta property="og:title" content="Ligue 1 2025/26 AI Predictions &amp; Data-Driven Match Analysis | AIGoal.net">
+<meta property="og:description" content="Ligue 1 2025/26 AI predictions, weekly football match analysis, model consensus and data-driven forecast signals by AIGoal.net.">
+<meta property="og:url" content="https://aigoal.net/ligue-1-ai-prediction">
+<meta property="og:image" content="https://aigoal.net/og-image.png">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script async defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8363649317786686" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#0a0c14;--bg2:#0f1220;--card:#13172a;--border:#1e2340;
+  --accent:#00e5ff;--accent2:#ff3d5a;--accent3:#ffe600;--accent4:#7c4dff;
+  --text:#e8eaf6;--muted:#5a6280;
+  --sidebar-w:220px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+
+
+/* ─── SIDEBAR ─── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:300;overflow-y:auto;transition:transform .25s;}
+.sidebar .sb-section:last-child{margin-top:auto;}
+.sidebar::-webkit-scrollbar{width:3px;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);}
+.sb-logo{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:flex-start;text-decoration:none;cursor:pointer;flex-shrink:0;}
+.sb-section{padding:10px 0 4px;flex-shrink:0;}
+.sb-section-label{font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);padding:0 16px 6px;}
+.sb-item{display:flex;align-items:center;gap:10px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;cursor:pointer;transition:background .15s,color .15s;border-left:2px solid transparent;white-space:nowrap;overflow:hidden;}
+.sb-item:hover{background:rgba(0,229,255,.06);color:var(--text);}
+.sb-item.active{background:rgba(0,229,255,.1);color:var(--accent);border-left-color:var(--accent);}
+.sb-item .sb-flag{width:14px;height:10px;object-fit:cover;border-radius:2px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.55),0 0 0 .5px rgba(255,255,255,.08);opacity:.85;filter:saturate(.85);transition:opacity .15s,filter .15s;}
+.sb-item:hover .sb-flag,.sb-item.active .sb-flag{opacity:1;filter:saturate(1.1);}
+.sb-group-toggle .sb-flag{width:14px;height:10px;object-fit:cover;border-radius:2px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.55),0 0 0 .5px rgba(255,255,255,.08);opacity:.7;filter:saturate(.8);}
+.sb-group-toggle:hover .sb-flag{opacity:.95;filter:saturate(1);}
+.sb-item .sb-icon{width:18px;height:18px;flex-shrink:0;opacity:.7;}
+.sb-item.active .sb-icon{opacity:1;}
+.sb-divider{height:1px;background:var(--border);margin:8px 16px;}
+.sb-badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;background:rgba(0,229,255,.15);color:var(--accent);flex-shrink:0;}
+.sb-badge.new{background:rgba(255,61,90,.15);color:var(--accent2);}
+.sb-group-toggle{display:flex;align-items:center;gap:10px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:color .15s;user-select:none;}
+.sb-group-toggle:hover{color:var(--text);}
+.sb-group-toggle .arrow{margin-left:auto;font-size:10px;transition:transform .2s;flex-shrink:0;}
+.sb-group-toggle.open .arrow{transform:rotate(90deg);}
+.sb-group-content{display:none;padding-left:8px;}
+.sb-group-content.open{display:block;}
+
+/* ─── MAIN ─── */
+.main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;position:relative;z-index:1;min-width:0;}
+
+/* ─── TOP NAV ─── */
+.topnav{position:sticky;top:0;z-index:200;height:52px;background:rgba(10,12,20,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;gap:12px;}
+.topnav-left{display:flex;align-items:center;gap:12px;}
+.topnav-breadcrumb{font-size:12px;color:var(--muted);}
+.topnav-breadcrumb span{color:var(--text);font-weight:600;}
+.live-badge{background:var(--accent2);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;animation:blink 2s infinite;white-space:nowrap;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.5;}}
+.topnav-right{display:flex;align-items:center;gap:10px;}
+.week-chip{display:flex;align-items:center;gap:6px;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.2);border-radius:4px;padding:5px 11px;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.3px;white-space:nowrap;}
+.week-chip::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:blink 1.6s infinite;flex-shrink:0;}
+
+/* ─── LANG SWITCHER ─── */
+.lang-switcher{display:flex;gap:4px;align-items:center;}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:pointer;letter-spacing:.5px;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent);}
+.lang-btn.active{background:rgba(0,229,255,.12);border-color:var(--accent);color:var(--accent);}
+
+/* ─── CONTENT ─── */
+.content{padding:0 0 60px;}
+
+/* ─── PAGE VIEWS ─── */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ─── TITLE BAR ─── */
+.title-bar{background:linear-gradient(135deg,#0c1030 0%,#141930 100%);border-bottom:1px solid var(--border);padding:16px 24px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.title-bar h1{font-family:'DM Sans',sans-serif;font-size:clamp(14px,2.2vw,22px);font-weight:700;letter-spacing:.5px;color:#fff;line-height:1.1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.title-bar h1 .cy{color:var(--accent);}
+.title-bar h1 .cr{color:var(--accent2);}
+.league-country-tag{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:3px;padding:2px 6px;white-space:nowrap;flex-shrink:0;}
+.title-sub{font-size:11px;color:var(--muted);margin-top:4px;}
+.league-logo-header{height:34px;background:#fff;border-radius:6px;padding:3px 7px;object-fit:contain;display:inline-block;vertical-align:middle;}
+
+/* ─── LEGEND ─── */
+.legend-bar{padding:8px 24px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.leg{display:inline-flex;align-items:center;padding:3px 9px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:.3px;border:1px solid transparent;}
+.l1{background:rgba(0,200,83,.1);color:#00c853;border-color:rgba(0,200,83,.25);}
+.l1x{background:rgba(0,200,83,.06);color:#69f0ae;border-color:rgba(0,200,83,.18);}
+.lx2{background:rgba(255,61,90,.07);color:#ff8a80;border-color:rgba(255,61,90,.18);}
+.lkg{background:rgba(0,229,255,.08);color:#00e5ff;border-color:rgba(0,229,255,.25);}
+.lu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
+.la{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
+.leg-lbl{font-size:11px;color:var(--muted);font-weight:500;}
+
+/* ─── TABLE ─── */
+.table-wrap{overflow-x:auto;padding-bottom:6px;}
+.table-wrap::-webkit-scrollbar{height:4px;}
+.table-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+table{width:100%;border-collapse:collapse;min-width:660px;}
+thead th{padding:10px 7px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-align:center;background:var(--bg2);border-bottom:2px solid var(--border);white-space:nowrap;vertical-align:bottom;}
+thead th:first-child{text-align:left;padding-left:20px;min-width:230px;}
+.th-ai{padding-bottom:9px;}
+.ai-hd{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.ai-hd svg{width:20px;height:20px;flex-shrink:0;}
+.ai-hd .hn{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text);}
+th.th-cl{background:rgba(0,229,255,.05);border-bottom:2px solid var(--accent);}
+th.th-cl .hn{color:var(--accent);}
+tbody tr{border-bottom:1px solid rgba(30,35,64,.7);transition:background .1s;}
+tbody tr:hover{background:rgba(255,255,255,.022);}
+tbody tr.dr{background:rgba(255,61,90,.03);}
+tbody tr.dr:hover{background:rgba(255,61,90,.06);}
+td.mc{padding:12px 20px;text-align:left;}
+.mn{font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.mn .vs{color:var(--muted);font-weight:400;font-size:11px;margin:0 2px;}
+.mn .tname{max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.dtag{display:inline-block;background:var(--accent2);color:#fff;font-size:8px;font-weight:700;letter-spacing:1.5px;padding:2px 6px;border-radius:2px;vertical-align:middle;}
+.team-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0;border-radius:2px;}
+.match-meta{font-size:10px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:4px;}
+.match-time{font-family:'Bebas Neue',cursive;font-size:13px;color:var(--accent3);}
+td.pc{padding:8px 5px;text-align:center;vertical-align:middle;}
+td.pc.pcl{border-left:1px solid rgba(0,229,255,.14);border-right:1px solid rgba(0,229,255,.14);background:rgba(0,229,255,.03);}
+.badge{display:inline-block;padding:5px 10px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.2px;border:1px solid transparent;white-space:nowrap;line-height:1.1;transition:transform .12s;}
+.badge:hover{transform:scale(1.07);}
+.b1{background:rgba(0,200,83,.11);color:#00c853;border-color:rgba(0,200,83,.28);}
+.b1x{background:rgba(0,200,83,.07);color:#69f0ae;border-color:rgba(0,200,83,.18);}
+.bx2{background:rgba(255,61,90,.08);color:#ff8a80;border-color:rgba(255,61,90,.2);}
+.bkg{background:rgba(0,229,255,.09);color:#00e5ff;border-color:rgba(0,229,255,.28);}
+.bu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
+.ba{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
+.bdash{background:rgba(255,255,255,.04);color:var(--muted);border-color:var(--border);letter-spacing:1px;}
+td.pcl .badge{font-size:12px;padding:6px 11px;}
+
+/* ─── SECTION ─── */
+.sec{max-width:1300px;margin:0 auto;padding:0 24px;}
+.sec-gap{margin-top:40px;}
+.sec-title{font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:3px;color:#fff;margin-bottom:14px;}
+.sec-title span{color:var(--accent);}
+
+/* ─── CONSENSUS ─── */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;transition:border-color .2s,transform .2s;}
+.cc:hover{border-color:rgba(0,229,255,.3);transform:translateY(-2px);}
+.cc-m{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px;}
+.cc-p{font-size:16px;font-weight:700;color:#fff;margin-bottom:7px;}
+.cc-bg{height:4px;background:var(--border);border-radius:3px;overflow:hidden;}
+.cc-bar{height:100%;border-radius:3px;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.cc-n{font-size:10px;color:var(--muted);margin-top:4px;}
+
+/* ─── AI CARDS ─── */
+.ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+.ac{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:15px 12px;text-align:center;transition:border-color .2s,transform .2s;}
+.ac:hover{border-color:rgba(0,229,255,.35);transform:translateY(-3px);}
+.ac.act{border-color:var(--accent);background:rgba(0,229,255,.05);}
+.ac svg{width:32px;height:32px;margin:0 auto 8px;display:block;}
+.ac-name{font-weight:700;font-size:13px;margin-bottom:2px;}
+.ac-desc{font-size:10px;color:var(--muted);}
+
+/* ─── STATIC PAGES (About, Privacy, Contact) ─── */
+.static-page{max-width:760px;margin:0 auto;padding:40px 24px 60px;}
+.static-page h2{font-family:'Bebas Neue',cursive;font-size:28px;letter-spacing:3px;color:#fff;margin-bottom:6px;}
+.static-page h2 span{color:var(--accent);}
+.static-page .sp-sub{font-size:12px;color:var(--muted);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.static-page h3{font-size:14px;font-weight:700;color:var(--accent);margin:24px 0 8px;text-transform:uppercase;letter-spacing:.5px;}
+.static-page p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:12px;}
+.static-page a{color:var(--accent);text-decoration:none;}
+.static-page a:hover{text-decoration:underline;}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;}
+.form-row{margin-bottom:16px;}
+.form-row label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.form-row input,.form-row textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s;}
+.form-row input:focus,.form-row textarea:focus{border-color:var(--accent);}
+.form-row textarea{min-height:110px;resize:vertical;}
+.form-btn{background:var(--accent);color:#000;font-size:13px;font-weight:700;padding:10px 28px;border:none;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s;}
+.form-btn:hover{opacity:.85;}
+
+/* ─── ADUNIT ─── */
+.ad-unit{width:100%;min-height:90px;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06);border-radius:6px;overflow:hidden;margin:20px 0;}
+
+/* ─── DISCLAIMER ─── */
+.dis{background:rgba(255,61,90,.04);border:1px solid rgba(255,61,90,.16);border-radius:8px;padding:12px 18px;font-size:11px;color:#ef9a9a;line-height:1.6;display:flex;gap:10px;align-items:flex-start;margin-top:40px;}
+.dis strong{color:var(--accent2);}
+
+/* ─── FOOTER ─── */
+footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;}
+.flogo{font-family:'Bebas Neue',cursive;font-size:17px;letter-spacing:3px;color:var(--accent);}
+.flogo span{color:var(--accent2);}
+.flinks{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.flinks a{font-size:11px;color:var(--muted);text-decoration:none;transition:color .15s;}
+.flinks a:hover{color:var(--accent);}
+.fsmall{font-size:10px;color:#2e3455;margin-top:2px;}
+
+/* ─── MOBILE CARD VIEW ─── */
+.match-card{display:none;background:var(--card);border:1px solid var(--border);border-radius:10px;margin:8px 16px;overflow:hidden;}
+.match-card-header{padding:12px 14px 8px;border-bottom:1px solid var(--border);}
+.match-card-teams{font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.match-card-teams .vs{color:var(--muted);font-weight:400;font-size:11px;}
+.match-card-meta{font-size:10px;color:var(--muted);margin-top:4px;}
+.match-card-preds{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.match-card-pred{display:flex;align-items:center;justify-content:space-between;padding:7px 14px;border-bottom:1px solid rgba(30,35,64,.5);}
+.match-card-pred:nth-child(odd){border-right:1px solid rgba(30,35,64,.5);}
+.match-card-pred:nth-last-child(-n+2){border-bottom:none;}
+.match-card-ai{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+
+/* ─── MOBILE ─── */
+.sb-toggle{display:none;position:fixed;bottom:20px;right:16px;z-index:400;width:44px;height:44px;border-radius:50%;background:var(--accent);border:none;color:#000;font-size:18px;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,229,255,.35);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.content>*{animation:fadeUp .4s ease both;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+@media(max-width:768px){
+  :root{--sidebar-w:0px;}
+  .sidebar{transform:translateX(-220px);}
+  .sidebar.open{transform:translateX(0);width:220px;}
+  .main{margin-left:0;}
+  .sb-toggle{display:flex;}
+  .topnav{padding:0 12px;}
+  .topnav-breadcrumb{display:none;}
+  .week-chip{font-size:10px;padding:4px 8px;}
+  .title-bar,.legend-bar{padding-left:12px;padding-right:12px;}
+  .legend-bar{flex-wrap:wrap;gap:4px;}
+  .sec{padding:0 12px;}
+  .static-page{padding:24px 16px 40px;}
+  .table-wrap{display:none;}
+  .match-card{display:block;}
+  a.match-card{display:block;}
+  .ag{grid-template-columns:repeat(3,1fr);}
+  .cg{grid-template-columns:1fr;}
+}
+
+
+/* ─── SEO LANDING PAGE ADDITIONS ─── */
+.seo-hero{max-width:1180px;margin:0 auto;padding:44px 24px 26px;position:relative;overflow:hidden;}
+.seo-hero::before{content:'';position:absolute;right:24px;top:20px;width:260px;height:260px;background:radial-gradient(circle,rgba(0,229,255,.13),transparent 62%);pointer-events:none;}
+.seo-kicker{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.seo-hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(28px,4.8vw,56px);line-height:1.02;letter-spacing:-1.6px;color:#fff;max-width:880px;margin-bottom:14px;}
+.seo-hero h1 span{color:var(--accent);}
+.seo-lead{font-size:16px;line-height:1.75;color:#aab2d5;max-width:780px;margin-bottom:22px;}
+.seo-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+.seo-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:8px;padding:12px 18px;font-size:13px;font-weight:800;letter-spacing:.2px;transition:transform .15s,border-color .15s,background .15s;}
+.seo-btn.primary{background:var(--accent);color:#001015;}
+.seo-btn.secondary{border:1px solid var(--border);color:var(--text);background:rgba(255,255,255,.03);}
+.seo-btn:hover{transform:translateY(-2px);}
+.seo-grid{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;}
+.seo-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.18);}
+.seo-card h2{font-size:20px;color:#fff;margin-bottom:12px;letter-spacing:-.3px;}
+.seo-card h3{font-size:15px;color:var(--accent);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.5px;}
+.seo-card p,.seo-card li{font-size:13px;color:#aab2d5;line-height:1.8;}
+.seo-card ul{padding-left:20px;margin-top:8px;}
+.seo-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;}
+.seo-stat{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;}
+.seo-stat b{display:block;font-size:24px;color:var(--accent);margin-bottom:4px;}
+.seo-stat span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;}
+.seo-pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.seo-pill{font-size:11px;font-weight:700;color:#c7cdf0;border:1px solid var(--border);background:rgba(255,255,255,.035);border-radius:999px;padding:7px 10px;}
+.seo-table{width:100%;min-width:0;margin-top:12px;border-collapse:separate;border-spacing:0 8px;}
+.seo-table th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;text-align:left;padding:6px;background:transparent;border:0;}
+.seo-table td{font-size:12px;color:#d7dcff;background:rgba(255,255,255,.035);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 8px;}
+.seo-table td:first-child{border-left:1px solid var(--border);border-radius:8px 0 0 8px;font-weight:700;color:#fff;}
+.seo-table td:last-child{border-right:1px solid var(--border);border-radius:0 8px 8px 0;color:var(--accent);font-weight:700;}
+.seo-links{max-width:1180px;margin:18px auto 0;padding:0 24px;}
+.seo-links .seo-card{padding:18px 22px;}
+.breadcrumb-link{color:var(--muted);font-size:12px;text-decoration:none;}
+.breadcrumb-link:hover{color:var(--accent);}
+@media(max-width:900px){.seo-grid{grid-template-columns:1fr}.seo-stats{grid-template-columns:1fr 1fr}.seo-hero{padding-top:30px}.seo-hero h1{letter-spacing:-1px}}
+@media(max-width:520px){.seo-stats{grid-template-columns:1fr}.seo-actions{flex-direction:column}.seo-btn{justify-content:center}.seo-hero,.seo-grid,.seo-links{padding-left:16px;padding-right:16px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Ligue 1 2025/26 AI Predictions &amp; Data-Driven Match Analysis",
+  "url":"https://aigoal.net/ligue-1-ai-prediction",
+  "description":"Ligue 1 2025/26 AI predictions, weekly football match analysis, model consensus and data-driven forecast signals by AIGoal.net.",
+  "isPartOf":{"@type":"WebSite","name":"AIGoal","url":"https://aigoal.net"},
+  "publisher":{"@type":"Organization","name":"AIGoal","url":"https://aigoal.net"}
+}
+</script>
+<!-- Google Analytics -->
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-E821MSQ47G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E821MSQ47G');
+</script>
+</head>
+<body>
+<div class="main" style="margin-left:0;">
+  <nav class="topnav">
+    <div class="topnav-left">
+      <a class="breadcrumb-link" href="/">AIGoal.net</a>
+      <div class="topnav-breadcrumb"><span>France</span> › <span>Ligue 1</span></div>
+      <span class="live-badge">2025/26</span>
+    </div>
+    <div class="topnav-right">
+      <div class="week-chip">AI Football Predictions</div>
+      <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:5px 9px;transition:all .15s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        <span style="font-size:11px;font-weight:600;">@AIGoalnet</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="seo-hero">
+      <div class="seo-kicker">FR · AI Match Forecasts</div>
+      <h1>Ligue 1 2025/26 AI Predictions &amp; Data-Driven Match Analysis</h1>
+      <p class="seo-lead">AIGoal combines outputs from multiple AI models to create weekly football prediction pages for French Ligue 1. This page focuses on data-driven match analysis, consensus signals and easy-to-read prediction summaries for the 2025/26 season.</p>
+      <div class="seo-actions">
+        <a class="seo-btn primary" href="/">← Back to live predictions</a>
+        <a class="seo-btn secondary" href="#methodology">How the AI analysis works</a>
+      </div>
+      <div class="seo-stats">
+        <div class="seo-stat"><b>6</b><span>AI Models</span></div>
+        <div class="seo-stat"><b>2025/26</b><span>Season Page</span></div>
+        <div class="seo-stat"><b>Weekly</b><span>Updates</span></div>
+      </div>
+    </section>
+
+    <section class="seo-grid">
+      <article class="seo-card">
+        <h2>Ligue 1 AI Predictions</h2>
+        <p>Our Ligue 1 prediction hub is built for football fans who want a fast, structured overview before matchday. Instead of relying on one single opinion, AIGoal compares several AI viewpoints and highlights where the models agree or disagree.</p>
+        <h3>What this page analyzes</h3>
+        <ul>
+          <li>Recent form, home and away trends, scoring patterns and defensive stability.</li>
+          <li>Model consensus across ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity style reasoning.</li>
+          <li>Match context such as schedule pressure, motivation, injuries when available, and tactical matchup signals.</li>
+          <li>pace, youth-heavy squads, transition attacks and recent team momentum.</li>
+        </ul>
+        <h3 id="methodology">Methodology</h3>
+        <p>Predictions are presented as informational analysis, not guaranteed outcomes. The goal is to make football data easier to read by turning multiple AI assessments into a compact match preview format.</p>
+      </article>
+
+      <aside class="seo-card">
+        <h2>Prediction Markets Covered</h2>
+        <div class="seo-pillrow">
+          <span class="seo-pill">Home Win</span><span class="seo-pill">Away Win</span><span class="seo-pill">Double Chance</span><span class="seo-pill">BTTS</span><span class="seo-pill">Over 2.5</span><span class="seo-pill">Under 2.5</span>
+        </div>
+        <table class="seo-table">
+          <thead><tr><th>Signal</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Home win lean</td></tr>
+            <tr><td>1X</td><td>Home team avoids defeat</td></tr>
+            <tr><td>X2</td><td>Away team avoids defeat</td></tr>
+            <tr><td>BTTS</td><td>Both teams to score</td></tr>
+            <tr><td>O2.5 / U2.5</td><td>Goal total direction</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </section>
+
+    <section class="seo-links">
+      <div class="seo-card">
+        <h2>More AI Prediction Pages</h2>
+        <div class="flinks" style="justify-content:flex-start;gap:10px 16px;margin-top:10px;">
+          <a href="/super-lig-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Süper Lig AI Prediction</a>
+<a href="/premier-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Premier League AI Prediction</a>
+<a href="/bundesliga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Bundesliga AI Prediction</a>
+<a href="/la-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">La Liga AI Prediction</a>
+<a href="/serie-a-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Serie A AI Prediction</a>
+<a href="/ligue-1-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Ligue 1 AI Prediction</a>
+<a href="/eredivisie-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Eredivisie AI Prediction</a>
+<a href="/primeira-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Primeira Liga AI Prediction</a>
+<a href="/championship-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Championship AI Prediction</a>
+<a href="/mls-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">MLS AI Prediction</a>
+<a href="/brasileirao-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Brasileirão AI Prediction</a>
+<a href="/champions-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Champions League AI Prediction</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seo-links">
+      <div class="dis">
+        <span style="font-size:17px;flex-shrink:0;">⚠️</span>
+        <span><strong>Disclaimer:</strong> AIGoal predictions are generated for informational and entertainment purposes only. They are not betting advice, financial advice or a guarantee of match outcomes.</span>
+      </div>
+    </section>
+
+    <section class="seo-links" style="margin-top:16px;">
+      <div class="ad-unit" style="display:block;min-height:90px;">
+        <ins class="adsbygoogle" style="display:block;width:100%;min-height:90px;"
+             data-ad-client="ca-pub-8363649317786686"
+             data-ad-slot="4343517411"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="flogo">AI<span>GOAL</span></div>
+    <div class="flinks">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="/#privacy">Privacy Policy</a>
+    </div>
+    <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);width:100%;">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2e3455;margin-bottom:8px;">AI Predictions by League</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;">
+        <a href="/super-lig-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Süper Lig AI Prediction</a>
+<a href="/premier-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Premier League AI Prediction</a>
+<a href="/bundesliga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Bundesliga AI Prediction</a>
+<a href="/la-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">La Liga AI Prediction</a>
+<a href="/serie-a-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Serie A AI Prediction</a>
+<a href="/ligue-1-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Ligue 1 AI Prediction</a>
+<a href="/eredivisie-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Eredivisie AI Prediction</a>
+<a href="/primeira-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Primeira Liga AI Prediction</a>
+<a href="/championship-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Championship AI Prediction</a>
+<a href="/mls-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">MLS AI Prediction</a>
+<a href="/brasileirao-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Brasileirão AI Prediction</a>
+<a href="/champions-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Champions League AI Prediction</a>
+      </div>
+    </div>
+    <div class="fsmall" style="margin-top:10px;">aigoal.net · AI Football Predictions · © 2026</div>
+  </footer>
+</div>
+</body>
+</html>
