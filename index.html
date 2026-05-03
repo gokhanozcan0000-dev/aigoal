@@ -300,6 +300,10 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       <span data-tr="Analizler" data-en="Analysis">Analizler</span>
     </a>
+    <a class="sb-item" onclick="showPage('howitworks');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span data-tr="Nasıl Çalışır?" data-en="How it works?">How it works?</span>
+    </a>
 
   </div>
 
@@ -573,7 +577,24 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
           @AIGoalnet
         </a>
-        <div class="fsmall">aigoal.net · AI Football Predictions · © 2026</div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);width:100%;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2e3455;margin-bottom:8px;">AI Predictions by League</div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;">
+            <a href="/super-lig-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Süper Lig AI Prediction</a>
+            <a href="/premier-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Premier League AI Prediction</a>
+            <a href="/bundesliga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Bundesliga AI Prediction</a>
+            <a href="/la-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">La Liga AI Prediction</a>
+            <a href="/serie-a-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Serie A AI Prediction</a>
+            <a href="/ligue-1-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Ligue 1 AI Prediction</a>
+            <a href="/eredivisie-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Eredivisie AI Prediction</a>
+            <a href="/primeira-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Primeira Liga AI Prediction</a>
+            <a href="/championship-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Championship AI Prediction</a>
+            <a href="/mls-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">MLS AI Prediction</a>
+            <a href="/brasileirao-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Brasileirão AI Prediction</a>
+            <a href="/champions-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Champions League AI Prediction</a>
+          </div>
+        </div>
+        <div class="fsmall" style="margin-top:10px;">aigoal.net · AI Football Predictions · © 2026</div>
       </footer>
     </div>
 
@@ -779,6 +800,74 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         </div>
       </div>
 
+    </div>
+
+    <!-- ══ HOW IT WORKS PAGE ══ -->
+    <div class="page" id="page-howitworks">
+      <div class="static-page" style="max-width:860px;">
+        <h1 style="font-family:'Bebas Neue',cursive;font-size:28px;letter-spacing:3px;color:#fff;margin-bottom:6px;">HOW IT <span style="color:var(--accent);">WORKS?</span></h1>
+        <div class="sp-sub">Understanding AI tools, their logic, and how to get the most out of them</div>
+
+        <h2 style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:2px;color:#fff;margin:32px 0 10px;">Article 1: <span style="color:var(--accent);">How Do AI Tools Work?</span></h2>
+        <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:16px;">Technical and Logical Process</p>
+
+        <p>Although Artificial Intelligence (AI) tools may seem like magic wands today, they are actually built upon massive datasets and complex mathematical algorithms. The working principle of an AI tool primarily consists of Machine Learning and Deep Learning layers that mimic the learning process of the human brain.</p>
+
+        <p>The process begins with the <strong style="color:var(--accent);">data collection phase</strong>. For an AI tool (such as a text generator or an image creator) to function properly, it must be trained with billions of data points from across the internet. During this stage, the model grasps the structure of language, the arrangement of pixels, or the logic of coding. Next, <strong style="color:var(--accent);">neural networks</strong> come into play. These networks identify patterns within the data. When you tell an AI tool to "Draw a picture of a cat," it actually combines the common features of millions of cat images in its memory (such as ear structure, whisker placement, etc.) to generate a brand-new output.</p>
+
+        <p>Another crucial stage is <strong style="color:var(--accent);">NLP (Natural Language Processing)</strong> technology. Chatbots or text-based tools do not just understand your sentences word-for-word; they interpret them contextually. The system analyzes your intent and provides the most probable correct answer through mathematical probability calculations. As a result, the tools we offer on aigoal.net operate this complex data architecture in the background, utilizing thousands of processor cores in seconds to provide you with the most refined information. The simple "Submit" button you see on the user interface actually opens the door to massive cloud computing power.</p>
+
+        <div style="background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:8px;padding:16px 20px;margin:20px 0;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">Key Concepts</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;">
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">Machine Learning</div><div style="font-size:10px;color:var(--muted);">Pattern recognition from data</div></div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">Deep Learning</div><div style="font-size:10px;color:var(--muted);">Multi-layered neural networks</div></div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">NLP</div><div style="font-size:10px;color:var(--muted);">Contextual language understanding</div></div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">Cloud Computing</div><div style="font-size:10px;color:var(--muted);">Thousands of cores in seconds</div></div>
+          </div>
+        </div>
+
+        <div style="height:1px;background:var(--border);margin:32px 0;"></div>
+
+        <h2 style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:2px;color:#fff;margin:0 0 10px;">Article 2: <span style="color:var(--accent);">Why Should You Use AI Tools?</span></h2>
+        <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:16px;">Efficiency and the Future</p>
+
+        <p>In this era where digital transformation has reached its peak, using AI tools is no longer a luxury — it has become a necessity. So, why should you incorporate these tools into your daily workflow? The most fundamental reason is <strong style="color:var(--accent);">time management and efficiency</strong>. AI tools can complete data analysis, copywriting, or graphic design tasks in seconds — tasks that would take the human mind hours. This allows you to focus on strategic thinking and creativity instead of getting bogged down by operational chores.</p>
+
+        <p>Secondly, <strong style="color:var(--accent);">cost-effectiveness</strong> is a major advantage. For small businesses or individual entrepreneurs, working with a professional agency can be expensive. However, using the right AI tools allows you to obtain high-quality outputs at much lower costs (or even for free). Platforms like aigoal.net democratize access to these tools, ensuring that everyone can reach the most advanced technology.</p>
+
+        <p>Furthermore, AI tools <strong style="color:var(--accent);">minimize the margin of error</strong>. Especially in areas like data processing, translation, or technical analysis, they prevent human errors caused by fatigue. AI always provides you with an objective, data-driven foundation. Finally, these tools <strong style="color:var(--accent);">trigger your creativity</strong>. Whether it's a draft for a blog post you're struggling to start or AI variations for a logo you're designing, they offer entirely new perspectives. In the world of the future, there will be two groups: "those who use AI" and "those who don't." Becoming friends with this technology is the smartest step to remain competitive.</p>
+
+        <div style="height:1px;background:var(--border);margin:32px 0;"></div>
+
+        <h2 style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:2px;color:#fff;margin:0 0 10px;">Article 3: <span style="color:var(--accent);">What is "Prompt Engineering"?</span></h2>
+        <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:16px;">Bonus Topic: And Why Does It Matter?</p>
+
+        <p>To get the best results from an AI tool, the quality of the commands you give is vital. This is where the concept of <strong style="color:var(--accent);">Prompt Engineering</strong> comes into play. Many users think an AI tool is inadequate when they don't get the desired result. However, the problem is usually not the tool's capacity, but the ambiguity of the instructions provided.</p>
+
+        <p>A good "prompt" starts by assigning a role to the AI. For example, instead of saying "Write me a text," saying "You are a professional digital marketing expert; write a compelling sales copy for a newly released pair of headphones" completely changes the outcome. Prompt engineering narrows down the AI's universe of possibilities, allowing it to focus exactly on your target.</p>
+
+        <div style="background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:8px;padding:16px 20px;margin:20px 0;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;margin-bottom:12px;">Why Is It Important?</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:rgba(0,229,255,.15);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;">Precision</span>
+              <span style="font-size:12px;color:var(--muted);line-height:1.6;">You reach the correct result with less trial and error.</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:rgba(0,229,255,.15);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;">Context</span>
+              <span style="font-size:12px;color:var(--muted);line-height:1.6;">Every detail you provide (target audience, tone, length) improves the quality of the output.</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:rgba(0,229,255,.15);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;">Differentiation</span>
+              <span style="font-size:12px;color:var(--muted);line-height:1.6;">It allows you to produce unique and in-depth content instead of the standard responses everyone else receives.</span>
+            </div>
+          </div>
+        </div>
+
+        <p>When using tools on aigoal.net, you should treat them not just as robots, but as highly intelligent assistants that need guidance. When you learn to give the right commands, you can reach 100% of the tool's potential. This also puts you one step ahead of your competitors in the digital world.</p>
+
+      </div>
     </div>
 
     <!-- ══ ABOUT PAGE ══ -->
