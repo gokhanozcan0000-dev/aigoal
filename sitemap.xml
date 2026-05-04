@@ -9,7 +9,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Lig SEO sayfaları -->
+  <!-- Lig SEO sayfalari -->
   <url>
     <loc>https://aigoal.net/super-lig-ai-prediction</loc>
     <lastmod>2026-05-05</lastmod>
@@ -83,9 +83,45 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Maç sayfaları (56 adet) -->
+  <!-- Mac sayfalari (141 adet) -->
+  <url>
+    <loc>https://aigoal.net/1-fc-koln-vs-1-fc-heidenheim-1846</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/1-fsv-mainz-05-vs-1-fc-union-berlin</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://aigoal.net/abd-vs-paraguay</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ac-milan-vs-atalanta-bc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/acf-fiorentina-vs-genoa-cfc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/afc-ajax-vs-fc-utrecht</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/aj-auxerre-vs-ogc-nice</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -109,13 +145,43 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/angers-sco-vs-rc-strasbourg-alsace</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/arjantin-vs-cezayir</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/as-monaco-fc-vs-lille-osc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/aston-villa-vs-nottingham-forest</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/athletic-club-vs-valencia-cf</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/atlanta-united-vs-los-angeles-galaxy</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/avs-vs-fc-porto</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -145,13 +211,73 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/besiktas-vs-konyaspor-kupa</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/besiktas-vs-trabzonspor</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/borussia-dortmund-vs-eintracht-frankfurt</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/brezilya-vs-fas</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/brighton-and-hove-albion-fc-vs-wolverhampton-wanderers-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/burnley-fc-vs-aston-villa-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ca-mineiro-vs-botafogo-fr</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ca-osasuna-vs-club-atletico-de-madrid</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/cagliari-calcio-vs-udinese-calcio</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/cd-santa-clara-vs-cd-nacional</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/cd-tondela-vs-moreirense-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/cf-estrela-da-amadora-vs-fc-famalicao</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -175,13 +301,55 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/club-atletico-de-madrid-vs-rc-celta-de-vigo</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/clube-do-remo-vs-se-palmeiras</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/colorado-rapids-vs-st-louis-city</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/coritiba-fbc-vs-sc-internacional</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/cr-vasco-da-gama-vs-ca-paranaense</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/crystal-palace-fc-vs-everton-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/dinamo-moscow-vs-krasnodar</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ec-bahia-vs-cruzeiro-ec</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/elche-cf-vs-deportivo-alaves</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -199,7 +367,55 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/fc-alverca-vs-gd-estoril-praia</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fc-augsburg-vs-borussia-monchengladbach</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fc-barcelona-vs-real-madrid-cf</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/fc-dallas-vs-real-salt-lake</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fc-groningen-vs-nec</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fc-internazionale-milano-vs-fc-barcelona</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fc-metz-vs-fc-lorient</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fc-twente-65-vs-sparta-rotterdam</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/feyenoord-rotterdam-vs-az</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -217,7 +433,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/fluminense-fc-vs-ec-vitoria</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fortuna-sittard-vs-pec-zwolle</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/fransa-vs-senegal</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/fulham-fc-vs-afc-bournemouth</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -241,7 +475,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/genclerbirligi-vs-trabzonspor-kupa</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/gil-vicente-fc-vs-fc-arouca</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/go-ahead-eagles-vs-psv</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/goztepe-vs-gaziantep-fk</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/gremio-fbpa-vs-cr-flamengo</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -254,6 +512,18 @@
   </url>
   <url>
     <loc>https://aigoal.net/haiti-vs-iskocya</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/hamburger-sv-vs-sc-freiburg</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/hellas-verona-fc-vs-como-1907</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -319,6 +589,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/le-havre-ac-vs-olympique-de-marseille</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/levante-ud-vs-ca-osasuna</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/liverpool-fc-vs-chelsea-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/lokomotiv-moscow-vs-baltika-kaliningrad</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,6 +619,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/manchester-city-fc-vs-brentford-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/meksika-vs-guney-afrika</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -338,6 +632,18 @@
   </url>
   <url>
     <loc>https://aigoal.net/minnesota-united-vs-austin</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/mirassol-fc-vs-chapecoense-af</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/nac-breda-vs-sc-heerenveen</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -361,6 +667,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/nottingham-forest-fc-vs-newcastle-united-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/ozbekistan-vs-kolombiya</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -368,6 +680,24 @@
   </url>
   <url>
     <loc>https://aigoal.net/pari-nizhny-novgorod-vs-cska-moskova</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/paris-saint-germain-fc-vs-arsenal-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/paris-saint-germain-fc-vs-stade-brestois-29</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/parma-calcio-1913-vs-as-roma</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -385,7 +715,85 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/racing-club-de-lens-vs-fc-nantes</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/rayo-vallecano-de-madrid-vs-girona-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/rb-leipzig-vs-fc-st-pauli-1910</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/rc-celta-de-vigo-vs-levante-ud</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/rcd-mallorca-vs-villarreal-cf</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/real-betis-balompie-vs-elche-cf</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/real-oviedo-vs-getafe-cf</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/real-sociedad-de-futbol-vs-real-betis-balompie</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/rio-ave-fc-vs-sporting-clube-de-portugal</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/san-jose-earthquakes-vs-vancouver-whitecaps</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/santos-fc-vs-rb-bragantino</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/sbv-excelsior-vs-fc-volendam</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/sc-corinthians-paulista-vs-sao-paulo-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/sc-freiburg-vs-sporting-braga</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -397,7 +805,43 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/sevilla-fc-vs-rcd-espanyol-de-barcelona</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/spartak-moskova-vs-rubin-kazan</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/sport-lisboa-e-benfica-vs-sporting-clube-de-braga</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ss-lazio-vs-fc-internazionale-milano</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ssc-napoli-vs-bologna-fc-1909</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/stade-rennais-fc-1901-vs-paris-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/sunderland-afc-vs-manchester-united-fc</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -409,7 +853,73 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/telstar-1963-vs-heracles-almelo</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/torino-fc-vs-us-sassuolo-calcio</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/toronto-fc-vs-inter-miami</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/tottenham-hotspur-fc-vs-leeds-united-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/toulouse-fc-vs-olympique-lyonnais</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/tsg-1899-hoffenheim-vs-sv-werder-bremen</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/us-cremonese-vs-ac-pisa-1909</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/us-lecce-vs-juventus-fc</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/vfb-stuttgart-vs-bayer-04-leverkusen</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/vfl-wolfsburg-vs-fc-bayern-munchen</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/vitoria-sc-vs-casa-pia-ac</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/west-ham-united-fc-vs-arsenal-fc</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
