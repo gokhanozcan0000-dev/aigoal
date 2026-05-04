@@ -1358,7 +1358,7 @@ const teamCrests = {
   'Aston Villa':                     '/crests/aston-villa.png',
 };
 function getCrest(home, away, field, provided){
-  // Her zaman yerel crests/ klasörüne bak, harici URL kullanma
+  if(provided) return provided;
   return field==='hc' ? (teamCrests[home]||'') : (teamCrests[away]||'');
 }
 function crestImg(src, alt, cls){
