@@ -22,7 +22,6 @@ LEAGUE_IDS = {
     "ligue1": 2015,           # Ligue 1
     "eredivisie": 2003,       # Eredivisie
     "primeiraliga": 2017,     # Primeira Liga
-    "mls": 2017,              # MLS (alternative code: use 2033 if needed)
     "brasileirao": 2013,      # Brasileirão
     "championsleague": 2001,  # UEFA Champions League
 }
