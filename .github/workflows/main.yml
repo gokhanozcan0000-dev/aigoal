@@ -1,22 +1,31 @@
 name: Cleanup Match Pages
- 
+
 on:
-  workflow_dispatch:  # Manuel tetikleme — GitHub Actions sekmesinden "Run workflow" butonu
- 
+  workflow_dispatch:
+
 jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
- 
-      - name: Delete all -vs- HTML files
+
+      - name: Delete weekly match HTML files (keep World Cup pages)
         run: |
-          COUNT=$(ls *-vs-*.html 2>/dev/null | wc -l)
-          echo "Silinecek dosya sayısı: $COUNT"
-          ls *-vs-*.html 2>/dev/null || echo "Hiç dosya bulunamadı"
-          rm -f *-vs-*.html
-          echo "✓ Silme tamamlandı"
- 
+          COUNT=0
+          KEPT=0
+          for f in *-vs-*.html; do
+            [ -f "$f" ] || continue
+            if grep -q "2026 FIFA World Cup" "$f" 2>/dev/null; then
+              echo "Keeping WC page: $f"
+              KEPT=$((KEPT + 1))
+              continue
+            fi
+            rm "$f"
+            COUNT=$((COUNT + 1))
+          done
+          echo "Deleted: $COUNT files"
+          echo "Kept (World Cup): $KEPT files"
+
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
@@ -24,4 +33,3 @@ jobs:
           git add -A
           git diff --staged --quiet || git commit -m "chore: remove old match pages"
           git push
- 
