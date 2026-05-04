@@ -1073,33 +1073,33 @@ let matches = matchDefs;
 const ais=['chatgpt','gemini','grok','copilot','claude','perplexity'];
 
 
-// ── Team crest mapping — source: TheSportsDB strBadge ──
+// ── Team crest mapping — local /crests/ folder (TheSportsDB source) ──
+// Files to place in your GitHub repo under /crests/:
+//   fenerbahce.png   → https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png
+//   galatasaray.png  → https://r2.thesportsdb.com/images/media/team/badge/io7jk21767941298.png
+//   besiktas.png     → https://www.thesportsdb.com/images/media/team/badge/svo05k1776827439.png
+//   goztepe.png      → https://r2.thesportsdb.com/images/media/team/badge/9jwk7o1513952059.png
+//   gaziantep.png    → https://r2.thesportsdb.com/images/media/team/badge/54j6ik1579458093.png
+//   alanyaspor.png   → https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png
+//   antalyaspor.png  → https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png
+//   eyupspor.png     → https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png
+//   karagumruk.png   → https://r2.thesportsdb.com/images/media/team/badge/bfb84y1580847945.png
+//   genclerbirligi.png → https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png
 const teamCrests = {
-  // Süper Lig — from TheSportsDB API
-  'Corendon Alanyaspor':          'https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png',
-  'Alanyaspor':                   'https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png',
-  'Hesap.com Antalyaspor':        'https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png',
-  'Antalyaspor':                  'https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png',
-  'Beşiktaş':                     'https://www.thesportsdb.com/images/media/team/badge/svo05k1776827439.png',
-  'İkas Eyüpspor':                'https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png',
-  'Eyüpspor':                     'https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png',
-  'Fatih Karagümrük':             'https://r2.thesportsdb.com/images/media/team/badge/bfb84y1580847945.png',
-  'Fenerbahçe':                   'https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png',
-  'Galatasaray':                  'https://r2.thesportsdb.com/images/media/team/badge/io7jk21767941298.png',
-  'Gaziantep FK':                 'https://r2.thesportsdb.com/images/media/team/badge/54j6ik1579458093.png',
-  'Nat. Dünyası Gençlerbirliği':  'https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png',
-  'Gençlerbirliği':               'https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png',
-  'Göztepe':                      'https://r2.thesportsdb.com/images/media/team/badge/9jwk7o1513952059.png',
-  // Remaining Turkish teams — football-data.org (verified IDs)
-  'RAMS Başakşehir':              'https://crests.football-data.org/678.png',
-  'Kasımpaşa':                    'https://crests.football-data.org/9699.png',
-  'Zecorner Kayserispor':         'https://crests.football-data.org/1877.png',
-  'Kocaelispor':                  'https://crests.football-data.org/1044.png',
-  'Tümosan Konyaspor':            'https://crests.football-data.org/4483.png',
-  'Çaykur Rizespor':              'https://crests.football-data.org/10267.png',
-  'Samsunspor':                   'https://crests.football-data.org/792.png',
-  'Trabzonspor':                  'https://crests.football-data.org/675.png',
-  'Sivasspor':                    'https://crests.football-data.org/677.png',
+  'Fenerbahçe':                  '/crests/fenerbahce.png',
+  'Galatasaray':                 '/crests/galatasaray.png',
+  'Beşiktaş':                    '/crests/besiktas.png',
+  'Göztepe':                     '/crests/goztepe.png',
+  'Gaziantep FK':                '/crests/gaziantep.png',
+  'Corendon Alanyaspor':         '/crests/alanyaspor.png',
+  'Alanyaspor':                  '/crests/alanyaspor.png',
+  'Hesap.com Antalyaspor':       '/crests/antalyaspor.png',
+  'Antalyaspor':                 '/crests/antalyaspor.png',
+  'İkas Eyüpspor':               '/crests/eyupspor.png',
+  'Eyüpspor':                    '/crests/eyupspor.png',
+  'Fatih Karagümrük':            '/crests/karagumruk.png',
+  'Nat. Dünyası Gençlerbirliği': '/crests/genclerbirligi.png',
+  'Gençlerbirliği':              '/crests/genclerbirligi.png',
 };
 function getCrest(home, away, field, provided){
   if(provided) return provided;
