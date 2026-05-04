@@ -11,11 +11,7 @@ FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_KEY")
 
 # League IDs and their corresponding variable names in index.html
 LEAGUE_IDS = {
-    "superlig": 322,          # Trendyol Süper Lig
-    "lig1": 323,              # Trendyol 1. Lig
-    "kupasi": 304,            # Ziraat Kupası
-    "pl": 2021,               # Premier League
-    "championship": 2016,     # EFL Championship
+    "pl": 2021,               # Premier League    "championship": 2016,     # EFL Championship
     "bundesliga": 2002,       # Bundesliga
     "seriea": 2019,           # Serie A
     "laliga": 2014,           # La Liga
