@@ -17,6 +17,7 @@ LEAGUE_IDS = {
     "laliga": 2014,
     "ligue1": 2015,
     "eredivisie": 2003,
+    "primeiraliga": 2017,
     "worldcup": 2000,
     "championsleague": 2001,
     "brasileirao": 2013,
