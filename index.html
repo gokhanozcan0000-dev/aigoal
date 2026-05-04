@@ -134,6 +134,11 @@ td.mc{padding:12px 20px;text-align:left;}
 .mn .tname{max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .dtag{display:inline-block;background:var(--accent2);color:#fff;font-size:8px;font-weight:700;letter-spacing:1.5px;padding:2px 6px;border-radius:2px;vertical-align:middle;}
 .team-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0;border-radius:2px;}
+.tcrest{width:20px;height:20px;object-fit:contain;flex-shrink:0;opacity:.85;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35));vertical-align:middle;}
+.mn-crests{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.mn-crests .vs{color:var(--muted);font-weight:400;font-size:11px;margin:0 2px;}
+.mn-crests .team-w{display:flex;align-items:center;gap:4px;}
+.card-crest{width:18px;height:18px;object-fit:contain;flex-shrink:0;opacity:.85;vertical-align:middle;}
 .match-meta{font-size:10px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:4px;}
 .match-time{font-family:'Bebas Neue',cursive;font-size:13px;color:var(--accent3);}
 td.pc{padding:8px 5px;text-align:center;vertical-align:middle;}
@@ -1068,6 +1073,43 @@ let matches = matchDefs;
 const ais=['chatgpt','gemini','grok','copilot','claude','perplexity'];
 
 
+// ── Team crest mapping — source: TheSportsDB strBadge ──
+const teamCrests = {
+  // Süper Lig — from TheSportsDB API
+  'Corendon Alanyaspor':          'https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png',
+  'Alanyaspor':                   'https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png',
+  'Hesap.com Antalyaspor':        'https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png',
+  'Antalyaspor':                  'https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png',
+  'Beşiktaş':                     'https://www.thesportsdb.com/images/media/team/badge/svo05k1776827439.png',
+  'İkas Eyüpspor':                'https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png',
+  'Eyüpspor':                     'https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png',
+  'Fatih Karagümrük':             'https://r2.thesportsdb.com/images/media/team/badge/bfb84y1580847945.png',
+  'Fenerbahçe':                   'https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png',
+  'Galatasaray':                  'https://r2.thesportsdb.com/images/media/team/badge/io7jk21767941298.png',
+  'Gaziantep FK':                 'https://r2.thesportsdb.com/images/media/team/badge/54j6ik1579458093.png',
+  'Nat. Dünyası Gençlerbirliği':  'https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png',
+  'Gençlerbirliği':               'https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png',
+  'Göztepe':                      'https://r2.thesportsdb.com/images/media/team/badge/9jwk7o1513952059.png',
+  // Remaining Turkish teams — football-data.org (verified IDs)
+  'RAMS Başakşehir':              'https://crests.football-data.org/678.png',
+  'Kasımpaşa':                    'https://crests.football-data.org/9699.png',
+  'Zecorner Kayserispor':         'https://crests.football-data.org/1877.png',
+  'Kocaelispor':                  'https://crests.football-data.org/1044.png',
+  'Tümosan Konyaspor':            'https://crests.football-data.org/4483.png',
+  'Çaykur Rizespor':              'https://crests.football-data.org/10267.png',
+  'Samsunspor':                   'https://crests.football-data.org/792.png',
+  'Trabzonspor':                  'https://crests.football-data.org/675.png',
+  'Sivasspor':                    'https://crests.football-data.org/677.png',
+};
+function getCrest(home, away, field, provided){
+  if(provided) return provided;
+  return field==='hc' ? (teamCrests[home]||'') : (teamCrests[away]||'');
+}
+function crestImg(src, alt, cls){
+  if(!src) return '';
+  return `<img src="${src}" alt="${alt}" class="${cls}" onerror="this.style.display='none'" loading="lazy">`;
+}
+
 function renderTable(){
   const derbiLabel = currentLang==='tr' ? 'DERBİ' : 'DERBY';
   const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity'};
@@ -1081,9 +1123,14 @@ function renderTable(){
     }).join('');
     const dt=m.derbi?`<span class="dtag">${derbiLabel}</span>`:'';
     const dateStr = m.date[currentLang] || m.date.en || m.date.tr;
+    const hcUrl = getCrest(m.home, m.away, 'hc', m.hc);
+    const acUrl = getCrest(m.home, m.away, 'ac', m.ac);
+    const hImg = crestImg(hcUrl, m.home, 'tcrest');
+    const aImg = crestImg(acUrl, m.away, 'tcrest');
+    const teamsHtml = `<span class="mn-crests"><span class="team-w">${hImg}<span class="tname" style="max-width:none;white-space:normal;">${m.home}</span></span><span class="vs">vs</span><span class="team-w">${aImg}<span class="tname" style="max-width:none;white-space:normal;">${m.away}</span></span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}</span>`;
     const matchName = m.url
-      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:7px;flex-wrap:wrap;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'"><span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}</a>`
-      : `<span class="tname" style="max-width:none;white-space:normal;">${m.home}</span><span class="vs">vs</span><span class="tname" style="max-width:none;white-space:normal;">${m.away}</span>${dt}`;
+      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">${teamsHtml}</a>`
+      : teamsHtml;
     return `<tr class="${m.derbi?'dr':''}">
       <td class="mc">
         <div class="mn">${matchName}</div>
@@ -1097,6 +1144,10 @@ function renderTable(){
     container.innerHTML = matches.map(m=>{
       const dt = m.derbi ? `<span class="dtag">${derbiLabel}</span>` : '';
       const dateStr = m.date[currentLang] || m.date.en || m.date.tr;
+      const hcU = getCrest(m.home, m.away, 'hc', m.hc);
+      const acU = getCrest(m.home, m.away, 'ac', m.ac);
+      const hCI = crestImg(hcU, m.home, 'card-crest');
+      const aCI = crestImg(acU, m.away, 'card-crest');
       const preds = ais.map(ai=>{
         const p = m.p[ai];
         const lbl = p[currentLang] || p.en || p.tr;
@@ -1108,7 +1159,7 @@ function renderTable(){
       const cardContent = `
         <div class="match-card-header">
           <div class="match-card-teams">
-            <span>${m.home}</span><span class="vs">vs</span><span>${m.away}</span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}
+            <span style="display:flex;align-items:center;gap:4px;">${hCI}<span>${m.home}</span></span><span class="vs">vs</span><span style="display:flex;align-items:center;gap:4px;">${aCI}<span>${m.away}</span></span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}
           </div>
           <div class="match-card-meta">${dateStr}${m.time ? ' · <span style="color:#ffe600;font-family:Bebas Neue,cursive;font-size:13px;">'+m.time+'</span>' : ''}</div>
         </div>
