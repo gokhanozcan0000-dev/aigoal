@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="tr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası</title>
+<meta name="description" content="ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity weekly football predictions for leagues worldwide. Free AI football analysis.">
+<meta property="og:title" content="AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası">
+<meta property="og:description" content="6 AI models analyze football matches every week. Free predictions for Super Lig, Premier League and more.">
+<meta property="og:url" content="https://aigoal.net">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aigoal.net">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+<script async defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8363649317786686" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#0a0c14;--bg2:#0f1220;--card:#13172a;--border:#1e2340;
+  --accent:#00e5ff;--accent2:#ff3d5a;--accent3:#ffe600;--accent4:#7c4dff;
+  --text:#e8eaf6;--muted:#5a6280;
+  --sidebar-w:220px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;overflow-x:hidden;}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+
+
+/* ─── SIDEBAR ─── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:300;overflow-y:auto;transition:transform .25s;}
+.sidebar .sb-section:last-child{margin-top:auto;}
+.sidebar::-webkit-scrollbar{width:3px;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);}
+.sb-logo{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:flex-start;text-decoration:none;cursor:pointer;flex-shrink:0;}
+.sb-section{padding:10px 0 4px;flex-shrink:0;}
+.sb-section-label{font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);padding:0 16px 6px;}
+.sb-item{display:flex;align-items:center;gap:10px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;cursor:pointer;transition:background .15s,color .15s;border-left:2px solid transparent;white-space:nowrap;overflow:hidden;}
+.sb-item:hover{background:rgba(0,229,255,.06);color:var(--text);}
+.sb-item.active{background:rgba(0,229,255,.1);color:var(--accent);border-left-color:var(--accent);}
+.sb-item .sb-flag{width:14px;height:10px;object-fit:cover;border-radius:2px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.55),0 0 0 .5px rgba(255,255,255,.08);opacity:.85;filter:saturate(.85);transition:opacity .15s,filter .15s;}
+.sb-item:hover .sb-flag,.sb-item.active .sb-flag{opacity:1;filter:saturate(1.1);}
+.sb-group-toggle .sb-flag{width:14px;height:10px;object-fit:cover;border-radius:2px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.55),0 0 0 .5px rgba(255,255,255,.08);opacity:.7;filter:saturate(.8);}
+.sb-group-toggle:hover .sb-flag{opacity:.95;filter:saturate(1);}
+.sb-item .sb-icon{width:18px;height:18px;flex-shrink:0;opacity:.7;}
+.sb-item.active .sb-icon{opacity:1;}
+.sb-divider{height:1px;background:var(--border);margin:8px 16px;}
+.sb-badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;background:rgba(0,229,255,.15);color:var(--accent);flex-shrink:0;}
+.sb-badge.new{background:rgba(255,61,90,.15);color:var(--accent2);}
+.sb-group-toggle{display:flex;align-items:center;gap:10px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:color .15s;user-select:none;}
+.sb-group-toggle:hover{color:var(--text);}
+.sb-group-toggle .arrow{margin-left:auto;font-size:10px;transition:transform .2s;flex-shrink:0;}
+.sb-group-toggle.open .arrow{transform:rotate(90deg);}
+.sb-group-content{display:none;padding-left:8px;}
+.sb-group-content.open{display:block;}
+
+/* ─── MAIN ─── */
+.main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;position:relative;z-index:1;min-width:0;}
+
+/* ─── TOP NAV ─── */
+.topnav{position:sticky;top:0;z-index:200;height:52px;background:rgba(10,12,20,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;gap:12px;}
+.topnav-left{display:flex;align-items:center;gap:12px;}
+.topnav-breadcrumb{font-size:12px;color:var(--muted);}
+.topnav-breadcrumb span{color:var(--text);font-weight:600;}
+.live-badge{background:var(--accent2);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;animation:blink 2s infinite;white-space:nowrap;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.5;}}
+.topnav-right{display:flex;align-items:center;gap:10px;}
+.week-chip{display:flex;align-items:center;gap:6px;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.2);border-radius:4px;padding:5px 11px;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.3px;white-space:nowrap;}
+.week-chip::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:blink 1.6s infinite;flex-shrink:0;}
+
+/* ─── LANG SWITCHER ─── */
+.lang-switcher{display:flex;gap:4px;align-items:center;}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:pointer;letter-spacing:.5px;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent);}
+.lang-btn.active{background:rgba(0,229,255,.12);border-color:var(--accent);color:var(--accent);}
+
+/* ─── CONTENT ─── */
+.content{padding:0 0 60px;}
+
+/* ─── PAGE VIEWS ─── */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ─── TITLE BAR ─── */
+.title-bar{background:linear-gradient(135deg,#0c1030 0%,#141930 100%);border-bottom:1px solid var(--border);padding:16px 24px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.title-bar h1{font-family:'DM Sans',sans-serif;font-size:clamp(14px,2.2vw,22px);font-weight:700;letter-spacing:.5px;color:#fff;line-height:1.1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.title-bar h1 .cy{color:var(--accent);}
+.title-bar h1 .cr{color:var(--accent2);}
+.league-country-tag{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:3px;padding:2px 6px;white-space:nowrap;flex-shrink:0;}
+.title-sub{font-size:11px;color:var(--muted);margin-top:4px;}
+.league-logo-header{height:34px;background:#fff;border-radius:6px;padding:3px 7px;object-fit:contain;display:inline-block;vertical-align:middle;}
+
+/* ─── LEGEND ─── */
+.legend-bar{padding:8px 24px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.leg{display:inline-flex;align-items:center;padding:3px 9px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:.3px;border:1px solid transparent;}
+.l1{background:rgba(0,200,83,.1);color:#00c853;border-color:rgba(0,200,83,.25);}
+.l1x{background:rgba(0,200,83,.06);color:#69f0ae;border-color:rgba(0,200,83,.18);}
+.lx2{background:rgba(255,61,90,.07);color:#ff8a80;border-color:rgba(255,61,90,.18);}
+.lkg{background:rgba(0,229,255,.08);color:#00e5ff;border-color:rgba(0,229,255,.25);}
+.lu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
+.la{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
+.leg-lbl{font-size:11px;color:var(--muted);font-weight:500;}
+
+/* ─── TABLE ─── */
+.table-wrap{overflow-x:auto;padding-bottom:6px;}
+.table-wrap::-webkit-scrollbar{height:4px;}
+.table-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+table{width:100%;border-collapse:collapse;min-width:660px;}
+thead th{padding:10px 7px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-align:center;background:var(--bg2);border-bottom:2px solid var(--border);white-space:nowrap;vertical-align:bottom;}
+thead th:first-child{text-align:left;padding-left:20px;min-width:230px;}
+.th-ai{padding-bottom:9px;}
+.ai-hd{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.ai-hd svg{width:20px;height:20px;flex-shrink:0;}
+.ai-hd .hn{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text);}
+th.th-cl{background:rgba(0,229,255,.05);border-bottom:2px solid var(--accent);}
+th.th-cl .hn{color:var(--accent);}
+tbody tr{border-bottom:1px solid rgba(30,35,64,.7);transition:background .1s;}
+tbody tr:hover{background:rgba(255,255,255,.022);}
+tbody tr.dr{background:rgba(255,61,90,.03);}
+tbody tr.dr:hover{background:rgba(255,61,90,.06);}
+td.mc{padding:12px 20px;text-align:left;}
+.mn{font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.mn .vs{color:var(--muted);font-weight:400;font-size:11px;margin:0 2px;}
+.mn .tname{max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.dtag{display:inline-block;background:var(--accent2);color:#fff;font-size:8px;font-weight:700;letter-spacing:1.5px;padding:2px 6px;border-radius:2px;vertical-align:middle;}
+.team-logo{width:22px;height:22px;object-fit:contain;flex-shrink:0;border-radius:2px;}
+.tcrest{width:20px;height:20px;object-fit:contain;flex-shrink:0;opacity:.85;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35));vertical-align:middle;}
+.mn-crests{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.mn-crests .vs{color:var(--muted);font-weight:400;font-size:11px;margin:0 2px;}
+.mn-crests .team-w{display:flex;align-items:center;gap:4px;}
+.card-crest{width:18px;height:18px;object-fit:contain;flex-shrink:0;opacity:.85;vertical-align:middle;}
+.match-meta{font-size:10px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:4px;}
+.match-time{font-family:'Bebas Neue',cursive;font-size:13px;color:var(--accent3);}
+td.pc{padding:8px 5px;text-align:center;vertical-align:middle;}
+td.pc.pcl{border-left:1px solid rgba(0,229,255,.14);border-right:1px solid rgba(0,229,255,.14);background:rgba(0,229,255,.03);}
+.badge{display:inline-block;padding:5px 10px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.2px;border:1px solid transparent;white-space:nowrap;line-height:1.1;transition:transform .12s;}
+.badge:hover{transform:scale(1.07);}
+.b1{background:rgba(0,200,83,.11);color:#00c853;border-color:rgba(0,200,83,.28);}
+.b1x{background:rgba(0,200,83,.07);color:#69f0ae;border-color:rgba(0,200,83,.18);}
+.bx2{background:rgba(255,61,90,.08);color:#ff8a80;border-color:rgba(255,61,90,.2);}
+.bkg{background:rgba(0,229,255,.09);color:#00e5ff;border-color:rgba(0,229,255,.28);}
+.bu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
+.ba{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
+.bdash{background:rgba(255,255,255,.04);color:var(--muted);border-color:var(--border);letter-spacing:1px;}
+td.pcl .badge{font-size:12px;padding:6px 11px;}
+
+/* ─── SECTION ─── */
+.sec{max-width:1300px;margin:0 auto;padding:0 24px;}
+.sec-gap{margin-top:40px;}
+.sec-title{font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:3px;color:#fff;margin-bottom:14px;}
+.sec-title span{color:var(--accent);}
+
+/* ─── CONSENSUS ─── */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;transition:border-color .2s,transform .2s;}
+.cc:hover{border-color:rgba(0,229,255,.3);transform:translateY(-2px);}
+.cc-m{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px;}
+.cc-p{font-size:16px;font-weight:700;color:#fff;margin-bottom:7px;}
+.cc-bg{height:4px;background:var(--border);border-radius:3px;overflow:hidden;}
+.cc-bar{height:100%;border-radius:3px;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.cc-n{font-size:10px;color:var(--muted);margin-top:4px;}
+
+/* ─── AI CARDS ─── */
+.ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+.ac{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:15px 12px;text-align:center;transition:border-color .2s,transform .2s;}
+.ac:hover{border-color:rgba(0,229,255,.35);transform:translateY(-3px);}
+.ac.act{border-color:var(--accent);background:rgba(0,229,255,.05);}
+.ac svg{width:32px;height:32px;margin:0 auto 8px;display:block;}
+.ac-name{font-weight:700;font-size:13px;margin-bottom:2px;}
+.ac-desc{font-size:10px;color:var(--muted);}
+
+/* ─── STATIC PAGES (About, Privacy, Contact) ─── */
+.static-page{max-width:760px;margin:0 auto;padding:40px 24px 60px;}
+.static-page h2{font-family:'Bebas Neue',cursive;font-size:28px;letter-spacing:3px;color:#fff;margin-bottom:6px;}
+.static-page h2 span{color:var(--accent);}
+.static-page .sp-sub{font-size:12px;color:var(--muted);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.static-page h3{font-size:14px;font-weight:700;color:var(--accent);margin:24px 0 8px;text-transform:uppercase;letter-spacing:.5px;}
+.static-page p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:12px;}
+.static-page a{color:var(--accent);text-decoration:none;}
+.static-page a:hover{text-decoration:underline;}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;}
+.form-row{margin-bottom:16px;}
+.form-row label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.form-row input,.form-row textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s;}
+.form-row input:focus,.form-row textarea:focus{border-color:var(--accent);}
+.form-row textarea{min-height:110px;resize:vertical;}
+.form-btn{background:var(--accent);color:#000;font-size:13px;font-weight:700;padding:10px 28px;border:none;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s;}
+.form-btn:hover{opacity:.85;}
+
+/* ─── ADUNIT ─── */
+.ad-unit{width:100%;min-height:90px;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06);border-radius:6px;overflow:hidden;margin:20px 0;}
+
+/* ─── DISCLAIMER ─── */
+.dis{background:rgba(255,61,90,.04);border:1px solid rgba(255,61,90,.16);border-radius:8px;padding:12px 18px;font-size:11px;color:#ef9a9a;line-height:1.6;display:flex;gap:10px;align-items:flex-start;margin-top:40px;}
+.dis strong{color:var(--accent2);}
+
+/* ─── FOOTER ─── */
+footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;}
+.flogo{font-family:'Bebas Neue',cursive;font-size:17px;letter-spacing:3px;color:var(--accent);}
+.flogo span{color:var(--accent2);}
+.flinks{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.flinks a{font-size:11px;color:var(--muted);text-decoration:none;transition:color .15s;}
+.flinks a:hover{color:var(--accent);}
+.fsmall{font-size:10px;color:#2e3455;margin-top:2px;}
+
+/* ─── MOBILE CARD VIEW ─── */
+.match-card{display:none;background:var(--card);border:1px solid var(--border);border-radius:10px;margin:8px 16px;overflow:hidden;}
+.match-card-header{padding:12px 14px 8px;border-bottom:1px solid var(--border);}
+.match-card-teams{font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.match-card-teams .vs{color:var(--muted);font-weight:400;font-size:11px;}
+.match-card-meta{font-size:10px;color:var(--muted);margin-top:4px;}
+.match-card-preds{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.match-card-pred{display:flex;align-items:center;justify-content:space-between;padding:7px 14px;border-bottom:1px solid rgba(30,35,64,.5);}
+.match-card-pred:nth-child(odd){border-right:1px solid rgba(30,35,64,.5);}
+.match-card-pred:nth-last-child(-n+2){border-bottom:none;}
+.match-card-ai{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+
+/* ─── MOBILE ─── */
+.sb-toggle{display:none;position:fixed;bottom:20px;right:16px;z-index:400;width:44px;height:44px;border-radius:50%;background:var(--accent);border:none;color:#000;font-size:18px;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,229,255,.35);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.content>*{animation:fadeUp .4s ease both;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+@media(max-width:768px){
+  :root{--sidebar-w:0px;}
+  .sidebar{transform:translateX(-220px);}
+  .sidebar.open{transform:translateX(0);width:220px;}
+  .main{margin-left:0;}
+  .sb-toggle{display:flex;}
+  .topnav{padding:0 12px;}
+  .topnav-breadcrumb{display:none;}
+  .week-chip{font-size:10px;padding:4px 8px;}
+  .title-bar,.legend-bar{padding-left:12px;padding-right:12px;}
+  .legend-bar{flex-wrap:wrap;gap:4px;}
+  .sec{padding:0 12px;}
+  .static-page{padding:24px 16px 40px;}
+  .table-wrap{display:none;}
+  .match-card{display:block;}
+  a.match-card{display:block;}
+  .ag{grid-template-columns:repeat(3,1fr);}
+  .cg{grid-template-columns:1fr;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AIGoal",
+  "url": "https://aigoal.net",
+  "description": "ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity yapay zeka modellerinin haftalık futbol maç tahminleri. Süper Lig, Premier League, Bundesliga ve daha fazlası.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AIGoal",
+    "url": "https://aigoal.net",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aigoal.net/logo.png"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://aigoal.net/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<link rel="alternate" hreflang="tr" href="https://aigoal.net/">
+<link rel="alternate" hreflang="en" href="https://aigoal.net/">
+<link rel="alternate" hreflang="x-default" href="https://aigoal.net/">
+<meta property="og:image" content="https://aigoal.net/og-image.png">
+<!-- Google Analytics -->
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-E821MSQ47G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E821MSQ47G');
+</script>
+</head>
+<body>
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar" id="sidebar">
+  <a class="sb-logo" onclick="switchLeague('superlig',document.querySelector('[onclick*=superlig]'));setActive(document.querySelector('[onclick*=superlig]'));">
+    <img src="logo.png" alt="AIGoal" style="width:178px;height:auto;object-fit:contain;display:block;" fetchpriority="high" width="178" height="50" onerror="this.style.display='none'">
+  </a>
+
+  <div class="sb-section">
+    <div class="sb-section-label" data-tr="Genel" data-en="General">Genel</div>
+    <a class="sb-item active" onclick="switchLeague('superlig',document.querySelector('[onclick*=superlig]'));setActive(document.querySelector('[onclick*=superlig]'))">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</span>
+    </a>
+    <a class="sb-item" onclick="showPage('analiz');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <span data-tr="Analizler" data-en="Analysis">Analizler</span>
+    </a>
+    <a class="sb-item" onclick="showPage('howitworks');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span data-tr="Nasıl Çalışır?" data-en="How it works?">How it works?</span>
+    </a>
+
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🇹🇷 <span data-tr="Türkiye" data-en="Turkey">Türkiye</span></div>
+    <a class="sb-item" onclick="switchLeague('superlig',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
+      <span>Trendyol Süper Lig</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('kupasi',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
+      <span data-tr="Ziraat Türkiye Kupası" data-en="Ziraat Turkey Cup">Ziraat Türkiye Kupası</span>
+      <span class="sb-badge new" style="margin-left:auto;">YF</span>
+    </a>
+
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🌍 <span data-tr="Avrupa" data-en="Europe">Avrupa</span></div>
+    <a class="sb-item" onclick="switchLeague('pl',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb-eng.svg" alt="EN">
+      <span data-tr="İngiltere — Premier League" data-en="England — Premier League">İngiltere — Premier League</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('laliga',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/es.svg" alt="ES">
+      <span data-tr="İspanya — La Liga" data-en="Spain — La Liga">İspanya — La Liga</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('bundesliga',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/de.svg" alt="DE">
+      <span data-tr="Almanya — Bundesliga" data-en="Germany — Bundesliga">Almanya — Bundesliga</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('seriea',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/it.svg" alt="IT">
+      <span data-tr="İtalya — Serie A" data-en="Italy — Serie A">İtalya — Serie A</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('ligue1',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/fr.svg" alt="FR">
+      <span data-tr="Fransa — Ligue 1" data-en="France — Ligue 1">Fransa — Ligue 1</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('eredivisie',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/nl.svg" alt="NL">
+      <span data-tr="Hollanda — Eredivisie" data-en="Netherlands — Eredivisie">Hollanda — Eredivisie</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('primeiraliga',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pt.svg" alt="PT">
+      <span data-tr="Portekiz — Primeira Liga" data-en="Portugal — Primeira Liga">Portekiz — Primeira Liga</span>
+    </a>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🌎 <span data-tr="Amerika" data-en="Americas">Amerika</span></div>
+    <a class="sb-item" onclick="switchLeague('mls',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg" alt="US">
+      <span data-tr="Amerika — MLS" data-en="USA — MLS">Amerika — MLS</span>
+    </a>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🌎 <span data-tr="Güney Amerika" data-en="South America">Güney Amerika</span></div>
+    <a class="sb-item" onclick="switchLeague('brasileirao',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
+      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A" data-es="Brasil — Série A" data-pt="Brasil — Série A" data-ru="Бразилия — Серия A">Brezilya — Série A</span>
+    </a>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🌍 <span data-tr="Diğer Ligler" data-en="Other Leagues" data-es="Otras Ligas" data-pt="Outras Ligas" data-ru="Другие Лиги">Diğer Ligler</span></div>
+    <a class="sb-item" onclick="switchLeague('russia',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ru.svg" alt="RU">
+      <span data-tr="Rusya — Premier Lig" data-en="Russia — Premier League" data-es="Rusia — Premier Liga" data-pt="Rússia — Premier Liga" data-ru="Россия — Премьер-Лига">Rusya — Premier Lig</span>
+    </a>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">🏆 <span data-tr="Dünya Kupası" data-en="World Cup">Dünya Kupası</span></div>
+    <a class="sb-item" onclick="switchLeague('worldcup',this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+      <span data-tr="2026 FIFA Dünya Kupası" data-en="2026 FIFA World Cup">2026 FIFA Dünya Kupası</span>
+      <span class="sb-badge new">Haziran</span>
+    </a>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-label">UEFA</div>
+    <a class="sb-item" onclick="switchLeague('championsleague',this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span data-tr="Şampiyonlar Ligi" data-en="Champions League">Şampiyonlar Ligi</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('europaleague',this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+      <span data-tr="Avrupa Ligi" data-en="Europa League">Avrupa Ligi</span>
+    </a>
+  </div>
+
+  <div class="sb-divider" style="margin-top:auto;"></div>
+
+  <div class="sb-section">
+    <a class="sb-item" onclick="showPage('about');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span data-tr="Hakkımızda" data-en="About Us">Hakkımızda</span>
+    </a>
+    <a class="sb-item" onclick="showPage('contact');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span data-tr="İletişim" data-en="Contact">İletişim</span>
+    </a>
+    <a class="sb-item" onclick="showPage('privacy');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik</span>
+    </a>
+  </div>
+
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+  <nav class="topnav">
+    <div class="topnav-left">
+      <div class="topnav-breadcrumb" id="breadcrumb"><span data-tr="Türkiye" data-en="Turkey">Türkiye</span> › <span data-tr="Trendyol Süper Lig" data-en="Trendyol Süper Lig">Trendyol Süper Lig</span></div>
+      <span class="live-badge" data-tr="32. HAFTA" data-en="WEEK 32">32. HAFTA</span>
+    </div>
+    <div class="topnav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="btnTR" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <div class="week-chip">📅 27 Nis – 3 <span data-tr="Mayıs" data-en="May">Mayıs</span> 2026</div>
+      <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:5px 9px;transition:all .15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        <span style="font-size:11px;font-weight:600;">@AIGoalnet</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="content">
+
+    <!-- ══ HOME PAGE ══ -->
+    <div class="page active" id="page-home">
+      <div class="title-bar">
+        <div>
+          <h1>
+            <img id="leagueLogo" class="league-logo-header" src="" alt="Süper Lig" onerror="this.style.display='none'">
+            <span class="league-country-tag">TR</span> TRENDYOL SÜPER LİG — <span class="cr" data-tr="Güncel Tahminler" data-en="Latest Predictions">Güncel Tahminler</span>
+          </h1>
+          <div class="title-sub" data-tr="Yapay zeka destekli futbol tahminleri · Her hafta güncellenir" data-en="AI-powered football predictions · Updated every week">Yapay zeka destekli futbol tahminleri · Her hafta güncellenir</div>
+        </div>
+
+      </div>
+
+      <div class="legend-bar">
+        <span class="leg-lbl" data-tr="Tahmin:" data-en="Prediction:">Tahmin:</span>
+        <span class="leg l1" data-tr="MS 1 — Ev sahibi kazanır" data-en="1 — Home wins">MS 1 — Ev sahibi kazanır</span>
+        <span class="leg l1x" data-tr="MS 1X — Ev sahibi kaybetmez" data-en="1X — Home doesn't lose">MS 1X — Ev sahibi kaybetmez</span>
+        <span class="leg lx2" data-tr="MS X2 — Deplasman kaybetmez" data-en="X2 — Away doesn't lose">MS X2 — Deplasman kaybetmez</span>
+        <span class="leg lkg" data-tr="KG Var — Karşılıklı Gol" data-en="BTTS — Both teams score">KG Var — Karşılıklı Gol</span>
+        <span class="leg lu" data-tr="2.5 Üst — 3+ gol" data-en="O2.5 — Over 2.5 goals">2.5 Üst — 3+ gol</span>
+        <span class="leg la" data-tr="2.5 Alt — 0–2 gol" data-en="U2.5 — Under 2.5 goals">2.5 Alt — 0–2 gol</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th style="text-align:left;padding-left:20px;" data-tr="Maç" data-en="Match">Maç</th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.896zm16.597 3.855l-5.843-3.369 2.02-1.168a.076.076 0 0 1 .071 0l4.83 2.786a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.402-.676zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08-4.778 2.758a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" fill="#e8eaf6"/></svg><span class="hn">ChatGPT Pro</span></div></th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span class="hn">Gemini</span></div></th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#e8eaf6"/></svg><span class="hn">Grok</span></div></th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24"><rect width="11" height="11" x="1" y="1" fill="#f25022"/><rect width="11" height="11" x="13" y="1" fill="#7fba00"/><rect width="11" height="11" x="1" y="13" fill="#00a4ef"/><rect width="11" height="11" x="13" y="13" fill="#ffb900"/></svg><span class="hn">Copilot Pro</span></div></th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 2.5c-1.2 0-2.3.5-3.1 1.4L12 6.7l-2.4-2.8C8.8 3 7.7 2.5 6.5 2.5 4 2.5 2 4.5 2 7c0 1.2.5 2.3 1.3 3.1L12 19.5l8.7-9.4c.8-.8 1.3-1.9 1.3-3.1 0-2.5-2-4.5-4.5-4.5z" fill="#CC785C"/></svg><span class="hn">Claude Pro</span></div></th>
+            <th class="th-ai"><div class="ai-hd"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hn">Perplexity</span></div></th>
+          </tr></thead>
+          <tbody id="matchTable"></tbody>
+        </table>
+      </div>
+
+      <div id="mobileCards"></div>
+
+      <div class="sec sec-gap" id="konsensus">
+        <div class="sec-title">🎯 <span data-tr="KONSENSÜs ANALİZİ" data-en="CONSENSUS">KONSENSÜs <span>ANALİZİ</span></span></div>
+        <div class="cg" id="cgrid"></div>
+      </div>
+
+      <div class="sec sec-gap" id="analizNotlari" style="display:none;">
+        <div class="sec-title">📝 <span data-tr="ANALİZ NOTLARI" data-en="ANALYSIS NOTES">ANALİZ <span>NOTLARI</span></span></div>
+        <div id="analizIcerik" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:13px;color:var(--muted);line-height:1.9;"></div>
+      </div>
+
+      <div class="sec sec-gap" id="modeller">
+        <div class="sec-title">🧠 <span data-tr="YAPAY ZEKALAR" data-en="AI MODELS">YAPAY <span>ZEKALAR</span></span></div>
+        <div class="ag" id="agrid"></div>
+      </div>
+
+      
+
+
+<div class="sec">
+        <div class="dis">
+          <span style="font-size:17px;flex-shrink:0;">⚠️</span>
+          <span data-tr="<strong>Sorumluluk Reddi:</strong> Bu sitedeki tahminler yapay zeka modellerinin analizlerine dayanmakta olup <strong>kesinlikle garanti içermez.</strong> Tüm tahminler yalnızca bilgilendirme ve eğlence amaçlıdır. Yatırım veya finansal karar alma süreçlerinde kullanılmamalıdır." data-en="<strong>Disclaimer:</strong> Predictions on this site are based on AI model analysis and <strong>carry no guarantee whatsoever.</strong> All predictions are for informational and entertainment purposes only. They should not be used as a basis for financial or investment decisions."><strong>Sorumluluk Reddi:</strong> Bu sitedeki tahminler yapay zeka modellerinin analizlerine dayanmakta olup <strong>kesinlikle garanti içermez.</strong> Tüm tahminler yalnızca bilgilendirme ve eğlence amaçlıdır. Yatırım veya finansal karar alma süreçlerinde kullanılmamalıdır.</span>
+        </div>
+      </div>
+
+      <div class="sec" style="margin:16px 0;">
+        <div class="ad-unit" style="display:block;min-height:90px;">
+          <ins class="adsbygoogle" style="display:block;width:100%;min-height:90px;"
+               data-ad-client="ca-pub-8363649317786686"
+               data-ad-slot="4343517411"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+(function(){
+  var ins = document.currentScript.previousElementSibling;
+  if(!ins) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        observer.disconnect();
+      }
+    });
+  }, {rootMargin:'200px'});
+  observer.observe(ins);
+})();
+</script>
+        </div>
+      </div>
+
+      <footer>
+        <div class="flogo">AI<span>GOAL</span></div>
+        <div class="flinks">
+          <a onclick="showPage('about');setActive(document.querySelectorAll('.sb-item')[1])" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+          <a onclick="showPage('contact');setActive(document.querySelectorAll('.sb-item')[2])" data-tr="İletişim" data-en="Contact">İletişim</a>
+          <a onclick="showPage('privacy');setActive(document.querySelectorAll('.sb-item')[3])" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</a>
+        </div>
+        <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;color:var(--muted);font-size:11px;text-decoration:none;margin-top:2px;transition:color .15s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          @AIGoalnet
+        </a>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);width:100%;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2e3455;margin-bottom:8px;">AI Predictions by League</div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;">
+            <a href="/super-lig-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Süper Lig AI Prediction</a>
+            <a href="/premier-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Premier League AI Prediction</a>
+            <a href="/bundesliga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Bundesliga AI Prediction</a>
+            <a href="/la-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">La Liga AI Prediction</a>
+            <a href="/serie-a-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Serie A AI Prediction</a>
+            <a href="/ligue-1-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Ligue 1 AI Prediction</a>
+            <a href="/eredivisie-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Eredivisie AI Prediction</a>
+            <a href="/primeira-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Primeira Liga AI Prediction</a>
+            <a href="/championship-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Championship AI Prediction</a>
+            <a href="/mls-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">MLS AI Prediction</a>
+            <a href="/brasileirao-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Brasileirão AI Prediction</a>
+            <a href="/champions-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Champions League AI Prediction</a>
+          </div>
+        </div>
+        <div class="fsmall" style="margin-top:10px;">aigoal.net · AI Football Predictions · © 2026</div>
+      </footer>
+    </div>
+
+    <!-- ══ ANALİZ PAGE ══ -->
+    <div class="page" id="page-analiz">
+      <div class="static-page" style="max-width:900px;">
+        <h2>AI TAHMİN <span>ANALİZİ</span></h2>
+        <div class="sp-sub" data-tr="Bu haftanın yapay zeka tahmin raporu" data-en="This week's AI prediction report">Bu haftanın yapay zeka tahmin raporu · 27 Nisan – 4 Mayıs 2026</div>
+
+        <!-- BÖLÜM 1: Haftalık Özet -->
+        <h3 data-tr="📊 Bu Haftanın AI Tahmin Özeti" data-en="📊 This Week's AI Prediction Summary">📊 Bu Haftanın AI Tahmin Özeti</h3>
+        <p data-tr="Bu hafta 6 yapay zeka modeli Süper Lig, Championship, Premier League, Bundesliga, Serie A, Ligue 1, Eredivisie, Primeira Liga, La Liga, MLS ve Brasileirão dahil 14 farklı lig ve organizasyonda 120'den fazla maçı analiz etti. Haftanın en dikkat çekici unsuru şüphesiz UEFA Şampiyonlar Ligi ve Avrupa Ligi yarı final ilk bacakları — dört büyük maç 28–30 Nisan arasında oynanıyor." data-en="This week, 6 AI models analyzed over 100 matches across 13 leagues including Süper Lig, La Liga, Premier League, Bundesliga, Serie A, Ligue 1, Eredivisie, Primeira Liga, Championship, MLS, Brasileirão and UEFA competitions. The week's standout element is the UEFA Champions League and Europa League semi-final first legs — four blockbuster matches between 28–30 April.">Bu hafta 6 yapay zeka modeli (ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity) Süper Lig, Championship, Premier League, Bundesliga, Serie A, Ligue 1, Eredivisie, Primeira Liga, La Liga, MLS ve Brasileirão dahil 14 farklı lig ve organizasyonda 120'den fazla maçı analiz etti. Haftanın en dikkat çekici unsuru Şampiyonlar Ligi yarı finalleri — PSG-Bayern (28 Nisan) ve Atletico-Arsenal (29 Nisan) ile Avrupa Ligi yarı finalleri Nottingham-Aston Villa ve Braga-Freiburg (30 Nisan).</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:16px 0 24px;">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:var(--accent);">120+</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Analiz Edilen Maç" data-en="Matches Analyzed">Analiz Edilen Maç</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:#00c853;">%69</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Ortalama Konsensüs" data-en="Avg Consensus">Ortalama Konsensüs</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:var(--accent2);">8</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Tam Konsensüs Maç" data-en="Full Consensus Matches">Tam Konsensüs (6/6)</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:#ffe600;">14</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="Kapsanan Lig/Turnuva" data-en="Leagues / Competitions">14 Lig/Turnuva</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:700;color:#c77dff;">4</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;" data-tr="UEFA Yarı Final Maçı" data-en="UEFA Semi-Finals">UEFA Yarı Finali</div>
+          </div>
+        </div>
+
+        <!-- BÖLÜM 2: UEFA Yarı Finalleri Spotlight -->
+        <h3 data-tr="🏆 UEFA Yarı Final Spotlight" data-en="🏆 UEFA Semi-Final Spotlight">🏆 UEFA Yarı Final Spotlight</h3>
+        <p data-tr="Bu hafta Avrupa'nın en prestijli iki turnuvasında yarı final ilk bacakları oynanıyor. Yapay zeka modelleri bu maçlarda özellikle temkinli tahminler üretiyor — yarı final atmosferi, her iki tarafın da ağzını sıkı tutacağı ve erken gol yemekten kaçınacağı gerilimli karşılaşmalar anlamına geliyor." data-en="This week sees the semi-final first legs of Europe's two most prestigious club competitions. AI models produce notably cautious predictions for these matches — the semi-final atmosphere means tightly contested affairs where both sides are wary of conceding early.">Bu hafta Avrupa'nın iki büyük turnuvasında yarı final ilk bacakları oynanıyor. Modeller bu maçlarda özellikle temkinli — her takım ikinci bacak hesabıyla oynamak zorunda.</p>
+
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:16px 0 24px;">
+          <div style="background:linear-gradient(90deg,rgba(124,77,255,.15),transparent);padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">🏆</span>
+            <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#c77dff;text-transform:uppercase;">UEFA Şampiyonlar Ligi — Yarı Final</span>
+          </div>
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">PSG vs FC Bayern München</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:3px;">28 Nisan Sal · 22:00 · İlk Bacak</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.28);color:#00e5ff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">KG Var</span>
+                <span style="background:rgba(199,125,255,.1);border:1px solid rgba(199,125,255,.25);color:#c77dff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">2.5 Üst</span>
+                <span style="background:rgba(0,200,83,.07);border:1px solid rgba(0,200,83,.18);color:#69f0ae;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">MS 1X</span>
+              </div>
+            </div>
+            <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.7;">PSG Ligue 1'de sezonun en istikrarlı performansını sergiliyor. Bayern ise La Liga devi Real Madrid'i eleyerek bu aşamaya geldi. Modellerin büyük çoğunluğu gollü bir maç bekliyor; ChatGPT ve Perplexity KG Var, Gemini ve Claude 2.5 Üst tahmininde birleşiyor. Evsahibi PSG için MS 1X konsensüsü baskın.</p>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">Atletico Madrid vs Arsenal FC</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:3px;">29 Nisan Çar · 22:00 · İlk Bacak</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="background:rgba(0,200,83,.07);border:1px solid rgba(0,200,83,.18);color:#69f0ae;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">MS 1X</span>
+                <span style="background:rgba(255,145,0,.08);border:1px solid rgba(255,145,0,.2);color:#ffab40;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">2.5 Alt</span>
+              </div>
+            </div>
+            <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.7;">Atletico Madrid ev sahibi avantajıyla bu zorlu eşleşmeye hazırlanıyor. Simeone'nin geleneksel 4-4-2 savunma bloğu Arsenal'in pas oyununu kırmayı hedefleyecek. Modeller düşük skorlu ve sıkışık bir maç öngörüyor — Copilot ve ChatGPT 2.5 Alt seçerken, Grok ve Claude MS 1X tahmininde buluşuyor. Perplexity ise Arsenal'a güvenerek X2 diyor.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:0 0 24px;">
+          <div style="background:linear-gradient(90deg,rgba(255,145,0,.12),transparent);padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">🌐</span>
+            <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#ffab40;text-transform:uppercase;">UEFA Avrupa Ligi — Yarı Final</span>
+          </div>
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">Nottingham Forest vs Aston Villa</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:3px;">30 Nisan Per · 22:00 · İlk Bacak</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="background:rgba(0,200,83,.07);border:1px solid rgba(0,200,83,.18);color:#69f0ae;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">MS 1X</span>
+                <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.28);color:#00e5ff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">KG Var</span>
+              </div>
+            </div>
+            <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.7;">İki Premier League ekibinin Avrupa Ligi yarı finalinde karşılaşması İngiliz futbolu için tarihi bir an. City Ground'da oynanacak bu ilk bacakta Forest ev sahibi avantajını kullanmak istiyor. Modellerin 3'ü MS 1X, 2'si KG Var tahmininde; Copilot ise 2.5 Üst diyor. Heyecanlı ve gollü geçmesi beklenen bir karşılaşma.</p>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">Sporting Braga vs SC Freiburg</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:3px;">30 Nisan Per · 22:00 · İlk Bacak</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="background:rgba(0,200,83,.11);border:1px solid rgba(0,200,83,.28);color:#00c853;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">MS 1</span>
+                <span style="background:rgba(0,200,83,.07);border:1px solid rgba(0,200,83,.18);color:#69f0ae;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;">MS 1X</span>
+              </div>
+            </div>
+            <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.7;">Portekiz'in Braga şehri bu yarı final için heyecanla bekliyor. Estádio Municipal de Braga'da Freiburg'u ağırlayacak ev sahibi, Bundesliga'nın bu sürpriz temsilcisine karşı net favoriliğini ortaya koyuyor. ChatGPT ve Copilot MS 1 tahmininde buluşurken, Gemini ve Claude MS 1X diyor. Grok 2.5 Alt ile dikkat çekiyor.</p>
+          </div>
+        </div>
+
+        <!-- BÖLÜM 3: Lig Lig Konsensüs -->
+        <h3 data-tr="🌍 Lig Bazında Konsensüs Oranları" data-en="🌍 Consensus Rates by League">🌍 Lig Bazında Konsensüs Oranları</h3>
+        <p data-tr="Her ligin yapay zeka konsensüs oranı farklılık gösteriyor. Güçlü favorilerin olduğu liglerde modeller daha kolay hemfikir oluyor; rekabetçi ve dengeli liglerde tahminler daha çok ayrışıyor." data-en="Consensus rates vary by league. Leagues with dominant favorites see higher model agreement; competitive, balanced leagues produce more divergent predictions.">Her ligin konsensüs oranı farklı. Süper Lig bu hafta Beşiktaş etkisiyle yüksek konsensüse ulaşırken, Hollanda Eredivisie playoff maçları ve La Liga'da tahminler en çok ayrışırken, Bundesliga ve Premier League'de favoriler belirgin.</p>
+
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:16px 0 24px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Süper Lig 🇹🇷</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:78%;height:100%;background:#00c853;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%78</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Bundesliga 🇩🇪</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:75%;height:100%;background:#00c853;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%75</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Primeira Liga 🇵🇹</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:73%;height:100%;background:#00c853;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%73</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:70%;height:100%;background:#00c853;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00c853;min-width:36px;text-align:right;">%70</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Serie A 🇮🇹</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:67%;height:100%;background:#00e5ff;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00e5ff;min-width:36px;text-align:right;">%67</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Eredivisie 🇳🇱</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:66%;height:100%;background:#00e5ff;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00e5ff;min-width:36px;text-align:right;">%66</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Ligue 1 🇫🇷</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:64%;height:100%;background:#00e5ff;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#00e5ff;min-width:36px;text-align:right;">%64</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Brasileirão 🇧🇷</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:62%;height:100%;background:#ffe600;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#ffe600;min-width:36px;text-align:right;">%62</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">MLS 🇺🇸</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:60%;height:100%;background:#ffe600;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#ffe600;min-width:36px;text-align:right;">%60</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">Championship 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:58%;height:100%;background:#ffe600;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#ffe600;min-width:36px;text-align:right;">%58</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;">
+            <span style="font-size:12px;min-width:170px;color:var(--text);">La Liga 🇪🇸</span>
+            <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:56%;height:100%;background:#ff3d5a;border-radius:3px;"></div></div>
+            <span style="font-size:12px;font-weight:700;color:#ff3d5a;min-width:36px;text-align:right;">%56</span>
+          </div>
+        </div>
+        <!-- BÖLÜM 5: AI Model Profilleri -->
+        <h3 data-tr="🧠 Yapay Zeka Model Profilleri" data-en="🧠 AI Model Profiles">🧠 Yapay Zeka Model Profilleri</h3>
+        <p data-tr="Her yapay zeka modeli tahmin yaparken farklı bir yaklaşım benimsiyor. Bu hafta gözlemlenen örüntüler:" data-en="Each AI model takes a different approach when predicting. Patterns observed this week:">Her model farklı bir tahmin stratejisi izliyor. Bu hafta gözlemlenen örüntüler:</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin:16px 0 24px;">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#10a37f;border-radius:50%;display:inline-block;"></span>ChatGPT Pro</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.8;">Ev sahibi odaklı ve temkinli. MS 1 ve MS 1X tahminlerini en sık kullanan model. Güçlü deplasman favorilerinde bile evsahibini ciddiye alıyor. Bu hafta Süper Lig maçlarında diğer modellerle yüksek uyum sergiledi.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#4285f4;border-radius:50%;display:inline-block;"></span>Gemini</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.8;">Dengeli ve analitik. Hem sonuç hem gol tahminlerini harmanlıyor. La Liga'da farklı alternatifler önerirken, Primeira Liga'da özellikle Benfica ve Porto gibi büyüklerde net tavır alıyor. KG Var tahminlerini sık kullanıyor.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#e8eaf6;border-radius:50%;display:inline-block;"></span>Grok</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.8;">En yüksek varyansa sahip model. 2.5 Üst ve 2.5 Alt gibi gol tahminlerini diğer modellerden daha sık tercih ediyor. UEFA yarı finallerinde de savunmacı yorumlar yaptı: Atletico-Arsenal için 2.5 Alt dedi.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#7fba00;border-radius:50%;display:inline-block;"></span>Copilot Pro</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.8;">Gol beklentisine odaklı. KG Var ve 2.5 Üst seçeneklerini en çok kullanan model bu hafta da bu eğilimini sürdürdü. Özellikle İngiliz liglerinde (Premier League, Championship) agresif gol tahminleri öne çıkıyor.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#cc785c;border-radius:50%;display:inline-block;"></span>Claude Pro</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.8;">İstatistik ağırlıklı ve savunmacı. KG Yok ve 2.5 Alt tahminlerini diğer modellerden daha sık kullanıyor. Estrela-Porto gibi ezici favorilerde net MS 2 derken, belirsiz maçlarda çoğunlukla temkinli kalıyor.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;background:#20e3b2;border-radius:50%;display:inline-block;"></span>Perplexity</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.8;">Güncel form ve haberlere duyarlı. Konsensüs tahminlere yakın durma eğiliminde fakat zaman zaman sürpriz tercihler yapıyor — bu hafta Atletico-Arsenal için X2 diyerek Arsenal'ı öne çıkardı.</div>
+          </div>
+        </div>
+
+        <div class="dis">
+          <span style="font-size:17px;flex-shrink:0;">⚠️</span>
+          <span data-tr="<strong>Sorumluluk Reddi:</strong> Bu analizler yapay zeka modellerinin tahminlerine dayanmakta olup kesinlikle garanti içermez. Yalnızca bilgilendirme amaçlıdır." data-en="<strong>Disclaimer:</strong> These analyses are based on AI model predictions and carry no guarantee whatsoever. For informational purposes only."><strong>Sorumluluk Reddi:</strong> Bu analizler yapay zeka modellerinin tahminlerine dayanmakta olup kesinlikle garanti içermez. Yalnızca bilgilendirme amaçlıdır.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ HOW IT WORKS PAGE ══ -->
+    <div class="page" id="page-howitworks">
+      <div class="static-page" style="max-width:860px;">
+        <h1 style="font-family:'Bebas Neue',cursive;font-size:28px;letter-spacing:3px;color:#fff;margin-bottom:6px;">HOW IT <span style="color:var(--accent);">WORKS?</span></h1>
+        <div class="sp-sub">Understanding AI tools, their logic, and how to get the most out of them</div>
+
+        <h2 style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:2px;color:#fff;margin:32px 0 10px;">Article 1: <span style="color:var(--accent);">How Do AI Tools Work?</span></h2>
+        <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:16px;">Technical and Logical Process</p>
+
+        <p>Although Artificial Intelligence (AI) tools may seem like magic wands today, they are actually built upon massive datasets and complex mathematical algorithms. The working principle of an AI tool primarily consists of Machine Learning and Deep Learning layers that mimic the learning process of the human brain.</p>
+
+        <p>The process begins with the <strong style="color:var(--accent);">data collection phase</strong>. For an AI tool (such as a text generator or an image creator) to function properly, it must be trained with billions of data points from across the internet. During this stage, the model grasps the structure of language, the arrangement of pixels, or the logic of coding. Next, <strong style="color:var(--accent);">neural networks</strong> come into play. These networks identify patterns within the data. When you tell an AI tool to "Draw a picture of a cat," it actually combines the common features of millions of cat images in its memory (such as ear structure, whisker placement, etc.) to generate a brand-new output.</p>
+
+        <p>Another crucial stage is <strong style="color:var(--accent);">NLP (Natural Language Processing)</strong> technology. Chatbots or text-based tools do not just understand your sentences word-for-word; they interpret them contextually. The system analyzes your intent and provides the most probable correct answer through mathematical probability calculations. As a result, the tools we offer on aigoal.net operate this complex data architecture in the background, utilizing thousands of processor cores in seconds to provide you with the most refined information. The simple "Submit" button you see on the user interface actually opens the door to massive cloud computing power.</p>
+
+        <div style="background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:8px;padding:16px 20px;margin:20px 0;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;">Key Concepts</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;">
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">Machine Learning</div><div style="font-size:10px;color:var(--muted);">Pattern recognition from data</div></div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">Deep Learning</div><div style="font-size:10px;color:var(--muted);">Multi-layered neural networks</div></div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">NLP</div><div style="font-size:10px;color:var(--muted);">Contextual language understanding</div></div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px 12px;"><div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">Cloud Computing</div><div style="font-size:10px;color:var(--muted);">Thousands of cores in seconds</div></div>
+          </div>
+        </div>
+
+        <div style="height:1px;background:var(--border);margin:32px 0;"></div>
+
+        <h2 style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:2px;color:#fff;margin:0 0 10px;">Article 2: <span style="color:var(--accent);">Why Should You Use AI Tools?</span></h2>
+        <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:16px;">Efficiency and the Future</p>
+
+        <p>In this era where digital transformation has reached its peak, using AI tools is no longer a luxury — it has become a necessity. So, why should you incorporate these tools into your daily workflow? The most fundamental reason is <strong style="color:var(--accent);">time management and efficiency</strong>. AI tools can complete data analysis, copywriting, or graphic design tasks in seconds — tasks that would take the human mind hours. This allows you to focus on strategic thinking and creativity instead of getting bogged down by operational chores.</p>
+
+        <p>Secondly, <strong style="color:var(--accent);">cost-effectiveness</strong> is a major advantage. For small businesses or individual entrepreneurs, working with a professional agency can be expensive. However, using the right AI tools allows you to obtain high-quality outputs at much lower costs (or even for free). Platforms like aigoal.net democratize access to these tools, ensuring that everyone can reach the most advanced technology.</p>
+
+        <p>Furthermore, AI tools <strong style="color:var(--accent);">minimize the margin of error</strong>. Especially in areas like data processing, translation, or technical analysis, they prevent human errors caused by fatigue. AI always provides you with an objective, data-driven foundation. Finally, these tools <strong style="color:var(--accent);">trigger your creativity</strong>. Whether it's a draft for a blog post you're struggling to start or AI variations for a logo you're designing, they offer entirely new perspectives. In the world of the future, there will be two groups: "those who use AI" and "those who don't." Becoming friends with this technology is the smartest step to remain competitive.</p>
+
+        <div style="height:1px;background:var(--border);margin:32px 0;"></div>
+
+        <h2 style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:2px;color:#fff;margin:0 0 10px;">Article 3: <span style="color:var(--accent);">What is "Prompt Engineering"?</span></h2>
+        <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:16px;">Bonus Topic: And Why Does It Matter?</p>
+
+        <p>To get the best results from an AI tool, the quality of the commands you give is vital. This is where the concept of <strong style="color:var(--accent);">Prompt Engineering</strong> comes into play. Many users think an AI tool is inadequate when they don't get the desired result. However, the problem is usually not the tool's capacity, but the ambiguity of the instructions provided.</p>
+
+        <p>A good "prompt" starts by assigning a role to the AI. For example, instead of saying "Write me a text," saying "You are a professional digital marketing expert; write a compelling sales copy for a newly released pair of headphones" completely changes the outcome. Prompt engineering narrows down the AI's universe of possibilities, allowing it to focus exactly on your target.</p>
+
+        <div style="background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.15);border-radius:8px;padding:16px 20px;margin:20px 0;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;margin-bottom:12px;">Why Is It Important?</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:rgba(0,229,255,.15);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;">Precision</span>
+              <span style="font-size:12px;color:var(--muted);line-height:1.6;">You reach the correct result with less trial and error.</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:rgba(0,229,255,.15);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;">Context</span>
+              <span style="font-size:12px;color:var(--muted);line-height:1.6;">Every detail you provide (target audience, tone, length) improves the quality of the output.</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:rgba(0,229,255,.15);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;">Differentiation</span>
+              <span style="font-size:12px;color:var(--muted);line-height:1.6;">It allows you to produce unique and in-depth content instead of the standard responses everyone else receives.</span>
+            </div>
+          </div>
+        </div>
+
+        <p>When using tools on aigoal.net, you should treat them not just as robots, but as highly intelligent assistants that need guidance. When you learn to give the right commands, you can reach 100% of the tool's potential. This also puts you one step ahead of your competitors in the digital world.</p>
+
+      </div>
+    </div>
+
+    <!-- ══ ABOUT PAGE ══ -->
+
+        <!-- ══ ABOUT PAGE ══ -->
+    <div class="page" id="page-about">
+      <div class="static-page">
+        <h2>ABOUT <span>AIGOAL</span></h2>
+        <div class="sp-sub" data-tr="AIGoal hakkında" data-en="About AIGoal">Hakkımızda / About Us</div>
+
+        <h3 data-tr="Biz Kimiz?" data-en="Who We Are?">Biz Kimiz?</h3>
+        <p data-tr="AIGoal, dünyanın önde gelen yapay zeka modellerinin futbol maç tahminlerini tek bir platformda bir araya getiren bağımsız bir analiz sitesidir. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity her hafta yüzlerce maçı analiz eder; biz de bu tahminleri sizin için derleyip görselleştiririz." data-en="AIGoal is an independent analysis platform that aggregates football match predictions from the world's leading AI models. ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity analyze hundreds of matches every week — we compile and visualize those predictions for you.">AIGoal, dünyanın önde gelen yapay zeka modellerinin futbol maç tahminlerini tek bir platformda bir araya getiren bağımsız bir analiz sitesidir. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity her hafta yüzlerce maçı analiz eder; biz de bu tahminleri sizin için derleyip görselleştiririz.</p>
+
+        <h3 data-tr="Neden AIGoal?" data-en="Why AIGoal?">Neden AIGoal?</h3>
+        <p data-tr="Tek bir yapay zekanın tahminini takip etmek yerine, 6 farklı modelin konsensüsüne bakarak çok daha güçlü bir bakış açısı elde edersiniz. Tüm tahminlerimiz ücretsizdir, reklamsız erişim mümkündür ve her hafta güncellenir." data-en="Instead of following a single AI's predictions, you gain a much stronger perspective by looking at the consensus of 6 different models. All our predictions are free, ad-free access is available, and everything is updated every week.">Tek bir yapay zekanın tahminini takip etmek yerine, 6 farklı modelin konsensüsüne bakarak çok daha güçlü bir bakış açısı elde edersiniz. Tüm tahminlerimiz ücretsizdir ve her hafta güncellenir.</p>
+
+        <h3 data-tr="Hedefimiz" data-en="Our Mission">Hedefimiz</h3>
+        <p data-tr="Türkiye Süper Ligi ile başlayan AIGoal, kısa sürede Premier League, La Liga, Bundesliga ve diğer büyük liglere genişlemeyi hedeflemektedir. Uzun vadede tüm dünyadan ligleri kapsayan küresel bir yapay zeka futbol analiz platformu olmayı hedefliyoruz." data-en="AIGoal started with the Turkish Süper Lig and aims to quickly expand to the Premier League, La Liga, Bundesliga and other major competitions. Our long-term goal is to become a global AI football analysis platform covering leagues from every corner of the world.">Türkiye Süper Ligi ile başlayan AIGoal, kısa sürede Premier League, La Liga, Bundesliga ve diğer büyük liglere genişlemeyi hedeflemektedir.</p>
+      </div>
+
+    </div>
+
+    <!-- ══ CONTACT PAGE ══ -->
+    <div class="page" id="page-contact">
+      <div class="static-page">
+        <h2>CONTACT <span>US</span></h2>
+        <div class="sp-sub">İletişim / Contact</div>
+
+        <h3 data-tr="Bize Ulaşın" data-en="Get In Touch">Bize Ulaşın</h3>
+        <p data-tr="Soru, öneri veya iş birliği teklifleri için aşağıdaki formu kullanabilirsiniz. En kısa sürede yanıt vereceğiz." data-en="Use the form below for questions, suggestions or partnership inquiries. We'll get back to you as soon as possible.">Soru, öneri veya iş birliği teklifleri için aşağıdaki formu kullanabilirsiniz. En kısa sürede yanıt vereceğiz.</p>
+        <p>📧 <a href="mailto:info@aigoal.net">info@aigoal.net</a></p>
+
+        <div class="contact-form" style="margin-top:24px;">
+          <div class="form-row">
+            <label data-tr="Adınız" data-en="Your Name">Adınız</label>
+            <input type="text" id="cName" placeholder="John Doe">
+          </div>
+          <div class="form-row">
+            <label data-tr="E-posta" data-en="Email">E-posta</label>
+            <input type="email" id="cEmail" placeholder="you@example.com">
+          </div>
+          <div class="form-row">
+            <label data-tr="Mesajınız" data-en="Message">Mesajınız</label>
+            <textarea id="cMsg" placeholder="..."></textarea>
+          </div>
+          <button class="form-btn" onclick="submitContact()" data-tr="Gönder" data-en="Send">Gönder</button>
+          <p id="formMsg" style="margin-top:12px;font-size:12px;color:var(--accent);display:none;" data-tr="Mesajınız alındı, teşekkürler!" data-en="Message received, thank you!"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ PRIVACY PAGE ══ -->
+    <div class="page" id="page-privacy">
+      <div class="static-page">
+        <h2>PRIVACY <span>POLICY</span></h2>
+        <div class="sp-sub">Gizlilik Politikası / Privacy Policy · <span data-tr="Son güncelleme: Nisan 2026" data-en="Last updated: April 2026">Son güncelleme: Nisan 2026</span></div>
+
+        <h3 data-tr="Hangi Verileri Topluyoruz?" data-en="What Data Do We Collect?">Hangi Verileri Topluyoruz?</h3>
+        <p data-tr="AIGoal üzerinden herhangi bir kişisel veri toplamıyoruz. İletişim formunu kullandığınızda sağladığınız isim ve e-posta adresi yalnızca size yanıt vermek amacıyla kullanılır ve üçüncü taraflarla paylaşılmaz." data-en="AIGoal does not collect any personal data during normal browsing. When you use the contact form, the name and email address you provide are used solely to respond to you and are never shared with third parties.">AIGoal üzerinden herhangi bir kişisel veri toplamıyoruz. İletişim formunu kullandığınızda sağladığınız isim ve e-posta adresi yalnızca size yanıt vermek amacıyla kullanılır ve üçüncü taraflarla paylaşılmaz.</p>
+
+        <h3 data-tr="Çerezler (Cookies)" data-en="Cookies">Çerezler (Cookies)</h3>
+        <p data-tr="Sitemiz, dil tercihinizi hatırlamak için küçük bir yerel depolama kaydı kullanır. Google AdSense reklamları gösterildiğinde, Google kendi çerez politikasını uygular. Bu çerezler hakkında daha fazla bilgi için Google'ın gizlilik politikasını inceleyebilirsiniz." data-en="Our site uses a small local storage entry to remember your language preference. When Google AdSense ads are displayed, Google applies its own cookie policy. For more information about these cookies, please review Google's privacy policy.">Sitemiz, dil tercihinizi hatırlamak için küçük bir yerel depolama kaydı kullanır. Google AdSense reklamları gösterildiğinde, Google kendi çerez politikasını uygular.</p>
+
+        <h3 data-tr="Google AdSense" data-en="Google AdSense">Google AdSense</h3>
+        <p data-tr="Bu site, reklam göstermek için Google AdSense kullanmaktadır. Google, ziyaretçilerin ilgi alanlarına göre reklam sunmak amacıyla çerezleri kullanabilir. Google'ın reklam çerezlerini devre dışı bırakmak için ads.google.com adresini ziyaret edebilirsiniz." data-en="This site uses Google AdSense to display advertisements. Google may use cookies to serve ads based on a user's prior visits to this website or other websites. You may opt out of personalized advertising by visiting ads.google.com.">Bu site, reklam göstermek için Google AdSense kullanmaktadır. Google, ziyaretçilerin ilgi alanlarına göre reklam sunmak amacıyla çerezleri kullanabilir.</p>
+
+        <h3 data-tr="Üçüncü Taraf Bağlantılar" data-en="Third-Party Links">Üçüncü Taraf Bağlantılar</h3>
+        <p data-tr="Sitemizde yer alan bazı içerikler TheSportsDB ve diğer üçüncü taraf kaynaklardan yüklenmektedir. Bu kaynaklara ait gizlilik politikaları kendi sitelerinde mevcuttur." data-en="Some content on our site is loaded from TheSportsDB and other third-party sources. Their respective privacy policies are available on their own websites.">Sitemizde yer alan bazı içerikler TheSportsDB ve diğer üçüncü taraf kaynaklardan yüklenmektedir.</p>
+
+        <h3>İletişim / Contact</h3>
+        <p>Gizlilik politikamız hakkında sorularınız için / For questions about our privacy policy: <a href="mailto:info@aigoal.net">info@aigoal.net</a></p>
+      </div>
+
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<button class="sb-toggle" id="sbToggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<script>
+// ── Language ──
+let currentLang = localStorage.getItem('aigoal_lang') || 'tr';
+
+function setLang(lang){
+  currentLang = lang;
+  localStorage.setItem('aigoal_lang', lang);
+  document.getElementById('htmlRoot').lang = lang;
+  ['TR','EN'].forEach(l => {
+    const btn = document.getElementById('btn'+l);
+    if(btn) btn.classList.toggle('active', lang===l.toLowerCase());
+  });
+  document.querySelectorAll('[data-tr]').forEach(el=>{
+    const val = el.getAttribute('data-'+lang) || el.getAttribute('data-en');
+    if(val) el.innerHTML = val;
+  });
+  // refresh league-specific dynamic labels
+  const lg = allLeagues[currentLeague];
+  if(lg){
+    const lname = lg['name'+lang.charAt(0).toUpperCase()+lang.slice(1)] || lg.nameEn;
+    const lcountry = lg['country'+lang.charAt(0).toUpperCase()+lang.slice(1)] || lg.countryEn;
+    const bc = document.getElementById('breadcrumb');
+    if(bc) bc.innerHTML = `<span>${lcountry}</span> › <span>${lname}</span>`;
+    const badge = document.querySelector('.live-badge');
+    if(badge) badge.textContent = lg.weekLabel[lang] || lg.weekLabel.en;
+    const chip = document.querySelector('.week-chip');
+    if(chip) chip.innerHTML = `📅 ${lg.dates[lang] || lg.dates.en}`;
+    const titleEl = document.querySelector('.title-bar h1');
+    if(titleEl){
+      const labelMap = {tr:'Güncel Tahminler',en:'Latest Predictions'};
+      const label = labelMap[lang] || labelMap.en;
+      const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
+      titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lname} — <span class="cr">${label}</span>`;
+    }
+  }
+  const titleMap = {
+    tr:'AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası',
+    en:'AIGoal.net — AI-Powered Football Predictions | Super Lig, Premier League & More'
+  };
+  document.getElementById('pageTitle').textContent = titleMap[lang] || titleMap.en;
+  renderTable();
+  renderConsensus();
+  renderAnalysis();
+  renderTopPicks();
+  renderAiStats();
+}
+
+function renderAnalysis(){
+  const lg = allLeagues[currentLeague];
+  const sec = document.getElementById('analizNotlari');
+  const icerik = document.getElementById('analizIcerik');
+  if(!sec || !icerik) return;
+  const langKey = 'analysis'+currentLang.charAt(0).toUpperCase()+currentLang.slice(1);
+  const text = lg[langKey] || lg.analysisEn;
+  if(text){
+    sec.style.display='block';
+    icerik.innerHTML = text;
+  } else {
+    sec.style.display='none';
+    icerik.innerHTML='';
+  }
+}
+// ── Page routing ──
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ── League logo ──
+fetch('https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c=Turkey&s=Soccer')
+  .then(r=>r.json()).then(d=>{
+    const el=document.getElementById('leagueLogo');
+    const lig=d.countrys&&d.countrys.find(l=>l.strLeague&&l.strLeague.includes('Super Lig'));
+    el.src=lig&&lig.strBadge?lig.strBadge+'/preview':'https://www.thesportsdb.com/images/media/league/badge/xr69t61619788627.png/preview';
+  }).catch(()=>{
+    const el=document.getElementById('leagueLogo');
+    if(el) el.src='https://www.thesportsdb.com/images/media/league/badge/xr69t61619788627.png/preview';
+  });
+
+// ── Match data ──
+// prediction labels by language
+function pl(tr, en){ return currentLang==='tr' ? tr : en; }
+
+let matches = [];
+const ais=['chatgpt','gemini','grok','copilot','claude','perplexity'];
+
+
+// ── Team crest mapping — local /crests/ folder (TheSportsDB source) ──
+// Files to place in your GitHub repo under /crests/:
+//   fenerbahce.png   → https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png
+//   galatasaray.png  → https://r2.thesportsdb.com/images/media/team/badge/io7jk21767941298.png
+//   besiktas.png     → https://www.thesportsdb.com/images/media/team/badge/svo05k1776827439.png
+//   goztepe.png      → https://r2.thesportsdb.com/images/media/team/badge/9jwk7o1513952059.png
+//   gaziantep.png    → https://r2.thesportsdb.com/images/media/team/badge/54j6ik1579458093.png
+//   alanyaspor.png   → https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png
+//   antalyaspor.png  → https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png
+//   eyupspor.png     → https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png
+//   karagumruk.png   → https://r2.thesportsdb.com/images/media/team/badge/bfb84y1580847945.png
+//   genclerbirligi.png → https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png
+const teamCrests = {
+  // ── Türkiye Süper Lig ──
+  'Alanyaspor':                      '/crests/alanyaspor.png',
+  'Antalyaspor':                     '/crests/antalyaspor.png',
+  'Başakşehir FK':                   '/crests/basaksehir.png',
+  'Beşiktaş':                        '/crests/besiktas.png',
+  'Çaykur Rizespor':                 '/crests/rizespor.png',
+  'Eyüpspor':                        '/crests/eyupspor.png',
+  'Fatih Karagümrük':                '/crests/karagumruk.png',
+  'Fenerbahçe':                      '/crests/fenerbahce.png',
+  'Galatasaray':                     '/crests/galatasaray.png',
+  'Gaziantep FK':                    '/crests/gaziantep.png',
+  'Gençlerbirliği':                  '/crests/genclerbirligi.png',
+  'Göztepe':                         '/crests/goztepe.png',
+  'Kasımpaşa':                       '/crests/kasimpasa.png',
+  'Kayserispor':                     '/crests/kayserispor.png',
+  'Kocaelispor':                     '/crests/kocaelispor.png',
+  'Konyaspor':                       '/crests/konyaspor.png',
+  'Samsunspor':                      '/crests/samsunspor.png',
+  'Trabzonspor':                     '/crests/trabzonspor.png',
+  // eski maçlarda kullanılan sponsorlu isimler
+  'Nat. Dünyası Gençlerbirliği':     '/crests/genclerbirligi.png',
+  'Corendon Alanyaspor':             '/crests/alanyaspor.png',
+  'Hesap.com Antalyaspor':           '/crests/antalyaspor.png',
+  'İkas Eyüpspor':                   '/crests/eyupspor.png',
+  'Tümosan Konyaspor':               '/crests/konyaspor.png',
+  'Zecorner Kayserispor':            '/crests/kayserispor.png',
+  'RAMS Başakşehir':                 '/crests/basaksehir.png',
+  // ── Premier League ──
+  'Arsenal FC':                      '/crests/arsenal-fc.png',
+  'Aston Villa FC':                  '/crests/aston-villa-fc.png',
+  'AFC Bournemouth':                 '/crests/afc-bournemouth.png',
+  'Brentford FC':                    '/crests/brentford-fc.png',
+  'Brighton & Hove Albion FC':       '/crests/brighton-and-hove-albion-fc.png',
+  'Burnley FC':                      '/crests/burnley-fc.png',
+  'Chelsea FC':                      '/crests/chelsea-fc.png',
+  'Crystal Palace FC':               '/crests/crystal-palace-fc.png',
+  'Everton FC':                      '/crests/everton-fc.png',
+  'Fulham FC':                       '/crests/fulham-fc.png',
+  'Leeds United FC':                 '/crests/leeds-united-fc.png',
+  'Liverpool FC':                    '/crests/liverpool-fc.png',
+  'Manchester City FC':              '/crests/manchester-city-fc.png',
+  'Manchester United FC':            '/crests/manchester-united-fc.png',
+  'Newcastle United FC':             '/crests/newcastle-united-fc.png',
+  'Nottingham Forest FC':            '/crests/nottingham-forest-fc.png',
+  'Sunderland AFC':                  '/crests/sunderland-afc.png',
+  'Tottenham Hotspur FC':            '/crests/tottenham-hotspur-fc.png',
+  'West Ham United FC':              '/crests/west-ham-united-fc.png',
+  'Wolverhampton Wanderers FC':      '/crests/wolverhampton-wanderers-fc.png',
+  // ── Bundesliga ──
+  '1. FC Heidenheim 1846':           '/crests/1-fc-heidenheim-1846.png',
+  '1. FC Köln':                      '/crests/1-fc-koln.png',
+  '1. FC Union Berlin':              '/crests/1-fc-union-berlin.png',
+  '1. FSV Mainz 05':                 '/crests/1-fsv-mainz-05.png',
+  'Bayer 04 Leverkusen':             '/crests/bayer-04-leverkusen.png',
+  'Borussia Dortmund':               '/crests/borussia-dortmund.png',
+  'Borussia Mönchengladbach':        '/crests/borussia-monchengladbach.png',
+  'Eintracht Frankfurt':             '/crests/eintracht-frankfurt.png',
+  'FC Augsburg':                     '/crests/fc-augsburg.png',
+  'FC Bayern München':               '/crests/fc-bayern-munchen.png',
+  'FC St. Pauli 1910':               '/crests/fc-st-pauli-1910.png',
+  'Hamburger SV':                    '/crests/hamburger-sv.png',
+  'RB Leipzig':                      '/crests/rb-leipzig.png',
+  'SC Freiburg':                     '/crests/sc-freiburg.png',
+  'TSG 1899 Hoffenheim':             '/crests/tsg-1899-hoffenheim.png',
+  'SV Werder Bremen':                '/crests/sv-werder-bremen.png',
+  'VfB Stuttgart':                   '/crests/vfb-stuttgart.png',
+  'VfL Wolfsburg':                   '/crests/vfl-wolfsburg.png',
+  // ── La Liga ──
+  'Athletic Club':                   '/crests/athletic-club.png',
+  'CA Osasuna':                      '/crests/ca-osasuna.png',
+  'Club Atlético de Madrid':         '/crests/club-atletico-de-madrid.png',
+  'Deportivo Alavés':                '/crests/deportivo-alaves.png',
+  'FC Barcelona':                    '/crests/fc-barcelona.png',
+  'Getafe CF':                       '/crests/getafe-cf.png',
+  'Girona FC':                       '/crests/girona-fc.png',
+  'Levante UD':                      '/crests/levante-ud.png',
+  'RCD Espanyol de Barcelona':       '/crests/rcd-espanyol-de-barcelona.png',
+  'RCD Mallorca':                    '/crests/rcd-mallorca.png',
+  'RC Celta de Vigo':                '/crests/rc-celta-de-vigo.png',
+  'Rayo Vallecano de Madrid':        '/crests/rayo-vallecano-de-madrid.png',
+  'Real Betis Balompié':             '/crests/real-betis-balompie.png',
+  'Real Madrid CF':                  '/crests/real-madrid-cf.png',
+  'Real Oviedo':                     '/crests/real-oviedo.png',
+  'Real Sociedad de Fútbol':         '/crests/real-sociedad-de-futbol.png',
+  'Sevilla FC':                      '/crests/sevilla-fc.png',
+  'Valencia CF':                     '/crests/valencia-cf.png',
+  'Villarreal CF':                   '/crests/villarreal-cf.png',
+  'Elche CF':                        '/crests/elche-cf.png',
+  // ── Serie A ──
+  'AC Milan':                        '/crests/ac-milan.png',
+  'AC Pisa 1909':                    '/crests/ac-pisa-1909.png',
+  'ACF Fiorentina':                  '/crests/acf-fiorentina.png',
+  'AS Roma':                         '/crests/as-roma.png',
+  'Atalanta BC':                     '/crests/atalanta-bc.png',
+  'Bologna FC 1909':                 '/crests/bologna-fc-1909.png',
+  'Cagliari Calcio':                 '/crests/cagliari-calcio.png',
+  'Como 1907':                       '/crests/como-1907.png',
+  'FC Internazionale Milano':        '/crests/fc-internazionale-milano.png',
+  'Genoa CFC':                       '/crests/genoa-cfc.png',
+  'Hellas Verona FC':                '/crests/hellas-verona-fc.png',
+  'Juventus FC':                     '/crests/juventus-fc.png',
+  'Parma Calcio 1913':               '/crests/parma-calcio-1913.png',
+  'SS Lazio':                        '/crests/ss-lazio.png',
+  'SSC Napoli':                      '/crests/ssc-napoli.png',
+  'Torino FC':                       '/crests/torino-fc.png',
+  'Udinese Calcio':                  '/crests/udinese-calcio.png',
+  'US Cremonese':                    '/crests/us-cremonese.png',
+  'US Lecce':                        '/crests/us-lecce.png',
+  'US Sassuolo Calcio':              '/crests/us-sassuolo-calcio.png',
+  // ── Ligue 1 ──
+  'AJ Auxerre':                      '/crests/aj-auxerre.png',
+  'Angers SCO':                      '/crests/angers-sco.png',
+  'AS Monaco FC':                    '/crests/as-monaco-fc.png',
+  'FC Lorient':                      '/crests/fc-lorient.png',
+  'FC Metz':                         '/crests/fc-metz.png',
+  'FC Nantes':                       '/crests/fc-nantes.png',
+  'Le Havre AC':                     '/crests/le-havre-ac.png',
+  'Lille OSC':                       '/crests/lille-osc.png',
+  'OGC Nice':                        '/crests/ogc-nice.png',
+  'Olympique Lyonnais':              '/crests/olympique-lyonnais.png',
+  'Olympique de Marseille':          '/crests/olympique-de-marseille.png',
+  'Paris FC':                        '/crests/paris-fc.png',
+  'Paris Saint-Germain FC':          '/crests/paris-saint-germain-fc.png',
+  'Racing Club de Lens':             '/crests/racing-club-de-lens.png',
+  'RC Strasbourg Alsace':            '/crests/rc-strasbourg-alsace.png',
+  'Stade Brestois 29':               '/crests/stade-brestois-29.png',
+  'Stade Rennais FC 1901':           '/crests/stade-rennais-fc-1901.png',
+  'Toulouse FC':                     '/crests/toulouse-fc.png',
+  // ── Eredivisie ──
+  'AFC Ajax':                        '/crests/afc-ajax.png',
+  'FC Groningen':                    '/crests/fc-groningen.png',
+  "FC Twente '65":                  '/crests/fc-twente-65.png',
+  'FC Utrecht':                      '/crests/fc-utrecht.png',
+  'FC Volendam':                     '/crests/fc-volendam.png',
+  'Feyenoord Rotterdam':             '/crests/feyenoord-rotterdam.png',
+  'Fortuna Sittard':                 '/crests/fortuna-sittard.png',
+  'Go Ahead Eagles':                 '/crests/go-ahead-eagles.png',
+  'Heracles Almelo':                 '/crests/heracles-almelo.png',
+  'NAC Breda':                       '/crests/nac-breda.png',
+  'NEC':                             '/crests/nec.png',
+  'PEC Zwolle':                      '/crests/pec-zwolle.png',
+  'PSV':                             '/crests/psv.png',
+  'SBV Excelsior':                   '/crests/sbv-excelsior.png',
+  'SC Heerenveen':                   '/crests/sc-heerenveen.png',
+  'Sparta Rotterdam':                '/crests/sparta-rotterdam.png',
+  'Telstar 1963':                    '/crests/telstar-1963.png',
+  // ── Primeira Liga ──
+  'AVS':                             '/crests/avs.png',
+  'Casa Pia AC':                     '/crests/casa-pia-ac.png',
+  'CD Nacional':                     '/crests/cd-nacional.png',
+  'CD Santa Clara':                  '/crests/cd-santa-clara.png',
+  'CF Estrela da Amadora':           '/crests/cf-estrela-da-amadora.png',
+  'FC Alverca':                      '/crests/fc-alverca.png',
+  'FC Arouca':                       '/crests/fc-arouca.png',
+  'FC Famalicão':                    '/crests/fc-famalicao.png',
+  'FC Porto':                        '/crests/fc-porto.png',
+  'GD Estoril Praia':                '/crests/gd-estoril-praia.png',
+  'Gil Vicente FC':                  '/crests/gil-vicente-fc.png',
+  'Moreirense FC':                   '/crests/moreirense-fc.png',
+  'Rio Ave FC':                      '/crests/rio-ave-fc.png',
+  'Sport Lisboa e Benfica':          '/crests/sport-lisboa-e-benfica.png',
+  'Sporting Braga':                  '/crests/sporting-braga.png',
+  'Sporting Clube de Braga':         '/crests/sporting-clube-de-braga.png',
+  'Sporting Clube de Portugal':      '/crests/sporting-clube-de-portugal.png',
+  'Vitória SC':                      '/crests/vitoria-sc.png',
+  'CD Tondela':                      '/crests/cd-tondela.png',
+  // ── MLS ──
+  'Atlanta United':                  '/crests/atlanta-united.png',
+  'Austin':                          '/crests/austin.png',
+  'CF Montreal':                     '/crests/cf-montreal.png',
+  'Charlotte':                       '/crests/charlotte.png',
+  'Chicago Fire':                    '/crests/chicago-fire.png',
+  'Colorado Rapids':                 '/crests/colorado-rapids.png',
+  'Columbus Crew':                   '/crests/columbus-crew.png',
+  'DC United':                       '/crests/dc-united.png',
+  'FC Cincinnati':                   '/crests/fc-cincinnati.png',
+  'FC Dallas':                       '/crests/fc-dallas.png',
+  'Houston Dynamo':                  '/crests/houston-dynamo.png',
+  'Inter Miami':                     '/crests/inter-miami.png',
+  'Los Angeles FC':                  '/crests/los-angeles-fc.png',
+  'Los Angeles Galaxy':              '/crests/los-angeles-galaxy.png',
+  'Minnesota United':                '/crests/minnesota-united.png',
+  'Nashville SC':                    '/crests/nashville-sc.png',
+  'New England Revolution':          '/crests/new-england-revolution.png',
+  'New York City FC':                '/crests/new-york-city-fc.png',
+  'New York Red Bulls':              '/crests/new-york-red-bulls.png',
+  'Orlando City':                    '/crests/orlando-city.png',
+  'Philadelphia Union':              '/crests/philadelphia-union.png',
+  'Portland Timbers':                '/crests/portland-timbers.png',
+  'Real Salt Lake':                  '/crests/real-salt-lake.png',
+  'San Diego':                       '/crests/san-diego.png',
+  'San Jose Earthquakes':            '/crests/san-jose-earthquakes.png',
+  'Seattle Sounders':                '/crests/seattle-sounders.png',
+  'Sporting Kansas City':            '/crests/sporting-kansas-city.png',
+  'St. Louis City':                  '/crests/st-louis-city.png',
+  'Toronto FC':                      '/crests/toronto-fc.png',
+  'Vancouver Whitecaps':             '/crests/vancouver-whitecaps.png',
+  // ── Rusya ──
+  'Akron':                           '/crests/akron.png',
+  'Baltika Kaliningrad':             '/crests/baltika-kaliningrad.png',
+  'CSKA Moskova':                    '/crests/cska-moskova.png',
+  'Dinamo Moscow':                   '/crests/dinamo-moscow.png',
+  'FC Akhmat Grozny':                '/crests/fc-akhmat-grozny.png',
+  'FC Sochi':                        '/crests/fc-sochi.png',
+  'FK Orenburg':                     '/crests/fk-orenburg.png',
+  'Krasnodar':                       '/crests/krasnodar.png',
+  'Krylya Sovetov':                  '/crests/krylya-sovetov.png',
+  'Lokomotiv Moscow':                '/crests/lokomotiv-moscow.png',
+  'Makhachkala':                     '/crests/makhachkala.png',
+  'Pari Nizhny Novgorod':            '/crests/pari-nizhny-novgorod.png',
+  'Rostov':                          '/crests/rostov.png',
+  'Rubin Kazan':                     '/crests/rubin-kazan.png',
+  'Samsunspor':                      '/crests/samsunspor.png',
+  'Spartak Moskova':                 '/crests/spartak-moskova.png',
+  'Zenit St. Petersburg':            '/crests/zenit-st-petersburg.png',
+  // ── Brasileirao ──
+  'Botafogo FR':                     '/crests/botafogo-fr.png',
+  'CA Mineiro':                      '/crests/ca-mineiro.png',
+  'CA Paranaense':                   '/crests/ca-paranaense.png',
+  'Chapecoense AF':                  '/crests/chapecoense-af.png',
+  'Clube do Remo':                   '/crests/clube-do-remo.png',
+  'Coritiba FBC':                    '/crests/coritiba-fbc.png',
+  'CR Flamengo':                     '/crests/cr-flamengo.png',
+  'CR Vasco da Gama':                '/crests/cr-vasco-da-gama.png',
+  'Cruzeiro EC':                     '/crests/cruzeiro-ec.png',
+  'EC Bahia':                        '/crests/ec-bahia.png',
+  'EC Vitória':                      '/crests/ec-vitoria.png',
+  'Fluminense FC':                   '/crests/fluminense-fc.png',
+  'Grêmio FBPA':                     '/crests/gremio-fbpa.png',
+  'Mirassol FC':                     '/crests/mirassol-fc.png',
+  'RB Bragantino':                   '/crests/rb-bragantino.png',
+  'SC Corinthians Paulista':         '/crests/sc-corinthians-paulista.png',
+  'SC Internacional':                '/crests/sc-internacional.png',
+  'SE Palmeiras':                    '/crests/se-palmeiras.png',
+  'Santos FC':                       '/crests/santos-fc.png',
+  'São Paulo FC':                    '/crests/sao-paulo-fc.png',
+  // ── Champions League / Europa ──
+  'Nottingham Forest':               '/crests/nottingham-forest.png',
+  'Aston Villa':                     '/crests/aston-villa.png',
+};
+function getCrest(home, away, field, provided){
+  // Her zaman yerel crests/ klasörüne bak, harici URL kullanma
+  return field==='hc' ? (teamCrests[home]||'') : (teamCrests[away]||'');
+}
+function crestImg(src, alt, cls){
+  if(!src) return '';
+  return `<img src="${src}" alt="${alt}" class="${cls}" onerror="this.style.display='none'" loading="lazy">`;
+}
+
+function renderTable(){
+  const derbiLabel = currentLang==='tr' ? 'DERBİ' : 'DERBY';
+  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity'};
+
+  // Desktop table
+  document.getElementById('matchTable').innerHTML=matches.map(m=>{
+    const cells=ais.map(ai=>{
+      const p=m.p[ai];
+      const lbl = p[currentLang] || p.en || p.tr;
+      return `<td class="pc"><span class="badge ${p.c}">${lbl}</span></td>`;
+    }).join('');
+    const dt=m.derbi?`<span class="dtag">${derbiLabel}</span>`:'';
+    const dateStr = m.date[currentLang] || m.date.en || m.date.tr;
+    const hcUrl = getCrest(m.home, m.away, 'hc', m.hc);
+    const acUrl = getCrest(m.home, m.away, 'ac', m.ac);
+    const hImg = crestImg(hcUrl, m.home, 'tcrest');
+    const aImg = crestImg(acUrl, m.away, 'tcrest');
+    const teamsHtml = `<span class="mn-crests"><span class="team-w">${hImg}<span class="tname" style="max-width:none;white-space:normal;">${m.home}</span></span><span class="vs">vs</span><span class="team-w">${aImg}<span class="tname" style="max-width:none;white-space:normal;">${m.away}</span></span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}</span>`;
+    const matchName = m.url
+      ? `<a href="${m.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">${teamsHtml}</a>`
+      : teamsHtml;
+    return `<tr class="${m.derbi?'dr':''}">
+      <td class="mc">
+        <div class="mn">${matchName}</div>
+        <div class="match-meta">${dateStr} <span class="match-time">${m.time}</span></div>
+      </td>${cells}</tr>`;
+  }).join('');
+
+  // Mobile cards
+  const container = document.getElementById('mobileCards');
+  if(container){
+    container.innerHTML = matches.map(m=>{
+      const dt = m.derbi ? `<span class="dtag">${derbiLabel}</span>` : '';
+      const dateStr = m.date[currentLang] || m.date.en || m.date.tr;
+      const hcU = getCrest(m.home, m.away, 'hc', m.hc);
+      const acU = getCrest(m.home, m.away, 'ac', m.ac);
+      const hCI = crestImg(hcU, m.home, 'card-crest');
+      const aCI = crestImg(acU, m.away, 'card-crest');
+      const preds = ais.map(ai=>{
+        const p = m.p[ai];
+        const lbl = p[currentLang] || p.en || p.tr;
+        return `<div class="match-card-pred">
+          <span class="match-card-ai">${aiNames[ai]}</span>
+          <span class="badge ${p.c}">${lbl}</span>
+        </div>`;
+      }).join('');
+      const cardContent = `
+        <div class="match-card-header">
+          <div class="match-card-teams">
+            <span style="display:flex;align-items:center;gap:4px;">${hCI}<span>${m.home}</span></span><span class="vs">vs</span><span style="display:flex;align-items:center;gap:4px;">${aCI}<span>${m.away}</span></span>${dt}${m.popular ? '<span style="font-size:9px;font-weight:700;letter-spacing:1px;background:rgba(255,61,90,.15);color:var(--accent2);border:1px solid rgba(255,61,90,.3);border-radius:3px;padding:1px 6px;">🔥 POPÜLER</span>' : ''}
+          </div>
+          <div class="match-card-meta">${dateStr}${m.time ? ' · <span style="color:#ffe600;font-family:Bebas Neue,cursive;font-size:13px;">'+m.time+'</span>' : ''}</div>
+        </div>
+        <div class="match-card-preds">${preds}</div>`;
+      if(m.url) {
+        return `<a href="${m.url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;" class="match-card${m.derbi?' dr':''}">${cardContent}</a>`;
+      }
+      return `<div class="match-card${m.derbi?' dr':''}">${cardContent}</div>`;
+    }).join('');
+  }
+}
+
+function renderTopPicks(){
+  // "En Güvenli Tahminler" — 6/6 veya 5/6 konsensüslü maçlar, tüm liglerden
+  const grid = document.getElementById('guvenliGrid');
+  if(!grid) return;
+  const allMatches = [];
+  Object.entries(allLeagues).forEach(([lk, lg]) => {
+    (lg.matches || []).forEach(m => {
+      // Skip matches without predictions (e.g. World Cup placeholders)
+      if(ais.some(ai => m.p[ai].en === '—' || m.p[ai].tr === '—')) return;
+      const f = {};
+      ais.forEach(ai => {
+        const l = m.p[ai][currentLang] || m.p[ai].en || m.p[ai].tr;
+        f[l] = (f[l]||0) + 1;
+      });
+      const [tl, tc] = Object.entries(f).sort((a,b)=>b[1]-a[1])[0];
+      const pct = Math.round(tc/6*100);
+      if(tc >= 6) allMatches.push({home:m.home, away:m.away, tl, tc, pct, league: currentLang==='tr'?lg.nameTr:lg.nameEn, url:m.url||null});
+    });
+  });
+  allMatches.sort((a,b)=>b.tc-a.tc || b.pct-a.pct);
+  const top = allMatches.slice(0,12);
+  if(!top.length){ grid.innerHTML='<p style="color:var(--muted);font-size:13px;">Bu hafta tam konsensüslü maç bulunamadı.</p>'; return; }
+  
+  const lockColors = {6:'#00c853', 5:'#ffe600'};
+  grid.innerHTML = top.map(d => {
+    const nameHtml = d.url
+      ? `<a href="${d.url}" style="color:#fff;text-decoration:none;font-size:13px;font-weight:700;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#fff'">${d.home} – ${d.away}</a>`
+      : `<span style="font-size:13px;font-weight:700;color:#fff;">${d.home} – ${d.away}</span>`;
+    return `<div class="cc" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;right:0;background:${lockColors[d.tc]||'#00e5ff'};color:#000;font-size:9px;font-weight:700;padding:2px 8px;border-radius:0 8px 0 6px;letter-spacing:1px;">${d.tc}/6</div>
+      <div class="cc-m">${d.league}</div>
+      ${nameHtml}
+      <div class="cc-p" style="margin-top:4px;">${d.tl}</div>
+      <div class="cc-bg" style="margin-top:8px;"><div class="cc-bar" style="width:0%;background:${lockColors[d.tc]||'#00e5ff'}" data-w="${d.pct}"></div></div>
+      <div class="cc-n">${d.tc}/6 AI hemfikir · %${d.pct}</div>
+    </div>`;
+  }).join('');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    grid.querySelectorAll('.cc-bar').forEach(b=>b.style.width=b.dataset.w+'%');
+  }));
+}
+
+function renderAiStats(){
+  const grid = document.getElementById('aiStatsGrid');
+  if(!grid) return;
+  
+  // Collect all predictions across all leagues
+  const aiPredCounts = {};
+  const aiTotals = {};
+  ais.forEach(ai => { aiPredCounts[ai] = {}; aiTotals[ai] = 0; });
+  
+  Object.values(allLeagues).forEach(lg => {
+    (lg.matches || []).forEach(m => {
+      ais.forEach(ai => {
+        const pred = m.p[ai][currentLang] || m.p[ai].en || m.p[ai].tr;
+        aiPredCounts[ai][pred] = (aiPredCounts[ai][pred]||0) + 1;
+        aiTotals[ai]++;
+      });
+    });
+  });
+
+  const aiNames = {chatgpt:'ChatGPT Pro', gemini:'Gemini', grok:'Grok', copilot:'Copilot Pro', claude:'Claude Pro', perplexity:'Perplexity'};
+  const aiColors = {chatgpt:'#e8eaf6', gemini:'#4285F4', grok:'#e8eaf6', copilot:'#7fba00', claude:'#CC785C', perplexity:'#20e3b2'};
+  const aiSVGs = {
+    chatgpt:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073z" fill="#e8eaf6"/></svg>`,
+    gemini:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>`,
+    grok:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#e8eaf6"/></svg>`,
+    copilot:`<svg width="24" height="24" viewBox="0 0 24 24"><rect width="11" height="11" x="1" y="1" fill="#f25022"/><rect width="11" height="11" x="13" y="1" fill="#7fba00"/><rect width="11" height="11" x="1" y="13" fill="#00a4ef"/><rect width="11" height="11" x="13" y="13" fill="#ffb900"/></svg>`,
+    claude:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M17.5 2.5c-1.2 0-2.3.5-3.1 1.4L12 6.7l-2.4-2.8C8.8 3 7.7 2.5 6.5 2.5 4 2.5 2 4.5 2 7c0 1.2.5 2.3 1.3 3.1L12 19.5l8.7-9.4c.8-.8 1.3-1.9 1.3-3.1 0-2.5-2-4.5-4.5-4.5z" fill="#CC785C"/></svg>`,
+    perplexity:`<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  };
+
+  grid.innerHTML = ais.map(ai => {
+    const counts = aiPredCounts[ai];
+    const total = aiTotals[ai];
+    // Top 3 predictions
+    const top3 = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const favPred = top3[0] ? top3[0][0] : '—';
+    const favCount = top3[0] ? top3[0][1] : 0;
+    const favPct = total ? Math.round(favCount/total*100) : 0;
+    
+    // Aggressiveness: how often picks outright win (MS 1 or MS 2)
+    const boldPicks = (counts['MS 1']||counts['1']||0) + (counts['MS 2']||counts['2']||0);
+    const boldPct = total ? Math.round(boldPicks/total*100) : 0;
+    
+    return `<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,229,255,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        ${aiSVGs[ai]}
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#fff;">${aiNames[ai]}</div>
+          <div style="font-size:10px;color:var(--muted);">${total} ${{tr:'tahmin',en:'predictions'}[currentLang]||'predictions'}</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">En Sık Tahmin</div>
+      <div style="font-size:16px;font-weight:700;color:${aiColors[ai]};margin-bottom:8px;">${favPred} <span style="font-size:11px;color:var(--muted);font-weight:400;">%${favPct}</span></div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;">
+        ${top3.map(([p,c])=>`<span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:3px;font-size:10px;padding:2px 7px;color:var(--muted);">${p} <strong style="color:var(--text);">${Math.round(c/total*100)}%</strong></span>`).join('')}
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px;">Net Kazanım Tahmini</div>
+      <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;">
+        <div style="height:100%;width:${boldPct}%;background:${aiColors[ai]};border-radius:2px;transition:width 1s;"></div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:3px;">%${boldPct} MS 1/MS 2</div>
+    </div>`;
+  }).join('');
+}
+
+function renderConsensus(){
+  const hemfikir = {tr:'hemfikir',en:'in agreement'}[currentLang] || 'in agreement';
+  const consensusData=matches.map(m=>{
+    const f={};
+    ais.forEach(ai=>{const l=m.p[ai][currentLang]||m.p[ai].tr;f[l]=(f[l]||0)+1;});
+    const[tl,tc]=Object.entries(f).sort((a,b)=>b[1]-a[1])[0];
+    const pct=Math.round(tc/6*100);
+    let bc='#00e5ff';
+    if(tl==='1'||tl==='MS 1'||tl==='1X'||tl==='MS 1X')bc='#00c853';
+    else if(tl==='X2'||tl==='MS X2')bc='#ff3d5a';
+    else if(tl==='O2.5'||tl==='2.5 Üst')bc='#c77dff';
+    else if(tl==='U2.5'||tl==='2.5 Alt')bc='#ffab40';
+    return {home:m.home,away:m.away,tl,tc,pct,bc};
+  }).sort((a,b)=>b.pct-a.pct);
+  document.getElementById('cgrid').innerHTML=consensusData.map(d=>`
+    <div class="cc">
+      <div class="cc-m">${d.home} – ${d.away}</div>
+      <div class="cc-p">${d.tl}</div>
+      <div class="cc-bg"><div class="cc-bar" style="width:0%;background:${d.bc}" data-w="${d.pct}"></div></div>
+      <div class="cc-n">${d.tc}/6 ${hemfikir} · ${d.pct}%</div>
+    </div>`).join('');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll('.cc-bar').forEach(b=>b.style.width=b.dataset.w+'%');
+  }));
+}
+
+// ── AI cards ──
+const aiM=[
+  {name:'ChatGPT',desc:'OpenAI GPT-4o',act:false,svg:`<svg viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.896zm16.597 3.855l-5.843-3.369 2.02-1.168a.076.076 0 0 1 .071 0l4.83 2.786a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.402-.676zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08-4.778 2.758a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" fill="#e8eaf6"/></svg>`},
+  {name:'Gemini',desc:'Google DeepMind',act:false,svg:`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>`},
+  {name:'Grok',desc:'xAI',act:false,svg:`<svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#e8eaf6"/></svg>`},
+  {name:'Copilot',desc:'Microsoft',act:false,svg:`<svg viewBox="0 0 24 24"><rect width="11" height="11" x="1" y="1" fill="#f25022"/><rect width="11" height="11" x="13" y="1" fill="#7fba00"/><rect width="11" height="11" x="1" y="13" fill="#00a4ef"/><rect width="11" height="11" x="13" y="13" fill="#ffb900"/></svg>`},
+  {name:'Claude',desc:'Anthropic',act:false,svg:`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 2.5c-1.2 0-2.3.5-3.1 1.4L12 6.7l-2.4-2.8C8.8 3 7.7 2.5 6.5 2.5 4 2.5 2 4.5 2 7c0 1.2.5 2.3 1.3 3.1L12 19.5l8.7-9.4c.8-.8 1.3-1.9 1.3-3.1 0-2.5-2-4.5-4.5-4.5z" fill="#CC785C"/></svg>`},
+  {name:'Perplexity',desc:'Perplexity AI',act:false,svg:`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
+];
+document.getElementById('agrid').innerHTML=aiM.map(a=>`<div class="ac${a.act?' act':''}">${a.svg}<div class="ac-name">${a.name}</div><div class="ac-desc">${a.desc}</div></div>`).join('');
+
+// ── All league match data ──
+const allLeagues = {
+  superlig: {
+    nameTr:'Trendyol Süper Lig', nameEn:'Trendyol Süper Lig',
+    countryTr:'Türkiye', countryEn:'Turkey',
+    code:'TR', flagImg:'tr.svg', week:'33', weekLabel:{tr:'33. HAFTA', en:'WEEK 33'},
+    dates:{tr:'9 May 2026', en:'9 May 2026'},
+    flag:'🇹🇷',
+    analysisTr:`<strong>Fenerbahçe & Beşiktaş:</strong> Bu haftanın en net konsensüsleri bu iki takımda — Fenerbahçe - Başakşehir ve Beşiktaş - Fatih Karagümrük maçlarında 6/6 model ev sahibini destekliyor.<br><br><strong>Galatasaray:</strong> Samsunspor deplasmanında modeller ikiye bölünmüş; ChatGPT, Grok ve Copilot MS 2 derken Gemini ev sahibine şans tanıyor. Deplasman galibiyeti ağır basıyor.<br><br><strong>Trabzonspor - Göztepe:</strong> Modeller ev sahibini destekliyor ancak Gemini yüksek skorlu bir maç (2.5 Üst) öngörüyor — gollü bir gece bekleniyor.<br><br><strong>KG Var Maçları:</strong> Hesap.com Antalyaspor - Alanyaspor, Kasımpaşa - Kocaelispor ve Corendon Alanyaspor - Samsunspor karşılaşmalarında modeller karşılıklı gol seçeneğinde hemfikir.`,
+    analysisEn:`<strong>Fenerbahçe & Beşiktaş:</strong> The clearest consensus picks of the week — 6/6 models back Fenerbahçe at home against Başakşehir and Beşiktaş against Fatih Karagümrük.<br><br><strong>Galatasaray:</strong> Models split at Samsunspor; ChatGPT, Grok and Copilot back the away win while Gemini gives the hosts a chance. Away win is the leaning.<br><br><strong>Trabzonspor vs Göztepe:</strong> Models back the hosts but Gemini predicts a high-scoring game (Over 2.5) — a goal-heavy night expected.<br><br><strong>BTTS Fixtures:</strong> Hesap.com Antalyaspor vs Alanyaspor, Kasımpaşa vs Kocaelispor and Corendon Alanyaspor vs Samsunspor all see model consensus on BTTS.`,
+    analysisTr:`<strong>Beşiktaş - Trabzonspor:</strong> Sezonun en heyecanlı derbilerinden biri. Modeller ikiye bölünmüş; ChatGPT ve Copilot KG Var derken Gemini/Perplexity 1X, Grok beraberlik, Claude ise 2.5 Üst seçiyor.<br><br><strong>Galatasaray - Antalyaspor:</strong> Lider Galatasaray evinde güçlü. 5/6 model ev sahibi galibiyeti ya da 1X seçiyor; sadece Perplexity KG Var diyor.<br><br><strong>Konyaspor - Fenerbahçe:</strong> Şampiyonluk yarışındaki Fenerbahçe 5/6 modelde deplasman galibiyeti için favori — sadece Grok X2 ile daha temkinli.<br><br><strong>Düşük Profilli Maçlar:</strong> Gençlerbirliği - Kasımpaşa'da modeller dağılmış; Göztepe ve Başakşehir evlerinde net favori.`,
+    analysisEn:`<strong>Beşiktaş vs Trabzonspor:</strong> One of the season's most anticipated derbies. Models are split — ChatGPT & Copilot on BTTS, Gemini/Perplexity on 1X, Grok on X, Claude on O2.5.<br><br><strong>Galatasaray vs Antalyaspor:</strong> League leaders strong at home. 5/6 models back home win or 1X; only Perplexity goes BTTS.<br><br><strong>Konyaspor vs Fenerbahçe:</strong> Title-chasing Fenerbahçe are favourites for 5/6 models — only Grok plays it safe with X2.<br><br><strong>Lower-profile Fixtures:</strong> Gençlerbirliği vs Kasımpaşa sees the most model divergence; Göztepe and Başakşehir are clear home favourites.`,
+    matches:[
+      {home:'Alanyaspor',away:'Kayserispor',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/alanyaspor-vs-kayserispor',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+{home:'Başakşehir FK',away:'Samsunspor',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/basaksehir-fk-vs-samsunspor',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+{home:'Beşiktaş',away:'Trabzonspor',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:true,url:'/besiktas-vs-trabzonspor',popular:true,
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS X',en:'X',c:'bdash'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'Eyüpspor',away:'Çaykur Rizespor',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/eyupspor-vs-caykur-rizespor',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+{home:'Galatasaray',away:'Antalyaspor',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/galatasaray-vs-antalyaspor',popular:true,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+{home:'Gençlerbirliği',away:'Kasımpaşa',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/genclerbirligi-vs-kasimpasa',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+{home:'Göztepe',away:'Gaziantep FK',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/goztepe-vs-gaziantep-fk',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+{home:'Kocaelispor',away:'Fatih Karagümrük',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/kocaelispor-vs-fatih-karagumruk',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X',en:'X',c:'bdash'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+{home:'Konyaspor',away:'Fenerbahçe',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/konyaspor-vs-fenerbahce',popular:true,
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}}
+    ]
+  },
+  kupasi: {
+    nameTr:'Ziraat Türkiye Kupası', nameEn:'Ziraat Turkey Cup',
+    countryTr:'Türkiye', countryEn:'Turkey',
+    code:'TR', flagImg:'tr.svg',
+    week:'', weekLabel:{tr:'YARI FİNAL', en:'SEMI-FINAL'},
+    dates:{tr:'5–13 May 2026', en:'5–13 May 2026'},
+    flag:'🏆',
+    analysisTr:`<strong>Beşiktaş - Konyaspor:</strong> Beşiktaş güçlü favorisi; 5/6 model ev sahibini destekliyor. Grok 1X ile daha temkinli.<br><br><strong>Gençlerbirliği - Trabzonspor:</strong> Kupada beklenmedik sonuçlar çıkabiliyor. ChatGPT ve Claude ev sahibini tutarken Gemini ve Perplexity X2 ile Trabzonspor'u destekliyor.`,
+    analysisEn:`<strong>Beşiktaş vs Konyaspor:</strong> Beşiktaş strong favourites at home; 5/6 models back the hosts. Grok more cautious with 1X.<br><br><strong>Gençlerbirliği vs Trabzonspor:</strong> Cup football can produce surprises. ChatGPT & Claude back the hosts while Gemini & Perplexity side with Trabzonspor via X2.`,
+    matches:[
+      {home:'Beşiktaş',away:'Konyaspor',date:{tr:'5 May Sal',en:'Tue 5 May'},time:'20:30',derbi:false,url:'/besiktas-vs-konyaspor-kupa',popular:true,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Gençlerbirliği',away:'Trabzonspor',date:{tr:'13 May Çar',en:'Wed 13 May'},time:'20:30',derbi:false,url:'/genclerbirligi-vs-trabzonspor-kupa',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS X2',en:'X2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 1X',en:'1X',c:'b1x'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}}
+    ]
+  },
+  pl: {
+    nameTr:'Premier League', nameEn:'Premier League',
+    countryTr:'İngiltere', countryEn:'England',
+    code:'EN', flagImg:'gb-eng.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'Nisan 2026', en:'April 2026'},
+    flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    matches:[
+      {home:"Liverpool FC",away:"Chelsea FC",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"11:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Sunderland AFC",away:"Manchester United FC",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"14:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Brighton & Hove Albion FC",away:"Wolverhampton Wanderers FC",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"14:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Fulham FC",away:"AFC Bournemouth",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"14:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+      {home:"Manchester City FC",away:"Brentford FC",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"16:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Crystal Palace FC",away:"Everton FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"13:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Burnley FC",away:"Aston Villa FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"13:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Nottingham Forest FC",away:"Newcastle United FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"13:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"West Ham United FC",away:"Arsenal FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"15:30",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Tottenham Hotspur FC",away:"Leeds United FC",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+    ]
+  },
+  bundesliga: {
+    nameTr:'Bundesliga', nameEn:'Bundesliga',
+    countryTr:'Almanya', countryEn:'Germany',
+    code:'DE', flagImg:'de.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'Nisan 2026', en:'April 2026'},
+    flag:'🇩🇪',
+    matches:[
+{home:"Borussia Dortmund",away:"Eintracht Frankfurt",date:{tr:"8 May Cum",en:"Fri 8 May"},time:"18:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"VfB Stuttgart",away:"Bayer 04 Leverkusen",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"13:30",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+{home:"TSG 1899 Hoffenheim",away:"SV Werder Bremen",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"13:30",derbi:false,p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"FC Augsburg",away:"Borussia Mönchengladbach",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"13:30",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+{home:"RB Leipzig",away:"FC St. Pauli 1910",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"13:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+{home:"VfL Wolfsburg",away:"FC Bayern München",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"16:30",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+{home:"Hamburger SV",away:"SC Freiburg",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"13:30",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"1. FC Köln",away:"1. FC Heidenheim 1846",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"15:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+{home:"1. FSV Mainz 05",away:"1. FC Union Berlin",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"17:30",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
+    ]
+  },
+  seriea: {
+    nameTr:'Serie A', nameEn:'Serie A',
+    countryTr:'İtalya', countryEn:'Italy',
+    code:'IT', flagImg:'it.svg',
+    week:'34', weekLabel:{tr:'34. HAFTA', en:'WEEK 34'},
+    dates:{tr:'25–28 Nisan 2026', en:'25–28 April 2026'},
+    flag:'🇮🇹',
+    matches:[
+      {home:"Torino FC",away:"US Sassuolo Calcio",date:{tr:"8 May Cum",en:"Fri 8 May"},time:"18:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Cagliari Calcio",away:"Udinese Calcio",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"13:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"SS Lazio",away:"FC Internazionale Milano",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"16:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"US Lecce",away:"Juventus FC",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"18:45",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Hellas Verona FC",away:"Como 1907",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"10:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"ACF Fiorentina",away:"Genoa CFC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"13:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"US Cremonese",away:"AC Pisa 1909",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"13:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Parma Calcio 1913",away:"AS Roma",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"16:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"AC Milan",away:"Atalanta BC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"18:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"SSC Napoli",away:"Bologna FC 1909",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"18:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}}
+    ]
+  },
+  laliga: {
+    nameTr:'La Liga', nameEn:'La Liga',
+    countryTr:'İspanya', countryEn:'Spain',
+    code:'ES', flagImg:'es.svg',
+    week:'33', weekLabel:{tr:'33. HAFTA', en:'WEEK 33'},
+    dates:{tr:'24–27 Nisan 2026', en:'24–27 April 2026'},
+    flag:'🇪🇸',
+    analysisTr:`<strong>CA Osasuna - FC Barcelona:</strong> Tüm modeller Barça'yı güçlü favoriye koyuyor; 6/6 MS 2 konsensüsü.<br><br><strong>Valencia - Atlético Madrid:</strong> Atlético için güçlü deplasman konsensüsü — Perplexity de MS 2 ile hemfikir.<br><br><strong>Deportivo Alavés - Athletic Club:</strong> Perplexity bu hafta MS X2 ile diğer modellerden ayrışıyor; genel eğilim deplasman lehine.<br><br><strong>Getafe - Rayo Vallecano:</strong> Modeller düşük tempolu bir maç bekliyor; Perplexity 2.5 Alt ile bu görüşe katılıyor.`,
+    analysisEn:`<strong>CA Osasuna vs FC Barcelona:</strong> All models back Barça emphatically — 6/6 Away Win consensus.<br><br><strong>Valencia vs Atlético Madrid:</strong> Strong away consensus for Atlético — Perplexity also agrees with Away Win.<br><br><strong>Deportivo Alavés vs Athletic Club:</strong> Perplexity breaks from the pack with X2 this week; general lean is away.<br><br><strong>Getafe vs Rayo Vallecano:</strong> Models expect a low-scoring affair; Perplexity backs Under 2.5.`,
+    matches:[
+      {home:"Levante UD",away:"CA Osasuna",date:{tr:"8 May Cum",en:"Fri 8 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"Elche CF",away:"Deportivo Alavés",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"12:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+      {home:"Sevilla FC",away:"RCD Espanyol de Barcelona",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"14:15",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Club Atlético de Madrid",away:"RC Celta de Vigo",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"16:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Real Sociedad de Fútbol",away:"Real Betis Balompié",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"RCD Mallorca",away:"Villarreal CF",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"12:00",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Athletic Club",away:"Valencia CF",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:15",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Real Oviedo",away:"Getafe CF",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"16:30",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+      {home:"FC Barcelona",away:"Real Madrid CF",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Rayo Vallecano de Madrid",away:"Girona FC",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"RC Celta de Vigo",away:"Levante UD",date:{tr:"12 May Sal",en:"Tue 12 May"},time:"17:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Real Betis Balompié",away:"Elche CF",date:{tr:"12 May Sal",en:"Tue 12 May"},time:"18:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"CA Osasuna",away:"Club Atlético de Madrid",date:{tr:"12 May Sal",en:"Tue 12 May"},time:"19:30",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+    ]
+  },
+  ligue1: {
+    nameTr:'Ligue 1', nameEn:'Ligue 1',
+    countryTr:'Fransa', countryEn:'France',
+    code:'FR', flagImg:'fr.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'Nisan 2026', en:'April 2026'},
+    flag:'🇫🇷',
+    matches:[
+{home:"Racing Club de Lens",away:"FC Nantes",date:{tr:"8 May Cum",en:"Fri 8 May"},time:"18:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"Le Havre AC",away:"Olympique de Marseille",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+{home:"AJ Auxerre",away:"OGC Nice",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+{home:"AS Monaco FC",away:"Lille OSC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"FC Metz",away:"FC Lorient",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+{home:"Toulouse FC",away:"Olympique Lyonnais",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+{home:"Paris Saint-Germain FC",away:"Stade Brestois 29",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+{home:"Angers SCO",away:"RC Strasbourg Alsace",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+{home:"Stade Rennais FC 1901",away:"Paris FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+    ]
+  },
+  eredivisie: {
+    nameTr:'Eredivisie', nameEn:'Eredivisie',
+    countryTr:'Hollanda', countryEn:'Netherlands',
+    code:'NL', flagImg:'nl.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'28 Nis – 2 May 2026', en:'28 Apr – 2 May 2026'},
+    flag:'🇳🇱',
+    analysisTr:`<strong>AFC Ajax - PSV:</strong> Haftanın en büyük Eredivisie derbisi — modeller PSV'yi favori olarak görüyor, Perplexity de deplasman galibiyetine işaret ediyor.<br><br><strong>FC Den Bosch - Almere City & RKC Waalwijk - Roda JC Kerkrade:</strong> Bu haftanın en ilginç beraberlik adayları — 4/6 model çifte şans veya beraberlik seçeneğini tercih ediyor, Perplexity her iki maçta da MS X diyor.<br><br><strong>Fortuna Sittard - Feyenoord:</strong> Tüm modeller Feyenoord'u deplasmanda destekliyor; net MS 2 konsensüsü.<br><br><strong>NEC - Telstar:</strong> Ev sahibi lehine mutlak konsensüs — 6/6 model NEC galibiyeti öngörüyor.`,
+    analysisEn:`<strong>AFC Ajax vs PSV:</strong> The week's biggest Eredivisie derby — models lean PSV, with Perplexity also pointing to an away win.<br><br><strong>FC Den Bosch vs Almere City & RKC Waalwijk vs Roda JC Kerkrade:</strong> This week's most interesting draw candidates — 4/6 models favor double chance or draw, with Perplexity calling MS X in both.<br><br><strong>Fortuna Sittard vs Feyenoord:</strong> All models back Feyenoord away — clear Away Win consensus.<br><br><strong>NEC vs Telstar:</strong> Absolute home consensus — 6/6 models predict an NEC win.`,
+    matches:[
+{home:"AFC Ajax",away:"FC Utrecht",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"SBV Excelsior",away:"FC Volendam",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+{home:"FC Groningen",away:"NEC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+{home:"Feyenoord Rotterdam",away:"AZ",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+{home:"Fortuna Sittard",away:"PEC Zwolle",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"Go Ahead Eagles",away:"PSV",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+{home:"NAC Breda",away:"SC Heerenveen",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+{home:"Telstar 1963",away:"Heracles Almelo",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+{home:"FC Twente '65",away:"Sparta Rotterdam",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"14:45",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+    ]
+  },
+  primeiraliga: {
+    nameTr:'Primeira Liga', nameEn:'Primeira Liga',
+    countryTr:'Portekiz', countryEn:'Portugal',
+    code:'PT', flagImg:'pt.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'27 Nis – 3 May 2026', en:'27 Apr – 3 May 2026'},
+    flag:'🇵🇹',
+    analysisTr:`<strong>Porto - Alverca:</strong> Porto için güçlü ev sahibi konsensüsü; Perplexity de MS 1 ile destekliyor.<br><br><strong>Famalicão - Benfica:</strong> Tüm modeller ve Perplexity Benfica'yı destekliyor; net MS 2 konsensüsü.<br><br><strong>Arouca - Santa Clara:</strong> Perplexity bu maçta MS 1X seçerek ihtiyatlı; diğer modeller de net favori belirlemiyor.<br><br><strong>Moreirense, Gil Vicente, Casa Pia:</strong> Ev sahipleri lehine genel eğilim; Perplexity tüm bu maçlarda MS 1 seçiyor.`,
+    analysisEn:`<strong>Porto vs Alverca:</strong> Strong home win consensus — Perplexity also backs MS 1.<br><br><strong>Famalicão vs Benfica:</strong> All models including Perplexity back Benfica — clear Away Win consensus.<br><br><strong>Arouca vs Santa Clara:</strong> Perplexity plays it safe with 1X here; other models also uncertain on a clear favorite.<br><br><strong>Moreirense, Gil Vicente, Casa Pia:</strong> General lean toward home sides; Perplexity picks MS 1 in all three.`,
+    matches:[
+      {home:"Vitória SC",away:"Casa Pia AC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Gil Vicente FC",away:"FC Arouca",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"CD Tondela",away:"Moreirense FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"AVS",away:"FC Porto",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"CF Estrela da Amadora",away:"FC Famalicão",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"2.5 Alt",en:"U2.5",c:"ba"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"FC Alverca",away:"GD Estoril Praia",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+      {home:"Rio Ave FC",away:"Sporting Clube de Portugal",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"CD Santa Clara",away:"CD Nacional",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+      {home:"Sport Lisboa e Benfica",away:"Sporting Clube de Braga",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+    ]
+  },
+  mls: {
+    nameTr:'MLS', nameEn:'MLS',
+    countryTr:'Amerika', countryEn:'USA',
+    code:'US', flagImg:'us.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'9–11 May 2026', en:'9–11 May 2026'},
+    flag:'🇺🇸',
+    analysisTr:`<strong>Toronto - Inter Miami:</strong> 5/6 model Messi'nin takımını deplasmanda favori görüyor; sadece Grok X2 ile temkinli davranıyor.<br><br><strong>Seattle Sounders - San Diego:</strong> Seattle evinde net favori — 4/6 model MS 1 ya da 1X diyor.<br><br><strong>LAFC - Houston Dynamo:</strong> LAFC evinde güçlü; 4/6 model ev sahibi galibiyeti ya da 1X seçiyor.<br><br><strong>Doğu Kıyısı Karşılaşmaları:</strong> Charlotte-Cincinnati ve NY City-Columbus maçlarında deplasman takımları daha iyi formda.`,
+    analysisEn:`<strong>Toronto vs Inter Miami:</strong> 5/6 models favour Messi's side on the road; only Grok plays it safe with X2.<br><br><strong>Seattle Sounders vs San Diego:</strong> Seattle strong at home — 4/6 models back 1 or 1X.<br><br><strong>LAFC vs Houston Dynamo:</strong> LAFC powerful at home; 4/6 models pick home win or 1X.<br><br><strong>East Coast Fixtures:</strong> Charlotte vs Cincinnati and NYCFC vs Columbus both see the away side in better form.`,
+    matches:[
+      {home:'Toronto FC',away:'Inter Miami',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/toronto-fc-vs-inter-miami',
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+{home:'Chicago Fire',away:'New York Red Bulls',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'21:30',derbi:false,url:'/chicago-fire-vs-new-york-red-bulls',
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+{home:'CF Montreal',away:'Orlando City',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'23:30',derbi:false,url:'/cf-montreal-vs-orlando-city',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'Atlanta United',away:'Los Angeles Galaxy',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'02:30',derbi:false,url:'/atlanta-united-vs-los-angeles-galaxy',
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS X2',en:'X2',c:'bx2'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+{home:'Charlotte',away:'FC Cincinnati',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'02:30',derbi:false,url:'/charlotte-vs-fc-cincinnati',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'MS X2',en:'X2',c:'bx2'},claude:{tr:'2.5 Alt',en:'U2.5',c:'ba'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}},
+{home:'New England Revolution',away:'Philadelphia Union',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'02:30',derbi:false,url:'/new-england-revolution-vs-philadelphia-union',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'FC Dallas',away:'Real Salt Lake',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'03:30',derbi:false,url:'/fc-dallas-vs-real-salt-lake',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'Nashville SC',away:'DC United',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'04:15',derbi:false,url:'/nashville-sc-vs-dc-united',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
+{home:'Colorado Rapids',away:'St. Louis City',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'04:30',derbi:false,url:'/colorado-rapids-vs-st-louis-city',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS X2',en:'X2',c:'bx2'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+{home:'Portland Timbers',away:'Sporting Kansas City',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'05:30',derbi:false,url:'/portland-timbers-vs-sporting-kansas-city',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+{home:'San Jose Earthquakes',away:'Vancouver Whitecaps',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'05:30',derbi:false,url:'/san-jose-earthquakes-vs-vancouver-whitecaps',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
+{home:'Seattle Sounders',away:'San Diego',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'05:30',derbi:false,url:'/seattle-sounders-vs-san-diego',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'New York City FC',away:'Columbus Crew',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'23:30',derbi:false,url:'/new-york-city-fc-vs-columbus-crew',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 2',en:'2',c:'bx2'},copilot:{tr:'2.5 Üst',en:'O2.5',c:'bu'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'Minnesota United',away:'Austin',date:{tr:'11 May Paz',en:'Sun 11 May'},time:'02:00',derbi:false,url:'/minnesota-united-vs-austin',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+{home:'Los Angeles FC',away:'Houston Dynamo',date:{tr:'11 May Paz',en:'Sun 11 May'},time:'04:00',derbi:false,url:'/los-angeles-fc-vs-houston-dynamo',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}}
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+  worldcup: {
+    nameTr:'2026 FIFA Dünya Kupası', nameEn:'2026 FIFA World Cup',
+    countryTr:'Dünya', countryEn:'World',
+    code:'FIFA', flagImg:'',
+    week:'', weekLabel:{tr:'1. MAÇLAR', en:'MATCHDAY 1'},
+    dates:{tr:'11–18 Haziran 2026', en:'11–18 June 2026'},
+    flag:'🏆',
+    matches:[
+      {home:'Meksika',away:'Güney Afrika',date:{tr:'11 Haz Per',en:'Thu 11 Jun'},time:'21:00',derbi:false,url:'/meksika-vs-guney-afrika',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Güney Kore',away:'Çek Cumhuriyeti',date:{tr:'12 Haz Cum',en:'Fri 12 Jun'},time:'04:00',derbi:false,url:'/guney-kore-vs-cek-cumhuriyeti',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Kanada',away:'Bosna Hersek',date:{tr:'12 Haz Cum',en:'Fri 12 Jun'},time:'21:00',derbi:false,url:'/kanada-vs-bosna-hersek',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'ABD',away:'Paraguay',date:{tr:'13 Haz Cmt',en:'Sat 13 Jun'},time:'03:00',derbi:false,url:'/abd-vs-paraguay',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Katar',away:'İsviçre',date:{tr:'13 Haz Cmt',en:'Sat 13 Jun'},time:'21:00',derbi:false,url:'/katar-vs-isvicre',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Brezilya',away:'Fas',date:{tr:'14 Haz Paz',en:'Sun 14 Jun'},time:'00:00',derbi:false,url:'/brezilya-vs-fas',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Haiti',away:'İskoçya',date:{tr:'14 Haz Paz',en:'Sun 14 Jun'},time:'03:00',derbi:false,url:'/haiti-vs-iskocya',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Avustralya',away:'Türkiye',date:{tr:'14 Haz Paz',en:'Sun 14 Jun'},time:'06:00',derbi:false,url:'/avustralya-vs-turkiye',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Almanya',away:'Curaçao',date:{tr:'14 Haz Paz',en:'Sun 14 Jun'},time:'19:00',derbi:false,url:'/almanya-vs-curacao',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Hollanda',away:'Japonya',date:{tr:'14 Haz Paz',en:'Sun 14 Jun'},time:'22:00',derbi:false,url:'/hollanda-vs-japonya',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Fildişi Sahili',away:'Ekvador',date:{tr:'15 Haz Pzt',en:'Mon 15 Jun'},time:'01:00',derbi:false,url:'/fildisi-sahili-vs-ekvador',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'İsveç',away:'Tunus',date:{tr:'15 Haz Pzt',en:'Mon 15 Jun'},time:'04:00',derbi:false,url:'/isvec-vs-tunus',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'İspanya',away:'Yeşil Burun',date:{tr:'15 Haz Pzt',en:'Mon 15 Jun'},time:'18:00',derbi:false,url:'/ispanya-vs-yesil-burun',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Belçika',away:'Mısır',date:{tr:'15 Haz Pzt',en:'Mon 15 Jun'},time:'21:00',derbi:false,url:'/belcika-vs-misir',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Suudi Arabistan',away:'Uruguay',date:{tr:'16 Haz Sal',en:'Tue 16 Jun'},time:'00:00',derbi:false,url:'/suudi-arabistan-vs-uruguay',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'İran',away:'Yeni Zelanda',date:{tr:'16 Haz Sal',en:'Tue 16 Jun'},time:'03:00',derbi:false,url:'/iran-vs-yeni-zelanda',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Fransa',away:'Senegal',date:{tr:'16 Haz Sal',en:'Tue 16 Jun'},time:'21:00',derbi:false,url:'/fransa-vs-senegal',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Irak',away:'Norveç',date:{tr:'17 Haz Çar',en:'Wed 17 Jun'},time:'00:00',derbi:false,url:'/irak-vs-norvec',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Arjantin',away:'Cezayir',date:{tr:'17 Haz Çar',en:'Wed 17 Jun'},time:'03:00',derbi:false,url:'/arjantin-vs-cezayir',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Avusturya',away:'Ürdün',date:{tr:'17 Haz Çar',en:'Wed 17 Jun'},time:'06:00',derbi:false,url:'/avusturya-vs-urdun',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Portekiz',away:'DR Kongo',date:{tr:'17 Haz Çar',en:'Wed 17 Jun'},time:'19:00',derbi:false,url:'/portekiz-vs-dr-kongo',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'İngiltere',away:'Hırvatistan',date:{tr:'17 Haz Çar',en:'Wed 17 Jun'},time:'22:00',derbi:false,url:'/ingiltere-vs-hirvatistan',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Gana',away:'Panama',date:{tr:'18 Haz Per',en:'Thu 18 Jun'},time:'01:00',derbi:false,url:'/gana-vs-panama',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+      {home:'Özbekistan',away:'Kolombiya',date:{tr:'18 Haz Per',en:'Thu 18 Jun'},time:'04:00',derbi:false,url:'/ozbekistan-vs-kolombiya',
+       p:{chatgpt:{tr:'—',en:'—',c:'bdash'},gemini:{tr:'—',en:'—',c:'bdash'},grok:{tr:'—',en:'—',c:'bdash'},copilot:{tr:'—',en:'—',c:'bdash'},claude:{tr:'—',en:'—',c:'bdash'},perplexity:{tr:'—',en:'—',c:'bdash'}}},
+    ]
+  },
+  championsleague: {
+    nameTr:'UEFA Şampiyonlar Ligi', nameEn:'UEFA Champions League',
+    countryTr:'Avrupa', countryEn:'Europe',
+    code:'UEFA', flagImg:'',
+    week:'', weekLabel:{tr:'YARI FİNAL', en:'SEMI-FINAL'},
+    dates:{tr:'28 Nis – 6 May 2026', en:'28 Apr – 6 May 2026'},
+    flag:'🏆',
+    matches:[
+      {home:"Paris Saint-Germain FC",away:"Arsenal FC",date:{tr:"7 May Per",en:"Thu 7 May"},time:"21:00",derbi:false,url:"/paris-saint-germain-fc-vs-arsenal-fc",popular:true,
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
+      {home:"FC Internazionale Milano",away:"FC Barcelona",date:{tr:"7 May Per",en:"Thu 7 May"},time:"21:00",derbi:false,url:"/fc-internazionale-milano-vs-fc-barcelona",popular:true,
+       p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}}
+    ]
+  },
+  europaleague: {
+    nameTr:'UEFA Avrupa Ligi', nameEn:'UEFA Europa League',
+    countryTr:'Avrupa', countryEn:'Europe',
+    code:'UEFA', flagImg:'',
+    week:'', weekLabel:{tr:'YARI FİNAL', en:'SEMI-FINAL'},
+    dates:{tr:'7 May 2026', en:'7 May 2026'},
+    flag:'🏆',
+    matches:[
+      {home:"Aston Villa",away:"Nottingham Forest",date:{tr:"7 May Per",en:"Thu 7 May"},time:"22:00",derbi:false,url:"/aston-villa-vs-nottingham-forest",popular:true,
+       p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Üst",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"SC Freiburg",away:"Sporting Braga",date:{tr:"7 May Per",en:"Thu 7 May"},time:"22:00",derbi:false,url:"/sc-freiburg-vs-sporting-braga",popular:true,
+       p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
+    ]
+  },
+  brasileirao: {
+    nameTr:'Brasileirão Série A', nameEn:'Brasileirão Série A',
+    countryTr:'Brezilya', countryEn:'Brazil',
+    code:'BR', flagImg:'br.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'25–27 Nisan 2026', en:'25–27 April 2026'},
+    flag:'🇧🇷',
+    matches:[
+{home:"Coritiba FBC",away:"SC Internacional",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+{home:"Fluminense FC",away:"EC Vitória",date:{tr:"9 May Cmt",en:"Sat 9 May"},time:"21:00",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+{home:"EC Bahia",away:"Cruzeiro EC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"00:00",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"CA Mineiro",away:"Botafogo FR",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+{home:"Clube do Remo",away:"SE Palmeiras",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"19:00",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+{home:"SC Corinthians Paulista",away:"São Paulo FC",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"21:30",derbi:false,p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+{home:"Mirassol FC",away:"Chapecoense AF",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"21:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
+{home:"Santos FC",away:"RB Bragantino",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"21:30",derbi:false,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
+{home:"Grêmio FBPA",away:"CR Flamengo",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"22:30",derbi:false,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
+{home:"CR Vasco da Gama",away:"CA Paranaense",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"23:30",derbi:false,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
+    ]
+  },
+
+  // ── RUSSIA — Premier Liga ──
+  russia: {
+    nameTr:'Rusya Premier Ligi', nameEn:'Russian Premier League',
+    countryTr:'Rusya', countryEn:'Russia',
+    code:'RU', flagImg:'ru.svg',
+    week:'', weekLabel:{tr:'BU HAFTA', en:'THIS WEEK'},
+    dates:{tr:'10–11 May 2026', en:'10–11 May 2026'},
+    flag:'🇷🇺',
+    analysisTr:`<strong>Zenit - Sochi:</strong> 5/6 model Zenit'i net favori olarak görüyor; sadece Perplexity KG Var seçiyor.<br><br><strong>Lokomotiv - Baltika:</strong> 5/6 model Lokomotiv'i evinde güvenli seçiyor.<br><br><strong>Dinamo Moscow - Krasnodar:</strong> Sezonun en dengeli maçı — ChatGPT/Copilot KG Var, Gemini/Claude X2, Grok beraberlik, Perplexity 2.5 Üst seçiyor.<br><br><strong>Pari NN - CSKA:</strong> 4/6 model CSKA'yı favori görüyor.`,
+    analysisEn:`<strong>Zenit vs Sochi:</strong> 5/6 models back Zenit as clear favourites; only Perplexity goes BTTS.<br><br><strong>Lokomotiv vs Baltika:</strong> 5/6 models confidently pick Lokomotiv at home.<br><br><strong>Dinamo Moscow vs Krasnodar:</strong> Most balanced match of the round — ChatGPT/Copilot on BTTS, Gemini/Claude on X2, Grok on X, Perplexity on O2.5.<br><br><strong>Pari NN vs CSKA:</strong> 4/6 models favour CSKA away.`,
+    matches:[
+      {home:'FK Orenburg',away:'Krylya Sovetov',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'12:30',derbi:false,url:'/fk-orenburg-vs-krylya-sovetov',
+       p:{chatgpt:{tr:'MS 1X',en:'1X',c:'b1x'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 1X',en:'1X',c:'b1x'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+{home:'Zenit St. Petersburg',away:'FC Sochi',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'15:00',derbi:false,url:'/zenit-st-petersburg-vs-fc-sochi',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+{home:'FC Akhmat Grozny',away:'Makhachkala',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'17:15',derbi:false,url:'/fc-akhmat-grozny-vs-makhachkala',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'Lokomotiv Moscow',away:'Baltika Kaliningrad',date:{tr:'10 May Cmt',en:'Sat 10 May'},time:'19:30',derbi:false,url:'/lokomotiv-moscow-vs-baltika-kaliningrad',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1',en:'1',c:'b1'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'MS 1',en:'1',c:'b1'},perplexity:{tr:'2.5 Alt',en:'U2.5',c:'ba'}}},
+{home:'Akron',away:'Rostov',date:{tr:'11 May Paz',en:'Sun 11 May'},time:'13:00',derbi:false,url:'/akron-vs-rostov',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'2.5 Alt',en:'U2.5',c:'ba'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'KG Var',en:'BTTS',c:'bkg'}}},
+{home:'Pari Nizhny Novgorod',away:'CSKA Moskova',date:{tr:'11 May Paz',en:'Sun 11 May'},time:'15:15',derbi:false,url:'/pari-nizhny-novgorod-vs-cska-moskova',
+       p:{chatgpt:{tr:'MS X2',en:'X2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'KG Var',en:'BTTS',c:'bkg'},copilot:{tr:'MS X2',en:'X2',c:'bx2'},claude:{tr:'MS 2',en:'2',c:'bx2'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}},
+{home:'Spartak Moskova',away:'Rubin Kazan',date:{tr:'11 May Paz',en:'Sun 11 May'},time:'17:30',derbi:false,url:'/spartak-moskova-vs-rubin-kazan',
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'MS 1X',en:'1X',c:'b1x'},grok:{tr:'MS 1',en:'1',c:'b1'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'KG Var',en:'BTTS',c:'bkg'},perplexity:{tr:'MS 1X',en:'1X',c:'b1x'}}},
+{home:'Dinamo Moscow',away:'Krasnodar',date:{tr:'11 May Paz',en:'Sun 11 May'},time:'20:00',derbi:false,url:'/dinamo-moscow-vs-krasnodar',
+       p:{chatgpt:{tr:'KG Var',en:'BTTS',c:'bkg'},gemini:{tr:'MS X2',en:'X2',c:'bx2'},grok:{tr:'MS X',en:'X',c:'bdash'},copilot:{tr:'KG Var',en:'BTTS',c:'bkg'},claude:{tr:'MS X2',en:'X2',c:'bx2'},perplexity:{tr:'2.5 Üst',en:'O2.5',c:'bu'}}}
+    ]
+  },
+};
+
+
+let currentLeague = 'superlig';
+
+// ── Sidebar helpers ──
+function setActive(el){
+  document.querySelectorAll('.sb-item').forEach(i=>i.classList.remove('active'));
+  if(el) el.classList.add('active');
+}
+function toggleGroup(id,toggle){
+  document.getElementById(id).classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+function switchLeague(id,el){
+  setActive(el);
+  currentLeague = id;
+  const lg = allLeagues[id];
+  if(!lg) return;
+  matches = lg.matches;
+  // Update breadcrumb
+  const bc = document.getElementById('breadcrumb');
+  const lname = lg['name'+currentLang.charAt(0).toUpperCase()+currentLang.slice(1)] || lg.nameEn;
+  const lcountry = lg['country'+currentLang.charAt(0).toUpperCase()+currentLang.slice(1)] || lg.countryEn;
+  if(bc) bc.innerHTML = `<span>${lcountry}</span> › <span>${lname}</span>`;
+  // Update live badge
+  const badge = document.querySelector('.live-badge');
+  if(badge) badge.textContent = lg.weekLabel[currentLang] || lg.weekLabel.en;
+  // Update week chip
+  const chip = document.querySelector('.week-chip');
+  if(chip) chip.innerHTML = `📅 ${lg.dates[currentLang] || lg.dates.en}`;
+  // Update title
+  const titleEl = document.querySelector('.title-bar h1');
+  if(titleEl){
+    const labelMap = {tr:'Güncel Tahminler',en:'Latest Predictions'};
+    const label = labelMap[currentLang] || labelMap.en;
+    const flagHtml = lg.flagImg ? `<img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/${lg.flagImg}" alt="${lg.code}" style="width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);">` : '';
+    titleEl.innerHTML = `<span class="league-country-tag">${flagHtml}${lg.code||''}</span> ${lname} — <span class="cr">${label}</span>`;
+  }
+  renderTable();
+  renderConsensus();
+  renderAnalysis();
+  renderTopPicks();
+  renderAiStats();
+  showPage('home');
+  window.scrollTo(0,0);
+}
+
+// ── Contact form ──
+function submitContact(){
+  const msg=document.getElementById('formMsg');
+  const name=document.getElementById('cName').value;
+  const email=document.getElementById('cEmail').value;
+  const message=document.getElementById('cMsg').value;
+  if(!name||!email||!message){
+    msg.style.display='block';
+    msg.style.color='var(--accent2)';
+    msg.innerHTML = currentLang==='tr' ? 'Lütfen tüm alanları doldurun.' : 'Please fill in all fields.';
+    return;
+  }
+  msg.style.display='block';
+  msg.style.color='var(--muted)';
+  msg.innerHTML = currentLang==='tr' ? 'Gönderiliyor...' : 'Sending...';
+  fetch('https://formspree.io/f/mbdqzrrj', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name, email, message})
+  }).then(r=>{
+    if(r.ok){
+      msg.style.color='var(--accent)';
+      msg.innerHTML = currentLang==='tr' ? 'Mesajınız alındı, teşekkürler! ✓' : 'Message received, thank you! ✓';
+      ['cName','cEmail','cMsg'].forEach(id=>{document.getElementById(id).value='';});
+    } else {
+      msg.style.color='var(--accent2)';
+      msg.innerHTML = currentLang==='tr' ? 'Bir hata oluştu, tekrar deneyin.' : 'An error occurred, please try again.';
+    }
+  }).catch(()=>{
+    msg.style.color='var(--accent2)';
+    msg.innerHTML = currentLang==='tr' ? 'Bağlantı hatası, tekrar deneyin.' : 'Connection error, please try again.';
+  });
+}
+
+// ── Mobile sidebar close ──
+document.addEventListener('click',e=>{
+  const sb=document.getElementById('sidebar');
+  const toggle=document.getElementById('sbToggle');
+  if(window.innerWidth<=768&&!sb.contains(e.target)&&e.target!==toggle) sb.classList.remove('open');
+});
+
+// ── Init ──
+matches = allLeagues[currentLeague].matches;
+setLang(currentLang);
+renderAnalysis();
+renderTopPicks();
+renderAiStats();
+</script>
+</body>
+</html>
