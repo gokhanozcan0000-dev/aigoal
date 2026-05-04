@@ -1046,11 +1046,8 @@ const teamCrests = {
   'Gençlerbirliği':              '/crests/genclerbirligi.png',
 };
 function getCrest(home, away, field, provided){
-  const team = field==='hc' ? home : away;
-  // TR ve EPL takımları her zaman yerel /crests/ klasöründen
-  if(teamCrests[team]) return teamCrests[team];
-  // Diğer takımlar: maç verisindeki hc/ac URL'ini kullan (football-data.org)
-  return provided || '';
+  if(provided) return provided;
+  return field==='hc' ? (teamCrests[home]||'') : (teamCrests[away]||'');
 }
 function crestImg(src, alt, cls){
   if(!src) return '';
@@ -1724,7 +1721,10 @@ document.addEventListener('click',e=>{
 });
 
 // ── Init ──
+matches = (allLeagues[currentLeague] || allLeagues['superlig']).matches;
 setLang(currentLang);
+renderTable();
+renderConsensus();
 renderAnalysis();
 renderTopPicks();
 renderAiStats();
