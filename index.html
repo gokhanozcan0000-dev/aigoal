@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="tr" id="htmlRoot">
-<head>  
+<head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası</title>
-<meta name="description" content="ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity weekly football predictions for leagues worldwide. Free AI football analysis.">
-<meta property="og:title" content="AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası">
-<meta property="og:description" content="6 AI models analyze football matches every week. Free predictions for Super Lig, Premier League and more.">
+<meta name="description" content="AIGoal aggregates weekly football predictions from 6 AI models — ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity. Free AI-powered match analysis for Süper Lig, Premier League, Bundesliga, La Liga, Serie A and more.">
+<meta name="keywords" content="AI football predictions, yapay zeka futbol tahminleri, ChatGPT football, Gemini predictions, Süper Lig tahmin, Premier League AI, Bundesliga predictions, free football analysis, AI match predictions 2026">
+<meta property="og:title" content="AIGoal.net — AI Football Predictions | 6 Models, 14 Leagues">
+<meta property="og:description" content="6 AI models analyze 100+ football matches every week. Free predictions for Süper Lig, Premier League, Bundesliga, La Liga, Serie A and more.">
 <meta property="og:url" content="https://aigoal.net">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aigoal.net/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AIGoalnet">
+<meta name="twitter:title" content="AIGoal — AI Football Predictions">
+<meta name="twitter:description" content="6 AI models predict 100+ matches weekly. Free analysis for 14 leagues worldwide.">
+<meta name="twitter:image" content="https://aigoal.net/logo.png">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://aigoal.net">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AIGoal",
+  "url": "https://aigoal.net",
+  "description": "AIGoal aggregates weekly football predictions from 6 leading AI models including ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AIGoal",
+    "url": "https://aigoal.net",
+    "logo": { "@type": "ImageObject", "url": "https://aigoal.net/logo.png" }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://aigoal.net/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -419,6 +447,10 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
   <div class="sb-divider" style="margin-top:auto;"></div>
 
   <div class="sb-section">
+    <a class="sb-item" onclick="showPage('blog');setActive(this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <span data-tr="Blog & Analiz" data-en="Blog & Analysis">Blog & Analiz</span>
+    </a>
     <a class="sb-item" onclick="showPage('about');setActive(this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       <span data-tr="Hakkımızda" data-en="About Us">Hakkımızda</span>
@@ -559,20 +591,21 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
           @AIGoalnet
         </a>
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);width:100%;">
-          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2e3455;margin-bottom:8px;">AI Predictions by League</div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">AI Predictions by League</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;">
-            <a href="/super-lig-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Süper Lig AI Prediction</a>
-            <a href="/premier-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Premier League AI Prediction</a>
-            <a href="/bundesliga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Bundesliga AI Prediction</a>
-            <a href="/la-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">La Liga AI Prediction</a>
-            <a href="/serie-a-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Serie A AI Prediction</a>
-            <a href="/ligue-1-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Ligue 1 AI Prediction</a>
-            <a href="/eredivisie-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Eredivisie AI Prediction</a>
-            <a href="/primeira-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Primeira Liga AI Prediction</a>
-            <a href="/championship-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Championship AI Prediction</a>
-            <a href="/mls-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">MLS AI Prediction</a>
-            <a href="/brasileirao-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Brasileirão AI Prediction</a>
-            <a href="/champions-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Champions League AI Prediction</a>
+            <a onclick="showPage('blog');setActive(null)" style="font-size:10px;color:var(--muted);text-decoration:none;cursor:pointer;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">📝 Blog & Analysis</a>
+            <a href="/super-lig-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Süper Lig AI Prediction</a>
+            <a href="/premier-league-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Premier League AI Prediction</a>
+            <a href="/bundesliga-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Bundesliga AI Prediction</a>
+            <a href="/la-liga-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">La Liga AI Prediction</a>
+            <a href="/serie-a-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Serie A AI Prediction</a>
+            <a href="/ligue-1-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Ligue 1 AI Prediction</a>
+            <a href="/eredivisie-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Eredivisie AI Prediction</a>
+            <a href="/primeira-liga-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Primeira Liga AI Prediction</a>
+            <a href="/championship-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Championship AI Prediction</a>
+            <a href="/mls-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">MLS AI Prediction</a>
+            <a href="/brasileirao-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Brasileirão AI Prediction</a>
+            <a href="/champions-league-ai-prediction" style="font-size:10px;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Champions League AI Prediction</a>
           </div>
         </div>
         <div class="fsmall" style="margin-top:10px;">aigoal.net · AI Football Predictions · © 2026</div>
@@ -860,15 +893,23 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         <div class="sp-sub" data-tr="AIGoal hakkında" data-en="About AIGoal">Hakkımızda / About Us</div>
 
         <h3 data-tr="Biz Kimiz?" data-en="Who We Are?">Biz Kimiz?</h3>
-        <p data-tr="AIGoal, dünyanın önde gelen yapay zeka modellerinin futbol maç tahminlerini tek bir platformda bir araya getiren bağımsız bir analiz sitesidir. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity her hafta yüzlerce maçı analiz eder; biz de bu tahminleri sizin için derleyip görselleştiririz." data-en="AIGoal is an independent analysis platform that aggregates football match predictions from the world's leading AI models. ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity analyze hundreds of matches every week — we compile and visualize those predictions for you.">AIGoal, dünyanın önde gelen yapay zeka modellerinin futbol maç tahminlerini tek bir platformda bir araya getiren bağımsız bir analiz sitesidir. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity her hafta yüzlerce maçı analiz eder; biz de bu tahminleri sizin için derleyip görselleştiririz.</p>
+        <p data-tr="AIGoal, dünyanın önde gelen yapay zeka modellerinin futbol maç tahminlerini tek bir platformda bir araya getiren bağımsız bir analiz sitesidir. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity her hafta yüzlerce maçı analiz eder; biz de bu tahminleri sizin için derleyip görselleştiririz. Amacımız basit: hangi yapay zekanın ne düşündüğünü şeffaf bir şekilde sunmak ve futbol severlerle veri odaklı bir bakış açısını paylaşmak." data-en="AIGoal is an independent analysis platform that aggregates football match predictions from the world's leading AI models. ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity analyze hundreds of matches every week — we compile and visualize those predictions for you. Our goal is simple: to transparently show what each AI thinks and share a data-driven perspective with football fans worldwide.">AIGoal, dünyanın önde gelen yapay zeka modellerinin futbol maç tahminlerini tek bir platformda bir araya getiren bağımsız bir analiz sitesidir. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity her hafta yüzlerce maçı analiz eder; biz de bu tahminleri sizin için derleyip görselleştiririz.</p>
 
         <h3 data-tr="Neden AIGoal?" data-en="Why AIGoal?">Neden AIGoal?</h3>
-        <p data-tr="Tek bir yapay zekanın tahminini takip etmek yerine, 6 farklı modelin konsensüsüne bakarak çok daha güçlü bir bakış açısı elde edersiniz. Tüm tahminlerimiz ücretsizdir, reklamsız erişim mümkündür ve her hafta güncellenir." data-en="Instead of following a single AI's predictions, you gain a much stronger perspective by looking at the consensus of 6 different models. All our predictions are free, ad-free access is available, and everything is updated every week.">Tek bir yapay zekanın tahminini takip etmek yerine, 6 farklı modelin konsensüsüne bakarak çok daha güçlü bir bakış açısı elde edersiniz. Tüm tahminlerimiz ücretsizdir ve her hafta güncellenir.</p>
+        <p data-tr="Tek bir yapay zekanın tahminini takip etmek yerine, 6 farklı modelin konsensüsüne bakarak çok daha güçlü bir bakış açısı elde edersiniz. Bir model yanılırken diğerleri doğruyu bulmuş olabilir — bu çeşitlilik, tek bir kaynağa güvenmekten çok daha sağlıklıdır. AIGoal'da tüm tahminler ücretsizdir ve her hafta güncellenir." data-en="Instead of following a single AI's predictions, you gain a much stronger perspective by looking at the consensus of 6 different models. One model may be wrong while others are right — this diversity is far healthier than trusting a single source. At AIGoal, all predictions are free and updated every week.">Tek bir yapay zekanın tahminini takip etmek yerine, 6 farklı modelin konsensüsüne bakarak çok daha güçlü bir bakış açısı elde edersiniz. Tüm tahminlerimiz ücretsizdir ve her hafta güncellenir.</p>
+
+        <h3 data-tr="Hangi Ligleri Kapsıyoruz?" data-en="Which Leagues Do We Cover?">Hangi Ligleri Kapsıyoruz?</h3>
+        <p data-tr="AIGoal şu an 14 farklı lig ve organizasyonu kapsamaktadır: Trendyol Süper Lig, 1. Lig, Ziraat Kupası, İngiltere Premier League, Championship, Almanya Bundesliga, İspanya La Liga, İtalya Serie A, Fransa Ligue 1, Hollanda Eredivisie, Portekiz Primeira Liga, Amerikan MLS, Brezilya Brasileirão ve UEFA Şampiyonlar Ligi. Her lig için haftalık maç tahminleri, konsensüs analizi ve detaylı AI yorumları sunulmaktadır." data-en="AIGoal currently covers 14 leagues and competitions: Trendyol Süper Lig, 1. Lig, Ziraat Kupası, England Premier League, Championship, Germany Bundesliga, Spain La Liga, Italy Serie A, France Ligue 1, Netherlands Eredivisie, Portugal Primeira Liga, MLS, Brazil Brasileirão and UEFA Champions League. Weekly match predictions, consensus analysis and detailed AI commentary are provided for every league.">AIGoal şu an 14 farklı lig ve organizasyonu kapsamaktadır: Trendyol Süper Lig, Premier League, Bundesliga, La Liga, Serie A, Ligue 1, Eredivisie, Primeira Liga, MLS, Brasileirão ve UEFA Şampiyonlar Ligi.</p>
+
+        <h3 data-tr="Yapay Zeka Tahminleri Nasıl Çalışır?" data-en="How Do AI Predictions Work?">Yapay Zeka Tahminleri Nasıl Çalışır?</h3>
+        <p data-tr="Her hafta ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity modellerine yaklaşan maçlar sorulur. Her model; takım formunu, kafa kafaya istatistikleri, ev sahibi/deplasman performansını, sakatlıkları ve motivasyonu değerlendirerek bir tahmin üretir. Bu tahminler AIGoal'da tek bir tabloda karşılaştırmalı olarak sunulur. 6 modelin aynı sonuca vardığı maçlar 'konsensüs' olarak işaretlenir — bu maçlar genel olarak en güvenilir sinyaller olarak öne çıkar." data-en="Every week, upcoming matches are submitted to ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity. Each model evaluates team form, head-to-head statistics, home/away performance, injuries and motivation to generate a prediction. These predictions are presented in a single comparative table on AIGoal. Matches where all 6 models agree are marked as 'consensus' — these generally stand out as the most reliable signals.">Her hafta 6 yapay zeka modeline yaklaşan maçlar analiz ettirilir. Her model takım formu, istatistikler ve diğer faktörleri değerlendirerek bir tahmin üretir. 6 modelin hemfikir olduğu maçlar konsensüs olarak işaretlenir.</p>
+
+        <h3 data-tr="Tahminler Garanti Midir?" data-en="Are Predictions Guaranteed?">Tahminler Garanti Midir?</h3>
+        <p data-tr="Hayır, kesinlikle değil. Futbol doğası gereği öngörülemez; sürpriz sonuçlar her hafta yaşanır. AIGoal'daki tahminler yalnızca bilgilendirme ve eğlence amaçlıdır. Herhangi bir finansal karar alma sürecinde kullanılmamalıdır. AIGoal bir bahis rehberi değil, yapay zekaların futbola bakışını keşfetmek için bir analiz platformudur." data-en="No, absolutely not. Football is inherently unpredictable; surprise results happen every week. Predictions on AIGoal are for informational and entertainment purposes only. They should not be used for any financial decision-making. AIGoal is not a betting guide — it is an analysis platform for exploring how AI models interpret football.">Hayır. Futbol öngörülemezdir; tahminler yalnızca bilgilendirme ve eğlence amaçlıdır. Finansal kararlar için kullanılmamalıdır.</p>
 
         <h3 data-tr="Hedefimiz" data-en="Our Mission">Hedefimiz</h3>
-        <p data-tr="Türkiye Süper Ligi ile başlayan AIGoal, kısa sürede Premier League, La Liga, Bundesliga ve diğer büyük liglere genişlemeyi hedeflemektedir. Uzun vadede tüm dünyadan ligleri kapsayan küresel bir yapay zeka futbol analiz platformu olmayı hedefliyoruz." data-en="AIGoal started with the Turkish Süper Lig and aims to quickly expand to the Premier League, La Liga, Bundesliga and other major competitions. Our long-term goal is to become a global AI football analysis platform covering leagues from every corner of the world.">Türkiye Süper Ligi ile başlayan AIGoal, kısa sürede Premier League, La Liga, Bundesliga ve diğer büyük liglere genişlemeyi hedeflemektedir.</p>
+        <p data-tr="AIGoal, Türkiye Süper Ligi ile başlayan ve kısa sürede 14 ligi kapsayan küresel bir platforma dönüşen bir projedir. Uzun vadeli hedefimiz; dünyanın dört bir yanından ligleri kapsayan, yapay zeka tahmin doğruluğunu takip eden ve futbol severler için en kapsamlı AI analiz arşivini oluşturan bir platform olmaktır." data-en="AIGoal started as a Turkish Süper Lig project and quickly evolved into a global platform covering 14 leagues. Our long-term goal is to cover leagues from every corner of the world, track AI prediction accuracy over time and build the most comprehensive AI football analysis archive for fans worldwide.">Türkiye Süper Ligi ile başlayan AIGoal, kısa sürede 14 ligi kapsayan küresel bir platforma dönüştü. Hedefimiz tüm dünyadan ligleri kapsayan en kapsamlı AI futbol analiz platformu olmaktır.</p>
       </div>
-
     </div>
 
     <!-- ══ CONTACT PAGE ══ -->
@@ -899,6 +940,51 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         </div>
       </div>
 
+    </div>
+
+    <!-- ══ BLOG PAGE ══ -->
+    <div class="page" id="page-blog">
+      <div class="static-page" style="max-width:860px;">
+        <h2>BLOG & <span>ANALİZ</span></h2>
+        <div class="sp-sub" data-tr="Yapay zeka ve futbol üzerine yazılar" data-en="Articles on AI and football">Blog & Analysis</div>
+
+        <!-- Article 1 -->
+        <article style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:28px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">YAPAY ZEKA · Mayıs 2026</div>
+          <h3 style="font-size:18px;margin-bottom:12px;" data-tr="ChatGPT vs Gemini vs Grok: Hangi AI Futbolu Daha İyi Tahmin Ediyor?" data-en="ChatGPT vs Gemini vs Grok: Which AI Predicts Football Better?">ChatGPT vs Gemini vs Grok: Hangi AI Futbolu Daha İyi Tahmin Ediyor?</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.85;" data-tr="Yapay zeka modelleri futbol tahminlerinde birbirinden önemli ölçüde ayrışabiliyor. AIGoal'da her hafta 6 farklı modelin tahminlerini derleyerek bu ayrışmayı net şekilde görüyoruz. Peki hangi model gerçekten daha isabetli? ChatGPT genel olarak ev sahibi takımlara güvenen dengeli bir profil çiziyor. Gemini ise deplasman güçlü takımları tercih etme eğiliminde — özellikle Şampiyonlar Ligi maçlarında Gemini'nin deplasman tahminleri dikkat çekici bir isabet oranına sahip. Grok, diğer modellerden en fazla ayrışan model olma özelliğini koruyor; özellikle beraberlik ve alt/üst tahminlerinde çoğunluktan sıyrılıyor. Copilot'un tahminleri ChatGPT ile büyük ölçüde örtüşüyor ancak risk alma eğilimi daha düşük. Claude ise savunma odaklı maçlarda altgol tahminlerini tercih ediyor. Perplexity, gerçek zamanlı web araması kullandığından sakatlık ve kadro haberleri konusunda diğer modellerden farklı bir bakış açısı sunabiliyor. Genel olarak 6 modelin konsensüs sağladığı maçların, tek model tahminlerine kıyasla çok daha güvenilir sinyaller ürettiği görülüyor." data-en="AI models can diverge significantly in football predictions. At AIGoal, we aggregate 6 different models every week and see this divergence clearly. So which model is actually most accurate? ChatGPT generally profiles as balanced, favouring home sides. Gemini tends to back strong away teams — particularly in Champions League fixtures where its away predictions show a notable hit rate. Grok remains the model that most frequently breaks from the consensus, especially on draw and goal line predictions. Copilot's picks largely overlap with ChatGPT but with a lower risk appetite. Claude tends to favour under-goal predictions in defensively-minded fixtures. Perplexity, using real-time web search, can offer a different angle on injury news and squad updates. Overall, matches where all 6 models reach consensus produce significantly more reliable signals than single-model predictions.">Yapay zeka modelleri futbol tahminlerinde birbirinden önemli ölçüde ayrışabiliyor. AIGoal'da her hafta 6 farklı modelin tahminlerini derleyerek bu ayrışmayı net şekilde görüyoruz...</p>
+          <p style="color:var(--muted);font-size:13px;line-height:1.85;margin-top:12px;" data-tr="AIGoal'daki verilerimize göre, 6 modelin aynı tahminde buluştuğu maçlarda isabet oranı belirgin biçimde yüksek. Bu konsensüs maçları genellikle ligin güçlü bir takımının belirgin favorisi olduğu karşılaşmalar oluyor. Öte yandan en fazla modelin yanıldığı maçlar genellikle derbiler ve play-off niteliğindeki kritik maçlar — tam da sürprizlerin en sık yaşandığı türden karşılaşmalar." data-en="According to our AIGoal data, matches where all 6 models agree show a noticeably higher accuracy rate. These consensus fixtures are typically clashes where the league's stronger team is a clear favourite. Conversely, the matches where the most models get it wrong tend to be derbies and high-stakes playoff-type encounters — exactly the kind of game where surprises happen most often.">AIGoal'daki verilerimize göre, 6 modelin aynı tahminde buluştuğu maçlarda isabet oranı belirgin biçimde yüksek...</p>
+        </article>
+
+        <!-- Article 2 -->
+        <article style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:20px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;">BUNDESLIGA · Mayıs 2026</div>
+          <h3 style="font-size:18px;margin-bottom:12px;" data-tr="Bundesliga 2025-26: Yapay Zeka Modelleri Sezonu Nasıl Değerlendirdi?" data-en="Bundesliga 2025-26: How Did AI Models Assess the Season?">Bundesliga 2025-26: Yapay Zeka Modelleri Sezonu Nasıl Değerlendirdi?</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.85;" data-tr="2025-26 Bundesliga sezonu boyunca AIGoal'da takip ettiğimiz tahminler ilginç örüntüler ortaya koydu. Bayern Münih, hem ev hem deplasman maçlarında neredeyse istisnasız tüm AI modellerinin favorisi oldu — ve çoğunlukla haklı çıktı. Bayer Leverkusen ise geçen sezonun şampiyonu olmasına rağmen bu sezon modellerden daha sınırlı destek gördü. Hamburger SV'nin Bundesliga'ya dönüşü sezonu ilgi çekici kıldı; modeller Hamburg'un ev maçlarında oldukça tutarlı tahminler üretti. Sezonun sürpriz takımı Hoffenheim, AI modellerinin genel olarak hafife aldığı bir kadro oluşturdu — bu da en fazla sürprize yol açan karşılaşmaların Hoffenheim maçları olmasına sebep oldu." data-en="The predictions we tracked on AIGoal throughout the 2025-26 Bundesliga season revealed interesting patterns. Bayern Munich was the favourite of virtually all AI models in both home and away fixtures — and was proven right more often than not. Bayer Leverkusen, despite being last season's champions, received more limited model support this season. Hamburger SV's return to the Bundesliga added an interesting dimension; models produced fairly consistent predictions for Hamburg's home fixtures. The season's surprise package Hoffenheim built a squad that AI models generally underestimated — making Hoffenheim matches the source of the most frequent upsets in model predictions.">2025-26 Bundesliga sezonu boyunca AIGoal'da takip ettiğimiz tahminler ilginç örüntüler ortaya koydu. Bayern Münih, neredeyse istisnasız tüm AI modellerinin favorisi oldu...</p>
+        </article>
+
+        <!-- Article 3 -->
+        <article style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:20px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent3);margin-bottom:8px;">SÜPER LİG · Nisan 2026</div>
+          <h3 style="font-size:18px;margin-bottom:12px;" data-tr="Süper Lig'de AI Tahminleri: Büyük 4 Her Zaman Favori mi?" data-en="AI Predictions in Süper Lig: Are the Big 4 Always Favourites?">Süper Lig'de AI Tahminleri: Büyük 4 Her Zaman Favori mi?</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.85;" data-tr="Türkiye Süper Ligi, AI modelleri açısından ilginç bir test sahası. Fenerbahçe ve Galatasaray, ligdeki konumları itibarıyla modellerin büyük çoğunluğu tarafından sürekli favori gösteriliyor. Beşiktaş ise performansının dalgalı seyrettiği dönemlerde bile model desteğini yüksek oranda koruyor — bu da AI modellerinin marka değerine form tablolarından daha fazla ağırlık verdiğini düşündürüyor. Trabzonspor, özellikle Trabzon'da oynadığında tüm modellerin güçlü favori olarak gösterdiği bir takım; deplasmanda ise tablo tersine dönüyor. Küme düşme mücadelesi veren takımların maçlarında ise modellerin en sık yanıldığı tespit ediliyor — motivasyon faktörü, istatistik temelli tahmin sistemleri için hâlâ büyük bir körlük noktası olmayı sürdürüyor." data-en="The Turkish Süper Lig is an interesting testing ground for AI models. Fenerbahçe and Galatasaray are consistently favoured by the majority of models given their league standing. Beşiktaş maintains high model support even during inconsistent form periods — suggesting that AI models weight brand value more heavily than current form tables. Trabzonspor is a team all models strongly favour when playing in Trabzon; away from home, the picture reverses. In fixtures involving relegation-threatened teams, models are found to be most frequently wrong — motivation remains a significant blind spot for statistic-based prediction systems.">Türkiye Süper Ligi, AI modelleri açısından ilginç bir test sahası. Fenerbahçe ve Galatasaray modellerin büyük çoğunluğu tarafından sürekli favori gösteriliyor...</p>
+        </article>
+
+        <!-- Article 4 -->
+        <article style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:20px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent4);margin-bottom:8px;">ŞAMPİYONLAR LİGİ · Nisan 2026</div>
+          <h3 style="font-size:18px;margin-bottom:12px;" data-tr="UCL Yarı Finalleri: AI Modelleri PSG-Bayern ve Atletico-Arsenal'ı Nasıl Gördü?" data-en="UCL Semi-Finals: How Did AI Models View PSG-Bayern and Atletico-Arsenal?">UCL Yarı Finalleri: AI Modelleri PSG-Bayern ve Atletico-Arsenal'ı Nasıl Gördü?</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.85;" data-tr="Şampiyonlar Ligi yarı finalleri, AI tahmin sistemleri için her zaman zorlu bir sınav. 2025-26 sezonunda PSG-Bayern maçında modeller belirgin biçimde ikiye bölündü: ChatGPT ve Copilot Bayern'i desteklerken, Gemini ve Perplexity PSG'yi tercih etti. Grok ve Claude ise daha temkinli davranarak çifte şans seçeneklerine yöneldi. Atletico-Arsenal maçında ise konsensüs daha güçlüydü — 5 model Atletico'nun tempolu ve savunma öncelikli oyununa karşı Arsenal'ın geride kalacağını öngördü. Şampiyonlar Ligi özelinde AI modellerinin en zorlandığı senaryo, iki üst düzey takımın karşılaştığı ve form farkının minimal olduğu maçlar. Bu tür karşılaşmalarda tahmin dağılımı en geniş seviyeye ulaşıyor ve konsensüs en zor sağlanıyor." data-en="Champions League semi-finals are always a tough examination for AI prediction systems. In the 2025-26 season's PSG-Bayern fixture, models split noticeably: ChatGPT and Copilot backed Bayern while Gemini and Perplexity preferred PSG. Grok and Claude played it safer, leaning toward double-chance options. The Atletico-Arsenal fixture saw stronger consensus — 5 models predicted Arsenal would struggle against Atletico's high-tempo, defence-first approach. The scenario where AI models struggle most in Champions League specifically is when two elite sides meet with minimal form differential. In such fixtures, the prediction spread reaches its widest and consensus is hardest to achieve.">Şampiyonlar Ligi yarı finalleri, AI tahmin sistemleri için her zaman zorlu bir sınav. PSG-Bayern maçında modeller belirgin biçimde ikiye bölündü...</p>
+        </article>
+
+        <!-- Article 5 -->
+        <article style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:20px;margin-bottom:8px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">REHBER · Mart 2026</div>
+          <h3 style="font-size:18px;margin-bottom:12px;" data-tr="AIGoal Nasıl Kullanılır? Tahminleri Okuma Rehberi" data-en="How to Use AIGoal? A Guide to Reading the Predictions">AIGoal Nasıl Kullanılır? Tahminleri Okuma Rehberi</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.85;" data-tr="AIGoal'ı ilk kez ziyaret ediyorsanız, tahmin tablolarını nasıl okuyacağınızı anlatayım. Her satır bir maçı temsil ediyor. Sütunlarda 6 AI modeli yer alıyor: ChatGPT Pro, Gemini, Grok, Copilot Pro, Claude Pro ve Perplexity. Her modelin tahmini renkli bir badge ile gösteriliyor: MS 1 (ev sahibi kazanır), MS 2 (deplasman kazanır), MS X (beraberlik), 1X (ev sahibi kaybetmez), X2 (deplasman kaybetmez), KG Var (her iki takım da gol atar), 2.5 Üst (3 veya daha fazla gol) ve 2.5 Alt (2 veya daha az gol). Sayfanın alt bölümündeki Konsensüs Analizi bölümü, en fazla modelin hemfikir olduğu maçları öne çıkarır. Bu bölüm her hafta AIGoal'ın en güçlü tahmin sinyallerini gösterir. Lig değiştirmek için sol taraftaki kenar çubuğunu kullanabilirsiniz. Türkçe veya İngilizce görüntülemek için sağ üstteki dil düğmesine tıklayın." data-en="If you're visiting AIGoal for the first time, let me explain how to read the prediction tables. Each row represents a match. The columns feature 6 AI models: ChatGPT Pro, Gemini, Grok, Copilot Pro, Claude Pro and Perplexity. Each model's prediction is shown with a coloured badge: 1 (home wins), 2 (away wins), X (draw), 1X (home doesn't lose), X2 (away doesn't lose), BTTS (both teams score), O2.5 (over 2.5 goals) and U2.5 (under 2.5 goals). The Consensus Analysis section at the bottom of the page highlights matches where the most models agree. This section shows AIGoal's strongest prediction signals each week. Use the left sidebar to switch leagues. Click the language button at the top right to view in Turkish or English.">AIGoal'ı ilk kez ziyaret ediyorsanız, tahmin tablolarını nasıl okuyacağınızı anlatalım. Her satır bir maçı, her sütun bir AI modelini temsil ediyor...</p>
+        </article>
+
+      </div>
     </div>
 
     <!-- ══ PRIVACY PAGE ══ -->
@@ -1079,74 +1165,205 @@ const teamCrests = {
   'Tottenham Hotspur FC':            '/crests/tottenham-hotspur-fc.png',
   'West Ham United FC':              '/crests/west-ham-united-fc.png',
   'Wolverhampton Wanderers FC':      '/crests/wolverhampton-wanderers-fc.png',
-  // Bundesliga, La Liga, Serie A, Ligue 1, Eredivisie, Primeira Liga,
-  // MLS, Brasileirao, UCL/UEL ve diğer tüm takımlar TheSportsDB'den dinamik çekilir.
+  // ── Bundesliga ──
+  '1. FC Heidenheim 1846':           '/crests/1-fc-heidenheim-1846.png',
+  '1. FC Köln':                      '/crests/1-fc-koln.png',
+  '1. FC Union Berlin':              '/crests/1-fc-union-berlin.png',
+  '1. FSV Mainz 05':                 '/crests/1-fsv-mainz-05.png',
+  'Bayer 04 Leverkusen':             '/crests/bayer-04-leverkusen.png',
+  'Borussia Dortmund':               '/crests/borussia-dortmund.png',
+  'Borussia Mönchengladbach':        '/crests/borussia-monchengladbach.png',
+  'Eintracht Frankfurt':             '/crests/eintracht-frankfurt.png',
+  'FC Augsburg':                     '/crests/fc-augsburg.png',
+  'FC Bayern München':               '/crests/fc-bayern-munchen.png',
+  'FC St. Pauli 1910':               '/crests/fc-st-pauli-1910.png',
+  'Hamburger SV':                    '/crests/hamburger-sv.png',
+  'RB Leipzig':                      '/crests/rb-leipzig.png',
+  'SC Freiburg':                     '/crests/sc-freiburg.png',
+  'TSG 1899 Hoffenheim':             '/crests/tsg-1899-hoffenheim.png',
+  'SV Werder Bremen':                '/crests/sv-werder-bremen.png',
+  'VfB Stuttgart':                   '/crests/vfb-stuttgart.png',
+  'VfL Wolfsburg':                   '/crests/vfl-wolfsburg.png',
+  // ── La Liga ──
+  'Athletic Club':                   '/crests/athletic-club.png',
+  'CA Osasuna':                      '/crests/ca-osasuna.png',
+  'Club Atlético de Madrid':         '/crests/club-atletico-de-madrid.png',
+  'Deportivo Alavés':                '/crests/deportivo-alaves.png',
+  'FC Barcelona':                    '/crests/fc-barcelona.png',
+  'Getafe CF':                       '/crests/getafe-cf.png',
+  'Girona FC':                       '/crests/girona-fc.png',
+  'Levante UD':                      '/crests/levante-ud.png',
+  'RCD Espanyol de Barcelona':       '/crests/rcd-espanyol-de-barcelona.png',
+  'RCD Mallorca':                    '/crests/rcd-mallorca.png',
+  'RC Celta de Vigo':                '/crests/rc-celta-de-vigo.png',
+  'Rayo Vallecano de Madrid':        '/crests/rayo-vallecano-de-madrid.png',
+  'Real Betis Balompié':             '/crests/real-betis-balompie.png',
+  'Real Madrid CF':                  '/crests/real-madrid-cf.png',
+  'Real Oviedo':                     '/crests/real-oviedo.png',
+  'Real Sociedad de Fútbol':         '/crests/real-sociedad-de-futbol.png',
+  'Sevilla FC':                      '/crests/sevilla-fc.png',
+  'Valencia CF':                     '/crests/valencia-cf.png',
+  'Villarreal CF':                   '/crests/villarreal-cf.png',
+  'Elche CF':                        '/crests/elche-cf.png',
+  // ── Serie A ──
+  'AC Milan':                        '/crests/ac-milan.png',
+  'AC Pisa 1909':                    '/crests/ac-pisa-1909.png',
+  'ACF Fiorentina':                  '/crests/acf-fiorentina.png',
+  'AS Roma':                         '/crests/as-roma.png',
+  'Atalanta BC':                     '/crests/atalanta-bc.png',
+  'Bologna FC 1909':                 '/crests/bologna-fc-1909.png',
+  'Cagliari Calcio':                 '/crests/cagliari-calcio.png',
+  'Como 1907':                       '/crests/como-1907.png',
+  'FC Internazionale Milano':        '/crests/fc-internazionale-milano.png',
+  'Genoa CFC':                       '/crests/genoa-cfc.png',
+  'Hellas Verona FC':                '/crests/hellas-verona-fc.png',
+  'Juventus FC':                     '/crests/juventus-fc.png',
+  'Parma Calcio 1913':               '/crests/parma-calcio-1913.png',
+  'SS Lazio':                        '/crests/ss-lazio.png',
+  'SSC Napoli':                      '/crests/ssc-napoli.png',
+  'Torino FC':                       '/crests/torino-fc.png',
+  'Udinese Calcio':                  '/crests/udinese-calcio.png',
+  'US Cremonese':                    '/crests/us-cremonese.png',
+  'US Lecce':                        '/crests/us-lecce.png',
+  'US Sassuolo Calcio':              '/crests/us-sassuolo-calcio.png',
+  // ── Ligue 1 ──
+  'AJ Auxerre':                      '/crests/aj-auxerre.png',
+  'Angers SCO':                      '/crests/angers-sco.png',
+  'AS Monaco FC':                    '/crests/as-monaco-fc.png',
+  'FC Lorient':                      '/crests/fc-lorient.png',
+  'FC Metz':                         '/crests/fc-metz.png',
+  'FC Nantes':                       '/crests/fc-nantes.png',
+  'Le Havre AC':                     '/crests/le-havre-ac.png',
+  'Lille OSC':                       '/crests/lille-osc.png',
+  'OGC Nice':                        '/crests/ogc-nice.png',
+  'Olympique Lyonnais':              '/crests/olympique-lyonnais.png',
+  'Olympique de Marseille':          '/crests/olympique-de-marseille.png',
+  'Paris FC':                        '/crests/paris-fc.png',
+  'Paris Saint-Germain FC':          '/crests/paris-saint-germain-fc.png',
+  'Racing Club de Lens':             '/crests/racing-club-de-lens.png',
+  'RC Strasbourg Alsace':            '/crests/rc-strasbourg-alsace.png',
+  'Stade Brestois 29':               '/crests/stade-brestois-29.png',
+  'Stade Rennais FC 1901':           '/crests/stade-rennais-fc-1901.png',
+  'Toulouse FC':                     '/crests/toulouse-fc.png',
+  // ── Eredivisie ──
+  'AFC Ajax':                        '/crests/afc-ajax.png',
+  'FC Groningen':                    '/crests/fc-groningen.png',
+  "FC Twente '65":                  '/crests/fc-twente-65.png',
+  'FC Utrecht':                      '/crests/fc-utrecht.png',
+  'FC Volendam':                     '/crests/fc-volendam.png',
+  'Feyenoord Rotterdam':             '/crests/feyenoord-rotterdam.png',
+  'Fortuna Sittard':                 '/crests/fortuna-sittard.png',
+  'Go Ahead Eagles':                 '/crests/go-ahead-eagles.png',
+  'Heracles Almelo':                 '/crests/heracles-almelo.png',
+  'NAC Breda':                       '/crests/nac-breda.png',
+  'NEC':                             '/crests/nec.png',
+  'PEC Zwolle':                      '/crests/pec-zwolle.png',
+  'PSV':                             '/crests/psv.png',
+  'SBV Excelsior':                   '/crests/sbv-excelsior.png',
+  'SC Heerenveen':                   '/crests/sc-heerenveen.png',
+  'Sparta Rotterdam':                '/crests/sparta-rotterdam.png',
+  'Telstar 1963':                    '/crests/telstar-1963.png',
+  // ── Primeira Liga ──
+  'AVS':                             '/crests/avs.png',
+  'Casa Pia AC':                     '/crests/casa-pia-ac.png',
+  'CD Nacional':                     '/crests/cd-nacional.png',
+  'CD Santa Clara':                  '/crests/cd-santa-clara.png',
+  'CF Estrela da Amadora':           '/crests/cf-estrela-da-amadora.png',
+  'FC Alverca':                      '/crests/fc-alverca.png',
+  'FC Arouca':                       '/crests/fc-arouca.png',
+  'FC Famalicão':                    '/crests/fc-famalicao.png',
+  'FC Porto':                        '/crests/fc-porto.png',
+  'GD Estoril Praia':                '/crests/gd-estoril-praia.png',
+  'Gil Vicente FC':                  '/crests/gil-vicente-fc.png',
+  'Moreirense FC':                   '/crests/moreirense-fc.png',
+  'Rio Ave FC':                      '/crests/rio-ave-fc.png',
+  'Sport Lisboa e Benfica':          '/crests/sport-lisboa-e-benfica.png',
+  'Sporting Braga':                  '/crests/sporting-braga.png',
+  'Sporting Clube de Braga':         '/crests/sporting-clube-de-braga.png',
+  'Sporting Clube de Portugal':      '/crests/sporting-clube-de-portugal.png',
+  'Vitória SC':                      '/crests/vitoria-sc.png',
+  'CD Tondela':                      '/crests/cd-tondela.png',
+  // ── MLS ──
+  'Atlanta United':                  '/crests/atlanta-united.png',
+  'Austin':                          '/crests/austin.png',
+  'CF Montreal':                     '/crests/cf-montreal.png',
+  'Charlotte':                       '/crests/charlotte.png',
+  'Chicago Fire':                    '/crests/chicago-fire.png',
+  'Colorado Rapids':                 '/crests/colorado-rapids.png',
+  'Columbus Crew':                   '/crests/columbus-crew.png',
+  'DC United':                       '/crests/dc-united.png',
+  'FC Cincinnati':                   '/crests/fc-cincinnati.png',
+  'FC Dallas':                       '/crests/fc-dallas.png',
+  'Houston Dynamo':                  '/crests/houston-dynamo.png',
+  'Inter Miami':                     '/crests/inter-miami.png',
+  'Los Angeles FC':                  '/crests/los-angeles-fc.png',
+  'Los Angeles Galaxy':              '/crests/los-angeles-galaxy.png',
+  'Minnesota United':                '/crests/minnesota-united.png',
+  'Nashville SC':                    '/crests/nashville-sc.png',
+  'New England Revolution':          '/crests/new-england-revolution.png',
+  'New York City FC':                '/crests/new-york-city-fc.png',
+  'New York Red Bulls':              '/crests/new-york-red-bulls.png',
+  'Orlando City':                    '/crests/orlando-city.png',
+  'Philadelphia Union':              '/crests/philadelphia-union.png',
+  'Portland Timbers':                '/crests/portland-timbers.png',
+  'Real Salt Lake':                  '/crests/real-salt-lake.png',
+  'San Diego':                       '/crests/san-diego.png',
+  'San Jose Earthquakes':            '/crests/san-jose-earthquakes.png',
+  'Seattle Sounders':                '/crests/seattle-sounders.png',
+  'Sporting Kansas City':            '/crests/sporting-kansas-city.png',
+  'St. Louis City':                  '/crests/st-louis-city.png',
+  'Toronto FC':                      '/crests/toronto-fc.png',
+  'Vancouver Whitecaps':             '/crests/vancouver-whitecaps.png',
+  // ── Rusya ──
+  'Akron':                           '/crests/akron.png',
+  'Baltika Kaliningrad':             '/crests/baltika-kaliningrad.png',
+  'CSKA Moskova':                    '/crests/cska-moskova.png',
+  'Dinamo Moscow':                   '/crests/dinamo-moscow.png',
+  'FC Akhmat Grozny':                '/crests/fc-akhmat-grozny.png',
+  'FC Sochi':                        '/crests/fc-sochi.png',
+  'FK Orenburg':                     '/crests/fk-orenburg.png',
+  'Krasnodar':                       '/crests/krasnodar.png',
+  'Krylya Sovetov':                  '/crests/krylya-sovetov.png',
+  'Lokomotiv Moscow':                '/crests/lokomotiv-moscow.png',
+  'Makhachkala':                     '/crests/makhachkala.png',
+  'Pari Nizhny Novgorod':            '/crests/pari-nizhny-novgorod.png',
+  'Rostov':                          '/crests/rostov.png',
+  'Rubin Kazan':                     '/crests/rubin-kazan.png',
+  'Samsunspor':                      '/crests/samsunspor.png',
+  'Spartak Moskova':                 '/crests/spartak-moskova.png',
+  'Zenit St. Petersburg':            '/crests/zenit-st-petersburg.png',
+  // ── Brasileirao ──
+  'Botafogo FR':                     '/crests/botafogo-fr.png',
+  'CA Mineiro':                      '/crests/ca-mineiro.png',
+  'CA Paranaense':                   '/crests/ca-paranaense.png',
+  'Chapecoense AF':                  '/crests/chapecoense-af.png',
+  'Clube do Remo':                   '/crests/clube-do-remo.png',
+  'Coritiba FBC':                    '/crests/coritiba-fbc.png',
+  'CR Flamengo':                     '/crests/cr-flamengo.png',
+  'CR Vasco da Gama':                '/crests/cr-vasco-da-gama.png',
+  'Cruzeiro EC':                     '/crests/cruzeiro-ec.png',
+  'EC Bahia':                        '/crests/ec-bahia.png',
+  'EC Vitória':                      '/crests/ec-vitoria.png',
+  'Fluminense FC':                   '/crests/fluminense-fc.png',
+  'Grêmio FBPA':                     '/crests/gremio-fbpa.png',
+  'Mirassol FC':                     '/crests/mirassol-fc.png',
+  'RB Bragantino':                   '/crests/rb-bragantino.png',
+  'SC Corinthians Paulista':         '/crests/sc-corinthians-paulista.png',
+  'SC Internacional':                '/crests/sc-internacional.png',
+  'SE Palmeiras':                    '/crests/se-palmeiras.png',
+  'Santos FC':                       '/crests/santos-fc.png',
+  'São Paulo FC':                    '/crests/sao-paulo-fc.png',
+  // ── Champions League / Europa ──
+  'Nottingham Forest':               '/crests/nottingham-forest.png',
+  'Aston Villa':                     '/crests/aston-villa.png',
 };
-// ── Crest cache: TheSportsDB'den dinamik çekilen URL'ler burada saklanır ──
-const dynamicCrestCache = {};
-
-// Takım adını TheSportsDB arama terimine dönüştür
-function toSearchTerm(name) {
-  return encodeURIComponent(name.trim());
-}
-
-// TheSportsDB'den takım badge URL'sini çek, cache'e kaydet, img elementini güncelle
-async function fetchAndSetCrest(teamName, imgEls) {
-  // Zaten cache'te varsa direkt set et
-  if (dynamicCrestCache[teamName]) {
-    imgEls.forEach(el => { el.src = dynamicCrestCache[teamName]; el.style.display = ''; });
-    return;
-  }
-  // 'not_found' olarak işaretlenmişse tekrar sorma
-  if (dynamicCrestCache[teamName] === null) return;
-
-  try {
-    const res = await fetch(`https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${toSearchTerm(teamName)}`);
-    const data = await res.json();
-    const team = data.teams && data.teams[0];
-    if (team && team.strBadge) {
-      dynamicCrestCache[teamName] = team.strBadge;
-      imgEls.forEach(el => { el.src = team.strBadge; el.style.display = ''; });
-    } else {
-      dynamicCrestCache[teamName] = null; // bulunamadı, tekrar sorma
-      imgEls.forEach(el => el.style.display = 'none');
-    }
-  } catch(e) {
-    imgEls.forEach(el => el.style.display = 'none');
-  }
-}
-
 function getCrest(home, away, field, provided){
-  return field==='hc' ? (teamCrests[home] || '__dynamic__:' + home)
-                      : (teamCrests[away] || '__dynamic__:' + away);
+  // Her zaman yerel crests/ klasörüne bak, harici URL kullanma
+  return field==='hc' ? (teamCrests[home]||'') : (teamCrests[away]||'');
 }
-
 function crestImg(src, alt, cls){
   if(!src) return '';
-  // Statik crest — normal img
-  if(!src.startsWith('__dynamic__:')) {
-    return `<img src="${src}" alt="${alt}" class="${cls}" onerror="this.style.display='none'" loading="lazy">`;
-  }
-  // Dinamik crest — önce gizli placeholder, sonra TheSportsDB'den doldurulur
-  const teamName = src.replace('__dynamic__:', '');
-  const safeId = 'dc_' + teamName.replace(/[^a-zA-Z0-9]/g, '_') + '_' + cls;
-  // data-team attribute ile sonradan fetch edilecek
-  return `<img src="" alt="${alt}" class="${cls} dynamic-crest" data-team="${teamName.replace(/"/g,'&quot;')}" style="display:none" loading="lazy">`;
-}
-
-// Sayfa render edildikten sonra dynamic-crest elementlerini toplu çek
-function loadDynamicCrests() {
-  const pending = document.querySelectorAll('img.dynamic-crest[data-team]');
-  // Takım adına göre grupla (aynı takım birden fazla yerde olabilir)
-  const groups = {};
-  pending.forEach(el => {
-    const t = el.getAttribute('data-team');
-    if (!groups[t]) groups[t] = [];
-    groups[t].push(el);
-  });
-  Object.entries(groups).forEach(([teamName, els]) => {
-    fetchAndSetCrest(teamName, els);
-  });
+  return `<img src="${src}" alt="${alt}" class="${cls}" onerror="this.style.display='none'" loading="lazy">`;
 }
 
 function renderTable(){
@@ -1209,8 +1426,6 @@ function renderTable(){
       return `<div class="match-card${m.derbi?' dr':''}">${cardContent}</div>`;
     }).join('');
   }
-  // Render bitti — dynamic crest'leri TheSportsDB'den çek
-  requestAnimationFrame(() => loadDynamicCrests());
 }
 
 function renderTopPicks(){
