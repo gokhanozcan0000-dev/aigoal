@@ -1358,8 +1358,11 @@ const teamCrests = {
   'Aston Villa':                     '/crests/aston-villa.png',
 };
 function getCrest(home, away, field, provided){
-  if(provided) return provided;
-  return field==='hc' ? (teamCrests[home]||'') : (teamCrests[away]||'');
+  const team = field==='hc' ? home : away;
+  // TR ve EPL takımları her zaman yerel /crests/ klasöründen
+  if(teamCrests[team]) return teamCrests[team];
+  // Diğer takımlar: maç verisindeki hc/ac URL'ini kullan (football-data.org vb.)
+  return provided || '';
 }
 function crestImg(src, alt, cls){
   if(!src) return '';
