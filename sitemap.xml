@@ -83,7 +83,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Maç sayfaları (113 adet) -->
+  <!-- Maç sayfaları (115 adet) -->
   <url>
     <loc>https://aigoal.net/1-fc-koeln-vs-1-fc-heidenheim-1846</loc>
     <lastmod>2026-05-05</lastmod>
@@ -505,6 +505,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/nottingham-forest-vs-aston-villa</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/oezbekistan-vs-kolombiya</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -644,6 +650,12 @@
   </url>
   <url>
     <loc>https://aigoal.net/sport-lisboa-e-benfica-vs-sporting-clube-de-braga</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/sporting-braga-vs-sc-freiburg</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
