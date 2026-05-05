@@ -1118,9 +1118,7 @@ async function fetchAndSetCrest(teamName, imgEls) {
 
 function getCrest(home, away, field, provided){
   const team = field==='hc' ? home : away;
-  // TR ve EPL takimlari her zaman yerel /crests/ klasöründen
   if(teamCrests[team]) return teamCrests[team];
-  // Diger takimlar: mac verisindeki hc/ac URL'ini kullan (football-data.org)
   return provided || '';
 }
 
