@@ -319,7 +319,10 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <a class="sb-item" onclick="switchLeague('superlig',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
       <span>Trendyol Süper Lig</span>
-      
+    </a>
+    <a class="sb-item" onclick="switchLeague('ziraat',this)">
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
+      <span data-tr="Ziraat Türkiye Kupası" data-en="Ziraat Turkey Cup">Ziraat Türkiye Kupası</span>
     </a>
 
   </div>
@@ -1030,36 +1033,6 @@ const ais=['chatgpt','gemini','grok','copilot','claude','perplexity'];
 //   karagumruk.png   → https://r2.thesportsdb.com/images/media/team/badge/bfb84y1580847945.png
 //   genclerbirligi.png → https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png
 const teamCrests = {
-  // ── Türkiye ──
-  'Başakşehir FK': '/crests/basaksehir-fk.png',
-  'Kasımpaşa': '/crests/kasimpasa.png',
-  'Kayserispor': '/crests/kayserispor.png',
-  'Kocaelispor': '/crests/kocaelispor.png',
-  'Konyaspor': '/crests/konyaspor.png',
-  'Samsunspor': '/crests/samsunspor.png',
-  'Trabzonspor': '/crests/trabzonspor.png',
-  'Çaykur Rizespor': '/crests/caykur-rizespor.png',
-  // ── Premier League ──
-  'AFC Bournemouth': '/crests/afc-bournemouth.png',
-  'Arsenal FC': '/crests/arsenal-fc.png',
-  'Aston Villa FC': '/crests/aston-villa-fc.png',
-  'Brentford FC': '/crests/brentford-fc.png',
-  'Brighton & Hove Albion FC': '/crests/brighton-and-hove-albion-fc.png',
-  'Burnley FC': '/crests/burnley-fc.png',
-  'Chelsea FC': '/crests/chelsea-fc.png',
-  'Crystal Palace FC': '/crests/crystal-palace-fc.png',
-  'Everton FC': '/crests/everton-fc.png',
-  'Fulham FC': '/crests/fulham-fc.png',
-  'Leeds United FC': '/crests/leeds-united-fc.png',
-  'Liverpool FC': '/crests/liverpool-fc.png',
-  'Manchester City FC': '/crests/manchester-city-fc.png',
-  'Manchester United FC': '/crests/manchester-united-fc.png',
-  'Newcastle United FC': '/crests/newcastle-united-fc.png',
-  'Nottingham Forest FC': '/crests/nottingham-forest-fc.png',
-  'Sunderland AFC': '/crests/sunderland-afc.png',
-  'Tottenham Hotspur FC': '/crests/tottenham-hotspur-fc.png',
-  'West Ham United FC': '/crests/west-ham-united-fc.png',
-  'Wolverhampton Wanderers FC': '/crests/wolverhampton-wanderers-fc.png',
   'Fenerbahçe':                  '/crests/fenerbahce.png',
   'Galatasaray':                 '/crests/galatasaray.png',
   'Beşiktaş':                    '/crests/besiktas.png',
@@ -1077,9 +1050,7 @@ const teamCrests = {
 };
 function getCrest(home, away, field, provided){
   const team = field==='hc' ? home : away;
-  // TR ve EPL: her zaman yerel /crests/ klasöründen
   if(teamCrests[team]) return teamCrests[team];
-  // Diğer ligler: hc/ac URL'ini kullan
   return provided || '';
 }
 function crestImg(src, alt, cls){
@@ -1325,6 +1296,21 @@ const allLeagues = {
 {home:'Konyaspor',away:'Fenerbahçe',date:{tr:'9 May Cum',en:'Fri 9 May'},time:'20:00',derbi:false,url:'/konyaspor-vs-fenerbahce',popular:true,
        p:{chatgpt:{tr:'MS 2',en:'2',c:'bx2'},gemini:{tr:'MS 2',en:'2',c:'bx2'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'bx2'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 2',en:'2',c:'bx2'}}}
     ]
+  },
+  ziraat: {
+    nameTr:'Ziraat Türkiye Kupası', nameEn:'Ziraat Turkey Cup',
+    countryTr:'Türkiye', countryEn:'Turkey',
+    code:'ZTK', flagImg:'',
+    week:'', weekLabel:{tr:'KUPA', en:'CUP'},
+    dates:{tr:'Mayıs 2026', en:'May 2026'},
+    flag:'🏆',
+    analysis:{tr:'Ziraat Türkiye Kupası yarı final ve final maçları. Beşiktaş ile Gençlerbirliği ev sahibi avantajlarını kullanmak istiyor.',en:'Ziraat Turkey Cup semi-final and final fixtures. Beşiktaş and Gençlerbirliği look to use home advantage.'},
+    matches:[
+      {home:'Beşiktaş',away:'Konyaspor',date:{tr:'5 May Sal',en:'Tue 5 May'},time:'20:30',derbi:false,url:'/besiktas-vs-konyaspor',popular:true,
+       p:{chatgpt:{tr:'MS 1',en:'1',c:'b1'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS 1X',en:'1X',c:'b1x'},copilot:{tr:'MS 1',en:'1',c:'b1'},claude:{tr:'2.5 Üst',en:'O2.5',c:'bu'},perplexity:{tr:'MS 1',en:'1',c:'b1'}}},
+      {home:'Gençlerbirliği',away:'Trabzonspor',date:{tr:'13 May Çar',en:'Wed 13 May'},time:'20:30',derbi:false,url:'/genclerbirligi-vs-trabzonspor',popular:true,
+       p:{chatgpt:{tr:'MS 2',en:'2',c:'b2'},gemini:{tr:'KG Var',en:'BTTS',c:'bkg'},grok:{tr:'MS X2',en:'X2',c:'bx2'},copilot:{tr:'MS 2',en:'2',c:'b2'},claude:{tr:'MS 2',en:'2',c:'b2'},perplexity:{tr:'MS X2',en:'X2',c:'bx2'}}},
+    ],
   },
   pl: {
     nameTr:'Premier League', nameEn:'Premier League',
