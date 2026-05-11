@@ -321,7 +321,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
       <span>Trendyol Süper Lig</span>
     </a>
     <a class="sb-item" onclick="switchLeague('ziraat',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       <span data-tr="Ziraat Türkiye Kupası" data-en="Ziraat Turkey Cup">Ziraat Türkiye Kupası</span>
     </a>
 
@@ -358,25 +358,6 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <a class="sb-item" onclick="switchLeague('primeiraliga',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pt.svg" alt="PT">
       <span data-tr="Portekiz — Primeira Liga" data-en="Portugal — Primeira Liga">Portekiz — Primeira Liga</span>
-    </a>
-  </div>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">🌎 <span data-tr="Amerika" data-en="Americas">Amerika</span></div>
-    <a class="sb-item" onclick="switchLeague('mls',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg" alt="US">
-      <span data-tr="Amerika — MLS" data-en="USA — MLS">Amerika — MLS</span>
-    </a>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">🌎 <span data-tr="Güney Amerika" data-en="South America">Güney Amerika</span></div>
-    <a class="sb-item" onclick="switchLeague('brasileirao',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
-      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A" data-es="Brasil — Série A" data-pt="Brasil — Série A" data-ru="Бразилия — Серия A">Brezilya — Série A</span>
     </a>
   </div>
 
@@ -439,14 +420,14 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
   <nav class="topnav">
     <div class="topnav-left">
       <div class="topnav-breadcrumb" id="breadcrumb"><span data-tr="Türkiye" data-en="Turkey">Türkiye</span> › <span data-tr="Trendyol Süper Lig" data-en="Trendyol Süper Lig">Trendyol Süper Lig</span></div>
-      <span class="live-badge" data-tr="32. HAFTA" data-en="WEEK 32">32. HAFTA</span>
+      <span class="live-badge" data-tr="34. HAFTA" data-en="WEEK 34">34. HAFTA</span>
     </div>
     <div class="topnav-right">
       <div class="lang-switcher">
         <button class="lang-btn active" id="btnTR" onclick="setLang('tr')">TR</button>
         <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
       </div>
-      <div class="week-chip">📅 27 Nis – 3 <span data-tr="Mayıs" data-en="May">Mayıs</span> 2026</div>
+      <div class="week-chip">📅 15–17 <span data-tr="Mayıs" data-en="May">Mayıs</span> 2026</div>
       <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:5px 9px;transition:all .15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
         <span style="font-size:11px;font-weight:600;">@AIGoalnet</span>
@@ -1309,20 +1290,20 @@ const allLeagues = {
     nameTr:"Trendyol Süper Lig", nameEn:"Trendyol Süper Lig",
     countryTr:"Türkiye", countryEn:"Turkey",
     code:"TSL", flag:"🇹🇷",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Trendyol Süper Lig'in heyecanlı son haftaları başlıyor. Şampiyonluk yarışı, Avrupa biletleri ve küme düşme mücadelesi eş zamanlı sürerken 6 AI modeli bu hafta kritik derbileri masaya yatırdı. Konsensüs tahminlerine göre büyük dörtlü ev sahibi avantajını korurken orta sıra takımlar sürpriz potansiyeli taşıyor.",
-    analysisEn:"The Trendyol Süper Lig enters its crucial final weeks. With the title race, European spots and relegation battles all running simultaneously, 6 AI models have analyzed this week's critical fixtures. According to consensus predictions, the big four maintain home advantage while mid-table sides carry surprise potential.",
+    weekLabel:{tr:"34. HAFTA",en:"WEEK 34"},
+    dates:{tr:"15–17 Mayıs 2026",en:"15–17 May 2026"},
+    analysisTr:"Trendyol Süper Lig'in son haftasında şampiyonluk, Avrupa biletleri ve küme düşme mücadelesi eş zamanlı sona eriyor. Galatasaray şampiyonluk peşinde koşarken Fenerbahçe Eyüpspor'u ağırlıyor. Küme düşme hattındaki Rizespor, Beşiktaş'a karşı can havliyle mücadele edecek. AI modelleri büyük takımları favori gösterirken mücadeleli alt sıra maçlarında geniş tahmin dağılımı sergiledi.",
+    analysisEn:"In the Trendyol Süper Lig's final round, the title, European spots and relegation battles all conclude simultaneously. Galatasaray chases the championship while Fenerbahçe hosts Eyüpspor. Relegation-threatened Rizespor faces Beşiktaş in a must-win clash. AI models favour the big sides while showing wide prediction spread in the competitive lower-table fixtures.",
     matches:[
-      {home:"Alanyaspor",away:"Kayserispor",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/alanyaspor-vs-kayserispor",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-      {home:"Başakşehir FK",away:"Samsunspor",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/basaksehir-fk-vs-samsunspor",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Eyüpspor",away:"Çaykur Rizespor",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/eyupspor-vs-caykur-rizespor",p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Galatasaray",away:"Antalyaspor",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/galatasaray-vs-antalyaspor",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Göztepe",away:"Gaziantep FK",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/goztepe-vs-gaziantep-fk",p:{chatgpt:{tr:"MS 12",en:"1/2",c:"b1"},gemini:{tr:"2.5 Üst",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Kocaelispor",away:"Fatih Karagümrük",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/kocaelispor-vs-fatih-karagumruk",p:{chatgpt:{tr:"2.5 Alt",en:"U2.5",c:"ba"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Konyaspor",away:"Fenerbahçe",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/konyaspor-vs-fenerbahce",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-      {home:"Beşiktaş",away:"Trabzonspor",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:true,url:"/besiktas-vs-trabzonspor",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Gençlerbirliği",away:"Kasımpaşa",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/genclerbirligi-vs-kasimpasa",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Çaykur Rizespor",away:"Beşiktaş",date:{tr:"15 May Cum",en:"Fri 15 May"},time:"20:00",derbi:false,url:"/caykur-rizespor-vs-besiktas",popular:true,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Fatih Karagümrük",away:"Alanyaspor",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"17:00",derbi:false,url:"/fatih-karagumruk-vs-alanyaspor",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Gaziantep FK",away:"Başakşehir FK",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"20:00",derbi:false,url:"/gaziantep-fk-vs-basaksehir-fk",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
+      {home:"Samsunspor",away:"Göztepe",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"20:00",derbi:false,url:"/samsunspor-vs-goztepe",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
+      {home:"Kayserispor",away:"Konyaspor",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"17:00",derbi:false,url:"/kayserispor-vs-konyaspor",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Fenerbahçe",away:"Eyüpspor",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/fenerbahce-vs-eyupspor",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Kasımpaşa",away:"Galatasaray",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/kasimpasa-vs-galatasaray",popular:true,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
+      {home:"Antalyaspor",away:"Kocaelispor",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/antalyaspor-vs-kocaelispor",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Trabzonspor",away:"Gençlerbirliği",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/trabzonspor-vs-genclerbirligi",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
     ],
   },
   ziraat: {
@@ -1330,12 +1311,12 @@ const allLeagues = {
     countryTr:"Türkiye", countryEn:"Turkey",
     code:"ZTK", flag:"🏆",
     weekLabel:{tr:"KUPA",en:"CUP"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Ziraat Türkiye Kupası'nda yarı final ve final heyecanı yaşanıyor. Beşiktaş ve Gençlerbirliği kupa şampiyonluğuna uzanmak istiyor. AI modelleri bu karşılaşmalarda motivasyon faktörünü ve tek maçlık eleme sistemini göz önünde bulundurarak tahminlerini oluşturdu.",
-    analysisEn:"The Ziraat Turkey Cup delivers semi-final and final drama. Beşiktaş and Gençlerbirliği are reaching for cup glory. AI models factored in motivation levels and the single-leg knockout format when forming their predictions for these fixtures.",
+    dates:{tr:"13–22 Mayıs 2026",en:"13–22 May 2026"},
+    analysisTr:"Ziraat Türkiye Kupası'nda Konyaspor finale adını yazdırdı (Beşiktaş'ı 1-0 mağlup etti). İkinci finalist 13 Mayıs'ta oynanacak Gençlerbirliği-Trabzonspor yarı finalinin galibi olacak. Final 22 Mayıs Cuma günü saat 20.45'te Corendon Airlines Park Antalya Stadı'nda oynanacak. AI modelleri yarı finalde Trabzonspor'u hafif favori olarak değerlendirirken Konyaspor'un kupa finalindeki motivasyonunu güçlü buluyor.",
+    analysisEn:"In the Ziraat Turkey Cup, Konyaspor has booked their final spot by defeating Beşiktaş 1-0. The second finalist will be determined by the Gençlerbirliği vs Trabzonspor semi-final on 13 May. The final takes place on Friday 22 May at 20:45 at Corendon Airlines Park Antalya Stadium. AI models rate Trabzonspor as a slight semi-final favourite while considering Konyaspor's cup final motivation as a key factor.",
     matches:[
-      {home:"Beşiktaş",away:"Konyaspor",date:{tr:"5 May Sal",en:"Tue 5 May"},time:"20:30",derbi:false,url:"/besiktas-vs-konyaspor",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Üst",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Gençlerbirliği",away:"Trabzonspor",date:{tr:"13 May Çar",en:"Wed 13 May"},time:"20:30",derbi:false,url:"/genclerbirligi-vs-trabzonspor",popular:true,p:{chatgpt:{tr:"MS 2",en:"2",c:"b2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"b2"},claude:{tr:"MS 2",en:"2",c:"b2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Gençlerbirliği",away:"Trabzonspor",date:{tr:"13 May Çar",en:"Wed 13 May"},time:"20:30",derbi:false,url:"/genclerbirligi-vs-trabzonspor",popular:true,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
+      {home:"Konyaspor",away:"Finalist TBD",date:{tr:"22 May Cum",en:"Fri 22 May"},time:"20:45",derbi:false,url:"/ziraat-kupasi-final-2026",popular:true,p:{chatgpt:{tr:"MS X",en:"X",c:"bdash"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X",en:"X",c:"bdash"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
     ],
   },
   pl: {
@@ -1502,32 +1483,6 @@ const allLeagues = {
 {home:"Sporting Clube de Braga",away:"CF Estrela da Amadora",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/5613.png',ac:'https://crests.football-data.org/9136.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
     ],
   },
-  mls: {
-    nameTr:"MLS", nameEn:"MLS",
-    countryTr:"ABD", countryEn:"USA",
-    code:"MLS", flag:"🇺🇸",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"MLS sezonu orta aşamasında hızlanıyor. Inter Miami, Los Angeles FC ve New England Revolution bu hafta dikkat çeken maçlara çıkıyor. 6 AI modeli Amerikan futbolunda ev sahibi avantajının Avrupa liglerinden daha belirleyici olduğunu ortaya koyuyor.",
-    analysisEn:"The MLS season hits its stride at the midpoint. Inter Miami, Los Angeles FC and New England Revolution all feature in eye-catching fixtures this week. 6 AI models consistently show that home advantage in American soccer is even more decisive than in European leagues.",
-    matches:[
-      {home:"Toronto FC",away:"Inter Miami",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"20:00",derbi:false,url:"/toronto-fc-vs-inter-miami",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Üst",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-      {home:"Chicago Fire",away:"New York Red Bulls",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"21:30",derbi:false,url:"/chicago-fire-vs-new-york-red-bulls",p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"CF Montreal",away:"Orlando City",date:{tr:"9 May Cum",en:"Fri 9 May"},time:"23:30",derbi:false,url:"/cf-montreal-vs-orlando-city",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Atlanta United",away:"Los Angeles Galaxy",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"02:30",derbi:false,url:"/atlanta-united-vs-los-angeles-galaxy",p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Charlotte",away:"FC Cincinnati",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"02:30",derbi:false,url:"/charlotte-vs-fc-cincinnati",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-      {home:"New England Revolution",away:"Philadelphia Union",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"02:30",derbi:false,url:"/new-england-revolution-vs-philadelphia-union",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"FC Dallas",away:"Real Salt Lake",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"03:30",derbi:false,url:"/fc-dallas-vs-real-salt-lake",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Nashville SC",away:"DC United",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"04:15",derbi:false,url:"/nashville-sc-vs-dc-united",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-      {home:"Colorado Rapids",away:"St. Louis City",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"04:30",derbi:false,url:"/colorado-rapids-vs-st-louis-city",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Portland Timbers",away:"Sporting Kansas City",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"05:30",derbi:false,url:"/portland-timbers-vs-sporting-kansas-city",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Üst",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"San Jose Earthquakes",away:"Vancouver Whitecaps",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"05:30",derbi:false,url:"/san-jose-earthquakes-vs-vancouver-whitecaps",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-      {home:"Seattle Sounders",away:"San Diego",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"05:30",derbi:false,url:"/seattle-sounders-vs-san-diego",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"New York City FC",away:"Columbus Crew",date:{tr:"10 May Cmt",en:"Sat 10 May"},time:"23:30",derbi:false,url:"/new-york-city-fc-vs-columbus-crew",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Minnesota United",away:"Austin",date:{tr:"11 May Paz",en:"Sun 11 May"},time:"02:00",derbi:false,url:"/minnesota-united-vs-austin",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-      {home:"Los Angeles FC",away:"Houston Dynamo",date:{tr:"11 May Paz",en:"Sun 11 May"},time:"04:00",derbi:false,url:"/los-angeles-fc-vs-houston-dynamo",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Üst",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-    ],
-  },
   worldcup: {
     nameTr:"2026 FIFA Dünya Kupası", nameEn:"2026 FIFA World Cup",
     countryTr:"Dünya", countryEn:"World",
@@ -1587,29 +1542,6 @@ const allLeagues = {
     matches:[
       {home:"Nottingham Forest",away:"Aston Villa",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/nottingham-forest-vs-aston-villa",popular:true,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
       {home:"Sporting Braga",away:"SC Freiburg",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/sporting-braga-vs-sc-freiburg",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
-    ],
-  },
-  brasileirao: {
-    nameTr:"Brasileirão Série A", nameEn:"Brasileirão Série A",
-    countryTr:"Brezilya", countryEn:"Brazil",
-    code:"BSA", flag:"🇧🇷",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Brasileirão Série A'da Flamengo, Palmeiras ve Atlético Mineiro arasındaki üçlü şampiyonluk yarışı devam ediyor. 6 AI modeli Brezilya ligi için yüksek tempolu ve gol ağırlıklı tahminler üretti. Brezilya futbolunun fiziksel ve ofansif karakteri modellerin üst gol tahminlerini artırıyor.",
-    analysisEn:"The Brasileirão Série A three-way title race between Flamengo, Palmeiras and Atlético Mineiro continues. 6 AI models produced high-tempo and goal-heavy predictions for the Brazilian league. The physical and offensive character of Brazilian football drives model predictions toward the over.",
-    matches:[
-{home:"Grêmio FBPA",away:"CR Flamengo",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"22:30",derbi:false,hc:'https://crests.football-data.org/1767.png',ac:'https://crests.football-data.org/1783.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"CR Vasco da Gama",away:"CA Paranaense",date:{tr:"10 May Paz",en:"Sun 10 May"},time:"23:30",derbi:false,hc:'https://crests.football-data.org/1780.png',ac:'https://crests.football-data.org/1768.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"CA Mineiro",away:"Mirassol FC",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"21:30",derbi:false,hc:'https://crests.football-data.org/1766.png',ac:'https://crests.football-data.org/4364.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"SC Internacional",away:"CR Vasco da Gama",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"21:30",derbi:false,hc:'https://crests.football-data.org/6684.png',ac:'https://crests.football-data.org/1780.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Fluminense FC",away:"São Paulo FC",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"23:30",derbi:false,hc:'https://crests.football-data.org/1765.png',ac:'https://crests.football-data.org/1776.png',p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"SE Palmeiras",away:"Cruzeiro EC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/1769.png',ac:'https://crests.football-data.org/1771.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Santos FC",away:"Coritiba FBC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"14:00",derbi:false,hc:'https://crests.football-data.org/6685.png',ac:'https://crests.football-data.org/4241.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"EC Bahia",away:"Grêmio FBPA",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/1777.png',ac:'https://crests.football-data.org/1767.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Botafogo FR",away:"SC Corinthians Paulista",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/1770.png',ac:'https://crests.football-data.org/1779.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"RB Bragantino",away:"EC Vitória",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"21:30",derbi:false,hc:'https://crests.football-data.org/4286.png',ac:'https://crests.football-data.org/1782.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Chapecoense AF",away:"Clube do Remo",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"21:30",derbi:false,hc:'https://crests.football-data.org/1772_large.png',ac:'https://crests.football-data.org/4287.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"CA Paranaense",away:"CR Flamengo",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"22:30",derbi:false,hc:'https://crests.football-data.org/1768.png',ac:'https://crests.football-data.org/1783.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}}
     ],
   },
   russia: {
