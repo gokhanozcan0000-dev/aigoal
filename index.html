@@ -402,11 +402,18 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <div class="sb-section-label">UEFA</div>
     <a class="sb-item" onclick="switchLeague('championsleague',this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <span data-tr="Şampiyonlar Ligi" data-en="Champions League">Şampiyonlar Ligi</span>
+      <span data-tr="Şampiyonlar Ligi Final" data-en="Champions League Final">Şampiyonlar Ligi Final</span>
+      <span class="sb-badge new">30 May</span>
     </a>
     <a class="sb-item" onclick="switchLeague('europaleague',this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-      <span data-tr="Avrupa Ligi" data-en="Europa League">Avrupa Ligi</span>
+      <span data-tr="Avrupa Ligi Final" data-en="Europa League Final">Avrupa Ligi Final</span>
+      <span class="sb-badge new">20 May</span>
+    </a>
+    <a class="sb-item" onclick="switchLeague('conferenceleague',this)">
+      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M17 4H7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M5 10H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2M19 10h2a1 1 0 0 0 1 1v2a1 1 0 0 0-1 1h-2"/></svg>
+      <span data-tr="Konferans Ligi Final" data-en="Conference League Final">Konferans Ligi Final</span>
+      <span class="sb-badge new">27 May</span>
     </a>
   </div>
 
@@ -1533,29 +1540,39 @@ const allLeagues = {
     ],
   },
   championsleague: {
-    nameTr:"UEFA Şampiyonlar Ligi", nameEn:"UEFA Champions League",
+    nameTr:"UEFA Şampiyonlar Ligi Final", nameEn:"UEFA Champions League Final",
     countryTr:"Avrupa", countryEn:"Europe",
     code:"UCL", flag:"⭐",
-    weekLabel:{tr:"MAÇLAR",en:"MATCHES"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"UEFA Şampiyonlar Ligi'nin son maçları Avrupa futbolunun zirvesini belirliyor. Büyük kulüpler arasındaki kapışmada AI modelleri yakın tahminler üretiyor — Şampiyonlar Ligi, modellerin en çok zorlandığı turnuva özelliğini koruyor.",
-    analysisEn:"The final UEFA Champions League fixtures determine European football's elite. In clashes between top clubs, AI models produce tight predictions — the Champions League remains the tournament where models find it hardest to reach consensus.",
+    weekLabel:{tr:"FİNAL",en:"FINAL"},
+    dates:{tr:"30 Mayıs 2026",en:"30 May 2026"},
+    analysisTr:"UEFA Şampiyonlar Ligi'nin en büyük gecesi: PSG ile Arsenal 30 Mayıs'ta Budapeşte'nin Puskás Aréna'sında karşı karşıya geliyor. PSG yarı finalde Bayern Münih'i devirirken, Arsenal Atletico Madrid'i eleyerek finale yükseldi. AI modelleri bu zorlu karşılaşmada geniş bir tahmin dağılımı sergiledi; Şampiyonlar Ligi finali tarihsel olarak en az konsensüs üretilen karşılaşma olmaya devam ediyor.",
+    analysisEn:"The biggest night in UEFA Champions League: PSG face Arsenal at the Puskás Aréna in Budapest on 30 May. PSG eliminated Bayern Munich in the semis while Arsenal knocked out Atletico Madrid. AI models show a wide prediction spread for this difficult fixture — the Champions League final historically produces the least consensus of any match.",
     matches:[
-      {home:"Arsenal FC",away:"Club Atlético de Madrid",date:{tr:"5 May Sal",en:"Tue 5 May"},time:"19:00",derbi:false,url:"/arsenal-fc-vs-club-atletico-de-madrid",hc:"https://crests.football-data.org/57.png",ac:"https://crests.football-data.org/78.png",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"FC Bayern München",away:"Paris Saint-Germain FC",date:{tr:"6 May Çar",en:"Wed 6 May"},time:"19:00",derbi:false,url:"/fc-bayern-muenchen-vs-paris-saint-germain-fc",hc:"https://crests.football-data.org/5.png",ac:"https://crests.football-data.org/524.png",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
+      {home:"Paris Saint-Germain FC",away:"Arsenal FC",date:{tr:"30 May Cmt",en:"Sat 30 May"},time:"18:00",derbi:false,url:"/ucl-final-2026-psg-vs-arsenal",popular:true,hc:"https://crests.football-data.org/524.png",ac:"https://crests.football-data.org/57.png",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X",en:"X",c:"bdash"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
     ],
   },
   europaleague: {
-    nameTr:"UEFA Avrupa Ligi", nameEn:"UEFA Europa League",
+    nameTr:"UEFA Avrupa Ligi Final", nameEn:"UEFA Europa League Final",
     countryTr:"Avrupa", countryEn:"Europe",
     code:"UEL", flag:"🟠",
-    weekLabel:{tr:"MAÇLAR",en:"MATCHES"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"UEFA Avrupa Ligi son turlarında Nottingham Forest ve Sporting Braga arasındaki mücadele nefes kesiyor. 6 AI modeli bu karşılaşmalarda tek maçlık eleme sistemi ve motivasyon faktörünü göz önünde bulundurarak tahminlerini şekillendirdi.",
-    analysisEn:"The UEFA Europa League enters its final rounds with the Nottingham Forest vs Sporting Braga clash drawing breath-taking drama. 6 AI models shaped their predictions for these fixtures with the single-leg knockout format and motivation levels firmly in mind.",
+    weekLabel:{tr:"FİNAL",en:"FINAL"},
+    dates:{tr:"20 Mayıs 2026",en:"20 May 2026"},
+    analysisTr:"UEFA Avrupa Ligi finali 20 Mayıs'ta İstanbul'un Beşiktaş Park stadyumunda oynanıyor. Freiburg ilk kez bir Avrupa finaline ulaşırken, Aston Villa Premier League sonrası Avrupa arenasında zirvede. AI modelleri Aston Villa'yı hafif favori olarak değerlendiriyor; ancak Freiburg'un organize savunma oyunu modellerin güvenini sarsıyor.",
+    analysisEn:"The UEFA Europa League final takes place on 20 May at Beşiktaş Park in Istanbul. Freiburg reach their first-ever European final while Aston Villa continue their strong European campaign. AI models rate Aston Villa as slight favourites, but Freiburg's organised defensive structure makes models uncertain.",
     matches:[
-      {home:"Nottingham Forest",away:"Aston Villa",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/nottingham-forest-vs-aston-villa",popular:true,p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-      {home:"Sporting Braga",away:"SC Freiburg",date:{tr:"30 Nis Per",en:"Thu 30 Apr"},time:"22:00",derbi:false,url:"/sporting-braga-vs-sc-freiburg",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Yok",en:"BTTS No",c:"bkg"}}},
+      {home:"SC Freiburg",away:"Aston Villa FC",date:{tr:"20 May Çar",en:"Wed 20 May"},time:"22:00",derbi:false,url:"/uel-final-2026-freiburg-vs-aston-villa",popular:true,hc:"https://crests.football-data.org/17.png",ac:"https://crests.football-data.org/58.png",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
+    ],
+  },
+  conferenceleague: {
+    nameTr:"UEFA Konferans Ligi Final", nameEn:"UEFA Conference League Final",
+    countryTr:"Avrupa", countryEn:"Europe",
+    code:"UECL", flag:"🏆",
+    weekLabel:{tr:"FİNAL",en:"FINAL"},
+    dates:{tr:"27 Mayıs 2026",en:"27 May 2026"},
+    analysisTr:"UEFA Konferans Ligi finali 27 Mayıs'ta Leipzig'in Red Bull Arena'sında oynanıyor. Crystal Palace Premier League'den Avrupa sahnesine parlak çıkış yaparak finale ulaştı; Rayo Vallecano ise İspanya'dan sürpriz finalist oldu. AI modelleri Crystal Palace'ı hafif favori olarak görürken Rayo'nun kontr-atak gücü düşük skoru besliyor.",
+    analysisEn:"The UEFA Conference League final is played on 27 May at the Red Bull Arena in Leipzig. Crystal Palace made a brilliant leap from the Premier League to the European stage reaching the final; Rayo Vallecano arrive as a surprise Spanish finalist. AI models see Crystal Palace as slight favourites while Rayo's counter-attacking threat feeds lower-scoring predictions.",
+    matches:[
+      {home:"Crystal Palace FC",away:"Rayo Vallecano de Madrid",date:{tr:"27 May Çar",en:"Wed 27 May"},time:"21:00",derbi:false,url:"/uecl-final-2026-crystal-palace-vs-rayo-vallecano",popular:true,hc:"https://crests.football-data.org/354.png",ac:"https://crests.football-data.org/87.png",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
     ],
   },
   russia: {
