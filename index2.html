@@ -282,10 +282,10 @@
   .exch-card:hover { transform: translateY(-2px); }
   .exch-card.is-open { border-color: var(--accent, var(--border)); }
 
-  /* per-region accent colors */
   .region-americas .exch-card { --accent: #3b82f6; }
   .region-europe   .exch-card { --accent: #8b5cf6; }
   .region-asia     .exch-card { --accent: #ef4444; }
+  .region-mea      .exch-card { --accent: #f59e0b; }
 
   .exch-flag { width: 40px; height: 30px; object-fit: cover; border-radius: 3px; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; box-shadow: 0 1px 6px rgba(0,0,0,0.18); }
   .exch-name {
@@ -458,7 +458,7 @@
 
   <!-- Americas -->
   <div class="region-label">🌎 Americas</div>
-  <div class="exchanges-grid region-americas" id="americasGrid">
+  <div class="exchanges-grid region-americas">
     <div class="exch-card exch-card-wide" id="exch-nyse">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg" alt="US">
       <div class="exch-name">NYSE · NASDAQ</div>
@@ -471,18 +471,27 @@
     <div class="exch-card" id="exch-tsx">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ca.svg" alt="CA">
       <div class="exch-name">TSX</div>
-      <div class="exch-fullname">Toronto Stock Exchange</div>
+      <div class="exch-fullname">TMX Group · Toronto</div>
       <div class="exch-city">Toronto · ET</div>
       <div class="exch-status closed" id="tsx-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="tsx-time">–</div>
       <div class="exch-hours">09:30 – 16:00 ET</div>
+    </div>
+    <div class="exch-card" id="exch-b3">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
+      <div class="exch-name">B3</div>
+      <div class="exch-fullname">Brasil Bolsa Balcão</div>
+      <div class="exch-city">São Paulo · BRT</div>
+      <div class="exch-status closed" id="b3-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="b3-time">–</div>
+      <div class="exch-hours">10:00 – 17:30 BRT</div>
     </div>
   </div>
 
   <!-- Europe -->
   <div class="region-label">🌍 Europe</div>
   <div class="exchanges-grid region-europe">
-    <div class="exch-card">
+    <div class="exch-card" id="exch-lse">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb.svg" alt="GB">
       <div class="exch-name">LSE</div>
       <div class="exch-fullname">London Stock Exchange</div>
@@ -491,16 +500,34 @@
       <div class="exch-local" id="lse-time">–</div>
       <div class="exch-hours">08:00 – 16:30 GMT</div>
     </div>
-    <div class="exch-card">
+    <div class="exch-card" id="exch-euronext">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/eu.svg" alt="EU">
+      <div class="exch-name">Euronext</div>
+      <div class="exch-fullname">Euronext Paris / Amsterdam</div>
+      <div class="exch-city">Paris · CET</div>
+      <div class="exch-status closed" id="euronext-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="euronext-time">–</div>
+      <div class="exch-hours">09:00 – 17:30 CET</div>
+    </div>
+    <div class="exch-card" id="exch-xetra">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/de.svg" alt="DE">
       <div class="exch-name">Xetra</div>
-      <div class="exch-fullname">Frankfurt Stock Exchange</div>
+      <div class="exch-fullname">Deutsche Börse · Frankfurt</div>
       <div class="exch-city">Frankfurt · CET</div>
       <div class="exch-status closed" id="xetra-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="xetra-time">–</div>
       <div class="exch-hours">09:00 – 17:30 CET</div>
     </div>
-    <div class="exch-card">
+    <div class="exch-card" id="exch-six">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ch.svg" alt="CH">
+      <div class="exch-name">SIX</div>
+      <div class="exch-fullname">SIX Swiss Exchange</div>
+      <div class="exch-city">Zürich · CET</div>
+      <div class="exch-status closed" id="six-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="six-time">–</div>
+      <div class="exch-hours">09:00 – 17:30 CET</div>
+    </div>
+    <div class="exch-card" id="exch-bist">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
       <div class="exch-name">BIST</div>
       <div class="exch-fullname">Borsa Istanbul</div>
@@ -511,10 +538,10 @@
     </div>
   </div>
 
-  <!-- Asia -->
-  <div class="region-label">🌏 Asia</div>
+  <!-- Asia & Pacific -->
+  <div class="region-label">🌏 Asia &amp; Pacific</div>
   <div class="exchanges-grid region-asia">
-    <div class="exch-card">
+    <div class="exch-card" id="exch-sse">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cn.svg" alt="CN">
       <div class="exch-name">SSE</div>
       <div class="exch-fullname">Shanghai Stock Exchange</div>
@@ -523,7 +550,25 @@
       <div class="exch-local" id="sse-time">–</div>
       <div class="exch-hours">09:30–11:30, 13:00–15:00 CST</div>
     </div>
-    <div class="exch-card">
+    <div class="exch-card" id="exch-szse">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cn.svg" alt="CN">
+      <div class="exch-name">SZSE</div>
+      <div class="exch-fullname">Shenzhen Stock Exchange</div>
+      <div class="exch-city">Shenzhen · CST</div>
+      <div class="exch-status closed" id="szse-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="szse-time">–</div>
+      <div class="exch-hours">09:30–11:30, 13:00–15:00 CST</div>
+    </div>
+    <div class="exch-card" id="exch-hkex">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/hk.svg" alt="HK">
+      <div class="exch-name">HKEX</div>
+      <div class="exch-fullname">Hong Kong Exchanges</div>
+      <div class="exch-city">Hong Kong · HKT</div>
+      <div class="exch-status closed" id="hkex-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="hkex-time">–</div>
+      <div class="exch-hours">09:30–12:00, 13:00–16:00 HKT</div>
+    </div>
+    <div class="exch-card" id="exch-tse">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jp.svg" alt="JP">
       <div class="exch-name">TSE</div>
       <div class="exch-fullname">Tokyo Stock Exchange</div>
@@ -532,7 +577,7 @@
       <div class="exch-local" id="tse-time">–</div>
       <div class="exch-hours">09:00–11:30, 12:30–15:30 JST</div>
     </div>
-    <div class="exch-card">
+    <div class="exch-card" id="exch-krx">
       <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/kr.svg" alt="KR">
       <div class="exch-name">KRX</div>
       <div class="exch-fullname">Korea Exchange</div>
@@ -540,6 +585,56 @@
       <div class="exch-status closed" id="krx-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="krx-time">–</div>
       <div class="exch-hours">09:00 – 15:30 KST</div>
+    </div>
+    <div class="exch-card" id="exch-nse">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/in.svg" alt="IN">
+      <div class="exch-name">NSE</div>
+      <div class="exch-fullname">National Stock Exchange of India</div>
+      <div class="exch-city">Mumbai · IST</div>
+      <div class="exch-status closed" id="nse-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="nse-time">–</div>
+      <div class="exch-hours">09:15 – 15:30 IST</div>
+    </div>
+    <div class="exch-card" id="exch-twse">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tw.svg" alt="TW">
+      <div class="exch-name">TWSE</div>
+      <div class="exch-fullname">Taiwan Stock Exchange</div>
+      <div class="exch-city">Taipei · CST</div>
+      <div class="exch-status closed" id="twse-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="twse-time">–</div>
+      <div class="exch-hours">09:00 – 13:30 CST</div>
+    </div>
+    <div class="exch-card" id="exch-asx">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/au.svg" alt="AU">
+      <div class="exch-name">ASX</div>
+      <div class="exch-fullname">Australian Securities Exchange</div>
+      <div class="exch-city">Sydney · AEST</div>
+      <div class="exch-status closed" id="asx-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="asx-time">–</div>
+      <div class="exch-hours">10:00 – 16:00 AEST</div>
+    </div>
+  </div>
+
+  <!-- Middle East & Africa -->
+  <div class="region-label">🌍 Middle East &amp; Africa</div>
+  <div class="exchanges-grid region-mea">
+    <div class="exch-card" id="exch-tadawul">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/sa.svg" alt="SA">
+      <div class="exch-name">Tadawul</div>
+      <div class="exch-fullname">Saudi Exchange</div>
+      <div class="exch-city">Riyadh · AST</div>
+      <div class="exch-status closed" id="tadawul-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="tadawul-time">–</div>
+      <div class="exch-hours">10:00 – 15:00 AST (Sun–Thu)</div>
+    </div>
+    <div class="exch-card" id="exch-jse">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/za.svg" alt="ZA">
+      <div class="exch-name">JSE</div>
+      <div class="exch-fullname">Johannesburg Stock Exchange</div>
+      <div class="exch-city">Johannesburg · SAST</div>
+      <div class="exch-status closed" id="jse-st"><span class="sdot"></span>Closed</div>
+      <div class="exch-local" id="jse-time">–</div>
+      <div class="exch-hours">09:00 – 17:00 SAST</div>
     </div>
   </div>
 
@@ -642,13 +737,22 @@ function setExch(id, open, localTime) {
 }
 
 function update() {
-  const ny  = getLocalTime('America/New_York');
-  const lon = getLocalTime('Europe/London');
-  const fra = getLocalTime('Europe/Berlin');
-  const ist = getLocalTime('Europe/Istanbul');
-  const sha = getLocalTime('Asia/Shanghai');
-  const tok = getLocalTime('Asia/Tokyo');
-  const seo = getLocalTime('Asia/Seoul');
+  const ny   = getLocalTime('America/New_York');
+  const sao  = getLocalTime('America/Sao_Paulo');
+  const lon  = getLocalTime('Europe/London');
+  const par  = getLocalTime('Europe/Paris');
+  const fra  = getLocalTime('Europe/Berlin');
+  const zur  = getLocalTime('Europe/Zurich');
+  const ist  = getLocalTime('Europe/Istanbul');
+  const sha  = getLocalTime('Asia/Shanghai');
+  const hk   = getLocalTime('Asia/Hong_Kong');
+  const tok  = getLocalTime('Asia/Tokyo');
+  const seo  = getLocalTime('Asia/Seoul');
+  const mum  = getLocalTime('Asia/Kolkata');
+  const tai  = getLocalTime('Asia/Taipei');
+  const syd  = getLocalTime('Australia/Sydney');
+  const riy  = getLocalTime('Asia/Riyadh');
+  const joh  = getLocalTime('Africa/Johannesburg');
 
   const h = ny.getHours(), m = ny.getMinutes(), s = ny.getSeconds();
   const nowMins = h * 60 + m;
@@ -656,8 +760,8 @@ function update() {
   document.getElementById('heroClock').textContent = timeStr;
   document.getElementById('headerTime').textContent = pad(h) + ':' + pad(m) + ' ET';
 
-  const nyWd    = isWeekday(ny);
-  const nyOpen  = isOpen(ny, 9, 30, 16, 0);
+  const nyWd   = isWeekday(ny);
+  const nyOpen = isOpen(ny, 9, 30, 16, 0);
   const preOpen = isOpen(ny, 4, 0, 9, 30);
   const ahOpen  = isOpen(ny, 16, 0, 20, 0);
 
@@ -688,34 +792,47 @@ function update() {
   document.getElementById('countdownVal').textContent = cdVal;
 
   // Americas
-  setExch('nyse',   nyOpen, ny);
-  setExch('tsx',    isOpen(ny, 9, 30, 16, 0), ny);
+  setExch('nyse', nyOpen, ny);
+  setExch('tsx',  isOpen(ny, 9, 30, 16, 0), ny);
+  setExch('b3',   isOpen(sao, 10, 0, 17, 30), sao);
 
   // Europe
-  setExch('lse',   isOpen(lon, 8, 0, 16, 30), lon);
-  setExch('xetra', isOpen(fra, 9, 0, 17, 30), fra);
-  setExch('bist',  isOpen(ist, 10, 0, 18, 0), ist);
+  setExch('lse',      isOpen(lon, 8, 0, 16, 30), lon);
+  setExch('euronext', isOpen(par, 9, 0, 17, 30), par);
+  setExch('xetra',    isOpen(fra, 9, 0, 17, 30), fra);
+  setExch('six',      isOpen(zur, 9, 0, 17, 30), zur);
+  setExch('bist',     isOpen(ist, 10, 0, 18, 0), ist);
 
-  // Asia — SSE (lunch break)
+  // Asia — China exchanges (lunch break 11:30–13:00)
   const shaMins = sha.getHours() * 60 + sha.getMinutes();
-  const sseOpen = isWeekday(sha) && (
-    (shaMins >= 570 && shaMins < 690) ||
-    (shaMins >= 780 && shaMins < 900)
-  );
-  setExch('sse', sseOpen, sha);
+  const cnOpen = isWeekday(sha) && ((shaMins >= 570 && shaMins < 690) || (shaMins >= 780 && shaMins < 900));
+  setExch('sse',  cnOpen, sha);
+  setExch('szse', cnOpen, sha);
 
-  // Asia — TSE (lunch break)
+  // HKEX (lunch break 12:00–13:00)
+  const hkMins = hk.getHours() * 60 + hk.getMinutes();
+  const hkOpen = isWeekday(hk) && ((hkMins >= 570 && hkMins < 720) || (hkMins >= 780 && hkMins < 960));
+  setExch('hkex', hkOpen, hk);
+
+  // TSE Tokyo (lunch break 11:30–12:30)
   const tokMins = tok.getHours() * 60 + tok.getMinutes();
-  const tseOpen = isWeekday(tok) && (
-    (tokMins >= 540 && tokMins < 690) ||
-    (tokMins >= 750 && tokMins < 930)
-  );
+  const tseOpen = isWeekday(tok) && ((tokMins >= 540 && tokMins < 690) || (tokMins >= 750 && tokMins < 930));
   setExch('tse', tseOpen, tok);
 
-  // Asia — KRX
-  setExch('krx', isOpen(seo, 9, 0, 15, 30), seo);
+  setExch('krx',  isOpen(seo, 9, 0, 15, 30), seo);
+  setExch('nse',  isOpen(mum, 9, 15, 15, 30), mum);
+  setExch('twse', isOpen(tai, 9, 0, 13, 30), tai);
+  setExch('asx',  isOpen(syd, 10, 0, 16, 0), syd);
 
-  // Last updated
+  // Middle East & Africa — Tadawul opens Sun–Thu
+  const riyDay = riy.getDay();
+  const riyOpen = (riyDay >= 0 && riyDay <= 4) && isOpen(riy, 10, 0, 15, 0);
+  // override isOpen weekday check for Sun–Thu market
+  const riyMins = riy.getHours() * 60 + riy.getMinutes();
+  const tadawulOpen = (riyDay !== 5 && riyDay !== 6) && riyMins >= 600 && riyMins < 900;
+  setExch('tadawul', tadawulOpen, riy);
+  setExch('jse', isOpen(joh, 9, 0, 17, 0), joh);
+
   document.getElementById('lastUpdated').textContent = timeStr + ' ET';
 }
 
