@@ -256,54 +256,94 @@
   .exchanges-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 2rem;
   }
-  @media (max-width: 480px) {
-    .exchanges-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  .exch-card-wide { grid-column: span 2; }
+  @media (max-width: 480px) { .exch-card-wide { grid-column: span 2; } }
   .exch-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 0.875rem 0.75rem;
+    border-radius: var(--radius-lg);
+    padding: 1rem 0.875rem 0.875rem;
     text-align: center;
-    transition: border-color 0.2s;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+    overflow: hidden;
   }
-  .exch-card:hover { border-color: var(--border-strong); }
-  .exch-flag { font-size: 18px; margin-bottom: 4px; }
+  .exch-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent, var(--border));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .exch-card:hover { transform: translateY(-2px); }
+  .exch-card.is-open { border-color: var(--accent, var(--border)); }
+
+  /* per-region accent colors */
+  .region-americas .exch-card { --accent: #3b82f6; }
+  .region-europe   .exch-card { --accent: #8b5cf6; }
+  .region-asia     .exch-card { --accent: #ef4444; }
+
+  .exch-flag { width: 40px; height: 30px; object-fit: cover; border-radius: 3px; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; box-shadow: 0 1px 6px rgba(0,0,0,0.18); }
   .exch-name {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text);
+    margin-bottom: 1px;
+  }
+  .exch-fullname {
+    font-size: 10px;
+    color: var(--text-faint);
     margin-bottom: 2px;
   }
   .exch-city {
     font-size: 10px;
     color: var(--text-faint);
-    margin-bottom: 7px;
+    margin-bottom: 10px;
   }
   .exch-status {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
-    display: inline-block;
-    padding: 2px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
     border-radius: 999px;
   }
-  .exch-status.open { background: var(--green-bg); color: var(--green); }
-  .exch-status.closed { background: var(--surface2); color: var(--text-faint); }
-  .exch-local {
-    font-size: 10px;
+  .exch-status.open {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-border);
+  }
+  .exch-status.closed {
+    background: var(--surface2);
     color: var(--text-faint);
-    margin-top: 4px;
+    border: 1px solid var(--border);
+  }
+  .exch-status .sdot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .exch-status.open .sdot { background: var(--green); animation: pulse 2s infinite; }
+  .exch-status.closed .sdot { background: var(--text-faint); }
+  .exch-local {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
     font-family: var(--mono);
+    font-weight: 500;
   }
   .exch-hours {
     font-size: 9px;
     color: var(--text-faint);
-    margin-top: 2px;
+    margin-top: 3px;
+    line-height: 1.4;
   }
 
   /* ── Region label ── */
@@ -410,40 +450,6 @@
     <div class="hero-tz">New York · Eastern Time (ET)</div>
   </section>
 
-  <!-- Info cards -->
-  <div class="section-label">nasdaq / nyse session hours</div>
-  <div class="cards-grid">
-    <div class="info-card">
-      <div class="label">Pre-market</div>
-      <div class="val">04:00</div>
-      <div class="sub">starts daily (ET)</div>
-    </div>
-    <div class="info-card">
-      <div class="label">Regular session</div>
-      <div class="val">09:30 – 16:00</div>
-      <div class="sub">Mon – Fri</div>
-    </div>
-    <div class="info-card">
-      <div class="label">After-hours</div>
-      <div class="val">16:00 – 20:00</div>
-      <div class="sub">extended trading</div>
-    </div>
-    <div class="info-card">
-      <div class="label">Next open</div>
-      <div class="val" id="nextOpen">–</div>
-      <div class="sub" id="nextOpenSub">–</div>
-    </div>
-  </div>
-
-  <!-- Timeline -->
-  <div class="timeline-wrap">
-    <div class="section-label">today's trading day progress (regular session)</div>
-    <div class="timeline-bar">
-      <div class="timeline-fill" id="tlFill" style="width:0%"></div>
-    </div>
-    <div class="tl-times"><span>09:30</span><span id="tlPct">0%</span><span>16:00</span></div>
-  </div>
-
   <!-- Countdown -->
   <div class="countdown-bar">
     <span class="countdown-label" id="countdownLabel">Next event</span>
@@ -452,28 +458,22 @@
 
   <!-- Americas -->
   <div class="region-label">🌎 Americas</div>
-  <div class="exchanges-grid" id="americasGrid">
-    <div class="exch-card" id="exch-nyse">
-      <div class="exch-flag">🇺🇸</div>
-      <div class="exch-name">NYSE</div>
-      <div class="exch-city">New York</div>
-      <div class="exch-status closed" id="nyse-st">Closed</div>
+  <div class="exchanges-grid region-americas" id="americasGrid">
+    <div class="exch-card exch-card-wide" id="exch-nyse">
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg" alt="US">
+      <div class="exch-name">NYSE · NASDAQ</div>
+      <div class="exch-fullname">New York Stock Exchange · Nasdaq Stock Market</div>
+      <div class="exch-city">New York · ET</div>
+      <div class="exch-status closed" id="nyse-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="nyse-time">–</div>
       <div class="exch-hours">09:30 – 16:00 ET</div>
     </div>
-    <div class="exch-card" id="exch-nasdaq">
-      <div class="exch-flag">🇺🇸</div>
-      <div class="exch-name">NASDAQ</div>
-      <div class="exch-city">New York</div>
-      <div class="exch-status closed" id="nasdaq-st">Closed</div>
-      <div class="exch-local" id="nasdaq-time">–</div>
-      <div class="exch-hours">09:30 – 16:00 ET</div>
-    </div>
     <div class="exch-card" id="exch-tsx">
-      <div class="exch-flag">🇨🇦</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ca.svg" alt="CA">
       <div class="exch-name">TSX</div>
-      <div class="exch-city">Toronto</div>
-      <div class="exch-status closed" id="tsx-st">Closed</div>
+      <div class="exch-fullname">Toronto Stock Exchange</div>
+      <div class="exch-city">Toronto · ET</div>
+      <div class="exch-status closed" id="tsx-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="tsx-time">–</div>
       <div class="exch-hours">09:30 – 16:00 ET</div>
     </div>
@@ -481,28 +481,31 @@
 
   <!-- Europe -->
   <div class="region-label">🌍 Europe</div>
-  <div class="exchanges-grid">
+  <div class="exchanges-grid region-europe">
     <div class="exch-card">
-      <div class="exch-flag">🇬🇧</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb.svg" alt="GB">
       <div class="exch-name">LSE</div>
-      <div class="exch-city">London</div>
-      <div class="exch-status closed" id="lse-st">Closed</div>
+      <div class="exch-fullname">London Stock Exchange</div>
+      <div class="exch-city">London · GMT/BST</div>
+      <div class="exch-status closed" id="lse-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="lse-time">–</div>
       <div class="exch-hours">08:00 – 16:30 GMT</div>
     </div>
     <div class="exch-card">
-      <div class="exch-flag">🇩🇪</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/de.svg" alt="DE">
       <div class="exch-name">Xetra</div>
-      <div class="exch-city">Frankfurt</div>
-      <div class="exch-status closed" id="xetra-st">Closed</div>
+      <div class="exch-fullname">Frankfurt Stock Exchange</div>
+      <div class="exch-city">Frankfurt · CET</div>
+      <div class="exch-status closed" id="xetra-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="xetra-time">–</div>
       <div class="exch-hours">09:00 – 17:30 CET</div>
     </div>
     <div class="exch-card">
-      <div class="exch-flag">🇹🇷</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
       <div class="exch-name">BIST</div>
-      <div class="exch-city">Istanbul</div>
-      <div class="exch-status closed" id="bist-st">Closed</div>
+      <div class="exch-fullname">Borsa Istanbul</div>
+      <div class="exch-city">Istanbul · TRT</div>
+      <div class="exch-status closed" id="bist-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="bist-time">–</div>
       <div class="exch-hours">10:00 – 18:00 TRT</div>
     </div>
@@ -510,28 +513,31 @@
 
   <!-- Asia -->
   <div class="region-label">🌏 Asia</div>
-  <div class="exchanges-grid">
+  <div class="exchanges-grid region-asia">
     <div class="exch-card">
-      <div class="exch-flag">🇨🇳</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cn.svg" alt="CN">
       <div class="exch-name">SSE</div>
-      <div class="exch-city">Shanghai</div>
-      <div class="exch-status closed" id="sse-st">Closed</div>
+      <div class="exch-fullname">Shanghai Stock Exchange</div>
+      <div class="exch-city">Shanghai · CST</div>
+      <div class="exch-status closed" id="sse-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="sse-time">–</div>
       <div class="exch-hours">09:30–11:30, 13:00–15:00 CST</div>
     </div>
     <div class="exch-card">
-      <div class="exch-flag">🇯🇵</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jp.svg" alt="JP">
       <div class="exch-name">TSE</div>
-      <div class="exch-city">Tokyo</div>
-      <div class="exch-status closed" id="tse-st">Closed</div>
+      <div class="exch-fullname">Tokyo Stock Exchange</div>
+      <div class="exch-city">Tokyo · JST</div>
+      <div class="exch-status closed" id="tse-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="tse-time">–</div>
       <div class="exch-hours">09:00–11:30, 12:30–15:30 JST</div>
     </div>
     <div class="exch-card">
-      <div class="exch-flag">🇰🇷</div>
+      <img class="exch-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/kr.svg" alt="KR">
       <div class="exch-name">KRX</div>
-      <div class="exch-city">Seoul</div>
-      <div class="exch-status closed" id="krx-st">Closed</div>
+      <div class="exch-fullname">Korea Exchange</div>
+      <div class="exch-city">Seoul · KST</div>
+      <div class="exch-status closed" id="krx-st"><span class="sdot"></span>Closed</div>
       <div class="exch-local" id="krx-time">–</div>
       <div class="exch-hours">09:00 – 15:30 KST</div>
     </div>
@@ -626,10 +632,12 @@ function fmtTime(d) { return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
 function setExch(id, open, localTime) {
   const st = document.getElementById(id + '-st');
   const tm = document.getElementById(id + '-time');
+  const card = document.getElementById('exch-' + id);
   if (st) {
-    st.textContent = open ? 'Open' : 'Closed';
+    st.innerHTML = '<span class="sdot"></span>' + (open ? 'Open' : 'Closed');
     st.className = 'exch-status ' + (open ? 'open' : 'closed');
   }
+  if (card) card.classList.toggle('is-open', open);
   if (tm && localTime) tm.textContent = fmtTime(localTime) + ' local';
 }
 
@@ -657,14 +665,6 @@ function update() {
   pill.className = 'status-pill ' + (nyOpen ? 'open' : 'closed');
   document.getElementById('statusText').textContent = nyOpen ? 'OPEN' : 'CLOSED';
 
-  // Timeline
-  const elapsed = Math.max(0, Math.min(390, nowMins - 570));
-  const pct = nyWd ? Math.round(elapsed / 390 * 100) : 0;
-  const fill = document.getElementById('tlFill');
-  fill.style.width = pct + '%';
-  fill.className = 'timeline-fill ' + (nyOpen ? 'tl-green' : 'tl-gray');
-  document.getElementById('tlPct').textContent = pct + '%';
-
   // Countdown
   let cdLabel = '', cdVal = '';
   if (!nyWd) {
@@ -687,13 +687,8 @@ function update() {
   document.getElementById('countdownLabel').textContent = cdLabel;
   document.getElementById('countdownVal').textContent = cdVal;
 
-  // Next open card
-  document.getElementById('nextOpen').textContent = nyOpen ? 'Now' : (nyWd && h < 16 ? 'Today' : 'Mon');
-  document.getElementById('nextOpenSub').textContent = nyOpen ? 'market is live' : '09:30 ET';
-
   // Americas
   setExch('nyse',   nyOpen, ny);
-  setExch('nasdaq', nyOpen, ny);
   setExch('tsx',    isOpen(ny, 9, 30, 16, 0), ny);
 
   // Europe
