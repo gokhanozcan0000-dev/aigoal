@@ -76,7 +76,7 @@
     backdrop-filter: blur(8px);
   }
   .header-inner {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -99,7 +99,7 @@
 
   /* ── Main ── */
   main {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 1.5rem 5rem;
   }
@@ -255,12 +255,61 @@
   /* ── Exchanges grid ── */
   .exchanges-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-bottom: 2rem;
   }
+  @media (max-width: 700px) { .exchanges-grid { grid-template-columns: repeat(2, 1fr); } }
   .exch-card-wide { grid-column: span 2; }
-  @media (max-width: 480px) { .exch-card-wide { grid-column: span 2; } }
+
+  /* ── Highlights ── */
+  .highlights-section { margin-bottom: 2rem; }
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 700px) { .highlights-grid { grid-template-columns: repeat(2, 1fr); } }
+  .hl-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hl-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--hl-accent, var(--border));
+  }
+  .hl-flag { width: 28px; height: 21px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
+  .hl-info { flex: 1; min-width: 0; }
+  .hl-name {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hl-sub { font-size: 10px; color: var(--text-faint); margin-top: 1px; }
+  .hl-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .hl-badge.open { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .hl-badge.closed { background: var(--surface2); color: var(--text-faint); border: 1px solid var(--border); }
   .exch-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -454,6 +503,76 @@
   <div class="countdown-bar">
     <span class="countdown-label" id="countdownLabel">Next event</span>
     <span class="countdown-val" id="countdownVal">–</span>
+  </div>
+
+  <!-- Highlights -->
+  <div class="highlights-section">
+    <div class="section-label">highlights</div>
+    <div class="highlights-grid">
+      <!-- Row 1 -->
+      <div class="hl-card" style="--hl-accent:#3b82f6">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg" alt="US">
+        <div class="hl-info"><div class="hl-name">NYSE · NASDAQ</div><div class="hl-sub">New York · 09:30–16:00 ET</div></div>
+        <span class="hl-badge closed" id="hl-nyse">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#8b5cf6">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/de.svg" alt="DE">
+        <div class="hl-info"><div class="hl-name">Xetra</div><div class="hl-sub">Frankfurt · 09:00–17:30 CET</div></div>
+        <span class="hl-badge closed" id="hl-xetra">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#8b5cf6">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb.svg" alt="GB">
+        <div class="hl-info"><div class="hl-name">LSE</div><div class="hl-sub">London · 08:00–16:30 GMT</div></div>
+        <span class="hl-badge closed" id="hl-lse">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#8b5cf6">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/eu.svg" alt="EU">
+        <div class="hl-info"><div class="hl-name">Euronext</div><div class="hl-sub">Paris · 09:00–17:30 CET</div></div>
+        <span class="hl-badge closed" id="hl-euronext">–</span>
+      </div>
+      <!-- Row 2 -->
+      <div class="hl-card" style="--hl-accent:#ef4444">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cn.svg" alt="CN">
+        <div class="hl-info"><div class="hl-name">SSE · Shanghai</div><div class="hl-sub">09:30–11:30, 13:00–15:00 CST</div></div>
+        <span class="hl-badge closed" id="hl-sse">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#ef4444">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jp.svg" alt="JP">
+        <div class="hl-info"><div class="hl-name">TSE · Tokyo</div><div class="hl-sub">09:00–11:30, 12:30–15:30 JST</div></div>
+        <span class="hl-badge closed" id="hl-tse">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#ef4444">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/kr.svg" alt="KR">
+        <div class="hl-info"><div class="hl-name">KRX · Seoul</div><div class="hl-sub">09:00–15:30 KST</div></div>
+        <span class="hl-badge closed" id="hl-krx">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#ef4444">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/in.svg" alt="IN">
+        <div class="hl-info"><div class="hl-name">NSE · Mumbai</div><div class="hl-sub">09:15–15:30 IST</div></div>
+        <span class="hl-badge closed" id="hl-nse">–</span>
+      </div>
+      <!-- Row 3 -->
+      <div class="hl-card" style="--hl-accent:#f59e0b">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
+        <div class="hl-info"><div class="hl-name">BIST · Istanbul</div><div class="hl-sub">10:00–18:00 TRT</div></div>
+        <span class="hl-badge closed" id="hl-bist">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#ef4444">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/au.svg" alt="AU">
+        <div class="hl-info"><div class="hl-name">ASX · Sydney</div><div class="hl-sub">10:00–16:00 AEST</div></div>
+        <span class="hl-badge closed" id="hl-asx">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#f59e0b">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/za.svg" alt="ZA">
+        <div class="hl-info"><div class="hl-name">JSE · Johannesburg</div><div class="hl-sub">09:00–17:00 SAST</div></div>
+        <span class="hl-badge closed" id="hl-jse">–</span>
+      </div>
+      <div class="hl-card" style="--hl-accent:#8b5cf6">
+        <img class="hl-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ch.svg" alt="CH">
+        <div class="hl-info"><div class="hl-name">SIX · Zürich</div><div class="hl-sub">09:00–17:30 CET</div></div>
+        <span class="hl-badge closed" id="hl-six">–</span>
+      </div>
+    </div>
   </div>
 
   <!-- Americas -->
@@ -834,6 +953,26 @@ function update() {
   setExch('jse', isOpen(joh, 9, 0, 17, 0), joh);
 
   document.getElementById('lastUpdated').textContent = timeStr + ' ET';
+
+  // Highlights
+  function setHl(id, open) {
+    const el = document.getElementById('hl-' + id);
+    if (!el) return;
+    el.textContent = open ? 'Open' : 'Closed';
+    el.className = 'hl-badge ' + (open ? 'open' : 'closed');
+  }
+  setHl('nyse', nyOpen);
+  setHl('xetra', isOpen(fra, 9, 0, 17, 30));
+  setHl('lse', isOpen(lon, 8, 0, 16, 30));
+  setHl('euronext', isOpen(par, 9, 0, 17, 30));
+  setHl('sse', cnOpen);
+  setHl('tse', tseOpen);
+  setHl('krx', isOpen(seo, 9, 0, 15, 30));
+  setHl('nse', isOpen(mum, 9, 15, 15, 30));
+  setHl('bist', isOpen(ist, 10, 0, 18, 0));
+  setHl('asx', isOpen(syd, 10, 0, 16, 0));
+  setHl('jse', isOpen(joh, 9, 0, 17, 0));
+  setHl('six', isOpen(zur, 9, 0, 17, 30));
 }
 
 // FAQ accordion
