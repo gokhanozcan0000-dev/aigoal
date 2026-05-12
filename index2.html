@@ -954,25 +954,78 @@ function update() {
 
   document.getElementById('lastUpdated').textContent = timeStr + ' ET';
 
-  // Highlights
-  function setHl(id, open) {
+  // Highlights — shows "Open" or "Xh Ym" until next open
+  function minsUntilOpen(localD, openH, openM) {
+    const d = localD;
+    const dayOfWeek = d.getDay();
+    const nowM = d.getHours() * 60 + d.getMinutes();
+    const openMins = openH * 60 + openM;
+    // same day, before open
+    if (dayOfWeek !== 0 && dayOfWeek !== 6 && nowM < openMins) {
+      return openMins - nowM;
+    }
+    // calculate minutes to next weekday open
+    let daysAhead = 1;
+    while (daysAhead <= 7) {
+      const nextDay = (dayOfWeek + daysAhead) % 7;
+      if (nextDay !== 0 && nextDay !== 6) {
+        return daysAhead * 1440 - nowM + openMins;
+      }
+      daysAhead++;
+    }
+    return null;
+  }
+  function minsUntilOpenCustom(localD, sessions) {
+    // sessions: array of [openH, openM] pairs (first session of day)
+    const d = localD;
+    const dayOfWeek = d.getDay();
+    const nowM = d.getHours() * 60 + d.getMinutes();
+    const [openH, openM] = sessions[0];
+    const openMins = openH * 60 + openM;
+    if (dayOfWeek !== 0 && dayOfWeek !== 6 && nowM < openMins) return openMins - nowM;
+    let daysAhead = 1;
+    while (daysAhead <= 7) {
+      const nextDay = (dayOfWeek + daysAhead) % 7;
+      if (nextDay !== 0 && nextDay !== 6) return daysAhead * 1440 - nowM + openMins;
+      daysAhead++;
+    }
+    return null;
+  }
+  function fmtCountdown(mins) {
+    if (mins === null) return '–';
+    const h = Math.floor(mins / 60), m = mins % 60;
+    if (h === 0) return m + 'm';
+    return h + 'h ' + pad(m) + 'm';
+  }
+  function setHl(id, open, localD, openH, openM) {
     const el = document.getElementById('hl-' + id);
     if (!el) return;
-    el.textContent = open ? 'Open' : 'Closed';
-    el.className = 'hl-badge ' + (open ? 'open' : 'closed');
+    if (open) {
+      el.textContent = 'Open';
+      el.className = 'hl-badge open';
+    } else {
+      const mins = minsUntilOpen(localD, openH, openM);
+      el.textContent = 'in ' + fmtCountdown(mins);
+      el.className = 'hl-badge closed';
+    }
   }
-  setHl('nyse', nyOpen);
-  setHl('xetra', isOpen(fra, 9, 0, 17, 30));
-  setHl('lse', isOpen(lon, 8, 0, 16, 30));
-  setHl('euronext', isOpen(par, 9, 0, 17, 30));
-  setHl('sse', cnOpen);
-  setHl('tse', tseOpen);
-  setHl('krx', isOpen(seo, 9, 0, 15, 30));
-  setHl('nse', isOpen(mum, 9, 15, 15, 30));
-  setHl('bist', isOpen(ist, 10, 0, 18, 0));
-  setHl('asx', isOpen(syd, 10, 0, 16, 0));
-  setHl('jse', isOpen(joh, 9, 0, 17, 0));
-  setHl('six', isOpen(zur, 9, 0, 17, 30));
+  function setHlCustom(id, open, localD, openH, openM) {
+    // for exchanges with lunch breaks — use first session open time
+    setHl(id, open, localD, openH, openM);
+  }
+
+  setHl('nyse',     nyOpen,                        ny,  9, 30);
+  setHl('xetra',    isOpen(fra, 9, 0, 17, 30),     fra, 9,  0);
+  setHl('lse',      isOpen(lon, 8, 0, 16, 30),     lon, 8,  0);
+  setHl('euronext', isOpen(par, 9, 0, 17, 30),     par, 9,  0);
+  setHlCustom('sse',  cnOpen,                       sha, 9, 30);
+  setHlCustom('tse',  tseOpen,                      tok, 9,  0);
+  setHl('krx',      isOpen(seo, 9, 0, 15, 30),     seo, 9,  0);
+  setHl('nse',      isOpen(mum, 9, 15, 15, 30),    mum, 9, 15);
+  setHl('bist',     isOpen(ist, 10, 0, 18, 0),     ist, 10, 0);
+  setHl('asx',      isOpen(syd, 10, 0, 16, 0),     syd, 10, 0);
+  setHl('jse',      isOpen(joh, 9, 0, 17, 0),      joh, 9,  0);
+  setHl('six',      isOpen(zur, 9, 0, 17, 30),     zur, 9,  0);
 }
 
 // FAQ accordion
