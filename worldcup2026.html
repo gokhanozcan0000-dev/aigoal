@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 FIFA World Cup AI Predictions | AIGoal.net</title>
+<meta name="description" content="ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity AI predictions for every 2026 FIFA World Cup group stage match. USA, Canada & Mexico. Free AI football analysis.">
+<meta property="og:title" content="2026 FIFA World Cup AI Predictions | AIGoal.net">
+<meta property="og:description" content="6 AI models predict every group stage match of the 2026 FIFA World Cup. Free analysis updated weekly.">
+<meta property="og:url" content="https://aigoal.net/worldcup2026">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aigoal.net/worldcup2026">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8363649317786686" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg:#080a10;--bg2:#0d1020;--card:#0f1428;--border:#1a2038;
+  --accent:#c8a227;--accent2:#ff3d5a;--accent3:#ffe600;--accent4:#7c4dff;
+  --gold:#c8a227;--gold2:#9e7a1a;
+  --text:#e8eaf6;--muted:#5a6280;
+  --wc-red:#c8102e;--wc-blue:#003087;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* GRID BG */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(200,162,39,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(200,162,39,.015) 1px,transparent 1px);
+  background-size:48px 48px;}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:200;height:52px;background:rgba(8,10,16,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;gap:12px;}
+.topbar-logo{display:flex;align-items:center;text-decoration:none;}
+.topbar-logo img{height:32px;width:auto;object-fit:contain;}
+.topbar-logo-fallback{font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:3px;color:var(--accent);}
+.topbar-logo-fallback span{color:var(--accent2);}
+.topbar-right{display:flex;align-items:center;gap:10px;}
+.topbar-link{font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;padding:5px 12px;border:1px solid var(--border);border-radius:4px;transition:all .15s;}
+.topbar-link:hover{color:var(--accent);border-color:rgba(200,162,39,.35);}
+.topbar-wc-badge{font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;background:linear-gradient(90deg,var(--wc-red),var(--wc-blue));color:#fff;letter-spacing:.5px;}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;padding:80px 24px 64px;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,50,140,.25) 0%, transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);}
+
+/* Trophy SVG animation */
+.trophy-wrap{display:flex;justify-content:center;margin-bottom:28px;}
+.trophy-svg{width:90px;height:90px;filter:drop-shadow(0 0 32px rgba(255,215,0,.3));animation:floatUp 3.5s ease-in-out infinite;}
+@keyframes floatUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+/* Countdown */
+.countdown-wrap{display:flex;justify-content:center;gap:12px;margin-bottom:36px;flex-wrap:wrap;}
+.cd-block{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 18px;text-align:center;min-width:72px;}
+.cd-num{font-family:'Bebas Neue',cursive;font-size:40px;color:var(--gold);line-height:1;display:block;}
+.cd-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;}
+.cd-sep{font-family:'Bebas Neue',cursive;font-size:40px;color:var(--muted);align-self:flex-start;padding-top:12px;}
+
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;opacity:.9;}
+.hero-title{font-family:'Bebas Neue',cursive;font-size:clamp(52px,10vw,96px);line-height:.95;margin-bottom:6px;letter-spacing:2px;}
+.hero-title .ht-2026{color:var(--accent);}
+.hero-title .ht-wc{color:#fff;}
+.hero-subtitle{font-size:clamp(13px,2vw,17px);color:var(--muted);max-width:520px;margin:12px auto 32px;line-height:1.6;}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;font-weight:700;font-size:13px;padding:11px 24px;border-radius:4px;text-decoration:none;letter-spacing:.5px;transition:opacity .15s;}
+.hero-cta:hover{opacity:.85;}
+.hero-cta2{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;padding:11px 20px;text-decoration:none;transition:color .15s;margin-left:8px;}
+.hero-cta2:hover{color:var(--text);}
+
+/* HOST CITIES STRIP */
+.cities-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;overflow:hidden;position:relative;}
+.cities-scroll{display:flex;gap:0;animation:scrollLeft 30s linear infinite;width:max-content;}
+.cities-strip:hover .cities-scroll{animation-play-state:paused;}
+@keyframes scrollLeft{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.city-item{display:flex;align-items:center;gap:8px;padding:0 28px;font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap;border-right:1px solid var(--border);}
+.city-item .ci-flag{font-size:14px;}
+.city-item .ci-name{color:var(--text);}
+.city-item .ci-stadium{color:var(--muted);}
+
+/* STATS BAR */
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;border-bottom:1px solid var(--border);}
+.stat-item{padding:20px 24px;text-align:center;border-right:1px solid var(--border);position:relative;z-index:1;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Bebas Neue',cursive;font-size:38px;color:var(--accent);line-height:1;display:block;}
+.stat-num.gold{color:var(--gold);}
+.stat-num.red{color:var(--accent2);}
+.stat-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+
+/* SECTION LAYOUT */
+.section{padding:40px 24px;max-width:1100px;margin:0 auto;}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap;}
+.section-title{font-family:'Bebas Neue',cursive;font-size:28px;letter-spacing:3px;color:#fff;display:flex;align-items:center;gap:10px;}
+.section-title .st-accent{color:var(--accent);}
+.section-title .st-gold{color:var(--gold);}
+.section-pill{font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;background:rgba(200,162,39,.12);border:1px solid rgba(200,162,39,.25);color:var(--accent);letter-spacing:1px;}
+
+/* GROUP TABS */
+.group-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:20px;}
+.gtab{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;padding:5px 12px;border-radius:3px;cursor:pointer;letter-spacing:.5px;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.gtab:hover{border-color:rgba(200,162,39,.35);color:var(--text);}
+.gtab.active{background:rgba(200,162,39,.12);border-color:rgba(200,162,39,.45);color:var(--accent);}
+
+/* MATCH CARDS */
+.matches-grid{display:flex;flex-direction:column;gap:8px;}
+.match-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s;cursor:pointer;}
+.match-card:hover{border-color:rgba(200,162,39,.35);transform:translateY(-1px);}
+.match-card:hover .mc-arrow{opacity:1;transform:translateX(0);}
+.mc-date{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.5px;min-width:64px;flex-shrink:0;}
+.mc-teams{flex:1;display:flex;align-items:center;gap:10px;min-width:0;}
+.mc-team{display:flex;align-items:center;gap:8px;flex:1;min-width:0;}
+.mc-team.away{flex-direction:row-reverse;}
+.mc-team.away .mc-tname{text-align:right;}
+.mc-flag{width:22px;height:16px;object-fit:cover;border-radius:2px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.5);}
+.mc-tname{font-size:13px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mc-vs{font-family:'Bebas Neue',cursive;font-size:16px;color:var(--muted);flex-shrink:0;width:24px;text-align:center;}
+.mc-time{font-family:'Bebas Neue',cursive;font-size:16px;color:var(--accent3);min-width:42px;text-align:center;flex-shrink:0;}
+.mc-preds{display:flex;gap:4px;flex-shrink:0;}
+.mc-pred{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.mc-pred-ai{font-size:8px;color:var(--muted);font-weight:700;letter-spacing:.3px;}
+.mc-pred-val{font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap;}
+.mc-arrow{font-size:14px;color:var(--accent);opacity:.3;transform:translateX(-4px);transition:all .2s;flex-shrink:0;}
+/* tbd badge */
+.mc-pred-val.tbd{background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--border);}
+.mc-pred-val.b1{background:rgba(0,200,83,.11);color:#00c853;}
+.mc-pred-val.b1x{background:rgba(0,200,83,.07);color:#69f0ae;}
+.mc-pred-val.bx2{background:rgba(255,61,90,.08);color:#ff8a80;}
+.mc-pred-val.bkg{background:rgba(200,162,39,.1);color:#c8a227;}
+.mc-pred-val.bu{background:rgba(199,125,255,.1);color:#c77dff;}
+.mc-pred-val.ba{background:rgba(255,145,0,.08);color:#ffab40;}
+.mc-pred-val.bdash{background:rgba(255,255,255,.04);color:var(--muted);}
+
+/* AI MODELS SECTION */
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.ai-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 14px;display:flex;align-items:center;gap:12px;}
+.ai-icon{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ai-info .ai-name{font-size:12px;font-weight:700;color:#fff;}
+.ai-info .ai-stat{font-size:11px;color:var(--muted);margin-top:2px;}
+
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.how-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 18px;}
+.how-num{font-family:'Bebas Neue',cursive;font-size:32px;color:var(--accent);line-height:1;margin-bottom:8px;}
+.how-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;}
+.how-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* LEGEND */
+.legend-bar{display:flex;gap:6px;flex-wrap:wrap;padding:14px 24px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.leg{display:inline-flex;align-items:center;padding:3px 9px;border-radius:3px;font-size:11px;font-weight:700;border:1px solid transparent;}
+.l1{background:rgba(0,200,83,.1);color:#00c853;border-color:rgba(0,200,83,.25);}
+.l1x{background:rgba(0,200,83,.06);color:#69f0ae;border-color:rgba(0,200,83,.18);}
+.lx2{background:rgba(255,61,90,.07);color:#ff8a80;border-color:rgba(255,61,90,.18);}
+.lkg{background:rgba(200,162,39,.1);color:#c8a227;border-color:rgba(200,162,39,.35);}
+.lu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
+.la{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
+.leg-label{font-size:11px;color:var(--muted);font-weight:600;padding:3px 0;margin-right:4px;}
+
+/* DISCLAIMER */
+.disclaimer{margin:0 24px 40px;background:rgba(255,61,90,.04);border:1px solid rgba(255,61,90,.14);border-radius:8px;padding:12px 18px;font-size:11px;color:#ef9a9a;line-height:1.6;display:flex;gap:10px;}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:24px;text-align:center;font-size:11px;color:var(--muted);}
+.footer a{color:var(--muted);text-decoration:none;}
+.footer a:hover{color:var(--accent);}
+
+/* AD */
+.ad-unit{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06);border-radius:6px;overflow:hidden;margin:0 24px 24px;}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  .mc-preds{display:none;}
+  .mc-time{min-width:36px;}
+  .stat-item{padding:14px 12px;}
+  .stat-num{font-size:28px;}
+  .hero{padding:56px 18px 44px;}
+}
+@media(max-width:480px){
+  .mc-date{display:none;}
+  .mc-tname{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <a href="/" class="topbar-logo">
+    <img src="logo.png" alt="AIGoal" style="width:178px;height:auto;object-fit:contain;display:block;" fetchpriority="high" width="178" height="50" onerror="this.style.display='none'">
+  </a>
+  <div class="topbar-right">
+    <span class="topbar-wc-badge">🌍 WORLD CUP 2026</span>
+    <a href="/" class="topbar-link">← All Leagues</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="trophy-wrap">
+    <svg class="trophy-svg" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="tg" cx="50%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#fff8c0"/>
+          <stop offset="40%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#b8860b"/>
+        </radialGradient>
+        <radialGradient id="tg2" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#ffe680"/>
+          <stop offset="100%" stop-color="#c8a000"/>
+        </radialGradient>
+      </defs>
+      <!-- Cup body -->
+      <path d="M30 12 Q28 36 24 44 Q16 56 22 60 Q28 63 45 63 Q62 63 68 60 Q74 56 66 44 Q62 36 60 12 Z" fill="url(#tg)" opacity=".95"/>
+      <!-- Cup shine -->
+      <path d="M36 16 Q34 30 32 40 Q30 48 34 54" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Handles left -->
+      <path d="M30 20 Q14 20 14 30 Q14 40 24 42" fill="none" stroke="url(#tg)" stroke-width="5" stroke-linecap="round"/>
+      <!-- Handles right -->
+      <path d="M60 20 Q76 20 76 30 Q76 40 66 42" fill="none" stroke="url(#tg)" stroke-width="5" stroke-linecap="round"/>
+      <!-- Base stem -->
+      <rect x="38" y="63" width="14" height="8" rx="2" fill="url(#tg2)"/>
+      <!-- Base plate -->
+      <rect x="28" y="71" width="34" height="7" rx="3" fill="url(#tg)"/>
+      <!-- Globe lines on cup -->
+      <ellipse cx="45" cy="37" rx="14" ry="20" fill="none" stroke="rgba(150,100,0,.3)" stroke-width="1"/>
+      <line x1="31" y1="30" x2="59" y2="30" stroke="rgba(150,100,0,.3)" stroke-width="1"/>
+      <line x1="31" y1="44" x2="59" y2="44" stroke="rgba(150,100,0,.3)" stroke-width="1"/>
+      <!-- Shine spot -->
+      <ellipse cx="40" cy="22" rx="5" ry="7" fill="rgba(255,255,255,.25)" transform="rotate(-20,40,22)"/>
+      <!-- Glow ring -->
+      <circle cx="45" cy="45" r="42" fill="none" stroke="rgba(255,215,0,.08)" stroke-width="8"/>
+    </svg>
+  </div>
+
+  <div class="hero-eyebrow">2026 FIFA World Cup · USA · Canada · Mexico</div>
+  <h1 class="hero-title">
+    <span class="ht-wc">WORLD</span><br>
+    <span class="ht-wc">CUP </span><span class="ht-2026">2026</span>
+  </h1>
+  <p class="hero-subtitle">6 AI models — ChatGPT, Gemini, Grok, Copilot, Claude & Perplexity — predict every group stage match. Predictions updated closer to kick-off.</p>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:4px;">
+    <a href="#matches" class="hero-cta">View All Predictions ↓</a>
+    <a href="/" class="hero-cta2">← Other Leagues</a>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 24px;text-align:center;">
+  <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">Kickoff countdown · Mexico vs South Africa · 11 Jun 2026</div>
+  <div class="countdown-wrap">
+    <div class="cd-block"><span class="cd-num" id="cd-d">—</span><div class="cd-label">Days</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-block"><span class="cd-num" id="cd-h">—</span><div class="cd-label">Hours</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-block"><span class="cd-num" id="cd-m">—</span><div class="cd-label">Min</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-block"><span class="cd-num" id="cd-s">—</span><div class="cd-label">Sec</div></div>
+  </div>
+</div>
+
+<!-- HOST CITIES STRIP -->
+<div class="cities-strip">
+  <div class="cities-scroll" id="citiesScroll">
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">New York / NJ</span><span class="ci-stadium">· MetLife Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇲🇽</span><span class="ci-name">Mexico City</span><span class="ci-stadium">· Estadio Azteca</span></div>
+    <div class="city-item"><span class="ci-flag">🇨🇦</span><span class="ci-name">Toronto</span><span class="ci-stadium">· BMO Field</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Los Angeles</span><span class="ci-stadium">· SoFi Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Dallas</span><span class="ci-stadium">· AT&T Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">San Francisco</span><span class="ci-stadium">· Levi's Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Miami</span><span class="ci-stadium">· Hard Rock Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Seattle</span><span class="ci-stadium">· Lumen Field</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Boston</span><span class="ci-stadium">· Gillette Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Atlanta</span><span class="ci-stadium">· Mercedes-Benz Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Kansas City</span><span class="ci-stadium">· Arrowhead Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇲🇽</span><span class="ci-name">Guadalajara</span><span class="ci-stadium">· Estadio Akron</span></div>
+    <div class="city-item"><span class="ci-flag">🇨🇦</span><span class="ci-name">Vancouver</span><span class="ci-stadium">· BC Place</span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">New York / NJ</span><span class="ci-stadium">· MetLife Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇲🇽</span><span class="ci-name">Mexico City</span><span class="ci-stadium">· Estadio Azteca</span></div>
+    <div class="city-item"><span class="ci-flag">🇨🇦</span><span class="ci-name">Toronto</span><span class="ci-stadium">· BMO Field</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Los Angeles</span><span class="ci-stadium">· SoFi Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Dallas</span><span class="ci-stadium">· AT&T Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">San Francisco</span><span class="ci-stadium">· Levi's Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Miami</span><span class="ci-stadium">· Hard Rock Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Seattle</span><span class="ci-stadium">· Lumen Field</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Boston</span><span class="ci-stadium">· Gillette Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Atlanta</span><span class="ci-stadium">· Mercedes-Benz Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇺🇸</span><span class="ci-name">Kansas City</span><span class="ci-stadium">· Arrowhead Stadium</span></div>
+    <div class="city-item"><span class="ci-flag">🇲🇽</span><span class="ci-name">Guadalajara</span><span class="ci-stadium">· Estadio Akron</span></div>
+    <div class="city-item"><span class="ci-flag">🇨🇦</span><span class="ci-name">Vancouver</span><span class="ci-stadium">· BC Place</span></div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num gold">48</span><div class="stat-label">Teams</div></div>
+  <div class="stat-item"><span class="stat-num">104</span><div class="stat-label">Matches</div></div>
+  <div class="stat-item"><span class="stat-num">16</span><div class="stat-label">Groups</div></div>
+  <div class="stat-item"><span class="stat-num red">3</span><div class="stat-label">Host Nations</div></div>
+  <div class="stat-item"><span class="stat-num">6</span><div class="stat-label">AI Models</div></div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <span class="leg-label">PREDICTION KEY:</span>
+  <span class="leg l1">1 — Home wins</span>
+  <span class="leg l1x">1X — Home doesn't lose</span>
+  <span class="leg lx2">X2 — Away doesn't lose</span>
+  <span class="leg lkg">BTTS — Both score</span>
+  <span class="leg lu">O2.5 — Over 2.5</span>
+  <span class="leg la">U2.5 — Under 2.5</span>
+</div>
+
+<!-- AD -->
+<div class="ad-unit" style="margin:24px 24px 0;">
+  <ins class="adsbygoogle" style="display:block;width:100%;min-height:90px;"
+       data-ad-client="ca-pub-8363649317786686"
+       data-ad-slot="4343517411"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- MATCHES -->
+<div class="section" id="matches">
+  <div class="section-head">
+    <div class="section-title">🌍 GROUP STAGE <span class="st-gold">MATCHES</span></div>
+    <span class="section-pill">11–18 JUNE 2026</span>
+  </div>
+
+  <!-- Group filter tabs -->
+  <div class="group-tabs" id="groupTabs">
+    <button class="gtab active" onclick="filterGroup('all',this)">All Matches</button>
+    <button class="gtab" onclick="filterGroup('Jun 11',this)">Thu 11</button>
+    <button class="gtab" onclick="filterGroup('Jun 12',this)">Fri 12</button>
+    <button class="gtab" onclick="filterGroup('Jun 13',this)">Sat 13</button>
+    <button class="gtab" onclick="filterGroup('Jun 14',this)">Sun 14</button>
+    <button class="gtab" onclick="filterGroup('Jun 15',this)">Mon 15</button>
+    <button class="gtab" onclick="filterGroup('Jun 16',this)">Tue 16</button>
+    <button class="gtab" onclick="filterGroup('Jun 17',this)">Wed 17</button>
+    <button class="gtab" onclick="filterGroup('Jun 18',this)">Thu 18</button>
+  </div>
+
+  <div class="matches-grid" id="matchGrid"></div>
+</div>
+
+<!-- AI MODELS -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 24px;">
+<div style="max-width:1100px;margin:0 auto;">
+  <div class="section-head" style="margin-bottom:20px;">
+    <div class="section-title">🤖 AI MODEL <span class="st-accent">PANEL</span></div>
+    <span class="section-pill">6 MODELS · 24 MATCHES</span>
+  </div>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-icon" style="background:rgba(100,149,237,.12);">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073z" fill="#e8eaf6"/></svg>
+      </div>
+      <div class="ai-info"><div class="ai-name">ChatGPT Pro</div><div class="ai-stat">OpenAI · GPT-4o</div></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-icon" style="background:rgba(66,133,244,.12);">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      </div>
+      <div class="ai-info"><div class="ai-name">Gemini</div><div class="ai-stat">Google · Gemini 2.5</div></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-icon" style="background:rgba(232,234,246,.06);">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#e8eaf6"/></svg>
+      </div>
+      <div class="ai-info"><div class="ai-name">Grok</div><div class="ai-stat">xAI · Grok-3</div></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-icon" style="background:rgba(0,120,212,.1);">
+        <svg width="20" height="20" viewBox="0 0 24 24"><rect width="9" height="9" x="1.5" y="1.5" fill="#f25022"/><rect width="9" height="9" x="13.5" y="1.5" fill="#7fba00"/><rect width="9" height="9" x="1.5" y="13.5" fill="#00a4ef"/><rect width="9" height="9" x="13.5" y="13.5" fill="#ffb900"/></svg>
+      </div>
+      <div class="ai-info"><div class="ai-name">Copilot Pro</div><div class="ai-stat">Microsoft · GPT-4o</div></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-icon" style="background:rgba(204,120,92,.12);">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M17.5 2.5c-1.2 0-2.3.5-3.1 1.4L12 6.7l-2.4-2.8C8.8 3 7.7 2.5 6.5 2.5 4 2.5 2 4.5 2 7c0 1.2.5 2.3 1.3 3.1L12 19.5l8.7-9.4c.8-.8 1.3-1.9 1.3-3.1 0-2.5-2-4.5-4.5-4.5z" fill="#CC785C"/></svg>
+      </div>
+      <div class="ai-info"><div class="ai-name">Claude Pro</div><div class="ai-stat">Anthropic · Sonnet</div></div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-icon" style="background:rgba(32,227,178,.08);">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#20e3b2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ai-info"><div class="ai-name">Perplexity</div><div class="ai-stat">Perplexity AI</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="section-head"><div class="section-title">⚙️ HOW IT <span class="st-accent">WORKS</span></div></div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">Fixtures Collected</div>
+      <div class="how-desc">Every World Cup group stage match is loaded with team form, head-to-head records and tournament context.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">6 AI Models Queried</div>
+      <div class="how-desc">ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity each independently analyze every fixture.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">Best Prediction Extracted</div>
+      <div class="how-desc">Each model's highest-confidence pick is recorded: 1, X2, 1X, BTTS, Over/Under 2.5, or Draw.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">04</div>
+      <div class="how-title">Updated Weekly</div>
+      <div class="how-desc">Predictions are refreshed as match day approaches, incorporating the latest team news and form.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <span style="font-size:17px;flex-shrink:0;">⚠️</span>
+  <span><strong>Disclaimer:</strong> All predictions are generated by AI models for informational and entertainment purposes only. They carry no guarantee and should never be used as the basis for financial, betting, or investment decisions. Always gamble responsibly.</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div style="margin-bottom:8px;">
+    <a href="/">AIGoal.net</a> · <a href="/worldcup2026">World Cup 2026</a>
+  </div>
+  <div>AI-powered football predictions · Not affiliated with FIFA · For entertainment only</div>
+</footer>
+
+<script>
+// ── MATCH DATA ──
+const matches = [
+  {home:"Mexico",away:"South Africa",date:"Thu 11 Jun",time:"21:00",url:"/mexico-vs-south-africa",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/mx.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/za.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"South Korea",away:"Czech Republic",date:"Fri 12 Jun",time:"04:00",url:"/south-korea-vs-czech-republic",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/kr.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cz.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Canada",away:"Bosnia-Herzegovina",date:"Fri 12 Jun",time:"21:00",url:"/canada-vs-bosnia-and-herzegovina",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ca.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ba.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"USA",away:"Paraguay",date:"Sat 13 Jun",time:"03:00",url:"/usa-vs-paraguay",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/us.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/py.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Qatar",away:"Switzerland",date:"Sat 13 Jun",time:"21:00",url:"/qatar-vs-switzerland",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/qa.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ch.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Brazil",away:"Morocco",date:"Sun 14 Jun",time:"00:00",url:"/brazil-vs-morocco",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ma.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Haiti",away:"Scotland",date:"Sun 14 Jun",time:"03:00",url:"/haiti-vs-scotland",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ht.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb-sct.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Australia",away:"Turkey",date:"Sun 14 Jun",time:"06:00",url:"/australia-vs-turkey",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/au.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Germany",away:"Curacao",date:"Sun 14 Jun",time:"19:00",url:"/germany-vs-curacao",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/de.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cw.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Netherlands",away:"Japan",date:"Sun 14 Jun",time:"22:00",url:"/netherlands-vs-japan",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/nl.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jp.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Ivory Coast",away:"Ecuador",date:"Mon 15 Jun",time:"01:00",url:"/ivory-coast-vs-ecuador",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ci.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ec.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Sweden",away:"Tunisia",date:"Mon 15 Jun",time:"04:00",url:"/sweden-vs-tunisia",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/se.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tn.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Spain",away:"Cape Verde",date:"Mon 15 Jun",time:"18:00",url:"/spain-vs-cape-verde",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/es.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cv.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Belgium",away:"Egypt",date:"Mon 15 Jun",time:"21:00",url:"/belgium-vs-egypt",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/be.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/eg.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Saudi Arabia",away:"Uruguay",date:"Tue 16 Jun",time:"00:00",url:"/saudi-arabia-vs-uruguay",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/sa.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/uy.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Iran",away:"New Zealand",date:"Tue 16 Jun",time:"03:00",url:"/iran-vs-new-zealand",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ir.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/nz.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"France",away:"Senegal",date:"Tue 16 Jun",time:"21:00",url:"/france-vs-senegal",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/fr.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/sn.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Iraq",away:"Norway",date:"Wed 17 Jun",time:"00:00",url:"/irak-vs-norway",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/iq.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/no.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Argentina",away:"Algeria",date:"Wed 17 Jun",time:"03:00",url:"/argentina-vs-algeria",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/ar.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/dz.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Austria",away:"Jordan",date:"Wed 17 Jun",time:"06:00",url:"/austria-vs-jordan",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/at.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/jo.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Portugal",away:"DR Congo",date:"Wed 17 Jun",time:"19:00",url:"/portugal-vs-dr-congo",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pt.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cd.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"England",away:"Croatia",date:"Wed 17 Jun",time:"22:00",url:"/england-vs-croatia",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb-eng.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/hr.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Ghana",away:"Panama",date:"Thu 18 Jun",time:"01:00",url:"/ghana-vs-panama",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gh.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pa.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+  {home:"Uzbekistan",away:"Colombia",date:"Thu 18 Jun",time:"04:00",url:"/uzbekistan-vs-colombia",
+   hf:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/uz.svg",
+   af:"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/co.svg",
+   preds:{chatgpt:"—",gemini:"—",grok:"—",copilot:"—",claude:"—",perplexity:"—"},
+   pc:{chatgpt:"bdash",gemini:"bdash",grok:"bdash",copilot:"bdash",claude:"bdash",perplexity:"bdash"}},
+];
+
+const AI_ORDER = ['chatgpt','gemini','grok','copilot','claude','perplexity'];
+const AI_SHORT = {chatgpt:'GPT',gemini:'GEM',grok:'GRK',copilot:'COP',claude:'CLO',perplexity:'PPX'};
+
+let activeFilter = 'all';
+
+function buildCard(m){
+  const predsHtml = AI_ORDER.map(ai=>`
+    <div class="mc-pred">
+      <div class="mc-pred-ai">${AI_SHORT[ai]}</div>
+      <div class="mc-pred-val ${m.pc[ai]}">${m.preds[ai]}</div>
+    </div>`).join('');
+  return `<a class="match-card" href="${m.url}" data-date="${m.date}">
+    <div class="mc-date">${m.date}</div>
+    <div class="mc-teams">
+      <div class="mc-team home">
+        <img class="mc-flag" src="${m.hf}" alt="${m.home}" loading="lazy">
+        <span class="mc-tname">${m.home}</span>
+      </div>
+      <div class="mc-vs">VS</div>
+      <div class="mc-team away">
+        <img class="mc-flag" src="${m.af}" alt="${m.away}" loading="lazy">
+        <span class="mc-tname">${m.away}</span>
+      </div>
+    </div>
+    <div class="mc-time">${m.time}</div>
+    <div class="mc-preds">${predsHtml}</div>
+    <div class="mc-arrow">›</div>
+  </a>`;
+}
+
+function renderMatches(filter){
+  const grid = document.getElementById('matchGrid');
+  const filtered = filter==='all' ? matches : matches.filter(m=>m.date.includes(filter));
+  grid.innerHTML = filtered.map(buildCard).join('');
+}
+
+function filterGroup(filter, btn){
+  activeFilter = filter;
+  document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMatches(filter);
+}
+
+// Countdown
+function updateCountdown(){
+  const kickoff = new Date('2026-06-11T21:00:00-06:00'); // Mexico City time
+  const now = new Date();
+  const diff = kickoff - now;
+  if(diff <= 0){
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(id=>{document.getElementById(id).textContent='0';});
+    return;
+  }
+  const d = Math.floor(diff/864e5);
+  const h = Math.floor((diff%864e5)/36e5);
+  const m = Math.floor((diff%36e5)/6e4);
+  const s = Math.floor((diff%6e4)/1e3);
+  document.getElementById('cd-d').textContent = d;
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+
+renderMatches('all');
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
