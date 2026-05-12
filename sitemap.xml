@@ -31,6 +31,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/argentina-vs-algeria</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/arsenal-fc-vs-burnley-fc</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,6 +79,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/australia-vs-turkey</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/austria-vs-jordan</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/az-vs-nac-breda</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -97,6 +115,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/belgium-vs-egypt</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/borussia-monchengladbach-vs-tsg-1899-hoffenheim</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -104,6 +128,12 @@
   </url>
   <url>
     <loc>https://aigoal.net/botafogo-vs-corinthians</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/brazil-vs-morocco</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -128,6 +158,12 @@
   </url>
   <url>
     <loc>https://aigoal.net/cagliari-calcio-vs-torino-fc</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/canada-vs-bosnia-and-herzegovina</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -230,6 +266,12 @@
   </url>
   <url>
     <loc>https://aigoal.net/elche-cf-vs-getafe-cf</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/england-vs-croatia</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -349,6 +391,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/france-vs-senegal</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/gaziantep-fk-vs-basaksehir-fk</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -373,7 +421,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/germany-vs-curacao</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/getafe-cf-vs-rcd-mallorca</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ghana-vs-panama</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -391,6 +451,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/haiti-vs-scotland</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/heracles-almelo-vs-fc-groningen</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -398,6 +464,24 @@
   </url>
   <url>
     <loc>https://aigoal.net/inter-miami-vs-portland-timbers</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/irak-vs-norway</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/iran-vs-new-zealand</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/ivory-coast-vs-ecuador</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -463,6 +547,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/mexico-vs-south-africa</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/minnesota-united-vs-colorado-rapids</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -476,6 +566,12 @@
   </url>
   <url>
     <loc>https://aigoal.net/nec-vs-go-ahead-eagles</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/netherlands-vs-japan</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -541,7 +637,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/portugal-vs-dr-congo</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/psv-vs-fc-twente-65</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/qatar-vs-switzerland</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -649,6 +757,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/saudi-arabia-vs-uruguay</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/sc-freiburg-vs-rb-leipzig</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -674,6 +788,18 @@
   </url>
   <url>
     <loc>https://aigoal.net/sevilla-fc-vs-real-madrid-cf</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/south-korea-vs-czech-republic</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/spain-vs-cape-verde</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -739,6 +865,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/sweden-vs-tunisia</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/tottenham-hotspur-fc-vs-leeds-united-fc</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -781,6 +913,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aigoal.net/usa-vs-paraguay</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aigoal.net/uzbekistan-vs-colombia</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aigoal.net/valencia-cf-vs-rayo-vallecano-de-madrid</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -809,11 +953,5 @@
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aigoal.net/worldcup</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>
