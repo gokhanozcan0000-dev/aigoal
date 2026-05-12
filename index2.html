@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is the Stock Market Open? — Global Exchange Status</title>
+<meta name="description" content="Real-time status of global stock exchanges: NASDAQ, NYSE, LSE, Xetra, BIST, TSX, SSE, TSE, KRX. Is the market open right now?">
+<meta name="keywords" content="is the stock market open, nasdaq open, nyse open, stock market hours, market status, global exchanges">
+<meta property="og:title" content="Is the Stock Market Open?">
+<meta property="og:description" content="Real-time status of 9 global stock exchanges. Check if NASDAQ, NYSE, LSE, Tokyo, Shanghai and more are open right now.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8f7f4;
+    --surface: #ffffff;
+    --surface2: #f0efe9;
+    --border: rgba(0,0,0,0.08);
+    --border-strong: rgba(0,0,0,0.15);
+    --text: #1a1a18;
+    --text-muted: #6b6b67;
+    --text-faint: #9b9b96;
+    --green: #2d6a2d;
+    --green-bg: #eaf3e0;
+    --green-border: #5a9a3a;
+    --red: #8b2020;
+    --red-bg: #faeaea;
+    --red-border: #c94040;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111110;
+      --surface: #1c1c1a;
+      --surface2: #242422;
+      --border: rgba(255,255,255,0.07);
+      --border-strong: rgba(255,255,255,0.12);
+      --text: #e8e8e2;
+      --text-muted: #8a8a84;
+      --text-faint: #5a5a56;
+      --green: #6abf4b;
+      --green-bg: #1a2e14;
+      --green-border: #3a6a24;
+      --red: #e06060;
+      --red-bg: #2a1414;
+      --red-border: #6a2424;
+    }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .header-time {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── Main ── */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 2.5rem 0 3rem;
+  }
+  .hero h1 {
+    font-family: var(--mono);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.875rem 2rem;
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  .status-pill.open {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green-border);
+  }
+  .status-pill.closed {
+    background: var(--red-bg);
+    color: var(--red);
+    border: 1px solid var(--red-border);
+  }
+  .pulse-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .open .pulse-dot { background: var(--green); animation: pulse 2s infinite; }
+  .closed .pulse-dot { background: var(--red); }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(0.85)} }
+
+  .hero-clock {
+    font-family: var(--mono);
+    font-size: 2.8rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .hero-tz {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  /* ── Section title ── */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 10px;
+  }
+
+  /* ── Info cards ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+  }
+  .info-card .label {
+    font-size: 11px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+    font-family: var(--mono);
+  }
+  .info-card .val {
+    font-family: var(--mono);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .info-card .sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  /* ── Timeline ── */
+  .timeline-wrap {
+    margin-bottom: 2rem;
+  }
+  .timeline-bar {
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 8px 0 5px;
+    border: 1px solid var(--border);
+  }
+  .timeline-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 1s linear;
+  }
+  .tl-green { background: var(--green); }
+  .tl-gray { background: var(--border-strong); }
+  .tl-times {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+
+  /* ── Countdown ── */
+  .countdown-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.875rem 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .countdown-label { font-size: 13px; color: var(--text-muted); }
+  .countdown-val {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  /* ── Exchanges grid ── */
+  .exchanges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 480px) {
+    .exchanges-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .exch-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.875rem 0.75rem;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+  .exch-card:hover { border-color: var(--border-strong); }
+  .exch-flag { font-size: 18px; margin-bottom: 4px; }
+  .exch-name {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .exch-city {
+    font-size: 10px;
+    color: var(--text-faint);
+    margin-bottom: 7px;
+  }
+  .exch-status {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+  }
+  .exch-status.open { background: var(--green-bg); color: var(--green); }
+  .exch-status.closed { background: var(--surface2); color: var(--text-faint); }
+  .exch-local {
+    font-size: 10px;
+    color: var(--text-faint);
+    margin-top: 4px;
+    font-family: var(--mono);
+  }
+  .exch-hours {
+    font-size: 9px;
+    color: var(--text-faint);
+    margin-top: 2px;
+  }
+
+  /* ── Region label ── */
+  .region-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-family: var(--mono);
+    margin: 1.5rem 0 8px;
+  }
+  .region-label:first-child { margin-top: 0; }
+
+  /* ── Holidays ── */
+  .holidays-wrap { margin-bottom: 2rem; }
+  .holiday-list { display: flex; flex-direction: column; }
+  .holiday-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .holiday-row:last-child { border-bottom: none; }
+  .holiday-name { color: var(--text); }
+  .holiday-meta { display: flex; align-items: center; gap: 10px; }
+  .holiday-date { color: var(--text-muted); font-family: var(--mono); font-size: 12px; }
+  .holiday-exch {
+    font-size: 10px;
+    background: var(--surface2);
+    color: var(--text-faint);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: var(--mono);
+  }
+
+  /* ── FAQ ── */
+  .faq-wrap { margin-bottom: 2rem; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+  .faq-q {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+  }
+  .faq-q::after {
+    content: '+';
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--text-faint);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-top: 0.75rem; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-faint);
+    font-family: var(--mono);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">ismarketopen.io</a>
+    <span class="header-time" id="headerTime">--:-- ET</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Is the stock market open<br>right now?</h1>
+    <div id="statusPill" class="status-pill open">
+      <span class="pulse-dot"></span>
+      <span id="statusText">OPEN</span>
+    </div>
+    <div class="hero-clock" id="heroClock">--:--:--</div>
+    <div class="hero-tz">New York · Eastern Time (ET)</div>
+  </section>
+
+  <!-- Info cards -->
+  <div class="section-label">nasdaq / nyse session hours</div>
+  <div class="cards-grid">
+    <div class="info-card">
+      <div class="label">Pre-market</div>
+      <div class="val">04:00</div>
+      <div class="sub">starts daily (ET)</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Regular session</div>
+      <div class="val">09:30 – 16:00</div>
+      <div class="sub">Mon – Fri</div>
+    </div>
+    <div class="info-card">
+      <div class="label">After-hours</div>
+      <div class="val">16:00 – 20:00</div>
+      <div class="sub">extended trading</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Next open</div>
+      <div class="val" id="nextOpen">–</div>
+      <div class="sub" id="nextOpenSub">–</div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline-wrap">
+    <div class="section-label">today's trading day progress (regular session)</div>
+    <div class="timeline-bar">
+      <div class="timeline-fill" id="tlFill" style="width:0%"></div>
+    </div>
+    <div class="tl-times"><span>09:30</span><span id="tlPct">0%</span><span>16:00</span></div>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-bar">
+    <span class="countdown-label" id="countdownLabel">Next event</span>
+    <span class="countdown-val" id="countdownVal">–</span>
+  </div>
+
+  <!-- Americas -->
+  <div class="region-label">🌎 Americas</div>
+  <div class="exchanges-grid" id="americasGrid">
+    <div class="exch-card" id="exch-nyse">
+      <div class="exch-flag">🇺🇸</div>
+      <div class="exch-name">NYSE</div>
+      <div class="exch-city">New York</div>
+      <div class="exch-status closed" id="nyse-st">Closed</div>
+      <div class="exch-local" id="nyse-time">–</div>
+      <div class="exch-hours">09:30 – 16:00 ET</div>
+    </div>
+    <div class="exch-card" id="exch-nasdaq">
+      <div class="exch-flag">🇺🇸</div>
+      <div class="exch-name">NASDAQ</div>
+      <div class="exch-city">New York</div>
+      <div class="exch-status closed" id="nasdaq-st">Closed</div>
+      <div class="exch-local" id="nasdaq-time">–</div>
+      <div class="exch-hours">09:30 – 16:00 ET</div>
+    </div>
+    <div class="exch-card" id="exch-tsx">
+      <div class="exch-flag">🇨🇦</div>
+      <div class="exch-name">TSX</div>
+      <div class="exch-city">Toronto</div>
+      <div class="exch-status closed" id="tsx-st">Closed</div>
+      <div class="exch-local" id="tsx-time">–</div>
+      <div class="exch-hours">09:30 – 16:00 ET</div>
+    </div>
+  </div>
+
+  <!-- Europe -->
+  <div class="region-label">🌍 Europe</div>
+  <div class="exchanges-grid">
+    <div class="exch-card">
+      <div class="exch-flag">🇬🇧</div>
+      <div class="exch-name">LSE</div>
+      <div class="exch-city">London</div>
+      <div class="exch-status closed" id="lse-st">Closed</div>
+      <div class="exch-local" id="lse-time">–</div>
+      <div class="exch-hours">08:00 – 16:30 GMT</div>
+    </div>
+    <div class="exch-card">
+      <div class="exch-flag">🇩🇪</div>
+      <div class="exch-name">Xetra</div>
+      <div class="exch-city">Frankfurt</div>
+      <div class="exch-status closed" id="xetra-st">Closed</div>
+      <div class="exch-local" id="xetra-time">–</div>
+      <div class="exch-hours">09:00 – 17:30 CET</div>
+    </div>
+    <div class="exch-card">
+      <div class="exch-flag">🇹🇷</div>
+      <div class="exch-name">BIST</div>
+      <div class="exch-city">Istanbul</div>
+      <div class="exch-status closed" id="bist-st">Closed</div>
+      <div class="exch-local" id="bist-time">–</div>
+      <div class="exch-hours">10:00 – 18:00 TRT</div>
+    </div>
+  </div>
+
+  <!-- Asia -->
+  <div class="region-label">🌏 Asia</div>
+  <div class="exchanges-grid">
+    <div class="exch-card">
+      <div class="exch-flag">🇨🇳</div>
+      <div class="exch-name">SSE</div>
+      <div class="exch-city">Shanghai</div>
+      <div class="exch-status closed" id="sse-st">Closed</div>
+      <div class="exch-local" id="sse-time">–</div>
+      <div class="exch-hours">09:30–11:30, 13:00–15:00 CST</div>
+    </div>
+    <div class="exch-card">
+      <div class="exch-flag">🇯🇵</div>
+      <div class="exch-name">TSE</div>
+      <div class="exch-city">Tokyo</div>
+      <div class="exch-status closed" id="tse-st">Closed</div>
+      <div class="exch-local" id="tse-time">–</div>
+      <div class="exch-hours">09:00–11:30, 12:30–15:30 JST</div>
+    </div>
+    <div class="exch-card">
+      <div class="exch-flag">🇰🇷</div>
+      <div class="exch-name">KRX</div>
+      <div class="exch-city">Seoul</div>
+      <div class="exch-status closed" id="krx-st">Closed</div>
+      <div class="exch-local" id="krx-time">–</div>
+      <div class="exch-hours">09:00 – 15:30 KST</div>
+    </div>
+  </div>
+
+  <!-- Holidays -->
+  <div class="holidays-wrap">
+    <div class="section-label">upcoming market holidays</div>
+    <div class="holiday-list">
+      <div class="holiday-row">
+        <span class="holiday-name">Memorial Day</span>
+        <span class="holiday-meta"><span class="holiday-exch">US</span><span class="holiday-date">May 26, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">Juneteenth National Independence Day</span>
+        <span class="holiday-meta"><span class="holiday-exch">US</span><span class="holiday-date">Jun 19, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">Independence Day</span>
+        <span class="holiday-meta"><span class="holiday-exch">US</span><span class="holiday-date">Jul 4, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">Labour Day (Canada)</span>
+        <span class="holiday-meta"><span class="holiday-exch">CA</span><span class="holiday-date">Sep 1, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">Labor Day (US)</span>
+        <span class="holiday-meta"><span class="holiday-exch">US</span><span class="holiday-date">Sep 1, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">Thanksgiving Day (US)</span>
+        <span class="holiday-meta"><span class="holiday-exch">US</span><span class="holiday-date">Nov 27, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">Christmas Day</span>
+        <span class="holiday-meta"><span class="holiday-exch">US · UK · DE</span><span class="holiday-date">Dec 25, 2025</span></span>
+      </div>
+      <div class="holiday-row">
+        <span class="holiday-name">New Year's Day</span>
+        <span class="holiday-meta"><span class="holiday-exch">Global</span><span class="holiday-date">Jan 1, 2026</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-wrap">
+    <div class="section-label">frequently asked questions</div>
+    <div class="faq-item">
+      <div class="faq-q">What time does NASDAQ open?</div>
+      <div class="faq-a">NASDAQ opens at 9:30 AM Eastern Time (ET) Monday through Friday, excluding market holidays. Pre-market trading begins at 4:00 AM ET, and after-hours trading runs until 8:00 PM ET.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is the stock market open on weekends?</div>
+      <div class="faq-a">No. Major stock exchanges including NASDAQ, NYSE, LSE and most global markets are closed on Saturdays and Sundays. Some cryptocurrency exchanges and OTC markets operate 24/7.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does the Shanghai Stock Exchange have a lunch break?</div>
+      <div class="faq-a">The SSE (Shanghai Stock Exchange) observes a midday break from 11:30 AM to 1:00 PM CST. Trading sessions are 9:30–11:30 AM and 1:00–3:00 PM local time. The Tokyo Stock Exchange (TSE) also has a lunch break from 11:30 AM to 12:30 PM JST.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between pre-market and after-hours trading?</div>
+      <div class="faq-a">Pre-market trading occurs before the regular session (4:00–9:30 AM ET). After-hours trading happens after the close (4:00–8:00 PM ET). Both have lower liquidity and wider spreads than regular hours. Not all brokers offer access to extended hours trading.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What time is the London Stock Exchange open?</div>
+      <div class="faq-a">The London Stock Exchange (LSE) is open from 8:00 AM to 4:30 PM GMT/BST, Monday through Friday. During British Summer Time (BST, late March–late October) this corresponds to 3:00 AM–11:30 AM ET.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  data is based on official exchange hours · always verify with your broker · last updated: <span id="lastUpdated">–</span>
+</footer>
+
+<script>
+function getLocalTime(tz) {
+  return new Date(new Date().toLocaleString('en-US', { timeZone: tz }));
+}
+function isWeekday(d) {
+  const day = d.getDay();
+  return day !== 0 && day !== 6;
+}
+function isOpen(d, openH, openM, closeH, closeM) {
+  if (!isWeekday(d)) return false;
+  const mins = d.getHours() * 60 + d.getMinutes();
+  return mins >= openH * 60 + openM && mins < closeH * 60 + closeM;
+}
+function pad(n) { return String(n).padStart(2, '0'); }
+function fmtTime(d) { return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+
+function setExch(id, open, localTime) {
+  const st = document.getElementById(id + '-st');
+  const tm = document.getElementById(id + '-time');
+  if (st) {
+    st.textContent = open ? 'Open' : 'Closed';
+    st.className = 'exch-status ' + (open ? 'open' : 'closed');
+  }
+  if (tm && localTime) tm.textContent = fmtTime(localTime) + ' local';
+}
+
+function update() {
+  const ny  = getLocalTime('America/New_York');
+  const lon = getLocalTime('Europe/London');
+  const fra = getLocalTime('Europe/Berlin');
+  const ist = getLocalTime('Europe/Istanbul');
+  const sha = getLocalTime('Asia/Shanghai');
+  const tok = getLocalTime('Asia/Tokyo');
+  const seo = getLocalTime('Asia/Seoul');
+
+  const h = ny.getHours(), m = ny.getMinutes(), s = ny.getSeconds();
+  const nowMins = h * 60 + m;
+  const timeStr = pad(h) + ':' + pad(m) + ':' + pad(s);
+  document.getElementById('heroClock').textContent = timeStr;
+  document.getElementById('headerTime').textContent = pad(h) + ':' + pad(m) + ' ET';
+
+  const nyWd    = isWeekday(ny);
+  const nyOpen  = isOpen(ny, 9, 30, 16, 0);
+  const preOpen = isOpen(ny, 4, 0, 9, 30);
+  const ahOpen  = isOpen(ny, 16, 0, 20, 0);
+
+  const pill = document.getElementById('statusPill');
+  pill.className = 'status-pill ' + (nyOpen ? 'open' : 'closed');
+  document.getElementById('statusText').textContent = nyOpen ? 'OPEN' : 'CLOSED';
+
+  // Timeline
+  const elapsed = Math.max(0, Math.min(390, nowMins - 570));
+  const pct = nyWd ? Math.round(elapsed / 390 * 100) : 0;
+  const fill = document.getElementById('tlFill');
+  fill.style.width = pct + '%';
+  fill.className = 'timeline-fill ' + (nyOpen ? 'tl-green' : 'tl-gray');
+  document.getElementById('tlPct').textContent = pct + '%';
+
+  // Countdown
+  let cdLabel = '', cdVal = '';
+  if (!nyWd) {
+    cdLabel = 'Market opens Monday'; cdVal = '09:30 ET';
+  } else if (h < 4) {
+    const d = 240 - nowMins;
+    cdLabel = 'Pre-market opens in'; cdVal = Math.floor(d/60) + 'h ' + pad(d%60) + 'm';
+  } else if (nowMins < 570) {
+    const d = 570 - nowMins;
+    cdLabel = 'Regular session opens in'; cdVal = Math.floor(d/60) + 'h ' + pad(d%60) + 'm';
+  } else if (nyOpen) {
+    const d = 960 - nowMins;
+    cdLabel = 'Market closes in'; cdVal = Math.floor(d/60) + 'h ' + pad(d%60) + 'm';
+  } else if (ahOpen) {
+    const d = 1200 - nowMins;
+    cdLabel = 'After-hours closes in'; cdVal = Math.floor(d/60) + 'h ' + pad(d%60) + 'm';
+  } else {
+    cdLabel = 'Next session'; cdVal = 'Tomorrow 09:30 ET';
+  }
+  document.getElementById('countdownLabel').textContent = cdLabel;
+  document.getElementById('countdownVal').textContent = cdVal;
+
+  // Next open card
+  document.getElementById('nextOpen').textContent = nyOpen ? 'Now' : (nyWd && h < 16 ? 'Today' : 'Mon');
+  document.getElementById('nextOpenSub').textContent = nyOpen ? 'market is live' : '09:30 ET';
+
+  // Americas
+  setExch('nyse',   nyOpen, ny);
+  setExch('nasdaq', nyOpen, ny);
+  setExch('tsx',    isOpen(ny, 9, 30, 16, 0), ny);
+
+  // Europe
+  setExch('lse',   isOpen(lon, 8, 0, 16, 30), lon);
+  setExch('xetra', isOpen(fra, 9, 0, 17, 30), fra);
+  setExch('bist',  isOpen(ist, 10, 0, 18, 0), ist);
+
+  // Asia — SSE (lunch break)
+  const shaMins = sha.getHours() * 60 + sha.getMinutes();
+  const sseOpen = isWeekday(sha) && (
+    (shaMins >= 570 && shaMins < 690) ||
+    (shaMins >= 780 && shaMins < 900)
+  );
+  setExch('sse', sseOpen, sha);
+
+  // Asia — TSE (lunch break)
+  const tokMins = tok.getHours() * 60 + tok.getMinutes();
+  const tseOpen = isWeekday(tok) && (
+    (tokMins >= 540 && tokMins < 690) ||
+    (tokMins >= 750 && tokMins < 930)
+  );
+  setExch('tse', tseOpen, tok);
+
+  // Asia — KRX
+  setExch('krx', isOpen(seo, 9, 0, 15, 30), seo);
+
+  // Last updated
+  document.getElementById('lastUpdated').textContent = timeStr + ' ET';
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+update();
+setInterval(update, 1000);
+</script>
+
+</body>
+</html>
