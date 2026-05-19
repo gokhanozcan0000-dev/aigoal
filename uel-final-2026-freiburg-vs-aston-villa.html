@@ -27,7 +27,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);
   background-size:56px 56px;}
-/* TOPBAR */
 .topbar{position:sticky;top:0;z-index:100;height:52px;background:rgba(10,12,20,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 24px;gap:16px;}
 .topbar-logo{display:flex;align-items:center;text-decoration:none;}
 .topbar-logo img{height:32px;width:auto;object-fit:contain;}
@@ -36,9 +35,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .topbar-breadcrumb a:hover{color:var(--accent);}
 .topbar-breadcrumb span{color:var(--text);font-weight:600;}
 .topbar-sep{color:var(--border);margin:0 4px;}
-/* MAIN */
 .page-wrap{max-width:960px;margin:0 auto;padding:32px 20px 60px;position:relative;z-index:1;}
-/* MATCH HERO */
 .match-hero{background:linear-gradient(135deg,#0c1030 0%,#141930 100%);border:1px solid var(--border);border-radius:12px;padding:32px 24px;margin-bottom:28px;text-align:center;}
 .league-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:4px;padding:4px 10px;margin-bottom:18px;}
 .teams-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;}
@@ -49,7 +46,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .match-info{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:12px;}
 .match-date{font-size:13px;color:var(--muted);}
 .match-time{font-family:'Bebas Neue',cursive;font-size:20px;color:var(--accent3);letter-spacing:1px;}
-/* CONSENSUS */
 .consensus-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .cons-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
 .cons-pred{font-size:28px;font-weight:700;color:#fff;}
@@ -57,7 +53,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .cons-bar-wrap{flex:1;min-width:160px;}
 .cons-bar-bg{height:6px;background:var(--border);border-radius:4px;overflow:hidden;margin-top:8px;}
 .cons-bar{height:100%;border-radius:4px;background:var(--accent);transition:width 1.2s cubic-bezier(.4,0,.2,1);}
-/* PREDICTIONS GRID */
 .section-title{font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:3px;color:#fff;margin-bottom:16px;}
 .section-title span{color:var(--accent);}
 .pred-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:32px;}
@@ -66,7 +61,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .pred-ai-header{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:12px;}
 .pred-ai-name{font-size:11px;font-weight:700;color:var(--text);letter-spacing:.5px;}
 .pred-value{display:flex;justify-content:center;}
-/* BADGES */
 .badge{display:inline-block;padding:6px 14px;border-radius:5px;font-size:13px;font-weight:700;letter-spacing:.2px;border:1px solid transparent;white-space:nowrap;}
 .b1{background:rgba(0,200,83,.11);color:#00c853;border-color:rgba(0,200,83,.28);}
 .b1x{background:rgba(0,200,83,.07);color:#69f0ae;border-color:rgba(0,200,83,.18);}
@@ -75,7 +69,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .bu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
 .ba{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
 .bdash{background:rgba(255,255,255,.04);color:var(--muted);border-color:var(--border);}
-/* LEGEND */
 .legend{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:28px;}
 .legend-title{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
 .legend-items{display:flex;flex-wrap:wrap;gap:6px;}
@@ -86,12 +79,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .lkg{background:rgba(0,229,255,.08);color:#00e5ff;border-color:rgba(0,229,255,.25);}
 .lu{background:rgba(199,125,255,.1);color:#c77dff;border-color:rgba(199,125,255,.25);}
 .la{background:rgba(255,145,0,.08);color:#ffab40;border-color:rgba(255,145,0,.2);}
-/* DISCLAIMER */
 .disclaimer{background:rgba(255,61,90,.04);border:1px solid rgba(255,61,90,.16);border-radius:8px;padding:12px 18px;font-size:11px;color:#ef9a9a;line-height:1.6;display:flex;gap:10px;margin-top:28px;}
-/* BACK LINK */
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-decoration:none;padding:8px 0;margin-bottom:8px;transition:color .15s;}
 .back-link:hover{color:var(--accent);}
-/* AD */
 .ad-unit{width:100%;min-height:90px;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06);border-radius:6px;overflow:hidden;margin:20px 0;}
 @media(max-width:600px){
   .teams-row{gap:12px;}
@@ -119,12 +109,12 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
     <div class="league-tag">Europe · UEFA Europa League Final</div>
     <div class="teams-row">
       <div class="team-block">
-        <img src="https://crests.football-data.org/17.png" alt="SC Freiburg" class="team-crest" onerror="this.style.display='none'">
+        
         <div class="team-name">SC Freiburg</div>
       </div>
       <div class="vs-sep">VS</div>
       <div class="team-block">
-        <img src="https://crests.football-data.org/58.png" alt="Aston Villa FC" class="team-crest" onerror="this.style.display='none'">
+        
         <div class="team-name">Aston Villa FC</div>
       </div>
     </div>
@@ -232,7 +222,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   </div>
 </div>
 <script>
-// Animate consensus bar on load
 window.addEventListener('load', function(){
   const bar = document.querySelector('.cons-bar');
   if(bar) { const w = bar.style.width; bar.style.width='0%'; setTimeout(()=>bar.style.width=w, 100); }
