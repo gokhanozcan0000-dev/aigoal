@@ -316,12 +316,8 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 
   <div class="sb-section">
     <div class="sb-section-label">🇹🇷 <span data-tr="Türkiye" data-en="Turkey">Türkiye</span></div>
-    <a class="sb-item" onclick="switchLeague('superlig',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
-      <span>Trendyol Süper Lig</span>
-    </a>
     <a class="sb-item" onclick="switchLeague('ziraat',this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
       <span data-tr="Ziraat Türkiye Kupası" data-en="Ziraat Turkey Cup">Ziraat Türkiye Kupası</span>
     </a>
 
@@ -346,18 +342,6 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
     <a class="sb-item" onclick="switchLeague('seriea',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/it.svg" alt="IT">
       <span data-tr="İtalya — Serie A" data-en="Italy — Serie A">İtalya — Serie A</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('ligue1',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/fr.svg" alt="FR">
-      <span data-tr="Fransa — Ligue 1" data-en="France — Ligue 1">Fransa — Ligue 1</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('eredivisie',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/nl.svg" alt="NL">
-      <span data-tr="Hollanda — Eredivisie" data-en="Netherlands — Eredivisie">Hollanda — Eredivisie</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('primeiraliga',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pt.svg" alt="PT">
-      <span data-tr="Portekiz — Primeira Liga" data-en="Portugal — Primeira Liga">Portekiz — Primeira Liga</span>
     </a>
     <a class="sb-item" onclick="switchLeague('jupilerleague',this)">
       <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/be.svg" alt="BE">
@@ -1324,26 +1308,6 @@ const allLeagues = {
     ],
   },
 
-  superlig: {
-    nameTr:"Trendyol Süper Lig", nameEn:"Trendyol Süper Lig",
-    countryTr:"Türkiye", countryEn:"Turkey",
-    code:"TSL", flag:"🇹🇷",
-    weekLabel:{tr:"34. HAFTA",en:"WEEK 34"},
-    dates:{tr:"15–17 Mayıs 2026",en:"15–17 May 2026"},
-    analysisTr:"Trendyol Süper Lig'in son haftasında şampiyonluk, Avrupa biletleri ve küme düşme mücadelesi eş zamanlı sona eriyor. Galatasaray şampiyonluk peşinde koşarken Fenerbahçe Eyüpspor'u ağırlıyor. Küme düşme hattındaki Rizespor, Beşiktaş'a karşı can havliyle mücadele edecek. AI modelleri büyük takımları favori gösterirken mücadeleli alt sıra maçlarında geniş tahmin dağılımı sergiledi.",
-    analysisEn:"In the Trendyol Süper Lig's final round, the title, European spots and relegation battles all conclude simultaneously. Galatasaray chases the championship while Fenerbahçe hosts Eyüpspor. Relegation-threatened Rizespor faces Beşiktaş in a must-win clash. AI models favour the big sides while showing wide prediction spread in the competitive lower-table fixtures.",
-    matches:[
-      {home:"Çaykur Rizespor",away:"Beşiktaş",date:{tr:"15 May Cum",en:"Fri 15 May"},time:"20:00",derbi:false,url:"/caykur-rizespor-vs-besiktas",popular:true,p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Fatih Karagümrük",away:"Alanyaspor",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"17:00",derbi:false,url:"/fatih-karagumruk-vs-alanyaspor",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Gaziantep FK",away:"Başakşehir FK",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"20:00",derbi:false,url:"/gaziantep-fk-vs-basaksehir-fk",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-      {home:"Samsunspor",away:"Göztepe",date:{tr:"16 May Cmt",en:"Sat 16 May"},time:"20:00",derbi:false,url:"/samsunspor-vs-goztepe",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
-      {home:"Kayserispor",away:"Konyaspor",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"17:00",derbi:false,url:"/kayserispor-vs-konyaspor",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Fenerbahçe",away:"Eyüpspor",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/fenerbahce-vs-eyupspor",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Üst",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Kasımpaşa",away:"Galatasaray",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/kasimpasa-vs-galatasaray",popular:true,p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
-      {home:"Antalyaspor",away:"Kocaelispor",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/antalyaspor-vs-kocaelispor",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-      {home:"Trabzonspor",away:"Gençlerbirliği",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"20:00",derbi:false,url:"/trabzonspor-vs-genclerbirligi",popular:true,p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-    ],
-  },
 
   pl: {
     nameTr:"Premier League", nameEn:"Premier League",
@@ -1444,77 +1408,8 @@ const allLeagues = {
     ],
   },
 
-  ligue1: {
-    nameTr:"Ligue 1", nameEn:"Ligue 1",
-    countryTr:"Fransa", countryEn:"France",
-    code:"L1", flag:"🇫🇷",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Ligue 1'de Paris Saint-Germain zirvedeki konumunu korurken rakipler puan kaybettirmeyi umuyor. Bu hafta 9 Ligue 1 maçında AI modelleri PSG dışındaki karşılaşmalarda daha geniş bir tahmin dağılımı sergiledi. Fransız liginin fiziksel oyun tarzı özellikle beraberlik tahminlerini artırıyor.",
-    analysisEn:"In Ligue 1, Paris Saint-Germain maintains its top position while rivals hope to take advantage of any slip. Across 9 fixtures this week, AI models showed a wider prediction spread in non-PSG matches. The physical style of French football is particularly boosting draw predictions.",
-    matches:[
-{home:"Stade Brestois 29",away:"RC Strasbourg Alsace",date:{tr:"13 May Çar",en:"Wed 13 May"},time:"17:00",derbi:false,hc:'https://crests.football-data.org/512.png',ac:'https://crests.football-data.org/576.png',url:"/stade-brestois-29-vs-rc-strasbourg-alsace",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Racing Club de Lens",away:"Paris Saint-Germain FC",date:{tr:"13 May Çar",en:"Wed 13 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/546.png',ac:'https://crests.football-data.org/524.png',url:"/racing-club-de-lens-vs-paris-saint-germain-fc",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"FC Lorient",away:"Le Havre AC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/525.png',ac:'https://crests.football-data.org/533.png',url:"/fc-lorient-vs-le-havre-ac",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"FC Nantes",away:"Toulouse FC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/543.png',ac:'https://crests.football-data.org/511.png',url:"/fc-nantes-vs-toulouse-fc",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-{home:"Paris FC",away:"Paris Saint-Germain FC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/1045.png',ac:'https://crests.football-data.org/524.png',url:"/paris-fc-vs-paris-saint-germain-fc",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"OGC Nice",away:"FC Metz",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/522.png',ac:'https://crests.football-data.org/545.png',url:"/ogc-nice-vs-fc-metz",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Olympique Lyonnais",away:"Racing Club de Lens",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/523.png',ac:'https://crests.football-data.org/546.png',url:"/olympique-lyonnais-vs-racing-club-de-lens",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Olympique de Marseille",away:"Stade Rennais FC 1901",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/516.png',ac:'https://crests.football-data.org/529.png',url:"/olympique-de-marseille-vs-stade-rennais-fc-1901",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Lille OSC",away:"AJ Auxerre",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/521.png',ac:'https://crests.football-data.org/519.png',url:"/lille-osc-vs-aj-auxerre",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"RC Strasbourg Alsace",away:"AS Monaco FC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/576.png',ac:'https://crests.football-data.org/548.png',url:"/rc-strasbourg-alsace-vs-as-monaco-fc",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Stade Brestois 29",away:"Angers SCO",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/512.png',ac:'https://crests.football-data.org/532.png',url:"/stade-brestois-29-vs-angers-sco",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}}
-    ],
-  },
 
-  eredivisie: {
-    nameTr:"Eredivisie", nameEn:"Eredivisie",
-    countryTr:"Hollanda", countryEn:"Netherlands",
-    code:"ERE", flag:"🇳🇱",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Eredivisie'de Ajax ve PSV arasındaki şampiyonluk yarışı son haftalara taşındı. 6 AI modeli Hollanda ligi için yüksek gol beklentili tahminler üretti — Eredivisie tarihsel olarak en fazla üst gol tahmini alan liglerden biri. Bu hafta 9 maçta konsensüs oranı %67.",
-    analysisEn:"The Eredivisie title race between Ajax and PSV extends to the final weeks. 6 AI models produced high-scoring predictions for the Dutch league — Eredivisie is historically one of the leagues attracting the most over-goal predictions. Consensus rate across 9 fixtures this week sits at 67%.",
-    matches:[
-{home:"AZ",away:"NAC Breda",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/682.png',ac:'https://crests.football-data.org/681.png',url:"/az-vs-nac-breda",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"FC Utrecht",away:"Fortuna Sittard",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/676.png',ac:'https://crests.football-data.org/1920.png',url:"/fc-utrecht-vs-fortuna-sittard",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"FC Volendam",away:"Telstar 1963",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/1919.png',ac:'https://crests.football-data.org/1912.png',url:"/fc-volendam-vs-telstar-1963",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Heracles Almelo",away:"FC Groningen",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/671.png',ac:'https://crests.football-data.org/677.png',url:"/heracles-almelo-vs-fc-groningen",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"NEC",away:"Go Ahead Eagles",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/1915.png',ac:'https://crests.football-data.org/718.png',url:"/nec-vs-go-ahead-eagles",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"PEC Zwolle",away:"Feyenoord Rotterdam",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/684.png',ac:'https://crests.football-data.org/675.png',url:"/pec-zwolle-vs-feyenoord-rotterdam",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"PSV",away:"FC Twente '65",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/674.png',ac:'https://crests.football-data.org/666.png',url:"/psv-vs-fc-twente-65",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"SC Heerenveen",away:"AFC Ajax",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/673.png',ac:'https://crests.football-data.org/678.png',url:"/sc-heerenveen-vs-afc-ajax",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Sparta Rotterdam",away:"SBV Excelsior",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"12:30",derbi:false,hc:'https://crests.football-data.org/6806.png',ac:'https://crests.football-data.org/670.png',url:"/sparta-rotterdam-vs-sbv-excelsior",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}}
-    ],
-  },
 
-  primeiraliga: {
-    nameTr:"Primeira Liga", nameEn:"Primeira Liga",
-    countryTr:"Portekiz", countryEn:"Portugal",
-    code:"PL", flag:"🇵🇹",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Primeira Liga'da Sporting ve Benfica şampiyonluk için her puana muhtaç. Porto ise her iki rakibinin puan kaybetmesini bekliyor. 6 AI modeli bu hafta Portekiz liginin 10 maçında ev sahibi takımları hafif favori olarak işaretledi.",
-    analysisEn:"In the Primeira Liga, Sporting and Benfica need every point for the title. Porto waits patiently for both rivals to drop points. Across 10 fixtures this week, 6 AI models marked home sides as slight favourites throughout the Portuguese top flight.",
-    matches:[
-{home:"Vitória SC",away:"Casa Pia AC",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/5543.png',ac:'https://crests.football-data.org/6618.png',url:"/vitoria-sc-vs-casa-pia-ac",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Gil Vicente FC",away:"FC Arouca",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/5533.png',ac:'https://crests.football-data.org/712.png',url:"/gil-vicente-fc-vs-fc-arouca",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"CD Tondela",away:"Moreirense FC",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/1049.png',ac:'https://crests.football-data.org/583.png',url:"/cd-tondela-vs-moreirense-fc",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-{home:"CF Estrela da Amadora",away:"FC Famalicão",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/9136.png',ac:'https://crests.football-data.org/5531.png',url:"/cf-estrela-da-amadora-vs-fc-famalicao",p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Rio Ave FC",away:"Sporting Clube de Portugal",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/496.png',ac:'https://crests.football-data.org/498.png',url:"/rio-ave-fc-vs-sporting-clube-de-portugal",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"CD Santa Clara",away:"CD Nacional",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/5530.png',ac:'https://crests.football-data.org/5529.png',url:"/cd-santa-clara-vs-cd-nacional",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Sport Lisboa e Benfica",away:"Sporting Clube de Braga",date:{tr:"11 May Pzt",en:"Mon 11 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/1903.png',ac:'https://crests.football-data.org/5613.png',url:"/sport-lisboa-e-benfica-vs-sporting-clube-de-braga",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Moreirense FC",away:"AVS",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/583.png',ac:'https://crests.football-data.org/10340.png',url:"/moreirense-fc-vs-avs",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"FC Famalicão",away:"FC Alverca",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/5531.png',ac:'https://crests.football-data.org/7822.png',url:"/fc-famalicao-vs-fc-alverca",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Sporting Clube de Portugal",away:"Gil Vicente FC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/498.png',ac:'https://crests.football-data.org/5533.png',url:"/sporting-clube-de-portugal-vs-gil-vicente-fc",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"FC Porto",away:"CD Santa Clara",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/503.png',ac:'https://crests.football-data.org/5530.png',url:"/fc-porto-vs-cd-santa-clara",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"GD Estoril Praia",away:"Sport Lisboa e Benfica",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/582.png',ac:'https://crests.football-data.org/1903.png',url:"/gd-estoril-praia-vs-sport-lisboa-e-benfica",p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"CD Nacional",away:"Vitória SC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/5529.png',ac:'https://crests.football-data.org/5543.png',url:"/cd-nacional-vs-vitoria-sc",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"Casa Pia AC",away:"Rio Ave FC",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/6618.png',ac:'https://crests.football-data.org/496.png',url:"/casa-pia-ac-vs-rio-ave-fc",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"FC Arouca",away:"CD Tondela",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/712.png',ac:'https://crests.football-data.org/1049.png',url:"/fc-arouca-vs-cd-tondela",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Alt",en:"U2.5",c:"ba"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Sporting Clube de Braga",away:"CF Estrela da Amadora",date:{tr:"17 May Paz",en:"Sun 17 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/5613.png',ac:'https://crests.football-data.org/9136.png',url:"/sporting-clube-de-braga-vs-cf-estrela-da-amadora",p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}}
-    ],
-  },
   worldcup: {
     nameTr:"2026 FIFA Dünya Kupası", nameEn:"2026 FIFA World Cup",
     countryTr:"Dünya", countryEn:"World",
