@@ -6,10 +6,10 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="pageTitle">AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası</title>
-<meta name="description" content="ChatGPT, Gemini, Grok, Copilot, Claude and Perplexity weekly football predictions for leagues worldwide. Free AI football analysis.">
-<meta property="og:title" content="AIGoal.net — AI Destekli Futbol Tahminleri | Süper Lig, Premier League ve Daha Fazlası">
-<meta property="og:description" content="6 AI models analyze football matches every week. Free predictions for Super Lig, Premier League and more.">
+<title id="pageTitle">AIGoal.net — 2026 FIFA Dünya Kupası AI Tahminleri | Group Stage Predictions</title>
+<meta name="description" content="2026 FIFA Dünya Kupası grup aşaması tahminleri. ChatGPT, Gemini, Grok, Copilot, Claude ve Perplexity yapay zeka modellerinden ücretsiz analiz.">
+<meta property="og:title" content="AIGoal.net — 2026 FIFA Dünya Kupası AI Tahminleri">
+<meta property="og:description" content="2026 FIFA World Cup Group Stage AI Predictions. 6 AI models analysed for every match.">
 <meta property="og:url" content="https://aigoal.net">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://aigoal.net">
@@ -291,13 +291,13 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 
 <!-- ═══ SIDEBAR ═══ -->
 <aside class="sidebar" id="sidebar">
-  <a class="sb-logo" onclick="switchLeague('ziraat',document.querySelector('[onclick*=ziraat]'));setActive(document.querySelector('[onclick*=ziraat]'));">
+  <a class="sb-logo" onclick="switchLeague('worldcup',document.querySelector('[onclick*=worldcup]'));setActive(document.querySelector('[onclick*=worldcup]'));">
     <img src="logo.png" alt="AIGoal" style="width:178px;height:auto;object-fit:contain;display:block;" fetchpriority="high" width="178" height="50" onerror="this.style.display='none'">
   </a>
 
   <div class="sb-section">
     <div class="sb-section-label" data-tr="Genel" data-en="General">Genel</div>
-    <a class="sb-item active" onclick="switchLeague('ziraat',document.querySelector('[onclick*=ziraat]'));setActive(document.querySelector('[onclick*=ziraat]'))">
+    <a class="sb-item active" onclick="switchLeague('worldcup',document.querySelector('[onclick*=worldcup]'));setActive(document.querySelector('[onclick*=worldcup]'))">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       <span data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</span>
     </a>
@@ -315,77 +315,11 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
   <div class="sb-divider"></div>
 
   <div class="sb-section">
-    <div class="sb-section-label">🇹🇷 <span data-tr="Türkiye" data-en="Turkey">Türkiye</span></div>
-    <a class="sb-item" onclick="switchLeague('ziraat',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/tr.svg" alt="TR">
-      <span data-tr="Ziraat Türkiye Kupası" data-en="Ziraat Turkey Cup">Ziraat Türkiye Kupası</span>
-    </a>
-
-  </div>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">🌍 <span data-tr="Avrupa" data-en="Europe">Avrupa</span></div>
-    <a class="sb-item" onclick="switchLeague('pl',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gb-eng.svg" alt="EN">
-      <span data-tr="İngiltere — Premier League" data-en="England — Premier League">İngiltere — Premier League</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('laliga',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/es.svg" alt="ES">
-      <span data-tr="İspanya — La Liga" data-en="Spain — La Liga">İspanya — La Liga</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('seriea',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/it.svg" alt="IT">
-      <span data-tr="İtalya — Serie A" data-en="Italy — Serie A">İtalya — Serie A</span>
-    </a>
-  </div>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">🌎 <span data-tr="Amerika" data-en="Americas">Amerika</span></div>
-    <a class="sb-item" onclick="switchLeague('brasileirao',this)">
-      <img class="sb-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/br.svg" alt="BR">
-      <span data-tr="Brezilya — Série A" data-en="Brazil — Série A">Brezilya — Série A</span>
-    </a>
-  </div>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">🌍 <span data-tr="Diğer Ligler" data-en="Other Leagues">Diğer Ligler</span></div>
-  </div>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
     <div class="sb-section-label">🏆 <span data-tr="Dünya Kupası" data-en="World Cup">Dünya Kupası</span></div>
     <a class="sb-item" onclick="switchLeague('worldcup',this)">
       <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
       <span data-tr="2026 FIFA Dünya Kupası" data-en="2026 FIFA World Cup">2026 FIFA Dünya Kupası</span>
       <span class="sb-badge new">Haziran</span>
-    </a>
-  </div>
-
-  <div class="sb-divider"></div>
-
-  <div class="sb-section">
-    <div class="sb-section-label">UEFA</div>
-    <a class="sb-item" onclick="switchLeague('championsleague',this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <span data-tr="Şampiyonlar Ligi Final" data-en="Champions League Final">Şampiyonlar Ligi Final</span>
-      <span class="sb-badge new">30 May</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('europaleague',this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-      <span data-tr="Avrupa Ligi Final" data-en="Europa League Final">Avrupa Ligi Final</span>
-      <span class="sb-badge new">20 May</span>
-    </a>
-    <a class="sb-item" onclick="switchLeague('conferenceleague',this)">
-      <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M17 4H7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M5 10H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2M19 10h2a1 1 0 0 0 1 1v2a1 1 0 0 0-1 1h-2"/></svg>
-      <span data-tr="Konferans Ligi Final" data-en="Conference League Final">Konferans Ligi Final</span>
-      <span class="sb-badge new">27 May</span>
     </a>
   </div>
 
@@ -412,15 +346,15 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
 <div class="main">
   <nav class="topnav">
     <div class="topnav-left">
-      <div class="topnav-breadcrumb" id="breadcrumb"><span data-tr="Türkiye" data-en="Turkey">Türkiye</span> › <span data-tr="Trendyol Süper Lig" data-en="Trendyol Süper Lig">Ziraat Türkiye Kupası</span></div>
-      <span class="live-badge" data-tr="FİNAL" data-en="FINAL">FİNAL</span>
+      <div class="topnav-breadcrumb" id="breadcrumb"><span data-tr="Dünya" data-en="World">Dünya</span> › <span data-tr="2026 FIFA Dünya Kupası" data-en="2026 FIFA World Cup">2026 FIFA World Cup</span></div>
+      <span class="live-badge" data-tr="MAÇLAR" data-en="MATCHDAY">MAÇLAR</span>
     </div>
     <div class="topnav-right">
       <div class="lang-switcher">
         <button class="lang-btn active" id="btnTR" onclick="setLang('tr')">TR</button>
         <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
       </div>
-      <div class="week-chip">📅 22 <span data-tr="Mayıs" data-en="May">Mayıs</span> 2026</div>
+      <div class="week-chip">📅 <span data-tr="Haziran 2026" data-en="June 2026">Haziran 2026</span></div>
       <a href="https://x.com/AIGoalnet" target="_blank" rel="noopener" title="@AIGoalnet" style="display:flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:5px 9px;transition:all .15s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(255,255,255,.25)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
         <span style="font-size:11px;font-weight:600;">@AIGoalnet</span>
@@ -436,7 +370,7 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
         <div>
           <h1>
             <img id="leagueLogo" class="league-logo-header" src="" alt="Süper Lig" onerror="this.style.display='none'">
-            <span class="league-country-tag">ZTK</span> ZİRAAT TÜRKİYE KUPASI — <span class="cr" data-tr="Güncel Tahminler" data-en="Latest Predictions">Güncel Tahminler</span>
+            <span class="league-country-tag">🌍 FIFA</span> 2026 FIFA Dünya Kupası — <span class="cr" data-tr="Grup Aşaması Tahminleri" data-en="Group Stage Predictions">Grup Aşaması Tahminleri</span>
           </h1>
           <div class="title-sub" data-tr="Yapay zeka destekli futbol tahminleri · Her hafta güncellenir" data-en="AI-powered football predictions · Updated every week">Yapay zeka destekli futbol tahminleri · Her hafta güncellenir</div>
         </div>
@@ -532,20 +466,9 @@ footer{border-top:1px solid var(--border);margin-top:36px;padding:20px 24px;disp
           @AIGoalnet
         </a>
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);width:100%;">
-          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2e3455;margin-bottom:8px;">AI Predictions by League</div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2e3455;margin-bottom:8px;">AI Predictions</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;">
-            <a href="/super-lig-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Süper Lig AI Prediction</a>
-            <a href="/premier-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Premier League AI Prediction</a>
-            <a href="/bundesliga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Bundesliga AI Prediction</a>
-            <a href="/la-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">La Liga AI Prediction</a>
-            <a href="/serie-a-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Serie A AI Prediction</a>
-            <a href="/ligue-1-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Ligue 1 AI Prediction</a>
-            <a href="/eredivisie-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Eredivisie AI Prediction</a>
-            <a href="/primeira-liga-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Primeira Liga AI Prediction</a>
-            <a href="/championship-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Championship AI Prediction</a>
-            <a href="/mls-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">MLS AI Prediction</a>
-            <a href="/brasileirao-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Brasileirão AI Prediction</a>
-            <a href="/champions-league-ai-prediction" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">Champions League AI Prediction</a>
+            <a href="/" style="font-size:10px;color:#2e3455;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='#2e3455'">2026 FIFA World Cup AI Prediction</a>
           </div>
         </div>
         <div class="fsmall" style="margin-top:10px;">aigoal.net · AI Football Predictions · © 2026</div>
@@ -1279,85 +1202,6 @@ document.getElementById('agrid').innerHTML=aiM.map(a=>`<div class="ac${a.act?' a
 
 // ── All league match data ──
 const allLeagues = {
-  ziraat: {
-    nameTr:"Ziraat Türkiye Kupası", nameEn:"Ziraat Turkey Cup",
-    countryTr:"Türkiye", countryEn:"Turkey",
-    code:"ZTK", flag:"🏆",
-    weekLabel:{tr:"KUPA",en:"CUP"},
-    dates:{tr:"13–22 Mayıs 2026",en:"13–22 May 2026"},
-    analysisTr:"Ziraat Türkiye Kupası'nda Konyaspor finale adını yazdırdı (Beşiktaş'ı 1-0 mağlup etti). İkinci finalist 13 Mayıs'ta oynanacak Gençlerbirliği-Trabzonspor yarı finalinin galibi olacak. Final 22 Mayıs Cuma günü saat 20.45'te Corendon Airlines Park Antalya Stadı'nda oynanacak. AI modelleri yarı finalde Trabzonspor'u hafif favori olarak değerlendirirken Konyaspor'un kupa finalindeki motivasyonunu güçlü buluyor.",
-    analysisEn:"In the Ziraat Turkey Cup, Konyaspor has booked their final spot by defeating Beşiktaş 1-0. The second finalist will be determined by the Gençlerbirliği vs Trabzonspor semi-final on 13 May. The final takes place on Friday 22 May at 20:45 at Corendon Airlines Park Antalya Stadium. AI models rate Trabzonspor as a slight semi-final favourite while considering Konyaspor's cup final motivation as a key factor.",
-    matches:[
-      
-      {home:"Konyaspor",away:"Finalist TBD",date:{tr:"22 May Cum",en:"Fri 22 May"},time:"20:45",derbi:false,url:"/ziraat-kupasi-final-2026",popular:true,p:{chatgpt:{tr:"MS X",en:"X",c:"bdash"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS X",en:"X",c:"bdash"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-    ],
-  },
-  pl: {
-    nameTr:"Premier League", nameEn:"Premier League",
-    countryTr:"İngiltere", countryEn:"England",
-    code:"EPL", flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Premier League'in son haftalarında şampiyonluk, Avrupa ve küme düşme meselesi netleşiyor. Bu hafta 12 maçta 6 AI modeli özellikle üst sıra yarışını yakından takip etti. Konsensüs analizi ev sahibi avantajının bu dönemde belirleyici olduğunu ortaya koyuyor.",
-    analysisEn:"The Premier League's final weeks settle the title, European spots and relegation. This gameweek's 12 fixtures saw all 6 AI models closely tracking the top-of-table race. Consensus analysis shows home advantage is particularly decisive at this stage of the season.",
-    matches:[
-
-{home:"AFC Bournemouth",away:"Manchester City FC",date:{tr:"19 May Sal",en:"Tue 19 May"},time:"18:30",derbi:false,hc:'https://crests.football-data.org/bournemouth.png',ac:'https://crests.football-data.org/65.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Chelsea FC",away:"Tottenham Hotspur FC",date:{tr:"19 May Sal",en:"Tue 19 May"},time:"19:15",derbi:false,hc:'https://crests.football-data.org/61.png',ac:'https://crests.football-data.org/73.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-{home:"Sunderland AFC",away:"Chelsea FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/71.png',ac:'https://crests.football-data.org/61.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Brighton & Hove Albion FC",away:"Manchester United FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/397.png',ac:'https://crests.football-data.org/66.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Crystal Palace FC",away:"Arsenal FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/354.png',ac:'https://crests.football-data.org/57.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Burnley FC",away:"Wolverhampton Wanderers FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/328.png',ac:'https://crests.football-data.org/76.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"Fulham FC",away:"Newcastle United FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/63.png',ac:'https://crests.football-data.org/67.png',p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Liverpool FC",away:"Brentford FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/64.png',ac:'https://crests.football-data.org/402.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Manchester City FC",away:"Aston Villa FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/65.png',ac:'https://crests.football-data.org/58.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"Nottingham Forest FC",away:"AFC Bournemouth",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/351.png',ac:'https://crests.football-data.org/bournemouth.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Tottenham Hotspur FC",away:"Everton FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/73.png',ac:'https://crests.football-data.org/62.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"West Ham United FC",away:"Leeds United FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"15:00",derbi:false,hc:'https://crests.football-data.org/563.png',ac:'https://crests.football-data.org/341.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}}
-    ],
-  },
-  seriea: {
-    nameTr:"Serie A", nameEn:"Serie A",
-    countryTr:"İtalya", countryEn:"Italy",
-    code:"SA", flag:"🇮🇹",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"Serie A'da şampiyonluk yarışı son virajda. Inter ve Napoli arasındaki puan farkı minimum seviyelerde seyrederken 6 AI modeli bu hafta İtalyan liginin en kritik maçlarını inceledi. Alt gol tahminleri özellikle savunma güçlü takımların maçlarında ön plana çıkıyor.",
-    analysisEn:"The Serie A title race enters its final bend. With the gap between Inter and Napoli at a minimum, 6 AI models examined Italian football's most critical fixtures this week. Under-goal predictions stand out particularly in matches involving defensively solid sides.",
-    matches:[
-{home:"ACF Fiorentina",away:"Atalanta BC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/99.png',ac:'https://crests.football-data.org/102.png',p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"AC Milan",away:"Cagliari Calcio",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/98.png',ac:'https://crests.football-data.org/104.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Bologna FC 1909",away:"FC Internazionale Milano",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/103.png',ac:'https://crests.football-data.org/108.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-{home:"Torino FC",away:"Juventus FC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/586.png',ac:'https://crests.football-data.org/109.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-{home:"Hellas Verona FC",away:"AS Roma",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/450.png',ac:'https://crests.football-data.org/100.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"SS Lazio",away:"AC Pisa 1909",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/110.png',ac:'https://crests.football-data.org/487.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Parma Calcio 1913",away:"US Sassuolo Calcio",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/112.png',ac:'https://crests.football-data.org/471.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"SSC Napoli",away:"Udinese Calcio",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/113.png',ac:'https://crests.football-data.org/115.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"US Cremonese",away:"Como 1907",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/457.png',ac:'https://crests.football-data.org/7397.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"US Lecce",away:"Genoa CFC",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"13:00",derbi:false,hc:'https://crests.football-data.org/5890.png',ac:'https://crests.football-data.org/107.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}}
-    ],
-  },
-  laliga: {
-    nameTr:"La Liga", nameEn:"La Liga",
-    countryTr:"İspanya", countryEn:"Spain",
-    code:"LL", flag:"🇪🇸",
-    weekLabel:{tr:"HAFTANın MAÇ",en:"MATCHWEEK"},
-    dates:{tr:"Mayıs 2026",en:"May 2026"},
-    analysisTr:"La Liga'nın son haftalarında Barcelona ve Real Madrid arasındaki şampiyonluk yarışı kıyasıya sürüyor. 6 AI modeli bu hafta 14 La Liga maçını analiz ederek büyük kulüplerde güçlü bir konsensüs oranı yakaladı. Atletico Madrid ise derbi maçlarındaki yüksek motivasyonuyla modellerin dikkatini çekiyor.",
-    analysisEn:"La Liga's final weeks see an intense title race between Barcelona and Real Madrid. Across 14 fixtures this week, 6 AI models achieved a strong consensus rate for the big clubs. Atletico Madrid continues to draw model attention with their trademark high motivation in derby fixtures.",
-    matches:[
-{home:"Deportivo Alavés",away:"Rayo Vallecano de Madrid",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/263.png',ac:'https://crests.football-data.org/87.png',p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS X2",en:"X2",c:"bx2"}}},
-{home:"Real Betis Balompié",away:"Levante UD",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/90.png',ac:'https://crests.football-data.org/88.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"RC Celta de Vigo",away:"Sevilla FC",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/558.png',ac:'https://crests.football-data.org/559.png',p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"RCD Espanyol de Barcelona",away:"Real Sociedad de Fútbol",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/80.png',ac:'https://crests.football-data.org/92.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS X2",en:"X2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-{home:"Getafe CF",away:"CA Osasuna",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/82.png',ac:'https://crests.football-data.org/79.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"2.5 Alt",en:"U2.5",c:"ba"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"KG Yok",en:"No BTTS",c:"ba"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"RCD Mallorca",away:"Real Oviedo",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/89.png',ac:'https://crests.football-data.org/1048.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1X",en:"1X",c:"b1x"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Real Madrid CF",away:"Athletic Club",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/86.png',ac:'https://crests.football-data.org/77.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Valencia CF",away:"FC Barcelona",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/95.png',ac:'https://crests.football-data.org/81.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Girona FC",away:"Elche CF",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/298.png',ac:'https://crests.football-data.org/285.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"Villarreal CF",away:"Club Atlético de Madrid",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/94.png',ac:'https://crests.football-data.org/78.png',p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}}
-    ],
-  },
   worldcup: {
     nameTr:"2026 FIFA Dünya Kupası", nameEn:"2026 FIFA World Cup",
     countryTr:"Dünya", countryEn:"World",
@@ -1392,68 +1236,11 @@ const allLeagues = {
       {home:"Gana",away:"Panama",date:{tr:"18 Haz Per",en:"Thu 18 Jun"},time:"01:00",derbi:false,hc:'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/gh.svg',ac:'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/pa.svg',url:"/ghana-vs-panama",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS X",en:"X",c:"bdash"}}},
       {home:"Özbekistan",away:"Kolombiya",date:{tr:"18 Haz Per",en:"Thu 18 Jun"},time:"04:00",derbi:false,hc:'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/uz.svg',ac:'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/co.svg',url:"/uzbekistan-vs-colombia",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
     ],
-  },
-  championsleague: {
-    nameTr:"UEFA Şampiyonlar Ligi Final", nameEn:"UEFA Champions League Final",
-    countryTr:"Avrupa", countryEn:"Europe",
-    code:"UCL", flag:"⭐",
-    weekLabel:{tr:"FİNAL",en:"FINAL"},
-    dates:{tr:"30 Mayıs 2026",en:"30 May 2026"},
-    analysisTr:"UEFA Şampiyonlar Ligi'nin en büyük gecesi: PSG ile Arsenal 30 Mayıs'ta Budapeşte'nin Puskás Aréna'sında karşı karşıya geliyor. PSG yarı finalde Bayern Münih'i devirirken, Arsenal Atletico Madrid'i eleyerek finale yükseldi. AI modelleri bu zorlu karşılaşmada geniş bir tahmin dağılımı sergiledi; Şampiyonlar Ligi finali tarihsel olarak en az konsensüs üretilen karşılaşma olmaya devam ediyor.",
-    analysisEn:"The biggest night in UEFA Champions League: PSG face Arsenal at the Puskás Aréna in Budapest on 30 May. PSG eliminated Bayern Munich in the semis while Arsenal knocked out Atletico Madrid. AI models show a wide prediction spread for this difficult fixture — the Champions League final historically produces the least consensus of any match.",
-    matches:[
-      {home:"Paris Saint-Germain FC",away:"Arsenal FC",date:{tr:"30 May Cmt",en:"Sat 30 May"},time:"18:00",derbi:false,url:"/ucl-final-2026-psg-vs-arsenal",popular:true,hc:"https://crests.football-data.org/524.png",ac:"https://crests.football-data.org/57.png",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"MS X",en:"X",c:"bdash"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"2.5 Üst",en:"O2.5",c:"bu"}}},
-    ],
-  },
-  europaleague: {
-    nameTr:"UEFA Avrupa Ligi Final", nameEn:"UEFA Europa League Final",
-    countryTr:"Avrupa", countryEn:"Europe",
-    code:"UEL", flag:"🟠",
-    weekLabel:{tr:"FİNAL",en:"FINAL"},
-    dates:{tr:"20 Mayıs 2026",en:"20 May 2026"},
-    analysisTr:"UEFA Avrupa Ligi finali 20 Mayıs'ta İstanbul'un Beşiktaş Park stadyumunda oynanıyor. Freiburg ilk kez bir Avrupa finaline ulaşırken, Aston Villa Premier League sonrası Avrupa arenasında zirvede. AI modelleri Aston Villa'yı hafif favori olarak değerlendiriyor; ancak Freiburg'un organize savunma oyunu modellerin güvenini sarsıyor.",
-    analysisEn:"The UEFA Europa League final takes place on 20 May at Beşiktaş Park in Istanbul. Freiburg reach their first-ever European final while Aston Villa continue their strong European campaign. AI models rate Aston Villa as slight favourites, but Freiburg's organised defensive structure makes models uncertain.",
-    matches:[
-      {home:"SC Freiburg",away:"Aston Villa FC",date:{tr:"20 May Çar",en:"Wed 20 May"},time:"22:00",derbi:false,url:"/uel-final-2026-freiburg-vs-aston-villa",popular:true,hc:"https://crests.football-data.org/17.png",ac:"https://crests.football-data.org/58.png",p:{chatgpt:{tr:"MS X2",en:"X2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-    ],
-  },
-  conferenceleague: {
-    nameTr:"UEFA Konferans Ligi Final", nameEn:"UEFA Conference League Final",
-    countryTr:"Avrupa", countryEn:"Europe",
-    code:"UECL", flag:"🏆",
-    weekLabel:{tr:"FİNAL",en:"FINAL"},
-    dates:{tr:"27 Mayıs 2026",en:"27 May 2026"},
-    analysisTr:"UEFA Konferans Ligi finali 27 Mayıs'ta Leipzig'in Red Bull Arena'sında oynanıyor. Crystal Palace Premier League'den Avrupa sahnesine parlak çıkış yaparak finale ulaştı; Rayo Vallecano ise İspanya'dan sürpriz finalist oldu. AI modelleri Crystal Palace'ı hafif favori olarak görürken Rayo'nun kontr-atak gücü düşük skoru besliyor.",
-    analysisEn:"The UEFA Conference League final is played on 27 May at the Red Bull Arena in Leipzig. Crystal Palace made a brilliant leap from the Premier League to the European stage reaching the final; Rayo Vallecano arrive as a surprise Spanish finalist. AI models see Crystal Palace as slight favourites while Rayo's counter-attacking threat feeds lower-scoring predictions.",
-    matches:[
-      {home:"Crystal Palace FC",away:"Rayo Vallecano de Madrid",date:{tr:"27 May Çar",en:"Wed 27 May"},time:"21:00",derbi:false,url:"/uecl-final-2026-crystal-palace-vs-rayo-vallecano",popular:true,hc:"https://crests.football-data.org/354.png",ac:"https://crests.football-data.org/87.png",p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-    ],
-  },
-  brasileirao: {
-    nameTr:"Brasileirão Série A", nameEn:"Brasileirão Série A",
-    countryTr:"Brezilya", countryEn:"Brazil",
-    code:"BSA", flag:"🇧🇷",
-    weekLabel:{tr:"16. HAFTA",en:"WEEK 16"},
-    dates:{tr:"16–18 Mayıs 2026",en:"16–18 May 2026"},
-    analysisTr:"Brasileirão Série A'nın 16. haftasında Flamengo, Palmeiras ve Botafogo zirve yarışında kritik maçlara çıkıyor. AI modelleri Brezilya liginin ofansif karakterini yansıtarak yüksek gol oranı tahminleri üretti. Palmeiras–Cruzeiro ve Botafogo–Corinthians gibi dev derbilerde güçlü konsensüs öne çıktı.",
-    analysisEn:"In Brasileirão Série A Week 16, Flamengo, Palmeiras and Botafogo take on critical fixtures in the title race. AI models reflect the offensive character of Brazilian football with high-scoring predictions. Strong consensus emerged for marquee clashes like Palmeiras vs Cruzeiro and Botafogo vs Corinthians.",
-    matches:[
-{home:"São Paulo FC",away:"Botafogo FR",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"20:00",derbi:false,hc:'https://crests.football-data.org/1776.png',ac:'https://crests.football-data.org/1770.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"MS 1X",en:"1X",c:"b1x"}}},
-{home:"EC Vitória",away:"SC Internacional",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"20:00",derbi:false,hc:'https://crests.football-data.org/1782.png',ac:'https://crests.football-data.org/6684.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"MS X2",en:"X2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Alt",en:"U2.5",c:"ba"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}},
-{home:"Grêmio FBPA",away:"Santos FC",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"22:00",derbi:false,hc:'https://crests.football-data.org/1767.png',ac:'https://crests.football-data.org/6685.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Mirassol FC",away:"Fluminense FC",date:{tr:"23 May Cmt",en:"Sat 23 May"},time:"22:00",derbi:false,hc:'https://crests.football-data.org/4364.png',ac:'https://crests.football-data.org/1765.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS 2",en:"2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Ust",en:"O2.5",c:"bu"}}},
-{home:"CR Flamengo",away:"SE Palmeiras",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"00:00",derbi:false,hc:'https://crests.football-data.org/1783.png',ac:'https://crests.football-data.org/1769.png',p:{chatgpt:{tr:"KG Var",en:"BTTS",c:"bkg"},gemini:{tr:"2.5 Ust",en:"O2.5",c:"bu"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"MS 1X",en:"1X",c:"b1x"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Cruzeiro EC",away:"Chapecoense AF",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/1771.png',ac:'https://crests.football-data.org/1772_large.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1",en:"1",c:"b1"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Ust",en:"O2.5",c:"bu"},claude:{tr:"MS 1X",en:"1X",c:"b1x"},perplexity:{tr:"KG Var",en:"BTTS",c:"bkg"}}},
-{home:"Clube do Remo",away:"CA Paranaense",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"19:00",derbi:false,hc:'https://crests.football-data.org/4287.png',ac:'https://crests.football-data.org/1768.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS 2",en:"2",c:"bx2"},grok:{tr:"KG Var",en:"BTTS",c:"bkg"},copilot:{tr:"MS X2",en:"X2",c:"bx2"},claude:{tr:"MS 2",en:"2",c:"bx2"},perplexity:{tr:"2.5 Alt",en:"U2.5",c:"ba"}}},
-{home:"SC Corinthians Paulista",away:"CA Mineiro",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"21:30",derbi:false,hc:'https://crests.football-data.org/1779.png',ac:'https://crests.football-data.org/1766.png',p:{chatgpt:{tr:"MS 1X",en:"1X",c:"b1x"},gemini:{tr:"KG Var",en:"BTTS",c:"bkg"},grok:{tr:"MS 1",en:"1",c:"b1"},copilot:{tr:"2.5 Alt",en:"U2.5",c:"ba"},claude:{tr:"MS 1",en:"1",c:"b1"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"CR Vasco da Gama",away:"RB Bragantino",date:{tr:"24 May Paz",en:"Sun 24 May"},time:"23:30",derbi:false,hc:'https://crests.football-data.org/1780.png',ac:'https://crests.football-data.org/4286.png',p:{chatgpt:{tr:"MS 1",en:"1",c:"b1"},gemini:{tr:"MS 1X",en:"1X",c:"b1x"},grok:{tr:"2.5 Ust",en:"O2.5",c:"bu"},copilot:{tr:"MS 1",en:"1",c:"b1"},claude:{tr:"KG Var",en:"BTTS",c:"bkg"},perplexity:{tr:"MS 1",en:"1",c:"b1"}}},
-{home:"Coritiba FBC",away:"EC Bahia",date:{tr:"25 May Pzt",en:"Mon 25 May"},time:"23:00",derbi:false,hc:'https://crests.football-data.org/4241.png',ac:'https://crests.football-data.org/1777.png',p:{chatgpt:{tr:"MS 2",en:"2",c:"bx2"},gemini:{tr:"MS X2",en:"X2",c:"bx2"},grok:{tr:"MS 2",en:"2",c:"bx2"},copilot:{tr:"KG Var",en:"BTTS",c:"bkg"},claude:{tr:"2.5 Ust",en:"O2.5",c:"bu"},perplexity:{tr:"MS 2",en:"2",c:"bx2"}}}
-    ],
-  },
-};
+  }
+};;
 
 
-let currentLeague = 'ziraat';
+let currentLeague = 'worldcup';
 
 // ── Sidebar helpers ──
 function setActive(el){
@@ -1540,7 +1327,7 @@ document.addEventListener('click',e=>{
 });
 
 // ── Init ──
-matches = (allLeagues[currentLeague] || allLeagues['ziraat']).matches;
+matches = (allLeagues[currentLeague] || allLeagues['worldcup']).matches;
 setLang(currentLang);
 renderTable();
 renderConsensus();
